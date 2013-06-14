@@ -1,0 +1,2195 @@
+2013-06-11 04:44:30,784 p=13995 u=jeremy |  
+2013-06-11 04:44:30,784 p=13995 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 04:44:30,784 p=13995 u=jeremy |  
+2013-06-11 04:44:30,844 p=13995 u=jeremy |  adept01 | FAILED => paramiko is not installed
+2013-06-11 04:44:30,850 p=13995 u=jeremy |  adept02 | FAILED => paramiko is not installed
+2013-06-11 04:44:30,850 p=13995 u=jeremy |  adept03 | FAILED => paramiko is not installed
+2013-06-11 04:45:24,079 p=14117 u=jeremy |  
+2013-06-11 04:45:24,079 p=14117 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 04:45:24,079 p=14117 u=jeremy |  
+2013-06-11 04:45:24,139 p=14117 u=jeremy |  adept01 | FAILED => paramiko is not installed
+2013-06-11 04:45:24,141 p=14117 u=jeremy |  adept02 | FAILED => paramiko is not installed
+2013-06-11 04:45:24,142 p=14117 u=jeremy |  adept03 | FAILED => paramiko is not installed
+2013-06-11 04:48:26,534 p=17339 u=jeremy |  
+2013-06-11 04:48:26,534 p=17339 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 04:48:26,535 p=17339 u=jeremy |  
+2013-06-11 04:48:26,591 p=17339 u=jeremy |  adept01 | FAILED => paramiko is not installed
+2013-06-11 04:48:26,595 p=17339 u=jeremy |  adept02 | FAILED => paramiko is not installed
+2013-06-11 04:48:26,598 p=17339 u=jeremy |  adept03 | FAILED => paramiko is not installed
+2013-06-11 04:50:34,590 p=18190 u=jeremy |  
+2013-06-11 04:50:34,590 p=18190 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 04:50:34,590 p=18190 u=jeremy |  
+2013-06-11 04:50:46,820 p=18190 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:51:03,011 p=18190 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:51:44,810 p=18190 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:52:55,264 p=18544 u=jeremy |  
+2013-06-11 04:52:55,264 p=18544 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 04:52:55,264 p=18544 u=jeremy |  
+2013-06-11 04:52:55,710 p=18544 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:52:55,719 p=18544 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:52:55,732 p=18544 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:53:29,167 p=18636 u=jeremy |  
+2013-06-11 04:53:29,167 p=18636 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping -u jeremy
+2013-06-11 04:53:29,167 p=18636 u=jeremy |  
+2013-06-11 04:53:29,570 p=18636 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:53:29,589 p=18636 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:53:29,640 p=18636 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 04:54:25,277 p=18747 u=jeremy |  
+2013-06-11 04:54:25,277 p=18747 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m setup
+2013-06-11 04:54:25,277 p=18747 u=jeremy |  
+2013-06-11 04:54:25,927 p=18747 u=jeremy |  adept01 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.240"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe0e:cd0d"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-11", 
+            "day": "11", 
+            "epoch": "1370940864", 
+            "hour": "04", 
+            "iso8601": "2013-06-11T08:54:24Z", 
+            "iso8601_micro": "2013-06-11T08:54:24.997475Z", 
+            "minute": "54", 
+            "month": "06", 
+            "second": "24", 
+            "time": "04:54:24", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.240", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:0e:cd:0d", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.240", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe0e:cd0d", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:0e:cd:0d", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "fresh.deptadapt.org", 
+        "ansible_hostname": "fresh", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 173, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 995393536, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-11 04:54:25,990 p=18747 u=jeremy |  adept02 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.241"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe3e:cf7c"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-11", 
+            "day": "11", 
+            "epoch": "1370940864", 
+            "hour": "04", 
+            "iso8601": "2013-06-11T08:54:24Z", 
+            "iso8601_micro": "2013-06-11T08:54:24.747606Z", 
+            "minute": "54", 
+            "month": "06", 
+            "second": "24", 
+            "time": "04:54:24", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.241", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:3e:cf:7c", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.241", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe3e:cf7c", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:3e:cf:7c", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "adept02", 
+        "ansible_hostname": "adept02", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 173, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 995528704, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-11 04:54:26,020 p=18747 u=jeremy |  adept03 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.242"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe00:894c"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-11", 
+            "day": "11", 
+            "epoch": "1370940864", 
+            "hour": "04", 
+            "iso8601": "2013-06-11T08:54:24Z", 
+            "iso8601_micro": "2013-06-11T08:54:24.334877Z", 
+            "minute": "54", 
+            "month": "06", 
+            "second": "24", 
+            "time": "04:54:24", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.242", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:00:89:4c", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.242", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe00:894c", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:00:89:4c", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "adept03", 
+        "ansible_hostname": "adept03", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 173, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 995528704, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-11 16:35:23,517 p=472 u=jeremy |  
+2013-06-11 16:35:23,535 p=472 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping -u jeremy
+2013-06-11 16:35:23,536 p=472 u=jeremy |  
+2013-06-11 16:35:23,953 p=472 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 16:35:24,042 p=472 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 16:35:24,086 p=472 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 16:36:27,582 p=617 u=jeremy |  
+2013-06-11 16:36:27,582 p=617 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m setup
+2013-06-11 16:36:27,583 p=617 u=jeremy |  
+2013-06-11 16:36:28,190 p=617 u=jeremy |  adept01 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.240"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe0e:cd0d"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-11", 
+            "day": "11", 
+            "epoch": "1370982987", 
+            "hour": "16", 
+            "iso8601": "2013-06-11T20:36:27Z", 
+            "iso8601_micro": "2013-06-11T20:36:27.260011Z", 
+            "minute": "36", 
+            "month": "06", 
+            "second": "27", 
+            "time": "16:36:27", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.240", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:0e:cd:0d", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.240", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe0e:cd0d", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:0e:cd:0d", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "fresh.deptadapt.org", 
+        "ansible_hostname": "fresh", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 47, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 948318208, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-11 16:36:28,299 p=617 u=jeremy |  adept02 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.241"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe3e:cf7c"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-11", 
+            "day": "11", 
+            "epoch": "1370982987", 
+            "hour": "16", 
+            "iso8601": "2013-06-11T20:36:27Z", 
+            "iso8601_micro": "2013-06-11T20:36:27.060946Z", 
+            "minute": "36", 
+            "month": "06", 
+            "second": "27", 
+            "time": "16:36:27", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.241", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:3e:cf:7c", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.241", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe3e:cf7c", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:3e:cf:7c", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "adept02", 
+        "ansible_hostname": "adept02", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 47, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 948449280, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-11 16:36:28,304 p=617 u=jeremy |  adept03 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.242"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe00:894c"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-11", 
+            "day": "11", 
+            "epoch": "1370982986", 
+            "hour": "16", 
+            "iso8601": "2013-06-11T20:36:26Z", 
+            "iso8601_micro": "2013-06-11T20:36:26.621482Z", 
+            "minute": "36", 
+            "month": "06", 
+            "second": "26", 
+            "time": "16:36:26", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.242", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:00:89:4c", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.242", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe00:894c", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:00:89:4c", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "adept03", 
+        "ansible_hostname": "adept03", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 47, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 948449280, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-11 16:54:13,159 p=1804 u=jeremy |  
+2013-06-11 16:54:13,159 p=1804 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 16:54:13,159 p=1804 u=jeremy |  
+2013-06-11 16:54:13,550 p=1804 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 16:54:13,596 p=1804 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 16:54:13,623 p=1804 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 16:54:46,297 p=1910 u=jeremy |  
+2013-06-11 16:54:46,297 p=1910 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a name=ntp state=installed
+2013-06-11 16:54:46,297 p=1910 u=jeremy |  
+2013-06-11 16:54:47,630 p=1910 u=jeremy |  adept01 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'ntp' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-11 16:54:47,706 p=1910 u=jeremy |  adept02 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'ntp' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-11 16:54:47,706 p=1910 u=jeremy |  adept03 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'ntp' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-11 16:56:19,539 p=2059 u=jeremy |  
+2013-06-11 16:56:19,539 p=2059 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a name=ntp state=installed -K
+2013-06-11 16:56:19,539 p=2059 u=jeremy |  
+2013-06-11 16:56:49,537 p=2059 u=jeremy |  ERROR: interrupted
+2013-06-11 16:56:56,161 p=2246 u=jeremy |  
+2013-06-11 16:56:56,161 p=2246 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a name=ntp state=installed --sudo -K
+2013-06-11 16:56:56,161 p=2246 u=jeremy |  
+2013-06-11 16:57:09,211 p=2246 u=jeremy |  adept01 | success >> {
+    "changed": false
+}
+
+2013-06-11 16:57:09,399 p=2246 u=jeremy |  adept02 | success >> {
+    "changed": false
+}
+
+2013-06-11 16:57:09,944 p=2246 u=jeremy |  adept03 | success >> {
+    "changed": false
+}
+
+2013-06-11 16:57:36,268 p=2542 u=jeremy |  
+2013-06-11 16:57:36,268 p=2542 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a name=ntp state=uninstalled --sudo -K
+2013-06-11 16:57:36,268 p=2542 u=jeremy |  
+2013-06-11 16:57:39,743 p=2542 u=jeremy |  adept02 | FAILED >> {
+    "failed": true, 
+    "msg": "value of state must be one of: installed,latest,removed,absent,present, got: uninstalled"
+}
+
+2013-06-11 16:57:39,768 p=2542 u=jeremy |  adept03 | FAILED >> {
+    "failed": true, 
+    "msg": "value of state must be one of: installed,latest,removed,absent,present, got: uninstalled"
+}
+
+2013-06-11 16:57:39,774 p=2542 u=jeremy |  adept01 | FAILED >> {
+    "failed": true, 
+    "msg": "value of state must be one of: installed,latest,removed,absent,present, got: uninstalled"
+}
+
+2013-06-11 16:57:51,553 p=2614 u=jeremy |  
+2013-06-11 16:57:51,553 p=2614 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a name=ntp state=removed --sudo -K
+2013-06-11 16:57:51,553 p=2614 u=jeremy |  
+2013-06-11 16:58:07,551 p=2614 u=jeremy |  adept03 | success >> {
+    "changed": true
+}
+
+2013-06-11 16:58:08,481 p=2614 u=jeremy |  adept01 | success >> {
+    "changed": true
+}
+
+2013-06-11 16:58:08,563 p=2614 u=jeremy |  adept02 | success >> {
+    "changed": true
+}
+
+2013-06-11 16:58:19,182 p=2892 u=jeremy |  
+2013-06-11 16:58:19,182 p=2892 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a name=ntp state=installed --sudo -K
+2013-06-11 16:58:19,182 p=2892 u=jeremy |  
+2013-06-11 16:58:38,425 p=2892 u=jeremy |  adept03 | success >> {
+    "changed": true
+}
+
+2013-06-11 16:58:39,360 p=2892 u=jeremy |  adept02 | success >> {
+    "changed": true
+}
+
+2013-06-11 16:58:39,434 p=2892 u=jeremy |  adept01 | success >> {
+    "changed": true
+}
+
+2013-06-11 22:47:28,417 p=18183 u=jeremy |  
+2013-06-11 22:47:28,417 p=18183 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-11 22:47:28,418 p=18183 u=jeremy |  
+2013-06-11 22:47:28,870 p=18183 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:47:28,900 p=18183 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:47:29,047 p=18183 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:24,567 p=18992 u=jeremy |  
+2013-06-11 22:57:24,567 p=18992 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible
+2013-06-11 22:57:24,567 p=18992 u=jeremy |  
+2013-06-11 22:57:37,356 p=19007 u=jeremy |  
+2013-06-11 22:57:37,356 p=19007 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m ping
+2013-06-11 22:57:37,356 p=19007 u=jeremy |  
+2013-06-11 22:57:37,850 p=19007 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:37,900 p=19007 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:37,902 p=19007 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:43,104 p=19060 u=jeremy |  
+2013-06-11 22:57:43,105 p=19060 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -vvv -m ping
+2013-06-11 22:57:43,105 p=19060 u=jeremy |  
+2013-06-11 22:57:43,147 p=19060 u=jeremy |  <adept01> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept01
+2013-06-11 22:57:43,160 p=19060 u=jeremy |  <adept02> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept02
+2013-06-11 22:57:43,171 p=19060 u=jeremy |  <adept03> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept03
+2013-06-11 22:57:43,318 p=19060 u=jeremy |  <adept01> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371005863.32-132283022200339 && chmod a+rx $HOME/.ansible/tmp/ansible-1371005863.32-132283022200339 && echo $HOME/.ansible/tmp/ansible-1371005863.32-132283022200339'
+2013-06-11 22:57:43,348 p=19060 u=jeremy |  <adept02> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371005863.34-60418375128846 && chmod a+rx $HOME/.ansible/tmp/ansible-1371005863.34-60418375128846 && echo $HOME/.ansible/tmp/ansible-1371005863.34-60418375128846'
+2013-06-11 22:57:43,359 p=19060 u=jeremy |  <adept03> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371005863.36-1070353129619 && chmod a+rx $HOME/.ansible/tmp/ansible-1371005863.36-1070353129619 && echo $HOME/.ansible/tmp/ansible-1371005863.36-1070353129619'
+2013-06-11 22:57:43,376 p=19060 u=jeremy |  <adept03> REMOTE_MODULE ping 
+2013-06-11 22:57:43,380 p=19060 u=jeremy |  <adept03> PUT /tmp/tmpEF9n8W TO /home/jeremy/.ansible/tmp/ansible-1371005863.36-1070353129619/ping
+2013-06-11 22:57:43,518 p=19060 u=jeremy |  <adept03> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371005863.36-1070353129619/ping; rm -rf /home/jeremy/.ansible/tmp/ansible-1371005863.36-1070353129619/ >/dev/null 2>&1'
+2013-06-11 22:57:43,544 p=19060 u=jeremy |  <adept01> REMOTE_MODULE ping 
+2013-06-11 22:57:43,550 p=19060 u=jeremy |  <adept01> PUT /tmp/tmpNGiFp0 TO /home/jeremy/.ansible/tmp/ansible-1371005863.32-132283022200339/ping
+2013-06-11 22:57:43,550 p=19060 u=jeremy |  <adept02> REMOTE_MODULE ping 
+2013-06-11 22:57:43,554 p=19060 u=jeremy |  <adept02> PUT /tmp/tmpOaZpCJ TO /home/jeremy/.ansible/tmp/ansible-1371005863.34-60418375128846/ping
+2013-06-11 22:57:43,621 p=19060 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:43,671 p=19060 u=jeremy |  <adept01> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371005863.32-132283022200339/ping; rm -rf /home/jeremy/.ansible/tmp/ansible-1371005863.32-132283022200339/ >/dev/null 2>&1'
+2013-06-11 22:57:43,702 p=19060 u=jeremy |  <adept02> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371005863.34-60418375128846/ping; rm -rf /home/jeremy/.ansible/tmp/ansible-1371005863.34-60418375128846/ >/dev/null 2>&1'
+2013-06-11 22:57:43,767 p=19060 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:43,792 p=19060 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:47,810 p=19114 u=jeremy |  
+2013-06-11 22:57:47,811 p=19114 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -vv -m ping
+2013-06-11 22:57:47,811 p=19114 u=jeremy |  
+2013-06-11 22:57:48,025 p=19114 u=jeremy |  <adept01> REMOTE_MODULE ping 
+2013-06-11 22:57:48,080 p=19114 u=jeremy |  <adept03> REMOTE_MODULE ping 
+2013-06-11 22:57:48,118 p=19114 u=jeremy |  <adept02> REMOTE_MODULE ping 
+2013-06-11 22:57:48,279 p=19114 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:48,325 p=19114 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:48,364 p=19114 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:53,923 p=19168 u=jeremy |  
+2013-06-11 22:57:53,923 p=19168 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m ping
+2013-06-11 22:57:53,923 p=19168 u=jeremy |  
+2013-06-11 22:57:54,384 p=19168 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:54,422 p=19168 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-11 22:57:54,461 p=19168 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 00:11:53,247 p=29416 u=jeremy |  
+2013-06-12 00:11:53,247 p=29416 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m ping
+2013-06-12 00:11:53,247 p=29416 u=jeremy |  
+2013-06-12 00:11:53,733 p=29416 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 00:11:53,742 p=29416 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 00:11:53,772 p=29416 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 00:16:13,404 p=29760 u=jeremy |  
+2013-06-12 00:16:13,405 p=29760 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt pkg=postfix
+2013-06-12 00:16:13,405 p=29760 u=jeremy |  
+2013-06-12 00:16:20,408 p=29769 u=jeremy |  
+2013-06-12 00:16:20,408 p=29769 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a pkg=postfix
+2013-06-12 00:16:20,408 p=29769 u=jeremy |  
+2013-06-12 00:16:21,205 p=29769 u=jeremy |  adept03 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'postfix' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-12 00:16:21,208 p=29769 u=jeremy |  adept02 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'postfix' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-12 00:16:21,225 p=29769 u=jeremy |  adept01 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'postfix' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-12 00:16:52,781 p=29860 u=jeremy |  
+2013-06-12 00:16:52,781 p=29860 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a pkg=postfix -K
+2013-06-12 00:16:52,781 p=29860 u=jeremy |  
+2013-06-12 00:18:03,311 p=29860 u=jeremy |  adept02 | success >> {
+    "changed": true
+}
+
+2013-06-12 00:18:03,707 p=29860 u=jeremy |  adept03 | success >> {
+    "changed": true
+}
+
+2013-06-12 00:18:03,817 p=29860 u=jeremy |  adept01 | success >> {
+    "changed": true
+}
+
+2013-06-12 00:22:43,743 p=30304 u=jeremy |  
+2013-06-12 00:22:43,743 p=30304 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a pkg=postfix purge -K
+2013-06-12 00:22:43,743 p=30304 u=jeremy |  
+2013-06-12 00:22:56,005 p=30304 u=jeremy |  adept01 | FAILED >> {
+    "failed": true, 
+    "msg": "this module requires key=value arguments (['pkg=postfix', 'purge'])"
+}
+
+2013-06-12 00:22:56,083 p=30304 u=jeremy |  adept03 | FAILED >> {
+    "failed": true, 
+    "msg": "this module requires key=value arguments (['pkg=postfix', 'purge'])"
+}
+
+2013-06-12 00:22:56,107 p=30304 u=jeremy |  adept02 | FAILED >> {
+    "failed": true, 
+    "msg": "this module requires key=value arguments (['pkg=postfix', 'purge'])"
+}
+
+2013-06-12 00:23:10,680 p=30381 u=jeremy |  
+2013-06-12 00:23:10,680 p=30381 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a purge=postfix -K
+2013-06-12 00:23:10,680 p=30381 u=jeremy |  
+2013-06-12 00:26:04,211 p=30381 u=jeremy |  ERROR: interrupted
+2013-06-12 00:26:21,249 p=30633 u=jeremy |  
+2013-06-12 00:26:21,249 p=30633 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a purge=postfix -K
+2013-06-12 00:26:21,249 p=30633 u=jeremy |  
+2013-06-12 00:26:27,316 p=30633 u=jeremy |  adept01 | FAILED >> {
+    "failed": true, 
+    "msg": "Boolean postfix not in either boolean list"
+}
+
+2013-06-12 00:26:27,350 p=30633 u=jeremy |  adept02 | FAILED >> {
+    "failed": true, 
+    "msg": "Boolean postfix not in either boolean list"
+}
+
+2013-06-12 00:26:27,385 p=30633 u=jeremy |  adept03 | FAILED >> {
+    "failed": true, 
+    "msg": "Boolean postfix not in either boolean list"
+}
+
+2013-06-12 00:27:31,863 p=30764 u=jeremy |  
+2013-06-12 00:27:31,863 p=30764 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a pkg=tripwire -K
+2013-06-12 00:27:31,863 p=30764 u=jeremy |  
+2013-06-12 00:28:12,102 p=30764 u=jeremy |  adept02 | success >> {
+    "changed": true
+}
+
+2013-06-12 00:28:12,366 p=30764 u=jeremy |  adept01 | success >> {
+    "changed": true
+}
+
+2013-06-12 00:28:12,665 p=30764 u=jeremy |  adept03 | success >> {
+    "changed": true
+}
+
+2013-06-12 03:27:33,126 p=1256 u=jeremy |  
+2013-06-12 03:27:33,126 p=1256 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m command -a tripwire -m i -P ''
+2013-06-12 03:27:33,126 p=1256 u=jeremy |  
+2013-06-12 03:27:33,804 p=1256 u=jeremy |  adept02 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-06-12 03:27:33,840 p=1256 u=jeremy |  adept03 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-06-12 03:27:33,986 p=1256 u=jeremy |  adept01 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-06-12 03:27:50,871 p=1325 u=jeremy |  
+2013-06-12 03:27:50,871 p=1325 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m command tripwire -m i -P ''
+2013-06-12 03:27:50,871 p=1325 u=jeremy |  
+2013-06-12 03:28:29,687 p=1370 u=jeremy |  
+2013-06-12 03:28:29,687 p=1370 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping -vvv
+2013-06-12 03:28:29,687 p=1370 u=jeremy |  
+2013-06-12 03:28:29,733 p=1370 u=jeremy |  <adept01> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept01
+2013-06-12 03:28:29,742 p=1370 u=jeremy |  <adept02> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept02
+2013-06-12 03:28:29,757 p=1370 u=jeremy |  <adept03> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept03
+2013-06-12 03:28:29,923 p=1370 u=jeremy |  <adept01> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371022109.92-126813464341756 && chmod a+rx $HOME/.ansible/tmp/ansible-1371022109.92-126813464341756 && echo $HOME/.ansible/tmp/ansible-1371022109.92-126813464341756'
+2013-06-12 03:28:29,929 p=1370 u=jeremy |  <adept02> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371022109.93-51358282178332 && chmod a+rx $HOME/.ansible/tmp/ansible-1371022109.93-51358282178332 && echo $HOME/.ansible/tmp/ansible-1371022109.93-51358282178332'
+2013-06-12 03:28:29,938 p=1370 u=jeremy |  <adept01> REMOTE_MODULE ping 
+2013-06-12 03:28:29,944 p=1370 u=jeremy |  <adept02> REMOTE_MODULE ping 
+2013-06-12 03:28:29,944 p=1370 u=jeremy |  <adept03> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371022109.94-235834022494336 && chmod a+rx $HOME/.ansible/tmp/ansible-1371022109.94-235834022494336 && echo $HOME/.ansible/tmp/ansible-1371022109.94-235834022494336'
+2013-06-12 03:28:29,947 p=1370 u=jeremy |  <adept01> PUT /tmp/tmprTuIuD TO /home/jeremy/.ansible/tmp/ansible-1371022109.92-126813464341756/ping
+2013-06-12 03:28:29,949 p=1370 u=jeremy |  <adept02> PUT /tmp/tmpE7VFNJ TO /home/jeremy/.ansible/tmp/ansible-1371022109.93-51358282178332/ping
+2013-06-12 03:28:29,959 p=1370 u=jeremy |  <adept03> REMOTE_MODULE ping 
+2013-06-12 03:28:29,960 p=1370 u=jeremy |  <adept03> PUT /tmp/tmp3DVlEX TO /home/jeremy/.ansible/tmp/ansible-1371022109.94-235834022494336/ping
+2013-06-12 03:28:30,064 p=1370 u=jeremy |  <adept01> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371022109.92-126813464341756/ping; rm -rf /home/jeremy/.ansible/tmp/ansible-1371022109.92-126813464341756/ >/dev/null 2>&1'
+2013-06-12 03:28:30,073 p=1370 u=jeremy |  <adept02> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371022109.93-51358282178332/ping; rm -rf /home/jeremy/.ansible/tmp/ansible-1371022109.93-51358282178332/ >/dev/null 2>&1'
+2013-06-12 03:28:30,107 p=1370 u=jeremy |  <adept03> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371022109.94-235834022494336/ping; rm -rf /home/jeremy/.ansible/tmp/ansible-1371022109.94-235834022494336/ >/dev/null 2>&1'
+2013-06-12 03:28:30,159 p=1370 u=jeremy |  adept01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 03:28:30,174 p=1370 u=jeremy |  adept02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 03:28:30,206 p=1370 u=jeremy |  adept03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-12 03:29:01,890 p=1453 u=jeremy |  
+2013-06-12 03:29:01,890 p=1453 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m setup -vvv
+2013-06-12 03:29:01,890 p=1453 u=jeremy |  
+2013-06-12 03:29:01,930 p=1453 u=jeremy |  <adept01> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept01
+2013-06-12 03:29:01,944 p=1453 u=jeremy |  <adept02> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept02
+2013-06-12 03:29:01,953 p=1453 u=jeremy |  <adept03> ESTABLISH CONNECTION FOR USER: jeremy on PORT 22 TO adept03
+2013-06-12 03:29:02,172 p=1453 u=jeremy |  <adept02> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371022142.17-126748815070378 && chmod a+rx $HOME/.ansible/tmp/ansible-1371022142.17-126748815070378 && echo $HOME/.ansible/tmp/ansible-1371022142.17-126748815070378'
+2013-06-12 03:29:02,176 p=1453 u=jeremy |  <adept01> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371022142.17-70038358466562 && chmod a+rx $HOME/.ansible/tmp/ansible-1371022142.17-70038358466562 && echo $HOME/.ansible/tmp/ansible-1371022142.17-70038358466562'
+2013-06-12 03:29:02,182 p=1453 u=jeremy |  <adept02> REMOTE_MODULE setup 
+2013-06-12 03:29:02,184 p=1453 u=jeremy |  <adept01> REMOTE_MODULE setup 
+2013-06-12 03:29:02,186 p=1453 u=jeremy |  <adept02> PUT /tmp/tmp_AADKV TO /home/jeremy/.ansible/tmp/ansible-1371022142.17-126748815070378/setup
+2013-06-12 03:29:02,189 p=1453 u=jeremy |  <adept01> PUT /tmp/tmperoR8I TO /home/jeremy/.ansible/tmp/ansible-1371022142.17-70038358466562/setup
+2013-06-12 03:29:02,236 p=1453 u=jeremy |  <adept03> EXEC /bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1371022142.23-145043329785794 && chmod a+rx $HOME/.ansible/tmp/ansible-1371022142.23-145043329785794 && echo $HOME/.ansible/tmp/ansible-1371022142.23-145043329785794'
+2013-06-12 03:29:02,250 p=1453 u=jeremy |  <adept03> REMOTE_MODULE setup 
+2013-06-12 03:29:02,256 p=1453 u=jeremy |  <adept03> PUT /tmp/tmpdurf6_ TO /home/jeremy/.ansible/tmp/ansible-1371022142.23-145043329785794/setup
+2013-06-12 03:29:02,435 p=1453 u=jeremy |  <adept01> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371022142.17-70038358466562/setup; rm -rf /home/jeremy/.ansible/tmp/ansible-1371022142.17-70038358466562/ >/dev/null 2>&1'
+2013-06-12 03:29:02,476 p=1453 u=jeremy |  <adept02> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371022142.17-126748815070378/setup; rm -rf /home/jeremy/.ansible/tmp/ansible-1371022142.17-126748815070378/ >/dev/null 2>&1'
+2013-06-12 03:29:02,515 p=1453 u=jeremy |  <adept03> EXEC /bin/sh -c '/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1371022142.23-145043329785794/setup; rm -rf /home/jeremy/.ansible/tmp/ansible-1371022142.23-145043329785794/ >/dev/null 2>&1'
+2013-06-12 03:29:02,767 p=1453 u=jeremy |  adept01 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.240"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe0e:cd0d"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-12", 
+            "day": "12", 
+            "epoch": "1371022153", 
+            "hour": "03", 
+            "iso8601": "2013-06-12T07:29:13Z", 
+            "iso8601_micro": "2013-06-12T07:29:13.317832Z", 
+            "minute": "29", 
+            "month": "06", 
+            "second": "13", 
+            "time": "03:29:13", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.240", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:0e:cd:0d", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.240", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe0e:cd0d", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:0e:cd:0d", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "fresh.deptadapt.org", 
+        "ansible_hostname": "fresh", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 38, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 908152832, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-12 03:29:03,145 p=1453 u=jeremy |  adept02 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.241"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe3e:cf7c"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-12", 
+            "day": "12", 
+            "epoch": "1371022153", 
+            "hour": "03", 
+            "iso8601": "2013-06-12T07:29:13Z", 
+            "iso8601_micro": "2013-06-12T07:29:13.655343Z", 
+            "minute": "29", 
+            "month": "06", 
+            "second": "13", 
+            "time": "03:29:13", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.241", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:3e:cf:7c", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.241", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe3e:cf7c", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:3e:cf:7c", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "adept02", 
+        "ansible_hostname": "adept02", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 40, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 908300288, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-12 03:29:03,562 p=1453 u=jeremy |  adept03 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.242"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe00:894c"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-12", 
+            "day": "12", 
+            "epoch": "1371022154", 
+            "hour": "03", 
+            "iso8601": "2013-06-12T07:29:14Z", 
+            "iso8601_micro": "2013-06-12T07:29:14.120348Z", 
+            "minute": "29", 
+            "month": "06", 
+            "second": "14", 
+            "time": "03:29:14", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.242", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:00:89:4c", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.242", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe00:894c", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:00:89:4c", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "adept03", 
+        "ansible_hostname": "adept03", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 40, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 908300288, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-12 03:44:46,214 p=2605 u=jeremy |  
+2013-06-12 03:44:46,214 p=2605 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m apt -a pkg=apache2-mpm-event -K
+2013-06-12 03:44:46,214 p=2605 u=jeremy |  
+2013-06-12 03:46:08,361 p=2605 u=jeremy |  adept03 | success >> {
+    "changed": true
+}
+
+2013-06-12 03:46:08,459 p=2605 u=jeremy |  adept01 | success >> {
+    "changed": true
+}
+
+2013-06-12 03:46:09,344 p=2605 u=jeremy |  adept02 | success >> {
+    "changed": true
+}
+
+2013-06-14 03:49:31,759 p=15701 u=jeremy |  
+2013-06-14 03:49:31,759 p=15701 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m command -a shutdown -K
+2013-06-14 03:49:31,759 p=15701 u=jeremy |  
+2013-06-14 03:50:20,336 p=15701 u=jeremy |  ERROR: interrupted
+2013-06-14 03:50:28,482 p=15802 u=jeremy |  
+2013-06-14 03:50:28,482 p=15802 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m command -a shutdown -h now -K
+2013-06-14 03:50:28,483 p=15802 u=jeremy |  
+2013-06-14 03:51:39,786 p=15802 u=jeremy |  ERROR: interrupted
+2013-06-14 03:51:48,892 p=15930 u=jeremy |  
+2013-06-14 03:51:48,892 p=15930 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m command -a /sbin/shutdown -h now -K
+2013-06-14 03:51:48,892 p=15930 u=jeremy |  
+2013-06-14 03:51:58,495 p=15930 u=jeremy |  ERROR: interrupted
+2013-06-14 03:52:50,582 p=16042 u=jeremy |  
+2013-06-14 03:52:50,582 p=16042 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible
+2013-06-14 03:52:50,582 p=16042 u=jeremy |  
+2013-06-14 03:52:59,635 p=16054 u=jeremy |  
+2013-06-14 03:52:59,635 p=16054 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible
+2013-06-14 03:52:59,635 p=16054 u=jeremy |  
+2013-06-14 03:53:28,661 p=16088 u=jeremy |  
+2013-06-14 03:53:28,662 p=16088 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -v -m command -a /sbin/shutdown -h now -K
+2013-06-14 03:53:28,662 p=16088 u=jeremy |  
+2013-06-14 03:53:36,394 p=16088 u=jeremy |  adept01 | success | rc=0 >>
+
+
+2013-06-14 03:53:36,458 p=16088 u=jeremy |  adept02 | success | rc=0 >>
+
+
+2013-06-14 03:53:36,461 p=16088 u=jeremy |  adept03 | success | rc=0 >>
+
+
