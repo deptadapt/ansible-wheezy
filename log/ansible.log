@@ -2193,3 +2193,875 @@
 2013-06-14 03:53:36,461 p=16088 u=jeremy |  adept03 | success | rc=0 >>
 
 
+2013-06-14 04:13:01,288 p=18848 u=jeremy |  
+2013-06-14 04:13:01,288 p=18848 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-14 04:13:01,288 p=18848 u=jeremy |  
+2013-06-14 04:13:01,969 p=18848 u=jeremy |  test03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-14 04:13:01,982 p=18848 u=jeremy |  test02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-14 04:13:02,357 p=18848 u=jeremy |  test01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:13:20,287 p=8074 u=jeremy |   
+2013-06-15 02:13:20,287 p=8074 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook playbooks/apache2.yml --list-hosts --verbose
+2013-06-15 02:13:20,287 p=8074 u=jeremy |   
+2013-06-15 02:13:32,399 p=8177 u=jeremy |   
+2013-06-15 02:13:32,400 p=8177 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook playbooks/apache2.yml --verbose
+2013-06-15 02:13:32,400 p=8177 u=jeremy |   
+2013-06-15 02:13:32,405 p=8177 u=jeremy |  PLAY [web] ******************************************************************** 
+2013-06-15 02:13:32,405 p=8177 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-06-15 02:13:48,755 p=8177 u=jeremy |  ok: [test01]
+2013-06-15 02:13:49,362 p=8177 u=jeremy |  ok: [test02]
+2013-06-15 02:13:49,385 p=8177 u=jeremy |  TASK: [ensure apache2-mpm-event is installed] ********************************* 
+2013-06-15 02:13:50,402 p=8177 u=jeremy |  failed: [test02] => {"failed": true}
+2013-06-15 02:13:50,403 p=8177 u=jeremy |  msg: 'apt-get install 'apache2-mpm-event' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+
+2013-06-15 02:13:50,502 p=8177 u=jeremy |  failed: [test01] => {"failed": true}
+2013-06-15 02:13:50,502 p=8177 u=jeremy |  msg: 'apt-get install 'apache2-mpm-event' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+
+2013-06-15 02:13:50,512 p=8177 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-06-15 02:13:50,513 p=8177 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-06-15 02:13:50,513 p=8177 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/apache2.retry
+
+2013-06-15 02:13:50,513 p=8177 u=jeremy |  test01                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-06-15 02:13:50,513 p=8177 u=jeremy |  test02                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-06-15 02:14:59,147 p=8363 u=jeremy |  
+2013-06-15 02:14:59,147 p=8363 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m ping
+2013-06-15 02:14:59,147 p=8363 u=jeremy |  
+2013-06-15 02:15:01,344 p=8363 u=jeremy |  test01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:15:01,872 p=8363 u=jeremy |  test03 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:15:01,936 p=8363 u=jeremy |  test02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:15:17,474 p=8430 u=jeremy |  
+2013-06-15 02:15:17,474 p=8430 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible test01 -m setup
+2013-06-15 02:15:17,474 p=8430 u=jeremy |  
+2013-06-15 02:15:31,320 p=8430 u=jeremy |  test01 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.108"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe53:e748"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-15", 
+            "day": "15", 
+            "epoch": "1371276980", 
+            "hour": "02", 
+            "iso8601": "2013-06-15T06:16:20Z", 
+            "iso8601_micro": "2013-06-15T06:16:20.809845Z", 
+            "minute": "16", 
+            "month": "06", 
+            "second": "20", 
+            "time": "02:16:20", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.108", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:53:e7:48", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.108", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe53:e748", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:53:e7:48", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "test01", 
+        "ansible_hostname": "test01", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 47, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 948473856, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207862784, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-15 02:28:16,377 p=9332 u=jeremy |  
+2013-06-15 02:28:16,377 p=9332 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a pkg=screen
+2013-06-15 02:28:16,377 p=9332 u=jeremy |  
+2013-06-15 02:28:17,213 p=9332 u=jeremy |  test01 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'screen' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-15 02:28:17,250 p=9332 u=jeremy |  test02 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'screen' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-15 02:28:17,454 p=9332 u=jeremy |  test03 | FAILED >> {
+    "failed": true, 
+    "msg": "'apt-get install 'screen' ' failed: E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n"
+}
+
+2013-06-15 02:28:24,524 p=9385 u=jeremy |  
+2013-06-15 02:28:24,525 p=9385 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a pkg=screen -sudo -K
+2013-06-15 02:28:24,525 p=9385 u=jeremy |  
+2013-06-15 02:28:27,832 p=9385 u=jeremy |  test03 | FAILED => FAILED: Authentication failed.
+2013-06-15 02:28:27,836 p=9385 u=jeremy |  test02 | FAILED => FAILED: Authentication failed.
+2013-06-15 02:28:27,846 p=9385 u=jeremy |  test01 | FAILED => FAILED: Authentication failed.
+2013-06-15 02:28:32,674 p=9436 u=jeremy |  
+2013-06-15 02:28:32,674 p=9436 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a pkg=screen -sudo -K
+2013-06-15 02:28:32,674 p=9436 u=jeremy |  
+2013-06-15 02:28:38,312 p=9436 u=jeremy |  test03 | FAILED => FAILED: Authentication failed.
+2013-06-15 02:28:38,861 p=9436 u=jeremy |  test02 | FAILED => FAILED: Authentication failed.
+2013-06-15 02:28:45,932 p=9436 u=jeremy |  ERROR: interrupted
+2013-06-15 02:28:48,037 p=9484 u=jeremy |  
+2013-06-15 02:28:48,037 p=9484 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a pkg=screen -sudo -K
+2013-06-15 02:28:48,037 p=9484 u=jeremy |  
+2013-06-15 02:28:57,182 p=9484 u=jeremy |  test03 | FAILED => FAILED: Authentication failed.
+2013-06-15 02:28:59,240 p=9484 u=jeremy |  ERROR: interrupted
+2013-06-15 02:29:31,294 p=9532 u=jeremy |  
+2013-06-15 02:29:31,294 p=9532 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible all -m apt -a pkg=screen --sudo -K
+2013-06-15 02:29:31,294 p=9532 u=jeremy |  
+2013-06-15 02:30:00,904 p=9532 u=jeremy |  test02 | success >> {
+    "changed": true
+}
+
+2013-06-15 02:30:01,338 p=9532 u=jeremy |  test03 | success >> {
+    "changed": true
+}
+
+2013-06-15 02:30:01,528 p=9532 u=jeremy |  test01 | success >> {
+    "changed": true
+}
+
+2013-06-15 02:48:23,239 p=11348 u=jeremy |  
+2013-06-15 02:48:23,239 p=11348 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible deptadapt -m ping
+2013-06-15 02:48:23,239 p=11348 u=jeremy |  
+2013-06-15 02:48:28,682 p=11348 u=jeremy |  mx.deptadapt.org | FAILED => FAILED: [Errno 111] Connection refused
+2013-06-15 02:48:34,501 p=11348 u=jeremy |  tolstoy.deptadapt.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:48:35,069 p=11348 u=jeremy |  shelley.deptadapt.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:49:44,888 p=11487 u=jeremy |  
+2013-06-15 02:49:44,888 p=11487 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible deptadapt -m ping
+2013-06-15 02:49:44,888 p=11487 u=jeremy |  
+2013-06-15 02:49:53,286 p=11487 u=jeremy |  tolstoy.deptadapt.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:49:59,692 p=11487 u=jeremy |  shelley.deptadapt.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:50:05,677 p=11487 u=jeremy |  mx.deptadapt.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-06-15 02:50:14,506 p=11566 u=jeremy |  
+2013-06-15 02:50:14,506 p=11566 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible deptadapt -m setup
+2013-06-15 02:50:14,506 p=11566 u=jeremy |  
+2013-06-15 02:50:24,201 p=11566 u=jeremy |  tolstoy.deptadapt.org | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.249.59.111"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::216:3cff:fed0:464"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "0.5.1", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/tolstoy-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-15", 
+            "day": "15", 
+            "epoch": "1371279035", 
+            "hour": "02", 
+            "iso8601": "2013-06-15T06:50:35Z", 
+            "iso8601_micro": "2013-06-15T06:50:35.772907Z", 
+            "minute": "50", 
+            "month": "06", 
+            "second": "35", 
+            "time": "02:50:35", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.249.59.111", 
+            "alias": "eth0", 
+            "gateway": "192.249.59.1", 
+            "interface": "eth0", 
+            "macaddress": "00:16:3c:d0:04:64", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.249.59.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sr0": {
+                "holders": [], 
+                "host": "IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II]", 
+                "model": "QEMU DVD-ROM", 
+                "partitions": {}, 
+                "removable": "1", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "2097151", 
+                "sectorsize": "512", 
+                "size": "1024.00 MB", 
+                "support_discard": "0", 
+                "vendor": "QEMU"
+            }, 
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "41439232", 
+                        "sectorsize": 512, 
+                        "size": "19.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "41943040", 
+                "sectorsize": "512", 
+                "size": "20.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.249.59.111", 
+                "netmask": "255.255.255.0", 
+                "network": "192.249.59.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::216:3cff:fed0:464", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:16:3c:d0:04:64", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "tolstoy.deptadapt.org", 
+        "ansible_hostname": "tolstoy", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 81, 
+        "ansible_memtotal_mb": 1002, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/tolstoy-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 17922936832, 
+                "size_total": 19981529088
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207864832, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version (cpu64-rhel6)", 
+            "QEMU Virtual CPU version (cpu64-rhel6)", 
+            "QEMU Virtual CPU version (cpu64-rhel6)", 
+            "QEMU Virtual CPU version (cpu64-rhel6)"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 4, 
+        "ansible_product_name": "KVM", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "RHEL 6.4.0 PC", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAJESfGtkNrS5zprwkvVLAYlrrecrbOF1Q6KtlUyuzxH2YTGTqsKAY177+qSG1aJwaKqye1vKD6H9FM4gG16ssRum77eLxMPqAMlckbblKHbBBftXUlK5kWc0YyVX0Z/8+/V7XO/jUrvzxAQN5qENKRowO6cFYAv54hZxfPHtFyv1AAAAFQCs0EjPxCbqIF80/pSVXxVID3TqAwAAAIBlAt64w71oSM46XN+ipDIaTxHMvw0P55u5HszAlrqmfFuU0x/0KS5906hSMRIzh1jVQBASXJ0vTkgqb/q4CCfZHukOkQjp8nevSVtEXdJAauz7yHWJz6M3DGEsMIvWHipPKA/tSZsp3sF5Xl7I6vAD/QYPBEpmg9/Vrb1j44dSFwAAAIBdcPKKF+nz8RNBjDBYOY4y8JlxuHA7A1sLyxpYCrgNNwCF757slnoSq0bWuBdzo5mdQiQiEjaf9V2ehceCfgbpLrAqYPWcTwd9ZyGhOaXqnMXGqSkp/p4UDnU4K+3HVwYOEMAsvIjOtqbxB8bshT/NfH23n4GYhQRQ5aJ7unxNEA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNZ2eN6iqCdxxeAtcbM+wxKV5EaO8Q3o3E9R+faaIFxAu2r1qEhTJc6hPf4ap33JtFV1qZ9jaUo8Kcqf2Gxxl7M=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDBoIDWYpEbUzJv4Z2yWZ7wbxeYUVCsbw9CdBkIfpC8iLQZ7q41MBHQVcryUVYHGbw8bzZF+f3s0AgG1Bn5R5sVqjy1qgJw7ymIxYbFHpBc9yOIAQvgt6VAIpDb6PMN/G4t6WEEBwd3sCSKaUM5wB/Bln2BpPJ7McXjotr86bVuWPRKJuqcauPtHpH/t/FYBXv1tlc41Sl17XSrkuuuxSLKLdVxyxJW2SOSCfR7B3Mfr893bCLkidKFreHpbG/RsZdy0jfdgVw2nDRk739+5KQkwutrjImr+8kfL+MaFM01V5ctkR0WrmvZGgiLvFVdGA2zvnOxOTTO/dTbDj3NBY3H", 
+        "ansible_swapfree_mb": 871, 
+        "ansible_swaptotal_mb": 871, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Red Hat", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-15 02:50:31,479 p=11566 u=jeremy |  shelley.deptadapt.org | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.184.88.113"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::216:3cff:fed2:331"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "0.5.1", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/shelley-rootfs"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-15", 
+            "day": "15", 
+            "epoch": "1371279040", 
+            "hour": "02", 
+            "iso8601": "2013-06-15T06:50:40Z", 
+            "iso8601_micro": "2013-06-15T06:50:40.973023Z", 
+            "minute": "50", 
+            "month": "06", 
+            "second": "40", 
+            "time": "02:50:40", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.184.88.113", 
+            "alias": "eth0", 
+            "gateway": "192.184.88.1", 
+            "interface": "eth0", 
+            "macaddress": "00:16:3c:d2:03:31", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.184.88.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sr0": {
+                "holders": [], 
+                "host": "IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II]", 
+                "model": "QEMU DVD-ROM", 
+                "partitions": {}, 
+                "removable": "1", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "2097151", 
+                "sectorsize": "512", 
+                "size": "1024.00 MB", 
+                "support_discard": "0", 
+                "vendor": "QEMU"
+            }, 
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "389120", 
+                        "sectorsize": 512, 
+                        "size": "190.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "393214"
+                    }, 
+                    "vda5": {
+                        "sectors": "41547776", 
+                        "sectorsize": 512, 
+                        "size": "19.81 GB", 
+                        "start": "393216"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "41943040", 
+                "sectorsize": "512", 
+                "size": "20.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.0", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.184.88.113", 
+                "netmask": "255.255.255.0", 
+                "network": "192.184.88.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::216:3cff:fed2:331", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:16:3c:d2:03:31", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "shelley.deptadapt.org", 
+        "ansible_hostname": "shelley", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.0 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.0"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 12, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/shelley-rootfs", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 17945468928, 
+                "size_total": 19948834816
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext4", 
+                "mount": "/boot", 
+                "options": "rw,relatime,user_xattr,barrier=1,data=ordered", 
+                "size_available": 159117312, 
+                "size_total": 192924672
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version (cpu64-rhel6)"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "KVM", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "RHEL 6.4.0 PC", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAOyqRFpHEbPQ2FEzcBh7IMbjdCtPUzeViCp//Uhgm0eBQJkVwFZfcrL9YX81vuCH7y3KvM6flSfC+pseaaSkFQp+XNz+x6Epipz5eorV6/GIfoi+KaalrtK6uCLe/LD+9EIUYD3obBxYHwPNcCHljxDiOzTm79/jFv3n3j8c7ocRAAAAFQC16m9BGEUHg7kMGNj8g578mRgZpQAAAIBLp6Hsp+h7mbI3Q8YNYTITY90kz954G6WXK6jM8fe4hDn72SbQPqok1Y4PC5G8pqvWSk6hsOXEkunslsen6gcg35bdd/B4SWNaxvXrkKIaWpG4JaNmMyLP0B5s/qFq2KXpR/2yg0gI7VO+V+pit0eH2/TNLAnegVG9QNDEZS/mpQAAAIA1styB9efD5DR0xkyJFThUa7xgobfCI+BavrJyi2a6hqhj+hs19YfzYAFnUGHMFf30UzMj5qZqsTbJ3w04Ar8T+pnA6Od4aBwJxAPP2QTRa/cnQ2aW5Kw5MpdJnGQjiv+JiMhyW2cgv8RQk+wwyCJq/j/00/k+cHe0DFBneOcLuQ==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBN4PGCOdiS52xw+4PXuN4Q7mqRhzAYQ9CjbdGjakXnJL7d41R/LvS6++C/LXSEqfIn/4yeRcNXsyugmbkM/bk10=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCsPHKbNFSLyaoboaYAC4Z5fTszw7rgihsTo7vUGgiCSHDD6WiumVO5rX8x/nkrS2GL72dkfkWCqghdQyXdQBB/tBc+YHJE/LJ7ydhIh7KtelxLpyIxAg9KYmpguMKcoMXvM3LB1vfX8hBKwOtDV59KVqYXfvLIizm8f5GYNFj68lMCx/1ctVk4DI0cBJe3a78EFAGsRfYNF0+BvEW/bNJ6Po784PdRD9rBq2Ck43g7JtoKN0BJ4fQOZ58OEvZhDL3yZrYjstxNj7zl2WDMTwT9iYgv6p/bU7Mce1MwzueUjIPElAAhD9L0Zr5uD5L9XtukEzeaJ9Ntjbfq6xo320Mh", 
+        "ansible_swapfree_mb": 243, 
+        "ansible_swaptotal_mb": 243, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Red Hat", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-06-15 02:50:42,848 p=11566 u=jeremy |  mx.deptadapt.org | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "75.98.171.32"
+        ], 
+        "ansible_all_ipv6_addresses": [], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "NA", 
+        "ansible_bios_version": "NA", 
+        "ansible_cmdline": {
+            "quiet": true
+        }, 
+        "ansible_date_time": {
+            "date": "2013-06-15", 
+            "day": "15", 
+            "epoch": "1371279054", 
+            "hour": "02", 
+            "iso8601": "2013-06-15T06:50:54Z", 
+            "iso8601_micro": "2013-06-15T06:50:54.347355Z", 
+            "minute": "50", 
+            "month": "06", 
+            "second": "54", 
+            "time": "02:50:54", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "75.98.171.32", 
+            "alias": "venet0:0", 
+            "interface": "venet0", 
+            "macaddress": "", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.255", 
+            "network": "75.98.171.32", 
+            "type": "unknown"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {}, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "6.0.7", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_form_factor": "NA", 
+        "ansible_fqdn": "server.deptadapt.org", 
+        "ansible_hostname": "mx", 
+        "ansible_interfaces": [
+            "lo", 
+            "venet0:0", 
+            "venet0"
+        ], 
+        "ansible_kernel": "2.6.32-042stab068.8", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 414, 
+        "ansible_memtotal_mb": 512, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/simfs", 
+                "fstype": "simfs", 
+                "mount": "/", 
+                "options": "rw,relatime", 
+                "size_available": 10116079616, 
+                "size_total": 10737418240
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz", 
+            "Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz"
+        ], 
+        "ansible_processor_cores": 8, 
+        "ansible_processor_count": 2, 
+        "ansible_product_name": "NA", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.6.6", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAOKnR5bfovZkm0Cc5X0e3avQFygR6sgW6hwd4k7VucrC0q/B9l5AAIvLLRkz944aZ++9TNTTJ52ULaQdlzpP18NFLivbYYwXqNvGDRUC35hZ+SScGZfjKsIWhUpa6uOD+6Hriyea54fKTVhmBUs5jNq47K87ZQeFZVQfhrzZMTJ7AAAAFQCl2XxwgXI/nvj3y06SVoSBHy2e0QAAAIAjI1Ha2a2xIUsaQnVMd8yICdzHr9WfdLUMsNhvjsy8woo9kWttwGbSEWs0az0qbc+8/6pkxNM9rGmU5oPygt9pIiG5B9HTuEE+oUI/QFIn7oQEbg8zuog822uiUcE673ojirNZe6XzrDUDpHomrYnO9PXyqYIb1O6xtdBEauz3mgAAAIEAv1PYwXuxQkv51ItRLRmXAhlOyb17+Lragb+4ygBl9nbf1oBG84vV+4jDGwGaO05hSf44G7UrOCy76KeAyOpWj1fhbXYYagvQcE2zr3Y4fJ7xFDsj3cVq2izScAentY6HkIY5UAMHb/06TEUjJeMfBA+aQGx5IIKYSe+7kDqv1Go=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDAGL6UAdKizs8OqugKl8o2pq/D6HUkSI5+o+DBSL/HurTi4OnAjUfpztFgOws+mxSYF7KL79F2jg7DW4Ze76umscydMxx8K5EhFY9FftBXvOmVAd74K2VZ9xi+ktMj/632yHaok6bU7BLMFAnaAAG8+r/6KJO1iDABxb89V6uK+KCKZOdxcxdBeTotNalBgLzDjvX5D69gjx8QIbVAwscMIkgpK6+Nw9v0R5VFM8HdVSYEZZuZp5usdv1TteEVX9uoKWuLdIYrFCyeJubrNzA+6dKP3r+vWGI3nlbkJUP+TrqhQ/TclLiBHHAQgzl2JpwK9y3kjqNrZoETulITSRGH", 
+        "ansible_swapfree_mb": 461, 
+        "ansible_swaptotal_mb": 512, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "NA", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_venet0": {
+            "active": true, 
+            "device": "venet0", 
+            "ipv4": {
+                "address": "127.0.0.2", 
+                "netmask": "255.255.255.255", 
+                "network": "127.0.0.2"
+            }, 
+            "mtu": 1500
+        }, 
+        "ansible_venet0:0": {
+            "active": true, 
+            "device": "venet0", 
+            "ipv4": {
+                "address": "75.98.171.32", 
+                "netmask": "255.255.255.255", 
+                "network": "75.98.171.32"
+            }, 
+            "mtu": 1500
+        }, 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "openvz"
+    }, 
+    "changed": false
+}
+

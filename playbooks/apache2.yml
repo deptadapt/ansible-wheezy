@@ -1,0 +1,8 @@
+---
+- hosts: web
+  user: jeremy
+  tasks:
+  - name: ensure apache2-mpm-event is installed
+    action: apt pkg=apache2-mpm-event state=installed
+  - name: ensure apache is running
+    action: service name=apache2 state=started
