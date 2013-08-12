@@ -1,6 +1,16 @@
+[sabcat]
+test01
+test02
+# test03
+
 [web]
 test01
 test02
 
 [mail]
-test03
+# test03
+test02
+
+[ramnode]
+shelley.deptadapt.org
+tolstoy.deptadapt.org

@@ -1,0 +1,10 @@
+test02 | success >> {
+    "changed": false, 
+    "msg": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nReading extended state information...\nInitializing package states...\nWriting extended state information...\nReading task descriptions...\nNo packages will be installed, upgraded, or removed.\n0 packages upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 0 B of archives. After unpacking 0 B will be used.\nWriting extended state information...\nReading package lists...\nBuilding dependency tree...\nReading state information...\nReading extended state information...\nInitializing package states...\nReading task descriptions...\n"
+}
+
+test01 | success >> {
+    "changed": false, 
+    "msg": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nReading extended state information...\nInitializing package states...\nWriting extended state information...\nReading task descriptions...\nNo packages will be installed, upgraded, or removed.\n0 packages upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 0 B of archives. After unpacking 0 B will be used.\nWriting extended state information...\nReading package lists...\nBuilding dependency tree...\nReading state information...\nReading extended state information...\nInitializing package states...\nReading task descriptions...\n"
+}
+
