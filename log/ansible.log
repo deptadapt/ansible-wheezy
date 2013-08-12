@@ -6279,3 +6279,20 @@ blah
     "msg": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nReading extended state information...\nInitializing package states...\nReading task descriptions...\nNo packages will be installed, upgraded, or removed.\n0 packages upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 0 B of archives. After unpacking 0 B will be used.\nReading package lists...\nBuilding dependency tree...\nReading state information...\nReading extended state information...\nInitializing package states...\nReading task descriptions...\n"
 }
 
+2013-08-12 13:33:11,952 p=20922 u=jeremy |  
+2013-08-12 13:33:11,952 p=20922 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible sabcat -m ping
+2013-08-12 13:33:11,952 p=20922 u=jeremy |  
+2013-08-12 13:33:21,877 p=20922 u=jeremy |  ERROR: interrupted
+2013-08-12 13:33:59,506 p=21046 u=jeremy |  
+2013-08-12 13:33:59,506 p=21046 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible sabcat -m ping
+2013-08-12 13:33:59,506 p=21046 u=jeremy |  
+2013-08-12 13:34:00,100 p=21046 u=jeremy |  test01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-08-12 13:34:00,101 p=21046 u=jeremy |  test02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
