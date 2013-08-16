@@ -33,8 +33,9 @@ then
 fi
 
 # echo "Writing hostname"
-echo $host_name > hostname
+echo $host_name > /etc/hostname
+hostname -F /etc/hostname
 # echo "Writing hostname and FQDN to 127.0.1.1 record in hosts file."
 FQDN="$host_name$domain_name"
 # echo $FQDN
-sed -i "/127.0.1.1/c \127.0.1.1 \t$FQDN $host_name" hosts
+sed -i "/127.0.1.1/c \127.0.1.1 \t$FQDN $host_name" /etc/hosts
