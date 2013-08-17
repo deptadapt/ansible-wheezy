@@ -1,0 +1,20 @@
+---
+# This role contains the common elements to all systems
+
+# - name: Make sure APT is up to date
+#   apt: update_cache=yes upgrade=yes
+
+- name: Install NTP service
+  apt: pkg=ntp state=latest
+
+- name: Install harden-servers
+  apt: pkg=harden-servers state=latest
+
+- name: Copy Tripwire preseed
+  template: src=tripwire.preseed.cfg.j2 dest=/tmp/tripwire.preseed.cfg
+  
+- name: Load Tripwire preseed
+  command: debconf-set-selections < /tmp/tripwire.preseed.cfg
+
+# - name: Install harden package
+#   apt: pkg=harden state=latest

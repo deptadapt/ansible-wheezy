@@ -1,0 +1,6 @@
+---
+# site wide playbook
+
+- hosts: all
+  roles:
+    - common

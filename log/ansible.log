@@ -7612,3 +7612,856 @@ blah
 2013-08-16 21:25:36,152 p=13574 u=jeremy |  test02 | success | rc=0 >>
 
 
+2013-08-16 21:47:27,684 p=3495 u=jeremy |   
+2013-08-16 21:47:27,684 p=3495 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-16 21:47:27,684 p=3495 u=jeremy |   
+2013-08-16 21:47:27,690 p=3495 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-16 21:47:27,690 p=3495 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-16 21:47:29,977 p=3495 u=jeremy |  ok: [test01]
+2013-08-16 21:47:29,979 p=3495 u=jeremy |  ok: [test02]
+2013-08-16 21:47:30,006 p=3495 u=jeremy |  TASK: [Make sure APT is up to date] ******************************************* 
+2013-08-16 21:48:09,021 p=3495 u=jeremy |  failed: [test01] => {"failed": true, "item": "", "parsed": false}
+2013-08-16 21:48:09,021 p=3495 u=jeremy |  failed: [test02] => {"failed": true, "item": "", "parsed": false}
+2013-08-16 21:48:09,021 p=3495 u=jeremy |  invalid output was: Traceback (most recent call last):
+  File "/home/jeremy/.ansible/tmp/ansible-1376704050.06-125345741946060/apt", line 1238, in <module>
+    main()
+  File "/home/jeremy/.ansible/tmp/ansible-1376704050.06-125345741946060/apt", line 310, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 418, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/binary-amd64/Packages  Undetermined Error
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+2013-08-16 21:48:09,022 p=3495 u=jeremy |  invalid output was: Traceback (most recent call last):
+  File "/home/jeremy/.ansible/tmp/ansible-1376704050.06-107594953833030/apt", line 1238, in <module>
+    main()
+  File "/home/jeremy/.ansible/tmp/ansible-1376704050.06-107594953833030/apt", line 310, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 418, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/binary-amd64/Packages  Undetermined Error
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+2013-08-16 21:48:09,043 p=3495 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-16 21:48:09,043 p=3495 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-16 21:48:09,044 p=3495 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-16 21:48:09,044 p=3495 u=jeremy |  test01                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-16 21:48:09,045 p=3495 u=jeremy |  test02                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-16 21:48:51,590 p=5338 u=jeremy |   
+2013-08-16 21:48:51,590 p=5338 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-16 21:48:51,590 p=5338 u=jeremy |   
+2013-08-16 21:48:51,596 p=5338 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-16 21:48:51,596 p=5338 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-16 21:48:52,720 p=5338 u=jeremy |  ok: [test01]
+2013-08-16 21:48:52,722 p=5338 u=jeremy |  ok: [test02]
+2013-08-16 21:48:52,747 p=5338 u=jeremy |  TASK: [Make sure APT is up to date] ******************************************* 
+2013-08-16 21:49:25,150 p=5338 u=jeremy |  ok: [test01]
+2013-08-16 21:49:25,152 p=5338 u=jeremy |  ok: [test02]
+2013-08-16 21:49:25,174 p=5338 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-16 21:49:53,038 p=5338 u=jeremy |  changed: [test02]
+2013-08-16 21:49:53,041 p=5338 u=jeremy |  changed: [test01]
+2013-08-16 21:49:53,056 p=5338 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-16 21:49:53,056 p=5338 u=jeremy |  test01                     : ok=3    changed=1    unreachable=0    failed=0   
+2013-08-16 21:49:53,056 p=5338 u=jeremy |  test02                     : ok=3    changed=1    unreachable=0    failed=0   
+2013-08-16 21:55:01,571 p=11904 u=jeremy |   
+2013-08-16 21:55:01,571 p=11904 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-16 21:55:01,571 p=11904 u=jeremy |   
+2013-08-16 21:55:01,577 p=11904 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-16 21:55:01,578 p=11904 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-16 21:55:02,720 p=11904 u=jeremy |  ok: [test01]
+2013-08-16 21:55:02,722 p=11904 u=jeremy |  ok: [test02]
+2013-08-16 21:55:02,746 p=11904 u=jeremy |  TASK: [Make sure APT is up to date] ******************************************* 
+2013-08-16 21:55:29,042 p=11904 u=jeremy |  changed: [test01]
+2013-08-16 21:55:29,043 p=11904 u=jeremy |  ok: [test02]
+2013-08-16 21:55:29,067 p=11904 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-16 21:55:30,103 p=11904 u=jeremy |  ok: [test02]
+2013-08-16 21:55:30,104 p=11904 u=jeremy |  ok: [test01]
+2013-08-16 21:55:30,123 p=11904 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-16 21:55:40,632 p=11904 u=jeremy |  ok: [test01]
+2013-08-16 21:55:40,633 p=11904 u=jeremy |  changed: [test02]
+2013-08-16 21:55:40,645 p=11904 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-16 21:55:40,645 p=11904 u=jeremy |  test01                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-16 21:55:40,645 p=11904 u=jeremy |  test02                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-16 22:30:44,685 p=18966 u=jeremy |   
+2013-08-16 22:30:44,685 p=18966 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-16 22:30:44,685 p=18966 u=jeremy |   
+2013-08-16 22:30:44,692 p=18966 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-16 22:30:44,692 p=18966 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-16 22:30:46,007 p=18966 u=jeremy |  ok: [test02]
+2013-08-16 22:30:46,008 p=18966 u=jeremy |  ok: [test01]
+2013-08-16 22:30:46,042 p=18966 u=jeremy |  TASK: [Make sure APT is up to date] ******************************************* 
+2013-08-16 22:31:24,353 p=18966 u=jeremy |  failed: [test01] => {"failed": true, "item": "", "parsed": false}
+2013-08-16 22:31:24,353 p=18966 u=jeremy |  invalid output was: Traceback (most recent call last):
+  File "/home/jeremy/.ansible/tmp/ansible-1376706646.09-165895394564143/apt", line 1238, in <module>
+    main()
+  File "/home/jeremy/.ansible/tmp/ansible-1376706646.09-165895394564143/apt", line 310, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 418, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/binary-amd64/Packages  Undetermined Error
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+2013-08-16 22:31:24,353 p=18966 u=jeremy |  failed: [test02] => {"failed": true, "item": "", "parsed": false}
+2013-08-16 22:31:24,354 p=18966 u=jeremy |  invalid output was: Traceback (most recent call last):
+  File "/home/jeremy/.ansible/tmp/ansible-1376706646.11-143294775086298/apt", line 1238, in <module>
+    main()
+  File "/home/jeremy/.ansible/tmp/ansible-1376706646.11-143294775086298/apt", line 310, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 418, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/binary-amd64/Packages  Undetermined Error
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+2013-08-16 22:31:24,379 p=18966 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-16 22:31:24,380 p=18966 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-16 22:31:24,381 p=18966 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-16 22:31:24,381 p=18966 u=jeremy |  test01                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-16 22:31:24,381 p=18966 u=jeremy |  test02                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-16 22:31:50,632 p=20269 u=jeremy |   
+2013-08-16 22:31:50,632 p=20269 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-16 22:31:50,632 p=20269 u=jeremy |   
+2013-08-16 22:31:50,640 p=20269 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-16 22:31:50,640 p=20269 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-16 22:31:51,578 p=20269 u=jeremy |  ok: [test01]
+2013-08-16 22:31:51,578 p=20269 u=jeremy |  ok: [test02]
+2013-08-16 22:31:51,603 p=20269 u=jeremy |  TASK: [Make sure APT is up to date] ******************************************* 
+2013-08-16 22:32:21,822 p=20269 u=jeremy |  ok: [test01]
+2013-08-16 22:32:21,823 p=20269 u=jeremy |  changed: [test02]
+2013-08-16 22:32:21,850 p=20269 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-16 22:32:22,788 p=20269 u=jeremy |  ok: [test01]
+2013-08-16 22:32:22,789 p=20269 u=jeremy |  ok: [test02]
+2013-08-16 22:32:22,813 p=20269 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-16 22:32:23,791 p=20269 u=jeremy |  ok: [test01]
+2013-08-16 22:32:23,792 p=20269 u=jeremy |  ok: [test02]
+2013-08-16 22:32:23,816 p=20269 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-16 22:33:40,629 p=20269 u=jeremy |  changed: [test01]
+2013-08-16 22:33:40,630 p=20269 u=jeremy |  ok: [test02]
+2013-08-16 22:33:40,655 p=20269 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-16 22:33:40,656 p=20269 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-16 22:33:40,656 p=20269 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-16 23:50:00,600 p=9353 u=jeremy |  
+2013-08-16 23:50:00,601 p=9353 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts -s -m command -ashudown -h now
+2013-08-16 23:50:00,601 p=9353 u=jeremy |  
+2013-08-16 23:50:19,415 p=9664 u=jeremy |  
+2013-08-16 23:50:19,415 p=9664 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts -s -m command -ashudown -h now
+2013-08-16 23:50:19,415 p=9664 u=jeremy |  
+2013-08-16 23:50:26,517 p=9785 u=jeremy |  
+2013-08-16 23:50:26,517 p=9785 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts -s -m command -ashudown -h now
+2013-08-16 23:50:26,517 p=9785 u=jeremy |  
+2013-08-16 23:50:37,714 p=9993 u=jeremy |  
+2013-08-16 23:50:37,714 p=9993 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -ashudown -h now
+2013-08-16 23:50:37,714 p=9993 u=jeremy |  
+2013-08-16 23:50:38,624 p=9993 u=jeremy |  test01 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-08-16 23:50:38,625 p=9993 u=jeremy |  test02 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-08-16 23:50:48,497 p=10224 u=jeremy |  
+2013-08-16 23:50:48,497 p=10224 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -ashudown -h now
+2013-08-16 23:50:48,497 p=10224 u=jeremy |  
+2013-08-16 23:50:48,894 p=10224 u=jeremy |  test01 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-08-16 23:50:48,895 p=10224 u=jeremy |  test02 | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+
+2013-08-16 23:50:55,947 p=10412 u=jeremy |  
+2013-08-16 23:50:55,947 p=10412 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -ashutdown -h now
+2013-08-16 23:50:55,948 p=10412 u=jeremy |  
+2013-08-16 23:50:56,877 p=10412 u=jeremy |  test02 | success | rc=0 >>
+
+
+2013-08-16 23:50:56,879 p=10412 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-16 23:56:09,313 p=15297 u=jeremy |  
+2013-08-16 23:56:09,313 p=15297 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m ping
+2013-08-16 23:56:09,313 p=15297 u=jeremy |  
+2013-08-16 23:56:09,836 p=15297 u=jeremy |  test02 | FAILED => failed to transfer file to /ping:
+
+ssh: Could not resolve hostname test02: Name or service not known
+Couldn't read packet: Connection reset by peer
+
+2013-08-16 23:56:10,239 p=15297 u=jeremy |  test01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-08-16 23:56:14,407 p=15437 u=jeremy |  
+2013-08-16 23:56:14,407 p=15437 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m ping
+2013-08-16 23:56:14,408 p=15437 u=jeremy |  
+2013-08-16 23:56:15,414 p=15437 u=jeremy |  test01 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-08-16 23:56:15,641 p=15437 u=jeremy |  test02 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+2013-08-17 02:05:08,089 p=29137 u=jeremy |   
+2013-08-17 02:05:08,090 p=29137 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:05:08,090 p=29137 u=jeremy |   
+2013-08-17 02:05:08,098 p=29137 u=jeremy |  ERROR: tasks is not a legal parameter in an Ansible task or handler
+2013-08-17 02:05:46,050 p=29792 u=jeremy |   
+2013-08-17 02:05:46,050 p=29792 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:05:46,050 p=29792 u=jeremy |   
+2013-08-17 02:05:46,057 p=29792 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:05:46,057 p=29792 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:05:47,985 p=29792 u=jeremy |  ok: [test01]
+2013-08-17 02:05:47,986 p=29792 u=jeremy |  ok: [test02]
+2013-08-17 02:05:48,018 p=29792 u=jeremy |  TASK: [Make sure APT is up to date] ******************************************* 
+2013-08-17 02:06:27,011 p=29792 u=jeremy |  failed: [test01] => {"failed": true, "item": "", "parsed": false}
+2013-08-17 02:06:27,012 p=29792 u=jeremy |  invalid output was: Traceback (most recent call last):
+  File "/home/jeremy/.ansible/tmp/ansible-1376719548.09-75642845009609/apt", line 1238, in <module>
+    main()
+  File "/home/jeremy/.ansible/tmp/ansible-1376719548.09-75642845009609/apt", line 310, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 418, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/binary-amd64/Packages  Undetermined Error
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+2013-08-17 02:06:27,013 p=29792 u=jeremy |  failed: [test02] => {"failed": true, "item": "", "parsed": false}
+2013-08-17 02:06:27,014 p=29792 u=jeremy |  invalid output was: Traceback (most recent call last):
+  File "/home/jeremy/.ansible/tmp/ansible-1376719548.1-253255729679683/apt", line 1238, in <module>
+    main()
+  File "/home/jeremy/.ansible/tmp/ansible-1376719548.1-253255729679683/apt", line 310, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 418, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy/contrib/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/source/Sources  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/main/binary-amd64/Packages  Undetermined Error
+, W:Failed to fetch http://mirror.csclub.uwaterloo.ca/debian/dists/wheezy-updates/contrib/binary-amd64/Packages  Undetermined Error
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+2013-08-17 02:06:27,037 p=29792 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-17 02:06:27,038 p=29792 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:06:27,040 p=29792 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-17 02:06:27,040 p=29792 u=jeremy |  test01                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-17 02:06:27,043 p=29792 u=jeremy |  test02                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-17 02:07:00,043 p=31238 u=jeremy |   
+2013-08-17 02:07:00,043 p=31238 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:07:00,043 p=31238 u=jeremy |   
+2013-08-17 02:07:00,049 p=31238 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:07:00,049 p=31238 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:07:00,982 p=31238 u=jeremy |  ok: [test01]
+2013-08-17 02:07:00,984 p=31238 u=jeremy |  ok: [test02]
+2013-08-17 02:07:01,014 p=31238 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:07:02,856 p=31238 u=jeremy |  failed: [test01] => {"failed": true, "item": ""}
+2013-08-17 02:07:02,856 p=31238 u=jeremy |  msg: 'apt-get install 'ntp' ' failed: E: There are problems and -y was used without --force-yes
+
+2013-08-17 02:07:02,857 p=31238 u=jeremy |  failed: [test02] => {"failed": true, "item": ""}
+2013-08-17 02:07:02,859 p=31238 u=jeremy |  msg: 'apt-get install 'ntp' ' failed: E: There are problems and -y was used without --force-yes
+
+2013-08-17 02:07:02,878 p=31238 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-17 02:07:02,878 p=31238 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:07:02,879 p=31238 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-17 02:07:02,879 p=31238 u=jeremy |  test01                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-17 02:07:02,879 p=31238 u=jeremy |  test02                     : ok=1    changed=0    unreachable=0    failed=1   
+2013-08-17 02:07:41,237 p=32053 u=jeremy |  
+2013-08-17 02:07:41,237 p=32053 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -m apt -a update_cache=yes
+2013-08-17 02:07:41,237 p=32053 u=jeremy |  
+2013-08-17 02:07:42,141 p=32053 u=jeremy |  test01 | FAILED >> {
+    "failed": true, 
+    "msg": "Failed to lock apt for exclusive operation"
+}
+
+2013-08-17 02:07:42,142 p=32053 u=jeremy |  test02 | FAILED >> {
+    "failed": true, 
+    "msg": "Failed to lock apt for exclusive operation"
+}
+
+2013-08-17 02:07:48,535 p=32224 u=jeremy |  
+2013-08-17 02:07:48,536 p=32224 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m apt -a update_cache=yes
+2013-08-17 02:07:48,536 p=32224 u=jeremy |  
+2013-08-17 02:08:16,869 p=32224 u=jeremy |  test01 | success >> {
+    "changed": false
+}
+
+2013-08-17 02:08:16,870 p=32224 u=jeremy |  test02 | success >> {
+    "changed": false
+}
+
+2013-08-17 02:08:27,097 p=478 u=jeremy |   
+2013-08-17 02:08:27,097 p=478 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:08:27,097 p=478 u=jeremy |   
+2013-08-17 02:08:27,103 p=478 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:08:27,103 p=478 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:08:28,029 p=478 u=jeremy |  ok: [test01]
+2013-08-17 02:08:28,031 p=478 u=jeremy |  ok: [test02]
+2013-08-17 02:08:28,060 p=478 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:08:52,866 p=478 u=jeremy |  changed: [test01]
+2013-08-17 02:08:52,867 p=478 u=jeremy |  changed: [test02]
+2013-08-17 02:08:52,890 p=478 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:09:03,068 p=478 u=jeremy |  ok: [test01]
+2013-08-17 02:09:03,068 p=478 u=jeremy |  changed: [test02]
+2013-08-17 02:09:03,081 p=478 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:09:03,189 p=478 u=jeremy |  fatal: [test01] => {'msg': 'host not found: ', 'failed': True}
+2013-08-17 02:09:03,190 p=478 u=jeremy |  fatal: [test01] => {'msg': 'host not found: ', 'failed': True}
+2013-08-17 02:09:03,204 p=478 u=jeremy |  fatal: [test02] => {'msg': 'host not found: ', 'failed': True}
+2013-08-17 02:09:03,204 p=478 u=jeremy |  fatal: [test02] => {'msg': 'host not found: ', 'failed': True}
+2013-08-17 02:09:03,209 p=478 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-17 02:09:03,210 p=478 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:09:03,210 p=478 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-17 02:09:03,210 p=478 u=jeremy |  test01                     : ok=3    changed=1    unreachable=1    failed=0   
+2013-08-17 02:09:03,210 p=478 u=jeremy |  test02                     : ok=3    changed=2    unreachable=1    failed=0   
+2013-08-17 02:11:09,625 p=3494 u=jeremy |  
+2013-08-17 02:11:09,625 p=3494 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -m setup
+2013-08-17 02:11:09,625 p=3494 u=jeremy |  
+2013-08-17 02:11:10,721 p=3494 u=jeremy |  test01 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.109"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe52:1723"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-08-17", 
+            "day": "17", 
+            "epoch": "1376719870", 
+            "hour": "02", 
+            "iso8601": "2013-08-17T06:11:10Z", 
+            "iso8601_micro": "2013-08-17T06:11:10.385286Z", 
+            "minute": "11", 
+            "month": "08", 
+            "second": "10", 
+            "time": "02:11:10", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.109", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:52:17:23", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.1", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.109", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe52:1723", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:52:17:23", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "test01.deptadapt.org", 
+        "ansible_hostname": "test01", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.1 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.1"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 40, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 867356672, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207859712, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-08-17 02:11:10,723 p=3494 u=jeremy |  test02 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.104"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe3a:f13f"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-08-17", 
+            "day": "17", 
+            "epoch": "1376719870", 
+            "hour": "02", 
+            "iso8601": "2013-08-17T06:11:10Z", 
+            "iso8601_micro": "2013-08-17T06:11:10.717191Z", 
+            "minute": "11", 
+            "month": "08", 
+            "second": "10", 
+            "time": "02:11:10", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.104", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:3a:f1:3f", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.1", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.104", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe3a:f13f", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:3a:f1:3f", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "test02.deptadapt.org", 
+        "ansible_hostname": "test02", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.1 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.1"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 54, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 916582400, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207859712, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-08-17 02:12:10,154 p=4694 u=jeremy |   
+2013-08-17 02:12:10,154 p=4694 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:12:10,154 p=4694 u=jeremy |   
+2013-08-17 02:12:10,161 p=4694 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:12:10,161 p=4694 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:12:31,112 p=4694 u=jeremy |  ERROR: interrupted
+2013-08-17 02:12:33,657 p=5223 u=jeremy |   
+2013-08-17 02:12:33,657 p=5223 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:12:33,657 p=5223 u=jeremy |   
+2013-08-17 02:12:33,664 p=5223 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:12:33,664 p=5223 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:12:34,725 p=5223 u=jeremy |  ok: [test01]
+2013-08-17 02:12:34,727 p=5223 u=jeremy |  ok: [test02]
+2013-08-17 02:12:34,759 p=5223 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:12:35,783 p=5223 u=jeremy |  ok: [test01]
+2013-08-17 02:12:35,784 p=5223 u=jeremy |  ok: [test02]
+2013-08-17 02:12:35,806 p=5223 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:12:36,898 p=5223 u=jeremy |  ok: [test02]
+2013-08-17 02:12:36,899 p=5223 u=jeremy |  ok: [test01]
+2013-08-17 02:12:36,913 p=5223 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:12:37,433 p=5223 u=jeremy |  changed: [test01]
+2013-08-17 02:12:37,436 p=5223 u=jeremy |  changed: [test02]
+2013-08-17 02:12:37,457 p=5223 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:12:37,457 p=5223 u=jeremy |  test01                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-17 02:12:37,458 p=5223 u=jeremy |  test02                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-17 02:13:45,077 p=6654 u=jeremy |   
+2013-08-17 02:13:45,077 p=6654 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:13:45,077 p=6654 u=jeremy |   
+2013-08-17 02:13:45,084 p=6654 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:13:45,084 p=6654 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:13:46,259 p=6654 u=jeremy |  ok: [test01]
+2013-08-17 02:13:46,260 p=6654 u=jeremy |  ok: [test02]
+2013-08-17 02:13:46,299 p=6654 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:13:47,252 p=6654 u=jeremy |  ok: [test01]
+2013-08-17 02:13:47,254 p=6654 u=jeremy |  ok: [test02]
+2013-08-17 02:13:47,272 p=6654 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:13:48,215 p=6654 u=jeremy |  ok: [test02]
+2013-08-17 02:13:48,216 p=6654 u=jeremy |  ok: [test01]
+2013-08-17 02:13:48,240 p=6654 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:13:48,746 p=6654 u=jeremy |  changed: [test01]
+2013-08-17 02:13:48,747 p=6654 u=jeremy |  changed: [test02]
+2013-08-17 02:13:48,767 p=6654 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:13:48,768 p=6654 u=jeremy |  test01                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-17 02:13:48,769 p=6654 u=jeremy |  test02                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-17 02:20:10,722 p=13476 u=jeremy |   
+2013-08-17 02:20:10,722 p=13476 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:20:10,722 p=13476 u=jeremy |   
+2013-08-17 02:20:10,730 p=13476 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:20:10,730 p=13476 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:20:11,822 p=13476 u=jeremy |  ok: [test02]
+2013-08-17 02:20:11,822 p=13476 u=jeremy |  ok: [test01]
+2013-08-17 02:20:11,833 p=13476 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:20:12,768 p=13476 u=jeremy |  ok: [test01]
+2013-08-17 02:20:12,769 p=13476 u=jeremy |  ok: [test02]
+2013-08-17 02:20:12,777 p=13476 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:20:13,703 p=13476 u=jeremy |  ok: [test01]
+2013-08-17 02:20:13,704 p=13476 u=jeremy |  ok: [test02]
+2013-08-17 02:20:13,713 p=13476 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:20:14,119 p=13476 u=jeremy |  ok: [test02]
+2013-08-17 02:20:14,120 p=13476 u=jeremy |  changed: [test01]
+2013-08-17 02:20:14,129 p=13476 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:20:14,129 p=13476 u=jeremy |  test01                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-17 02:20:14,130 p=13476 u=jeremy |  test02                     : ok=4    changed=0    unreachable=0    failed=0   
+2013-08-17 02:21:21,352 p=14912 u=jeremy |   
+2013-08-17 02:21:21,353 p=14912 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:21:21,353 p=14912 u=jeremy |   
+2013-08-17 02:21:21,359 p=14912 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:21:21,359 p=14912 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:21:22,463 p=14912 u=jeremy |  ok: [test02]
+2013-08-17 02:21:22,464 p=14912 u=jeremy |  ok: [test01]
+2013-08-17 02:21:22,496 p=14912 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:21:23,447 p=14912 u=jeremy |  ok: [test01]
+2013-08-17 02:21:23,448 p=14912 u=jeremy |  ok: [test02]
+2013-08-17 02:21:23,469 p=14912 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:21:24,502 p=14912 u=jeremy |  ok: [test01]
+2013-08-17 02:21:24,502 p=14912 u=jeremy |  ok: [test02]
+2013-08-17 02:21:24,524 p=14912 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:21:24,854 p=14912 u=jeremy |  ok: [test01]
+2013-08-17 02:21:24,994 p=14912 u=jeremy |  changed: [test02]
+2013-08-17 02:21:25,016 p=14912 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:21:25,016 p=14912 u=jeremy |  test01                     : ok=4    changed=0    unreachable=0    failed=0   
+2013-08-17 02:21:25,017 p=14912 u=jeremy |  test02                     : ok=4    changed=1    unreachable=0    failed=0   
+2013-08-17 02:22:33,662 p=16359 u=jeremy |   
+2013-08-17 02:22:33,662 p=16359 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:22:33,662 p=16359 u=jeremy |   
+2013-08-17 02:22:33,669 p=16359 u=jeremy |  ERROR: multiple actions specified in task Load Tripwire preseed
+2013-08-17 02:23:15,818 p=17079 u=jeremy |   
+2013-08-17 02:23:15,819 p=17079 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:23:15,819 p=17079 u=jeremy |   
+2013-08-17 02:23:15,826 p=17079 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:23:15,826 p=17079 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:23:16,937 p=17079 u=jeremy |  ok: [test01]
+2013-08-17 02:23:16,940 p=17079 u=jeremy |  ok: [test02]
+2013-08-17 02:23:16,955 p=17079 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:23:17,896 p=17079 u=jeremy |  ok: [test01]
+2013-08-17 02:23:17,900 p=17079 u=jeremy |  ok: [test02]
+2013-08-17 02:23:17,921 p=17079 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:23:18,844 p=17079 u=jeremy |  ok: [test01]
+2013-08-17 02:23:18,845 p=17079 u=jeremy |  ok: [test02]
+2013-08-17 02:23:18,867 p=17079 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 02:23:19,360 p=17079 u=jeremy |  ok: [test01]
+2013-08-17 02:23:19,361 p=17079 u=jeremy |  ok: [test02]
+2013-08-17 02:23:19,386 p=17079 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:23:21,134 p=17079 u=jeremy |  changed: [test01]
+2013-08-17 02:23:21,135 p=17079 u=jeremy |  changed: [test02]
+2013-08-17 02:23:21,158 p=17079 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:23:21,159 p=17079 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 02:23:21,160 p=17079 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 02:26:50,280 p=21074 u=jeremy |  
+2013-08-17 02:26:50,280 p=21074 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts test01 -s -m command -a shutdown -h now
+2013-08-17 02:26:50,280 p=21074 u=jeremy |  
+2013-08-17 02:26:51,098 p=21074 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-17 02:30:15,474 p=24453 u=jeremy |   
+2013-08-17 02:30:15,474 p=24453 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:30:15,474 p=24453 u=jeremy |   
+2013-08-17 02:30:15,482 p=24453 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:30:15,482 p=24453 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:30:16,939 p=24453 u=jeremy |  ok: [test01]
+2013-08-17 02:30:16,942 p=24453 u=jeremy |  ok: [test02]
+2013-08-17 02:30:16,964 p=24453 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:30:30,079 p=24453 u=jeremy |  changed: [test01]
+2013-08-17 02:30:30,471 p=24453 u=jeremy |  ok: [test02]
+2013-08-17 02:30:30,491 p=24453 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:30:40,945 p=24453 u=jeremy |  changed: [test01]
+2013-08-17 02:30:40,946 p=24453 u=jeremy |  ok: [test02]
+2013-08-17 02:30:40,968 p=24453 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 02:30:41,464 p=24453 u=jeremy |  ok: [test02]
+2013-08-17 02:30:41,465 p=24453 u=jeremy |  changed: [test01]
+2013-08-17 02:30:41,475 p=24453 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:30:43,013 p=24453 u=jeremy |  changed: [test01]
+2013-08-17 02:30:43,015 p=24453 u=jeremy |  changed: [test02]
+2013-08-17 02:30:43,024 p=24453 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-17 02:33:18,848 p=24453 u=jeremy |  changed: [test01]
+2013-08-17 02:33:18,849 p=24453 u=jeremy |  changed: [test02]
+2013-08-17 02:33:18,861 p=24453 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:33:18,862 p=24453 u=jeremy |  test01                     : ok=6    changed=5    unreachable=0    failed=0   
+2013-08-17 02:33:18,862 p=24453 u=jeremy |  test02                     : ok=6    changed=2    unreachable=0    failed=0   
