@@ -7603,3 +7603,12 @@ blah
     "changed": false
 }
 
+2013-08-16 21:25:33,408 p=13574 u=jeremy |  
+2013-08-16 21:25:33,408 p=13574 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible sabcat -s -m command -a shutdown -h now
+2013-08-16 21:25:33,408 p=13574 u=jeremy |  
+2013-08-16 21:25:36,151 p=13574 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-16 21:25:36,152 p=13574 u=jeremy |  test02 | success | rc=0 >>
+
+
