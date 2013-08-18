@@ -1,6 +1,7 @@
 ---
 # This role contains the common elements to all systems
 
+# This task commented out for testing purposes (too slow)
 # - name: Make sure APT is up to date
 #   apt: update_cache=yes upgrade=yes
 
@@ -13,8 +14,8 @@
 - name: Copy Tripwire preseed
   template: src=tripwire.preseed.cfg.j2 dest=/tmp/tripwire.preseed.cfg
   
-- name: Load Tripwire preseed
-  command: debconf-set-selections < /tmp/tripwire.preseed.cfg
+# - name: Load Tripwire preseed
+#   command: debconf-set-selections /tmp/tripwire.preseed.cfg
 
 # - name: Install harden package
 #   apt: pkg=harden state=latest

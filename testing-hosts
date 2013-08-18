@@ -1,3 +1,13 @@
 [sabcat]
 test01
 test02
+test03
+test04
+
+[auto]
+test01
+test02
+
+[manual]
+test03
+test04

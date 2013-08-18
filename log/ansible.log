@@ -8465,3 +8465,479 @@ apt.cache.FetchFailedException: W:Failed to fetch http://mirror.csclub.uwaterloo
 2013-08-17 02:33:18,861 p=24453 u=jeremy |  PLAY RECAP ******************************************************************** 
 2013-08-17 02:33:18,862 p=24453 u=jeremy |  test01                     : ok=6    changed=5    unreachable=0    failed=0   
 2013-08-17 02:33:18,862 p=24453 u=jeremy |  test02                     : ok=6    changed=2    unreachable=0    failed=0   
+2013-08-17 02:48:11,603 p=11046 u=jeremy |  
+2013-08-17 02:48:11,603 p=11046 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command=shutdown
+2013-08-17 02:48:11,603 p=11046 u=jeremy |  
+2013-08-17 02:48:11,991 p=11046 u=jeremy |  test01 | FAILED => module command=shutdown not found in /home/jeremy/.virtualenvs/ansible/share/ansible/network:/home/jeremy/.virtualenvs/ansible/share/ansible/packaging:/home/jeremy/.virtualenvs/ansible/share/ansible/notification:/home/jeremy/.virtualenvs/ansible/share/ansible/internal:/home/jeremy/.virtualenvs/ansible/share/ansible/files:/home/jeremy/.virtualenvs/ansible/share/ansible/source_control:/home/jeremy/.virtualenvs/ansible/share/ansible/messaging:/home/jeremy/.virtualenvs/ansible/share/ansible/net_infrastructure:/home/jeremy/.virtualenvs/ansible/share/ansible/inventory:/home/jeremy/.virtualenvs/ansible/share/ansible/cloud:/home/jeremy/.virtualenvs/ansible/share/ansible/system:/home/jeremy/.virtualenvs/ansible/share/ansible/database:/home/jeremy/.virtualenvs/ansible/share/ansible/utilities:/home/jeremy/.virtualenvs/ansible/share/ansible/web_infrastructure:/home/jeremy/.virtualenvs/ansible/share/ansible/monitoring:/home/jeremy/.virtualenvs/ansible/share/ansible/commands:/home/jeremy/.virtualenvs/ansible/share/ansible
+2013-08-17 02:48:11,992 p=11046 u=jeremy |  test02 | FAILED => module command=shutdown not found in /home/jeremy/.virtualenvs/ansible/share/ansible/network:/home/jeremy/.virtualenvs/ansible/share/ansible/packaging:/home/jeremy/.virtualenvs/ansible/share/ansible/notification:/home/jeremy/.virtualenvs/ansible/share/ansible/internal:/home/jeremy/.virtualenvs/ansible/share/ansible/files:/home/jeremy/.virtualenvs/ansible/share/ansible/source_control:/home/jeremy/.virtualenvs/ansible/share/ansible/messaging:/home/jeremy/.virtualenvs/ansible/share/ansible/net_infrastructure:/home/jeremy/.virtualenvs/ansible/share/ansible/inventory:/home/jeremy/.virtualenvs/ansible/share/ansible/cloud:/home/jeremy/.virtualenvs/ansible/share/ansible/system:/home/jeremy/.virtualenvs/ansible/share/ansible/database:/home/jeremy/.virtualenvs/ansible/share/ansible/utilities:/home/jeremy/.virtualenvs/ansible/share/ansible/web_infrastructure:/home/jeremy/.virtualenvs/ansible/share/ansible/monitoring:/home/jeremy/.virtualenvs/ansible/share/ansible/commands:/home/jeremy/.virtualenvs/ansible/share/ansible
+2013-08-17 02:48:56,308 p=11867 u=jeremy |  
+2013-08-17 02:48:56,308 p=11867 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a shutdown -h now
+2013-08-17 02:48:56,308 p=11867 u=jeremy |  
+2013-08-17 02:48:57,449 p=11867 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-17 02:48:57,450 p=11867 u=jeremy |  test02 | success | rc=0 >>
+
+
+2013-08-17 02:56:32,665 p=19225 u=jeremy |   
+2013-08-17 02:56:32,665 p=19225 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:56:32,665 p=19225 u=jeremy |   
+2013-08-17 02:56:32,672 p=19225 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:56:32,672 p=19225 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:56:35,441 p=19225 u=jeremy |  ok: [test01]
+2013-08-17 02:56:35,442 p=19225 u=jeremy |  ok: [test02]
+2013-08-17 02:56:35,463 p=19225 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:57:00,558 p=19225 u=jeremy |  changed: [test01]
+2013-08-17 02:57:00,559 p=19225 u=jeremy |  changed: [test02]
+2013-08-17 02:57:00,568 p=19225 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:57:22,203 p=19225 u=jeremy |  changed: [test01]
+2013-08-17 02:57:22,205 p=19225 u=jeremy |  changed: [test02]
+2013-08-17 02:57:22,227 p=19225 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 02:57:22,578 p=19225 u=jeremy |  changed: [test01]
+2013-08-17 02:57:22,650 p=19225 u=jeremy |  changed: [test02]
+2013-08-17 02:57:22,659 p=19225 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:57:24,016 p=19225 u=jeremy |  changed: [test01]
+2013-08-17 02:57:24,017 p=19225 u=jeremy |  changed: [test02]
+2013-08-17 02:57:24,035 p=19225 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:57:24,036 p=19225 u=jeremy |  test01                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-17 02:57:24,036 p=19225 u=jeremy |  test02                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-17 02:59:08,569 p=22171 u=jeremy |   
+2013-08-17 02:59:08,569 p=22171 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 02:59:08,569 p=22171 u=jeremy |   
+2013-08-17 02:59:08,577 p=22171 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 02:59:08,577 p=22171 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 02:59:09,685 p=22171 u=jeremy |  ok: [test01]
+2013-08-17 02:59:09,687 p=22171 u=jeremy |  ok: [test02]
+2013-08-17 02:59:09,702 p=22171 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 02:59:10,659 p=22171 u=jeremy |  ok: [test01]
+2013-08-17 02:59:10,660 p=22171 u=jeremy |  ok: [test02]
+2013-08-17 02:59:10,671 p=22171 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 02:59:11,618 p=22171 u=jeremy |  ok: [test01]
+2013-08-17 02:59:11,619 p=22171 u=jeremy |  ok: [test02]
+2013-08-17 02:59:11,643 p=22171 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 02:59:12,023 p=22171 u=jeremy |  ok: [test01]
+2013-08-17 02:59:12,024 p=22171 u=jeremy |  ok: [test02]
+2013-08-17 02:59:12,037 p=22171 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 02:59:13,725 p=22171 u=jeremy |  changed: [test01]
+2013-08-17 02:59:13,726 p=22171 u=jeremy |  changed: [test02]
+2013-08-17 02:59:13,748 p=22171 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 02:59:13,749 p=22171 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 02:59:13,749 p=22171 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 03:03:03,675 p=27615 u=jeremy |   
+2013-08-17 03:03:03,675 p=27615 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 03:03:03,675 p=27615 u=jeremy |   
+2013-08-17 03:03:03,682 p=27615 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 03:03:03,683 p=27615 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 03:03:04,854 p=27615 u=jeremy |  ok: [test01]
+2013-08-17 03:03:04,855 p=27615 u=jeremy |  ok: [test02]
+2013-08-17 03:03:04,885 p=27615 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 03:03:05,821 p=27615 u=jeremy |  ok: [test01]
+2013-08-17 03:03:05,825 p=27615 u=jeremy |  ok: [test02]
+2013-08-17 03:03:05,837 p=27615 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 03:03:06,745 p=27615 u=jeremy |  ok: [test01]
+2013-08-17 03:03:06,745 p=27615 u=jeremy |  ok: [test02]
+2013-08-17 03:03:06,760 p=27615 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 03:03:07,097 p=27615 u=jeremy |  changed: [test01]
+2013-08-17 03:03:07,175 p=27615 u=jeremy |  changed: [test02]
+2013-08-17 03:03:07,188 p=27615 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 03:03:08,518 p=27615 u=jeremy |  changed: [test01]
+2013-08-17 03:03:08,518 p=27615 u=jeremy |  changed: [test02]
+2013-08-17 03:03:08,531 p=27615 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 03:03:08,531 p=27615 u=jeremy |  test01                     : ok=5    changed=2    unreachable=0    failed=0   
+2013-08-17 03:03:08,531 p=27615 u=jeremy |  test02                     : ok=5    changed=2    unreachable=0    failed=0   
+2013-08-17 03:04:44,957 p=29634 u=jeremy |   
+2013-08-17 03:04:44,957 p=29634 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 03:04:44,957 p=29634 u=jeremy |   
+2013-08-17 03:04:44,965 p=29634 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 03:04:44,965 p=29634 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 03:04:46,098 p=29634 u=jeremy |  ok: [test01]
+2013-08-17 03:04:46,100 p=29634 u=jeremy |  ok: [test02]
+2013-08-17 03:04:46,132 p=29634 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 03:04:47,006 p=29634 u=jeremy |  ok: [test01]
+2013-08-17 03:04:47,007 p=29634 u=jeremy |  ok: [test02]
+2013-08-17 03:04:47,029 p=29634 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 03:04:47,924 p=29634 u=jeremy |  ok: [test01]
+2013-08-17 03:04:47,925 p=29634 u=jeremy |  ok: [test02]
+2013-08-17 03:04:47,946 p=29634 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 03:04:48,357 p=29634 u=jeremy |  ok: [test01]
+2013-08-17 03:04:48,358 p=29634 u=jeremy |  ok: [test02]
+2013-08-17 03:04:48,383 p=29634 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 03:04:49,665 p=29634 u=jeremy |  changed: [test01]
+2013-08-17 03:04:49,666 p=29634 u=jeremy |  changed: [test02]
+2013-08-17 03:04:49,688 p=29634 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 03:04:49,688 p=29634 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 03:04:49,689 p=29634 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 13:07:55,988 p=23781 u=jeremy |   
+2013-08-17 13:07:55,988 p=23781 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-17 13:07:55,988 p=23781 u=jeremy |   
+2013-08-17 13:07:55,995 p=23781 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-17 13:07:55,996 p=23781 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-17 13:07:57,141 p=23781 u=jeremy |  ok: [test01]
+2013-08-17 13:07:57,142 p=23781 u=jeremy |  ok: [test02]
+2013-08-17 13:07:57,174 p=23781 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-17 13:07:58,144 p=23781 u=jeremy |  ok: [test01]
+2013-08-17 13:07:58,145 p=23781 u=jeremy |  ok: [test02]
+2013-08-17 13:07:58,157 p=23781 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-17 13:07:59,109 p=23781 u=jeremy |  ok: [test01]
+2013-08-17 13:07:59,110 p=23781 u=jeremy |  ok: [test02]
+2013-08-17 13:07:59,133 p=23781 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-17 13:07:59,658 p=23781 u=jeremy |  ok: [test01]
+2013-08-17 13:07:59,658 p=23781 u=jeremy |  ok: [test02]
+2013-08-17 13:07:59,680 p=23781 u=jeremy |  TASK: [Load Tripwire preseed] ************************************************* 
+2013-08-17 13:08:01,020 p=23781 u=jeremy |  changed: [test01]
+2013-08-17 13:08:01,023 p=23781 u=jeremy |  changed: [test02]
+2013-08-17 13:08:01,034 p=23781 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-17 13:08:01,034 p=23781 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-17 13:08:01,034 p=23781 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-18 00:50:07,016 p=8721 u=jeremy |  
+2013-08-18 00:50:07,016 p=8721 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a shutdown -h now
+2013-08-18 00:50:07,016 p=8721 u=jeremy |  
+2013-08-18 00:50:15,103 p=8721 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-18 00:50:15,104 p=8721 u=jeremy |  test02 | success | rc=0 >>
+
+
+2013-08-18 00:58:50,787 p=9360 u=jeremy |   
+2013-08-18 00:58:50,787 p=9360 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 00:58:50,787 p=9360 u=jeremy |   
+2013-08-18 00:58:50,794 p=9360 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-18 00:58:50,794 p=9360 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 00:58:52,347 p=9360 u=jeremy |  ok: [test01]
+2013-08-18 00:58:52,349 p=9360 u=jeremy |  ok: [test02]
+2013-08-18 00:58:52,383 p=9360 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 00:59:17,086 p=9360 u=jeremy |  changed: [test01]
+2013-08-18 00:59:17,087 p=9360 u=jeremy |  changed: [test02]
+2013-08-18 00:59:17,108 p=9360 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 00:59:37,496 p=9360 u=jeremy |  changed: [test01]
+2013-08-18 00:59:37,496 p=9360 u=jeremy |  changed: [test02]
+2013-08-18 00:59:37,508 p=9360 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-18 00:59:37,961 p=9360 u=jeremy |  changed: [test02]
+2013-08-18 00:59:37,962 p=9360 u=jeremy |  changed: [test01]
+2013-08-18 00:59:37,983 p=9360 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 01:02:11,854 p=9360 u=jeremy |  changed: [test01]
+2013-08-18 01:02:11,855 p=9360 u=jeremy |  changed: [test02]
+2013-08-18 01:02:11,866 p=9360 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 01:02:11,866 p=9360 u=jeremy |  test01                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-18 01:02:11,866 p=9360 u=jeremy |  test02                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-18 02:12:07,815 p=21770 u=jeremy |   
+2013-08-18 02:12:07,816 p=21770 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 02:12:07,816 p=21770 u=jeremy |   
+2013-08-18 02:12:07,824 p=21770 u=jeremy |  PLAY [manual] ***************************************************************** 
+2013-08-18 02:12:07,825 p=21770 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 02:12:11,970 p=21770 u=jeremy |  ok: [test04]
+2013-08-18 02:12:11,971 p=21770 u=jeremy |  ok: [test03]
+2013-08-18 02:12:11,998 p=21770 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 02:12:37,937 p=21770 u=jeremy |  changed: [test03]
+2013-08-18 02:12:37,939 p=21770 u=jeremy |  changed: [test04]
+2013-08-18 02:12:37,962 p=21770 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 02:12:59,644 p=21770 u=jeremy |  changed: [test03]
+2013-08-18 02:12:59,644 p=21770 u=jeremy |  changed: [test04]
+2013-08-18 02:12:59,656 p=21770 u=jeremy |  TASK: [Copy Tripwire preseed] ************************************************* 
+2013-08-18 02:12:59,988 p=21770 u=jeremy |  changed: [test03]
+2013-08-18 02:13:00,088 p=21770 u=jeremy |  changed: [test04]
+2013-08-18 02:13:00,104 p=21770 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 02:13:00,105 p=21770 u=jeremy |  test03                     : ok=4    changed=3    unreachable=0    failed=0   
+2013-08-18 02:13:00,106 p=21770 u=jeremy |  test04                     : ok=4    changed=3    unreachable=0    failed=0   
+2013-08-18 02:14:18,147 p=22136 u=jeremy |  
+2013-08-18 02:14:18,147 p=22136 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m apt -a pkg=debconf-utils
+2013-08-18 02:14:18,147 p=22136 u=jeremy |  
+2013-08-18 02:14:25,301 p=22136 u=jeremy |  test01 | success >> {
+    "changed": false
+}
+
+2013-08-18 02:14:37,246 p=22136 u=jeremy |  test03 | success >> {
+    "changed": false
+}
+
+2013-08-18 02:14:37,248 p=22136 u=jeremy |  test02 | success >> {
+    "changed": true
+}
+
+2013-08-18 02:14:44,993 p=22136 u=jeremy |  test04 | success >> {
+    "changed": true
+}
+
+2013-08-18 12:14:39,673 p=12652 u=jeremy |  
+2013-08-18 12:14:39,673 p=12652 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a debconf-get-selections | grep 'tripwire\/'
+2013-08-18 12:14:39,673 p=12652 u=jeremy |  
+2013-08-18 12:14:41,428 p=12652 u=jeremy |  test02 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:14:41,904 p=12652 u=jeremy |  test04 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 3807: ordinal not in range(128)
+
+2013-08-18 12:14:42,368 p=12652 u=jeremy |  test03 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:14:42,376 p=12652 u=jeremy |  test01 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:14:58,596 p=12745 u=jeremy |  
+2013-08-18 12:14:58,596 p=12745 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a debconf-get-selections | grep 'tripwire\/'
+2013-08-18 12:14:58,596 p=12745 u=jeremy |  
+2013-08-18 12:14:59,595 p=12745 u=jeremy |  test01 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:15:00,020 p=12745 u=jeremy |  test02 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:15:00,453 p=12745 u=jeremy |  test04 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 3807: ordinal not in range(128)
+
+2013-08-18 12:15:00,457 p=12745 u=jeremy |  test03 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:15:22,262 p=12830 u=jeremy |  
+2013-08-18 12:15:22,262 p=12830 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a debconf-get-selections | grep 'tripwire'
+2013-08-18 12:15:22,262 p=12830 u=jeremy |  
+2013-08-18 12:15:23,593 p=12830 u=jeremy |  test01 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:15:23,594 p=12830 u=jeremy |  test04 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 3807: ordinal not in range(128)
+
+2013-08-18 12:15:23,993 p=12830 u=jeremy |  test02 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:15:24,003 p=12830 u=jeremy |  test03 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:16:07,007 p=12940 u=jeremy |  
+2013-08-18 12:16:07,007 p=12940 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a debconf-get-selections
+2013-08-18 12:16:07,007 p=12940 u=jeremy |  
+2013-08-18 12:16:08,370 p=12940 u=jeremy |  test01 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:16:08,747 p=12940 u=jeremy |  test03 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:16:08,750 p=12940 u=jeremy |  test02 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 4329: ordinal not in range(128)
+
+2013-08-18 12:16:08,754 p=12940 u=jeremy |  test04 | FAILED => Traceback (most recent call last):
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 364, in _executor
+    exec_rc = self._executor_internal(host, new_stdin)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 443, in _executor_internal
+    return self._executor_internal_inner(host, self.module_name, self.module_args, inject, port, complex_args=complex_args)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/runner/__init__.py", line 625, in _executor_internal_inner
+    self.callbacks.on_ok(host, data)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 351, in on_ok
+    self._on_any(host,res)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 397, in _on_any
+    display(msg, color=color, runner=self.runner)
+  File "/home/jeremy/.virtualenvs/ansible/local/lib/python2.7/site-packages/ansible/callbacks.py", line 120, in display
+    print msg2
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xed' in position 3807: ordinal not in range(128)
+
+2013-08-18 12:16:39,182 p=13036 u=jeremy |  
+2013-08-18 12:16:39,182 p=13036 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a who
+2013-08-18 12:16:39,182 p=13036 u=jeremy |  
+2013-08-18 12:16:39,581 p=13036 u=jeremy |  test02 | success | rc=0 >>
+jeremy   pts/0        Aug 18 12:13 (parsons)
+jeremy   pts/1        Aug 18 12:16 (parsons)
+
+2013-08-18 12:16:39,751 p=13036 u=jeremy |  test01 | success | rc=0 >>
+jeremy   pts/0        Aug 18 12:16 (parsons)
+
+2013-08-18 12:16:39,753 p=13036 u=jeremy |  test04 | success | rc=0 >>
+jeremy   pts/0        Aug 18 12:16 (parsons)
+
+2013-08-18 12:16:39,756 p=13036 u=jeremy |  test03 | success | rc=0 >>
+jeremy   pts/0        Aug 18 12:16 (parsons)
+
+2013-08-18 15:15:57,694 p=29175 u=jeremy |  
+2013-08-18 15:15:57,695 p=29175 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a shutdown -h now
+2013-08-18 15:15:57,695 p=29175 u=jeremy |  
+2013-08-18 15:16:05,648 p=29175 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-18 15:16:06,414 p=29175 u=jeremy |  test03 | success | rc=0 >>
+
+
+2013-08-18 15:16:07,293 p=29175 u=jeremy |  test04 | success | rc=0 >>
+
+
+2013-08-18 15:16:07,295 p=29175 u=jeremy |  test02 | success | rc=0 >>
+
+
