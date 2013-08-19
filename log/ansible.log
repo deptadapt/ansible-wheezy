@@ -9247,3 +9247,838 @@ jeremy   pts/0        Aug 18 12:16 (parsons)
 2013-08-18 23:22:17,209 p=28895 u=jeremy |  PLAY RECAP ******************************************************************** 
 2013-08-18 23:22:17,209 p=28895 u=jeremy |  test01                     : ok=5    changed=0    unreachable=0    failed=0   
 2013-08-18 23:22:17,210 p=28895 u=jeremy |  test02                     : ok=5    changed=0    unreachable=0    failed=0   
+2013-08-18 23:41:59,524 p=17413 u=jeremy |   
+2013-08-18 23:41:59,524 p=17413 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i hosts -s site.yml
+2013-08-18 23:41:59,524 p=17413 u=jeremy |   
+2013-08-18 23:41:59,535 p=17413 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:41:59,535 p=17413 u=jeremy |  skipping: no hosts matched
+2013-08-18 23:41:59,535 p=17413 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:42:07,762 p=17550 u=jeremy |   
+2013-08-18 23:42:07,762 p=17550 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 23:42:07,762 p=17550 u=jeremy |   
+2013-08-18 23:42:07,772 p=17550 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:42:07,772 p=17550 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:42:08,877 p=17550 u=jeremy |  ok: [test01]
+2013-08-18 23:42:08,878 p=17550 u=jeremy |  ok: [test02]
+2013-08-18 23:42:08,894 p=17550 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:42:09,379 p=17550 u=jeremy |  ok: [test02]
+2013-08-18 23:42:09,723 p=17550 u=jeremy |  ok: [test01]
+2013-08-18 23:42:09,743 p=17550 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:42:10,594 p=17550 u=jeremy |  ok: [test01]
+2013-08-18 23:42:10,595 p=17550 u=jeremy |  ok: [test02]
+2013-08-18 23:42:10,603 p=17550 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:42:10,913 p=17550 u=jeremy |  changed: [test01]
+2013-08-18 23:42:10,995 p=17550 u=jeremy |  changed: [test02]
+2013-08-18 23:42:11,018 p=17550 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:42:11,512 p=17550 u=jeremy |  ok: [test01]
+2013-08-18 23:42:11,824 p=17550 u=jeremy |  ok: [test02]
+2013-08-18 23:42:11,843 p=17550 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:42:12,151 p=17550 u=jeremy |  changed: [test01]
+2013-08-18 23:42:12,152 p=17550 u=jeremy |  changed: [test02]
+2013-08-18 23:42:12,164 p=17550 u=jeremy |  TASK: [Copy Tripwire policy] ************************************************** 
+2013-08-18 23:42:12,517 p=17550 u=jeremy |  changed: [test01]
+2013-08-18 23:42:12,517 p=17550 u=jeremy |  changed: [test02]
+2013-08-18 23:42:12,541 p=17550 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:42:12,541 p=17550 u=jeremy |  test01                     : ok=7    changed=3    unreachable=0    failed=0   
+2013-08-18 23:42:12,541 p=17550 u=jeremy |  test02                     : ok=7    changed=3    unreachable=0    failed=0   
+2013-08-18 23:45:45,275 p=21636 u=jeremy |   
+2013-08-18 23:45:45,275 p=21636 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 23:45:45,275 p=21636 u=jeremy |   
+2013-08-18 23:45:45,285 p=21636 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:45:45,285 p=21636 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:45:46,412 p=21636 u=jeremy |  ok: [test01]
+2013-08-18 23:45:46,414 p=21636 u=jeremy |  ok: [test02]
+2013-08-18 23:45:46,445 p=21636 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:45:47,272 p=21636 u=jeremy |  ok: [test01]
+2013-08-18 23:45:47,273 p=21636 u=jeremy |  ok: [test02]
+2013-08-18 23:45:47,296 p=21636 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:45:48,149 p=21636 u=jeremy |  ok: [test01]
+2013-08-18 23:45:48,150 p=21636 u=jeremy |  ok: [test02]
+2013-08-18 23:45:48,175 p=21636 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:45:48,652 p=21636 u=jeremy |  changed: [test02]
+2013-08-18 23:45:48,835 p=21636 u=jeremy |  changed: [test01]
+2013-08-18 23:45:48,848 p=21636 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:45:49,674 p=21636 u=jeremy |  ok: [test01]
+2013-08-18 23:45:49,675 p=21636 u=jeremy |  ok: [test02]
+2013-08-18 23:45:49,687 p=21636 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:45:50,144 p=21636 u=jeremy |  changed: [test01]
+2013-08-18 23:45:50,144 p=21636 u=jeremy |  changed: [test02]
+2013-08-18 23:45:50,159 p=21636 u=jeremy |  TASK: [Copy Tripwire policy] ************************************************** 
+2013-08-18 23:45:50,526 p=21636 u=jeremy |  ok: [test01]
+2013-08-18 23:45:50,527 p=21636 u=jeremy |  ok: [test02]
+2013-08-18 23:45:50,554 p=21636 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:45:50,555 p=21636 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:45:50,555 p=21636 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:46:07,166 p=22377 u=jeremy |   
+2013-08-18 23:46:07,166 p=22377 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 23:46:07,166 p=22377 u=jeremy |   
+2013-08-18 23:46:07,176 p=22377 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:46:07,176 p=22377 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:46:08,048 p=22377 u=jeremy |  ok: [test01]
+2013-08-18 23:46:08,049 p=22377 u=jeremy |  ok: [test02]
+2013-08-18 23:46:08,064 p=22377 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:46:08,949 p=22377 u=jeremy |  ok: [test01]
+2013-08-18 23:46:08,950 p=22377 u=jeremy |  ok: [test02]
+2013-08-18 23:46:08,975 p=22377 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:46:09,905 p=22377 u=jeremy |  ok: [test01]
+2013-08-18 23:46:09,906 p=22377 u=jeremy |  ok: [test02]
+2013-08-18 23:46:09,927 p=22377 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:46:10,334 p=22377 u=jeremy |  changed: [test01]
+2013-08-18 23:46:10,422 p=22377 u=jeremy |  changed: [test02]
+2013-08-18 23:46:10,443 p=22377 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:46:11,473 p=22377 u=jeremy |  ok: [test01]
+2013-08-18 23:46:11,474 p=22377 u=jeremy |  ok: [test02]
+2013-08-18 23:46:11,498 p=22377 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:46:11,963 p=22377 u=jeremy |  changed: [test01]
+2013-08-18 23:46:11,964 p=22377 u=jeremy |  changed: [test02]
+2013-08-18 23:46:11,973 p=22377 u=jeremy |  TASK: [Copy Tripwire policy] ************************************************** 
+2013-08-18 23:46:12,412 p=22377 u=jeremy |  ok: [test01]
+2013-08-18 23:46:12,412 p=22377 u=jeremy |  ok: [test02]
+2013-08-18 23:46:12,425 p=22377 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:46:12,425 p=22377 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:46:12,425 p=22377 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:48:48,000 p=25426 u=jeremy |   
+2013-08-18 23:48:48,000 p=25426 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 23:48:48,001 p=25426 u=jeremy |   
+2013-08-18 23:48:48,011 p=25426 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:48:48,012 p=25426 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:48:49,249 p=25426 u=jeremy |  ok: [test01]
+2013-08-18 23:48:49,250 p=25426 u=jeremy |  ok: [test02]
+2013-08-18 23:48:49,263 p=25426 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:48:50,112 p=25426 u=jeremy |  ok: [test01]
+2013-08-18 23:48:50,113 p=25426 u=jeremy |  ok: [test02]
+2013-08-18 23:48:50,138 p=25426 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:48:51,078 p=25426 u=jeremy |  ok: [test01]
+2013-08-18 23:48:51,079 p=25426 u=jeremy |  ok: [test02]
+2013-08-18 23:48:51,101 p=25426 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:48:51,582 p=25426 u=jeremy |  changed: [test01]
+2013-08-18 23:48:51,583 p=25426 u=jeremy |  changed: [test02]
+2013-08-18 23:48:51,593 p=25426 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:48:52,483 p=25426 u=jeremy |  ok: [test01]
+2013-08-18 23:48:52,484 p=25426 u=jeremy |  ok: [test02]
+2013-08-18 23:48:52,506 p=25426 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:48:52,878 p=25426 u=jeremy |  changed: [test01]
+2013-08-18 23:48:52,879 p=25426 u=jeremy |  changed: [test02]
+2013-08-18 23:48:52,904 p=25426 u=jeremy |  TASK: [Copy Tripwire policy] ************************************************** 
+2013-08-18 23:48:53,231 p=25426 u=jeremy |  ok: [test01]
+2013-08-18 23:48:53,231 p=25426 u=jeremy |  ok: [test02]
+2013-08-18 23:48:53,242 p=25426 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:48:53,243 p=25426 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:48:53,243 p=25426 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:49:03,589 p=26094 u=jeremy |   
+2013-08-18 23:49:03,589 p=26094 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-18 23:49:03,589 p=26094 u=jeremy |   
+2013-08-18 23:49:03,599 p=26094 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:49:03,599 p=26094 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:49:04,433 p=26094 u=jeremy |  ok: [test01]
+2013-08-18 23:49:04,434 p=26094 u=jeremy |  ok: [test02]
+2013-08-18 23:49:04,472 p=26094 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:49:05,326 p=26094 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:49:05,327 p=26094 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:49:05,343 p=26094 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:49:06,163 p=26094 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:49:06,164 p=26094 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:49:06,186 p=26094 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:49:06,631 p=26094 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376884146.26-213896420989676/source", "state": "file", "uid": 0}
+2013-08-18 23:49:06,633 p=26094 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376884146.26-116219366047467/source", "state": "file", "uid": 0}
+2013-08-18 23:49:06,655 p=26094 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:49:07,190 p=26094 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:49:07,510 p=26094 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:49:07,529 p=26094 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:49:07,878 p=26094 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002550", "end": "2013-08-18 23:49:07.745594", "item": "", "rc": 0, "start": "2013-08-18 23:49:07.743044", "stderr": "", "stdout": ""}
+2013-08-18 23:49:07,879 p=26094 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002707", "end": "2013-08-18 23:49:07.832989", "item": "", "rc": 0, "start": "2013-08-18 23:49:07.830282", "stderr": "", "stdout": ""}
+2013-08-18 23:49:07,903 p=26094 u=jeremy |  TASK: [Copy Tripwire policy] ************************************************** 
+2013-08-18 23:49:08,225 p=26094 u=jeremy |  ok: [test01] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0600", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6057, "state": "file", "uid": 0}
+2013-08-18 23:49:08,226 p=26094 u=jeremy |  ok: [test02] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0600", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6057, "state": "file", "uid": 0}
+2013-08-18 23:49:08,244 p=26094 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:49:08,244 p=26094 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:49:08,244 p=26094 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-18 23:50:05,433 p=27512 u=jeremy |   
+2013-08-18 23:50:05,433 p=27512 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-18 23:50:05,433 p=27512 u=jeremy |   
+2013-08-18 23:50:05,446 p=27512 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:50:05,446 p=27512 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:50:06,254 p=27512 u=jeremy |  ok: [test01]
+2013-08-18 23:50:06,255 p=27512 u=jeremy |  ok: [test02]
+2013-08-18 23:50:06,285 p=27512 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:50:07,165 p=27512 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:50:07,166 p=27512 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:50:07,188 p=27512 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:50:08,006 p=27512 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:50:08,007 p=27512 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:50:08,031 p=27512 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:50:08,395 p=27512 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376884208.08-1751913183419/source", "state": "file", "uid": 0}
+2013-08-18 23:50:08,474 p=27512 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376884208.1-269872338078342/source", "state": "file", "uid": 0}
+2013-08-18 23:50:08,496 p=27512 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:50:09,315 p=27512 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:50:09,316 p=27512 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:50:09,339 p=27512 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:50:09,747 p=27512 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002284", "end": "2013-08-18 23:50:09.542406", "item": "", "rc": 0, "start": "2013-08-18 23:50:09.540122", "stderr": "", "stdout": ""}
+2013-08-18 23:50:09,748 p=27512 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002390", "end": "2013-08-18 23:50:09.636603", "item": "", "rc": 0, "start": "2013-08-18 23:50:09.634213", "stderr": "", "stdout": ""}
+2013-08-18 23:50:09,772 p=27512 u=jeremy |  TASK: [Remove twpol.txt] ****************************************************** 
+2013-08-18 23:50:11,209 p=27512 u=jeremy |  failed: [test01] => {"changed": true, "cmd": ["rm", "/etc/twpol.txt"], "delta": "0:00:00.002330", "end": "2013-08-18 23:50:11.090139", "item": "", "rc": 1, "start": "2013-08-18 23:50:11.087809"}
+2013-08-18 23:50:11,211 p=27512 u=jeremy |  failed: [test02] => {"changed": true, "cmd": ["rm", "/etc/twpol.txt"], "delta": "0:00:00.002316", "end": "2013-08-18 23:50:11.174114", "item": "", "rc": 1, "start": "2013-08-18 23:50:11.171798"}
+2013-08-18 23:50:11,212 p=27512 u=jeremy |  stderr: rm: cannot remove `/etc/twpol.txt': No such file or directory
+2013-08-18 23:50:11,212 p=27512 u=jeremy |  stderr: rm: cannot remove `/etc/twpol.txt': No such file or directory
+2013-08-18 23:50:11,234 p=27512 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-18 23:50:11,235 p=27512 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:50:11,237 p=27512 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-18 23:50:11,237 p=27512 u=jeremy |  test01                     : ok=6    changed=2    unreachable=0    failed=1   
+2013-08-18 23:50:11,238 p=27512 u=jeremy |  test02                     : ok=6    changed=2    unreachable=0    failed=1   
+2013-08-18 23:50:31,021 p=28302 u=jeremy |   
+2013-08-18 23:50:31,021 p=28302 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-18 23:50:31,021 p=28302 u=jeremy |   
+2013-08-18 23:50:31,032 p=28302 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:50:31,032 p=28302 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:50:31,821 p=28302 u=jeremy |  ok: [test01]
+2013-08-18 23:50:31,822 p=28302 u=jeremy |  ok: [test02]
+2013-08-18 23:50:31,855 p=28302 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:50:32,678 p=28302 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:50:32,678 p=28302 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:50:32,700 p=28302 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:50:33,797 p=28302 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:50:33,798 p=28302 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:50:33,823 p=28302 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:50:34,326 p=28302 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376884233.87-129819780386908/source", "state": "file", "uid": 0}
+2013-08-18 23:50:34,329 p=28302 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376884233.89-47404460135103/source", "state": "file", "uid": 0}
+2013-08-18 23:50:34,344 p=28302 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:50:35,171 p=28302 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-18 23:50:35,172 p=28302 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-18 23:50:35,196 p=28302 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-18 23:50:35,505 p=28302 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002375", "end": "2013-08-18 23:50:35.389462", "item": "", "rc": 0, "start": "2013-08-18 23:50:35.387087", "stderr": "", "stdout": ""}
+2013-08-18 23:50:35,505 p=28302 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002388", "end": "2013-08-18 23:50:35.475120", "item": "", "rc": 0, "start": "2013-08-18 23:50:35.472732", "stderr": "", "stdout": ""}
+2013-08-18 23:50:35,514 p=28302 u=jeremy |  TASK: [Remove twpol.txt] ****************************************************** 
+2013-08-18 23:50:36,381 p=28302 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.002267", "end": "2013-08-18 23:50:36.259071", "item": "", "rc": 0, "start": "2013-08-18 23:50:36.256804", "stderr": "", "stdout": ""}
+2013-08-18 23:50:36,382 p=28302 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.002423", "end": "2013-08-18 23:50:36.349952", "item": "", "rc": 0, "start": "2013-08-18 23:50:36.347529", "stderr": "", "stdout": ""}
+2013-08-18 23:50:36,411 p=28302 u=jeremy |  TASK: [Copy Tripwire policy] ************************************************** 
+2013-08-18 23:50:36,768 p=28302 u=jeremy |  failed: [test01] => {"failed": true, "item": "", "path": "/etc/tripwire/twpol.txt", "state": "absent"}
+2013-08-18 23:50:36,769 p=28302 u=jeremy |  msg: file (/etc/tripwire/twpol.txt) does not exist, use copy or template module to create
+2013-08-18 23:50:36,771 p=28302 u=jeremy |  failed: [test02] => {"failed": true, "item": "", "path": "/etc/tripwire/twpol.txt", "state": "absent"}
+2013-08-18 23:50:36,772 p=28302 u=jeremy |  msg: file (/etc/tripwire/twpol.txt) does not exist, use copy or template module to create
+2013-08-18 23:50:36,793 p=28302 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-18 23:50:36,794 p=28302 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:50:36,795 p=28302 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-18 23:50:36,796 p=28302 u=jeremy |  test01                     : ok=7    changed=3    unreachable=0    failed=1   
+2013-08-18 23:50:36,796 p=28302 u=jeremy |  test02                     : ok=7    changed=3    unreachable=0    failed=1   
+2013-08-19 00:08:56,355 p=19151 u=jeremy |   
+2013-08-19 00:08:56,355 p=19151 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:08:56,356 p=19151 u=jeremy |   
+2013-08-19 00:08:56,364 p=19151 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:08:56,365 p=19151 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:09:04,332 p=19151 u=jeremy |  ok: [test04]
+2013-08-19 00:09:04,334 p=19151 u=jeremy |  ok: [test03]
+2013-08-19 00:09:04,994 p=19151 u=jeremy |  ok: [test02]
+2013-08-19 00:09:04,996 p=19151 u=jeremy |  ok: [test01]
+2013-08-19 00:09:05,021 p=19151 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:09:05,935 p=19151 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:09:21,608 p=19151 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:09:35,059 p=19151 u=jeremy |  changed: [test03] => {"changed": true, "item": ""}
+2013-08-19 00:09:35,060 p=19151 u=jeremy |  changed: [test04] => {"changed": true, "item": ""}
+2013-08-19 00:09:35,086 p=19151 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 00:09:47,682 p=19151 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:09:47,997 p=19151 u=jeremy |  changed: [test03] => {"changed": true, "item": ""}
+2013-08-19 00:09:57,871 p=19151 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:09:57,872 p=19151 u=jeremy |  changed: [test04] => {"changed": true, "item": ""}
+2013-08-19 00:09:57,899 p=19151 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 00:09:58,607 p=19151 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376885397.97-73977964083025/source", "state": "file", "uid": 0}
+2013-08-19 00:09:58,865 p=19151 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376885397.98-127956726531689/source", "state": "file", "uid": 0}
+2013-08-19 00:09:59,024 p=19151 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376885397.97-52679820059293/source", "state": "file", "uid": 0}
+2013-08-19 00:09:59,026 p=19151 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376885397.98-169046670017928/source", "state": "file", "uid": 0}
+2013-08-19 00:09:59,042 p=19151 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 00:10:00,197 p=19151 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:10:00,198 p=19151 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:12:35,931 p=19151 u=jeremy |  changed: [test04] => {"changed": true, "item": ""}
+2013-08-19 00:12:35,932 p=19151 u=jeremy |  changed: [test03] => {"changed": true, "item": ""}
+2013-08-19 00:12:35,948 p=19151 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 00:12:35,948 p=19151 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-19 00:12:35,948 p=19151 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-19 00:12:35,948 p=19151 u=jeremy |  test03                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-19 00:12:35,948 p=19151 u=jeremy |  test04                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-19 00:14:53,591 p=25688 u=jeremy |  
+2013-08-19 00:14:53,591 p=25688 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts manual -s -m command -a ls -l /var/lib/tripwire/test04.twd
+2013-08-19 00:14:53,591 p=25688 u=jeremy |  
+2013-08-19 00:14:54,296 p=25688 u=jeremy |  test03 | FAILED | rc=2 >>
+ls: cannot access /var/lib/tripwire/test04.twd: No such file or directory
+
+2013-08-19 00:14:54,297 p=25688 u=jeremy |  test04 | success | rc=0 >>
+-rw-r--r-- 1 root root 871044 Aug 19 00:13 /var/lib/tripwire/test04.twd
+
+2013-08-19 00:22:48,395 p=1498 u=jeremy |   
+2013-08-19 00:22:48,396 p=1498 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:22:48,396 p=1498 u=jeremy |   
+2013-08-19 00:22:48,406 p=1498 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:22:48,406 p=1498 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:22:50,039 p=1498 u=jeremy |  ok: [test03]
+2013-08-19 00:22:50,324 p=1498 u=jeremy |  ok: [test02]
+2013-08-19 00:22:50,326 p=1498 u=jeremy |  ok: [test01]
+2013-08-19 00:22:50,670 p=1498 u=jeremy |  ok: [test04]
+2013-08-19 00:22:50,700 p=1498 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:22:52,040 p=1498 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:22:52,041 p=1498 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:22:52,377 p=1498 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:22:52,378 p=1498 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:22:52,392 p=1498 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 00:22:53,591 p=1498 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:22:53,591 p=1498 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:22:54,144 p=1498 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:22:54,145 p=1498 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:22:54,170 p=1498 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 00:22:54,824 p=1498 u=jeremy |  ok: [test01] => {"changed": false, "gid": 1000, "group": "jeremy", "item": "", "mode": "0600", "owner": "root", "path": "/tmp/tripwire-debconf-config.dat", "size": 1511, "state": "file", "uid": 0}
+2013-08-19 00:22:54,905 p=1498 u=jeremy |  ok: [test02] => {"changed": false, "gid": 1000, "group": "jeremy", "item": "", "mode": "0600", "owner": "root", "path": "/tmp/tripwire-debconf-config.dat", "size": 1511, "state": "file", "uid": 0}
+2013-08-19 00:22:54,906 p=1498 u=jeremy |  ok: [test03] => {"changed": false, "gid": 1000, "group": "jeremy", "item": "", "mode": "0600", "owner": "root", "path": "/tmp/tripwire-debconf-config.dat", "size": 1511, "state": "file", "uid": 0}
+2013-08-19 00:22:54,980 p=1498 u=jeremy |  ok: [test04] => {"changed": false, "gid": 1000, "group": "jeremy", "item": "", "mode": "0600", "owner": "root", "path": "/tmp/tripwire-debconf-config.dat", "size": 1511, "state": "file", "uid": 0}
+2013-08-19 00:22:55,002 p=1498 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 00:22:55,891 p=1498 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:22:56,206 p=1498 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:22:56,578 p=1498 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:22:56,580 p=1498 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:22:56,591 p=1498 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 00:22:57,026 p=1498 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002614", "end": "2013-08-19 00:22:56.822817", "item": "", "rc": 0, "start": "2013-08-19 00:22:56.820203", "stderr": "", "stdout": ""}
+2013-08-19 00:22:57,028 p=1498 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002353", "end": "2013-08-19 00:22:56.969902", "item": "", "rc": 0, "start": "2013-08-19 00:22:56.967549", "stderr": "", "stdout": ""}
+2013-08-19 00:22:57,111 p=1498 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002654", "end": "2013-08-19 00:22:57.056209", "item": "", "rc": 0, "start": "2013-08-19 00:22:57.053555", "stderr": "", "stdout": ""}
+2013-08-19 00:22:57,112 p=1498 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002472", "end": "2013-08-19 00:22:57.080217", "item": "", "rc": 0, "start": "2013-08-19 00:22:57.077745", "stderr": "", "stdout": ""}
+2013-08-19 00:22:57,134 p=1498 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 00:22:57,774 p=1498 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376886177.2-72814744767034/source", "state": "file", "uid": 0}
+2013-08-19 00:22:57,843 p=1498 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376886177.2-126917839396993/source", "state": "file", "uid": 0}
+2013-08-19 00:22:57,844 p=1498 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376886177.18-18621954963350/source", "state": "file", "uid": 0}
+2013-08-19 00:22:57,920 p=1498 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376886177.19-130244087098221/source", "state": "file", "uid": 0}
+2013-08-19 00:22:57,940 p=1498 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 00:22:57,940 p=1498 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-19 00:22:57,941 p=1498 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-19 00:22:57,941 p=1498 u=jeremy |  test03                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-19 00:22:57,941 p=1498 u=jeremy |  test04                     : ok=7    changed=2    unreachable=0    failed=0   
+2013-08-19 00:30:46,389 p=10389 u=jeremy |  
+2013-08-19 00:30:46,390 p=10389 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts test01 -m setup
+2013-08-19 00:30:46,390 p=10389 u=jeremy |  
+2013-08-19 00:30:47,243 p=10389 u=jeremy |  test01 | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.3.109"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::5054:ff:fe4f:cd3"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "01/01/2007", 
+        "ansible_bios_version": "Bochs", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.2.0-4-amd64", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "/dev/mapper/virtio-root"
+        }, 
+        "ansible_date_time": {
+            "date": "2013-08-19", 
+            "day": "19", 
+            "epoch": "1376886647", 
+            "hour": "00", 
+            "iso8601": "2013-08-19T04:30:47Z", 
+            "iso8601_micro": "2013-08-19T04:30:47.208614Z", 
+            "minute": "30", 
+            "month": "08", 
+            "second": "47", 
+            "time": "00:30:47", 
+            "tz": "EDT", 
+            "year": "2013"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.3.109", 
+            "alias": "eth0", 
+            "gateway": "192.168.3.1", 
+            "interface": "eth0", 
+            "macaddress": "52:54:00:4f:0c:d3", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.3.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "sectors": "497664", 
+                        "sectorsize": 512, 
+                        "size": "243.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "vda2": {
+                        "sectors": "2", 
+                        "sectorsize": 512, 
+                        "size": "1.00 KB", 
+                        "start": "501758"
+                    }, 
+                    "vda5": {
+                        "sectors": "3690496", 
+                        "sectorsize": 512, 
+                        "size": "1.76 GB", 
+                        "start": "501760"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "4194304", 
+                "sectorsize": "512", 
+                "size": "2.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "7.1", 
+        "ansible_domain": "deptadapt.org", 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "192.168.3.109", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.3.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::5054:ff:fe4f:cd3", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "52:54:00:4f:0c:d3", 
+            "module": "virtio_net", 
+            "mtu": 1500, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "test01.deptadapt.org", 
+        "ansible_hostname": "test01", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.2.0-4-amd64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 16436, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "wheezy", 
+            "description": "Debian GNU/Linux 7.1 (wheezy)", 
+            "id": "Debian", 
+            "major_release": "7", 
+            "release": "7.1"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 22, 
+        "ansible_memtotal_mb": 245, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/mapper/virtio-root", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered", 
+                "size_available": 866508800, 
+                "size_total": 1725644800
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext2", 
+                "mount": "/boot", 
+                "options": "rw,relatime,errors=continue", 
+                "size_available": 207859712, 
+                "size_total": 238787584
+            }
+        ], 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "QEMU Virtual CPU version 1.1.2"
+        ], 
+        "ansible_processor_cores": "NA", 
+        "ansible_processor_count": 1, 
+        "ansible_product_name": "Bochs", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "NA", 
+        "ansible_python_version": "2.7.3", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANhokJBUNDwKPwD5Nd41sW37x6Qz2oE9ch2wBjThv80EuKfpi/cyuM1F2RiN8R1QJ6xcmErwcHQk7DhGiJcpTRpzSwDKAr8TLSWSFqBlFglloXe7KxP9ZOdAzv2RJ/czIYoaSImJAm1l+aSTqhtQXMdX6RdhOuY2otdSJvhOUMNxAAAAFQCu6k1lz95uLAA7UN93uapGbqywwQAAAIBeCUfUFSxRWpdAgva+8wrQ6OAS5KOsl9d3GKaBTEWYaQgelOaFbd1mCuBPi6dKIBgGnnSkdKqtlSX0ZD7C0z+9rTWp2JBEGlHYcok7KGIUMnrUr6hotxo8fAXFiBsXzPMuHSnUjEKM7OKr9sbGsRFep1NZDByJ2R1OuY5iEWNtkAAAAIAnRneG2z1jOOaPNs0KEeuKg0DvV5m5yokErAHtDen+eKuyEqiKEeD14KHEo2eFufud510TeVusRmVx7O88BcbFviQnCSBdJv8op4v11Y0+6DAXs3gv9LYE6gWIntBWm9DI7dN531sd17BTD7vUPJlRgcp9JMt3uPE7flhhCe6/TA==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAz2OubgxzfQmr0B/MCXjI9+TIUTz3GRkQQxxK91ZnxOEcysO39HxZojkGJOb1mpKZc6JWOzZ7BvFr5KSCMLxPs=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDPOuqpsCFmLy/AQiTnFds2Pd2umvIOMSQxl0zzxc7KFjMU9K244byTHSaNUCAOKPzIyR0y8qtXTAEd/EVCENA1eZ1yalhtFlfh9JvDrJU6SStFJFR0fLV6fghFGoXJTcLo4mjmOP9VBFCotJJWqYoIUy6KZdUhlcOAc+yovtZWpKau8vCJy20G7o5OY12Lze8MU7evdHcidSRsiO9Mqh3HTz336sec+gqGwnXUHQqhwyJdDc3aHd7uZ4HBJOJzCg6TSuujt8cHuoLDGj7PtUU5wwixDz2NHP0fVQtGx32oSnPYat2rscrDVzCtGoBQyMSWeXVzG+gqqdHnx8FuOigZ", 
+        "ansible_swapfree_mb": 127, 
+        "ansible_swaptotal_mb": 127, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Bochs", 
+        "ansible_user_id": "jeremy", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "kvm"
+    }, 
+    "changed": false
+}
+
+2013-08-19 00:32:04,625 p=11779 u=jeremy |   
+2013-08-19 00:32:04,625 p=11779 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:32:04,625 p=11779 u=jeremy |   
+2013-08-19 00:32:04,635 p=11779 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:32:04,636 p=11779 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:32:05,994 p=11779 u=jeremy |  ok: [test02]
+2013-08-19 00:32:06,199 p=11779 u=jeremy |  ok: [test01]
+2013-08-19 00:32:06,774 p=11779 u=jeremy |  ok: [test04]
+2013-08-19 00:32:06,776 p=11779 u=jeremy |  ok: [test03]
+2013-08-19 00:32:06,809 p=11779 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:32:07,684 p=11779 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:32:08,016 p=11779 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:32:08,349 p=11779 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:32:08,350 p=11779 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:32:08,372 p=11779 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 00:32:09,207 p=11779 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:32:09,554 p=11779 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:32:09,555 p=11779 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:32:09,867 p=11779 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:32:09,891 p=11779 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 00:32:11,108 p=11779 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886729.95-129905798152943/source", "state": "file", "uid": 0}
+2013-08-19 00:32:11,109 p=11779 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886729.94-47804880608725/source", "state": "file", "uid": 0}
+2013-08-19 00:32:11,344 p=11779 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886729.95-22471156430462/source", "state": "file", "uid": 0}
+2013-08-19 00:32:11,346 p=11779 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886729.95-245586336962797/source", "state": "file", "uid": 0}
+2013-08-19 00:32:11,367 p=11779 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 00:32:12,553 p=11779 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:32:12,555 p=11779 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:32:12,592 p=11779 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:32:12,994 p=11779 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:32:13,016 p=11779 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 00:32:13,403 p=11779 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002735", "end": "2013-08-19 00:32:13.300080", "item": "", "rc": 0, "start": "2013-08-19 00:32:13.297345", "stderr": "", "stdout": ""}
+2013-08-19 00:32:13,404 p=11779 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002305", "end": "2013-08-19 00:32:13.375142", "item": "", "rc": 0, "start": "2013-08-19 00:32:13.372837", "stderr": "", "stdout": ""}
+2013-08-19 00:32:13,567 p=11779 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002333", "end": "2013-08-19 00:32:13.522243", "item": "", "rc": 0, "start": "2013-08-19 00:32:13.519910", "stderr": "", "stdout": ""}
+2013-08-19 00:32:13,568 p=11779 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002316", "end": "2013-08-19 00:32:13.604843", "item": "", "rc": 0, "start": "2013-08-19 00:32:13.602527", "stderr": "", "stdout": ""}
+2013-08-19 00:32:13,588 p=11779 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 00:32:13,967 p=11779 u=jeremy |  ok: [test01] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:14,141 p=11779 u=jeremy |  ok: [test04] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:14,313 p=11779 u=jeremy |  ok: [test02] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:14,315 p=11779 u=jeremy |  ok: [test03] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:14,327 p=11779 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 00:32:15,977 p=11779 u=jeremy |  failed: [test01] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test01site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.428286", "end": "2013-08-19 00:32:15.011509", "item": "", "rc": 1, "start": "2013-08-19 00:32:14.583223"}
+2013-08-19 00:32:16,977 p=11779 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test01site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:16,978 p=11779 u=jeremy |  failed: [test04] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test04site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.787612", "end": "2013-08-19 00:32:16.011966", "item": "", "rc": 1, "start": "2013-08-19 00:32:15.224354"}
+2013-08-19 00:32:16,979 p=11779 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test04site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:16,980 p=11779 u=jeremy |  failed: [test03] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test03site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.908993", "end": "2013-08-19 00:32:17.012235", "item": "", "rc": 1, "start": "2013-08-19 00:32:16.103242"}
+2013-08-19 00:32:16,983 p=11779 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test03site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:18,044 p=11779 u=jeremy |  failed: [test02] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test02site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.978230", "end": "2013-08-19 00:32:18.011579", "item": "", "rc": 1, "start": "2013-08-19 00:32:17.033349"}
+2013-08-19 00:32:18,045 p=11779 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test02site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:18,069 p=11779 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-19 00:32:18,070 p=11779 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 00:32:18,071 p=11779 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-19 00:32:18,071 p=11779 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:18,071 p=11779 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:18,072 p=11779 u=jeremy |  test03                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:18,072 p=11779 u=jeremy |  test04                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:38,796 p=12856 u=jeremy |   
+2013-08-19 00:32:38,796 p=12856 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:32:38,796 p=12856 u=jeremy |   
+2013-08-19 00:32:38,806 p=12856 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:32:38,807 p=12856 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:32:39,665 p=12856 u=jeremy |  ok: [test01]
+2013-08-19 00:32:39,668 p=12856 u=jeremy |  ok: [test04]
+2013-08-19 00:32:40,260 p=12856 u=jeremy |  ok: [test03]
+2013-08-19 00:32:40,262 p=12856 u=jeremy |  ok: [test02]
+2013-08-19 00:32:40,277 p=12856 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:32:41,162 p=12856 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:32:41,164 p=12856 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:32:41,812 p=12856 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:32:41,813 p=12856 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:32:41,837 p=12856 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 00:32:42,739 p=12856 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:32:43,076 p=12856 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:32:43,474 p=12856 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:32:43,475 p=12856 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:32:43,488 p=12856 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 00:32:43,889 p=12856 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886763.54-246111817287917/source", "state": "file", "uid": 0}
+2013-08-19 00:32:44,041 p=12856 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886763.54-227822556799368/source", "state": "file", "uid": 0}
+2013-08-19 00:32:44,129 p=12856 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886763.55-125927291407267/source", "state": "file", "uid": 0}
+2013-08-19 00:32:44,130 p=12856 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886763.55-278120808027123/source", "state": "file", "uid": 0}
+2013-08-19 00:32:44,154 p=12856 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 00:32:44,707 p=12856 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:32:45,821 p=12856 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:32:45,822 p=12856 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:32:45,825 p=12856 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:32:45,847 p=12856 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 00:32:46,229 p=12856 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002478", "end": "2013-08-19 00:32:46.114080", "item": "", "rc": 0, "start": "2013-08-19 00:32:46.111602", "stderr": "", "stdout": ""}
+2013-08-19 00:32:46,231 p=12856 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002380", "end": "2013-08-19 00:32:46.201358", "item": "", "rc": 0, "start": "2013-08-19 00:32:46.198978", "stderr": "", "stdout": ""}
+2013-08-19 00:32:46,330 p=12856 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002701", "end": "2013-08-19 00:32:46.364482", "item": "", "rc": 0, "start": "2013-08-19 00:32:46.361781", "stderr": "", "stdout": ""}
+2013-08-19 00:32:46,434 p=12856 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002300", "end": "2013-08-19 00:32:46.469390", "item": "", "rc": 0, "start": "2013-08-19 00:32:46.467090", "stderr": "", "stdout": ""}
+2013-08-19 00:32:46,457 p=12856 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 00:32:46,835 p=12856 u=jeremy |  ok: [test01] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:46,985 p=12856 u=jeremy |  ok: [test02] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:47,031 p=12856 u=jeremy |  ok: [test04] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:47,210 p=12856 u=jeremy |  ok: [test03] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:32:47,228 p=12856 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 00:32:48,976 p=12856 u=jeremy |  failed: [test01] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test01-site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.536721", "end": "2013-08-19 00:32:48.011598", "item": "", "rc": 1, "start": "2013-08-19 00:32:47.474877"}
+2013-08-19 00:32:48,977 p=12856 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test01-site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:48,977 p=12856 u=jeremy |  failed: [test03] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test03-site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.846505", "end": "2013-08-19 00:32:49.011793", "item": "", "rc": 1, "start": "2013-08-19 00:32:48.165288"}
+2013-08-19 00:32:48,978 p=12856 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test03-site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:51,089 p=12856 u=jeremy |  failed: [test04] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test04-site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.910657", "end": "2013-08-19 00:32:50.010797", "item": "", "rc": 1, "start": "2013-08-19 00:32:49.100140"}
+2013-08-19 00:32:51,090 p=12856 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test04-site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:51,091 p=12856 u=jeremy |  failed: [test02] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/test02-site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:00.965250", "end": "2013-08-19 00:32:51.011492", "item": "", "rc": 1, "start": "2013-08-19 00:32:50.046242"}
+2013-08-19 00:32:51,092 p=12856 u=jeremy |  stderr: ### Error: File could not be opened.
+### Filename: /etc/tripwire/test02-site.key
+### No such file or directory
+### Exiting...
+2013-08-19 00:32:51,117 p=12856 u=jeremy |  FATAL: all hosts have already failed -- aborting
+2013-08-19 00:32:51,118 p=12856 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 00:32:51,119 p=12856 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-19 00:32:51,119 p=12856 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:51,120 p=12856 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:51,120 p=12856 u=jeremy |  test03                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:32:51,120 p=12856 u=jeremy |  test04                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:33:22,190 p=14074 u=jeremy |   
+2013-08-19 00:33:22,191 p=14074 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:33:22,191 p=14074 u=jeremy |   
+2013-08-19 00:33:22,201 p=14074 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:33:22,201 p=14074 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:33:23,132 p=14074 u=jeremy |  ok: [test01]
+2013-08-19 00:33:23,433 p=14074 u=jeremy |  ok: [test02]
+2013-08-19 00:33:23,434 p=14074 u=jeremy |  ok: [test04]
+2013-08-19 00:33:23,707 p=14074 u=jeremy |  ok: [test03]
+2013-08-19 00:33:23,740 p=14074 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:33:25,275 p=14074 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:33:25,276 p=14074 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:33:25,279 p=14074 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:33:25,281 p=14074 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:33:25,297 p=14074 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 00:33:26,555 p=14074 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:33:26,555 p=14074 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:33:26,893 p=14074 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:33:26,894 p=14074 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:33:26,913 p=14074 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 00:33:27,909 p=14074 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886806.99-92465837866821/source", "state": "file", "uid": 0}
+2013-08-19 00:33:27,910 p=14074 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886806.98-83349011432409/source", "state": "file", "uid": 0}
+2013-08-19 00:33:28,125 p=14074 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886806.98-8731031735837/source", "state": "file", "uid": 0}
+2013-08-19 00:33:28,126 p=14074 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376886806.98-175817649539570/source", "state": "file", "uid": 0}
+2013-08-19 00:33:28,150 p=14074 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 00:33:29,035 p=14074 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:33:29,381 p=14074 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 00:33:29,382 p=14074 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 00:33:29,701 p=14074 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:33:29,725 p=14074 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 00:33:30,117 p=14074 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002837", "end": "2013-08-19 00:33:29.993644", "item": "", "rc": 0, "start": "2013-08-19 00:33:29.990807", "stderr": "", "stdout": ""}
+2013-08-19 00:33:30,200 p=14074 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002711", "end": "2013-08-19 00:33:30.088553", "item": "", "rc": 0, "start": "2013-08-19 00:33:30.085842", "stderr": "", "stdout": ""}
+2013-08-19 00:33:30,303 p=14074 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002414", "end": "2013-08-19 00:33:30.236466", "item": "", "rc": 0, "start": "2013-08-19 00:33:30.234052", "stderr": "", "stdout": ""}
+2013-08-19 00:33:30,304 p=14074 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002493", "end": "2013-08-19 00:33:30.311305", "item": "", "rc": 0, "start": "2013-08-19 00:33:30.308812", "stderr": "", "stdout": ""}
+2013-08-19 00:33:30,328 p=14074 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 00:33:30,861 p=14074 u=jeremy |  ok: [test02] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:33:30,862 p=14074 u=jeremy |  ok: [test04] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:33:31,015 p=14074 u=jeremy |  ok: [test03] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:33:31,017 p=14074 u=jeremy |  ok: [test01] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 00:33:31,041 p=14074 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 00:33:37,045 p=14074 u=jeremy |  failed: [test01] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.707877", "end": "2013-08-19 00:33:34.027087", "item": "", "rc": 1, "start": "2013-08-19 00:33:31.319210"}
+2013-08-19 00:33:37,045 p=14074 u=jeremy |  stderr: ### Error: Incorrect site passphrase.
+### Exiting...
+2013-08-19 00:33:39,989 p=14074 u=jeremy |  failed: [test02] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.892742", "end": "2013-08-19 00:33:37.013041", "item": "", "rc": 1, "start": "2013-08-19 00:33:34.120299"}
+2013-08-19 00:33:39,990 p=14074 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.854692", "end": "2013-08-19 00:33:40.015603", "item": "", "rc": 0, "start": "2013-08-19 00:33:37.160911", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 00:33:39,991 p=14074 u=jeremy |  stderr: ### Error: Incorrect site passphrase.
+### Exiting...
+2013-08-19 00:33:42,978 p=14074 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.908451", "end": "2013-08-19 00:33:43.011045", "item": "", "rc": 0, "start": "2013-08-19 00:33:40.102594", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 00:33:43,001 p=14074 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 00:33:43,002 p=14074 u=jeremy |             to retry, use: --limit @/var/tmp/ansible/site.retry
+
+2013-08-19 00:33:43,003 p=14074 u=jeremy |  test01                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:33:43,003 p=14074 u=jeremy |  test02                     : ok=7    changed=2    unreachable=0    failed=1   
+2013-08-19 00:33:43,003 p=14074 u=jeremy |  test03                     : ok=8    changed=3    unreachable=0    failed=0   
+2013-08-19 00:33:43,004 p=14074 u=jeremy |  test04                     : ok=8    changed=3    unreachable=0    failed=0   
+2013-08-19 00:40:33,115 p=21949 u=jeremy |  
+2013-08-19 00:40:33,115 p=21949 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -s -i testing-hosts all -m command -a shutdown -h now
+2013-08-19 00:40:33,115 p=21949 u=jeremy |  
+2013-08-19 00:40:36,310 p=21949 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-19 00:40:36,522 p=21949 u=jeremy |  test04 | success | rc=0 >>
+
+
+2013-08-19 00:40:38,232 p=21949 u=jeremy |  test02 | success | rc=0 >>
+
+
+2013-08-19 00:40:38,233 p=21949 u=jeremy |  test03 | success | rc=0 >>
+
+
+2013-08-19 00:50:21,331 p=31429 u=jeremy |   
+2013-08-19 00:50:21,332 p=31429 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:50:21,332 p=31429 u=jeremy |   
+2013-08-19 00:50:21,344 p=31429 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:50:21,344 p=31429 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:50:23,298 p=31429 u=jeremy |  ok: [test01]
+2013-08-19 00:50:23,896 p=31429 u=jeremy |  fatal: [test04] => failed to transfer file to /setup:
+
+ssh: Could not resolve hostname test04: Name or service not known
+Couldn't read packet: Connection reset by peer
+
+2013-08-19 00:50:23,897 p=31429 u=jeremy |  ok: [test02]
+2013-08-19 00:50:24,807 p=31429 u=jeremy |  ok: [test03]
+2013-08-19 00:50:24,844 p=31429 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:50:30,905 p=31429 u=jeremy |  ERROR: interrupted
+2013-08-19 00:51:24,574 p=32636 u=jeremy |   
+2013-08-19 00:51:24,574 p=32636 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 00:51:24,575 p=32636 u=jeremy |   
+2013-08-19 00:51:24,587 p=32636 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 00:51:24,587 p=32636 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 00:51:26,215 p=32636 u=jeremy |  ok: [test01]
+2013-08-19 00:51:26,216 p=32636 u=jeremy |  ok: [test04]
+2013-08-19 00:51:26,516 p=32636 u=jeremy |  ok: [test02]
+2013-08-19 00:51:26,517 p=32636 u=jeremy |  ok: [test03]
+2013-08-19 00:51:26,554 p=32636 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 00:51:44,195 p=32636 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 00:51:44,527 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "item": ""}
+2013-08-19 00:51:56,120 p=32636 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 00:51:56,121 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "item": ""}
+2013-08-19 00:51:56,144 p=32636 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 00:52:19,638 p=32636 u=jeremy |  changed: [test01] => {"changed": true, "item": ""}
+2013-08-19 00:52:30,953 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "item": ""}
+2013-08-19 00:52:40,576 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "item": ""}
+2013-08-19 00:52:40,577 p=32636 u=jeremy |  changed: [test03] => {"changed": true, "item": ""}
+2013-08-19 00:52:40,594 p=32636 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 00:52:41,141 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376887960.63-146010336914804/source", "state": "file", "uid": 0}
+2013-08-19 00:52:41,142 p=32636 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376887960.63-181745503599982/source", "state": "file", "uid": 0}
+2013-08-19 00:52:41,302 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376887960.64-89580278232889/source", "state": "file", "uid": 0}
+2013-08-19 00:52:41,303 p=32636 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376887960.64-130635477326931/source", "state": "file", "uid": 0}
+2013-08-19 00:52:41,314 p=32636 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 00:55:12,405 p=32636 u=jeremy |  changed: [test01] => {"changed": true, "item": ""}
+2013-08-19 00:55:12,407 p=32636 u=jeremy |  changed: [test03] => {"changed": true, "item": ""}
+2013-08-19 00:57:38,239 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "item": ""}
+2013-08-19 00:57:38,243 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "item": ""}
+2013-08-19 00:57:38,254 p=32636 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 00:57:38,880 p=32636 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002860", "end": "2013-08-19 00:57:38.799262", "item": "", "rc": 0, "start": "2013-08-19 00:57:38.796402", "stderr": "", "stdout": ""}
+2013-08-19 00:57:38,971 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002423", "end": "2013-08-19 00:57:38.884014", "item": "", "rc": 0, "start": "2013-08-19 00:57:38.881591", "stderr": "", "stdout": ""}
+2013-08-19 00:57:39,180 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002401", "end": "2013-08-19 00:57:38.977125", "item": "", "rc": 0, "start": "2013-08-19 00:57:38.974724", "stderr": "", "stdout": ""}
+2013-08-19 00:57:39,338 p=32636 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002329", "end": "2013-08-19 00:57:39.342194", "item": "", "rc": 0, "start": "2013-08-19 00:57:39.339865", "stderr": "", "stdout": ""}
+2013-08-19 00:57:39,345 p=32636 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 00:57:39,890 p=32636 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376888259.39-40784023219781/source", "state": "file", "uid": 0}
+2013-08-19 00:57:39,891 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376888259.39-96350870317243/source", "state": "file", "uid": 0}
+2013-08-19 00:57:39,964 p=32636 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376888259.37-201716038820729/source", "state": "file", "uid": 0}
+2013-08-19 00:57:39,965 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/etc/tripwire/twpol.txt", "gid": 0, "group": "root", "item": "", "md5sum": "04c65b6e927205e801ad26f256259f63", "mode": "0644", "owner": "root", "size": 6034, "src": "/home/jeremy/.ansible/tmp/ansible-1376888259.39-24324688457586/source", "state": "file", "uid": 0}
+2013-08-19 00:57:39,986 p=32636 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 00:57:49,018 p=32636 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.730165", "end": "2013-08-19 00:57:43.016344", "item": "", "rc": 0, "start": "2013-08-19 00:57:40.286179", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 00:57:49,020 p=32636 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.919530", "end": "2013-08-19 00:57:49.016029", "item": "", "rc": 0, "start": "2013-08-19 00:57:46.096499", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 00:57:49,021 p=32636 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.914012", "end": "2013-08-19 00:57:46.018499", "item": "", "rc": 0, "start": "2013-08-19 00:57:43.104487", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 00:57:52,018 p=32636 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.914029", "end": "2013-08-19 00:57:52.016794", "item": "", "rc": 0, "start": "2013-08-19 00:57:49.102765", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 00:57:52,037 p=32636 u=jeremy |  TASK: [Generate Tripwire initial database] ************************************ 
+2013-08-19 00:59:17,588 p=32636 u=jeremy |  ERROR: interrupted
+2013-08-19 01:00:46,276 p=22081 u=jeremy |   
+2013-08-19 01:00:46,276 p=22081 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -v -i testing-hosts -s site.yml
+2013-08-19 01:00:46,277 p=22081 u=jeremy |   
+2013-08-19 01:00:46,290 p=22081 u=jeremy |  PLAY [all] ******************************************************************** 
+2013-08-19 01:00:46,290 p=22081 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 01:00:49,484 p=22081 u=jeremy |  ok: [test01]
+2013-08-19 01:00:49,888 p=22081 u=jeremy |  ok: [test03]
+2013-08-19 01:00:49,889 p=22081 u=jeremy |  ok: [test02]
+2013-08-19 01:00:49,890 p=22081 u=jeremy |  ok: [test04]
+2013-08-19 01:00:49,917 p=22081 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 01:00:50,506 p=22081 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 01:00:50,517 p=22081 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 01:00:51,071 p=22081 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 01:00:51,080 p=22081 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 01:00:51,335 p=22081 u=jeremy |  changed: [test04] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376888451.13-244301824130487/source", "state": "file", "uid": 0}
+2013-08-19 01:00:51,357 p=22081 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 01:00:51,861 p=22081 u=jeremy |  ok: [test04] => {"changed": false, "item": ""}
+2013-08-19 01:00:51,871 p=22081 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 01:00:52,081 p=22081 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002779", "end": "2013-08-19 01:00:52.091328", "item": "", "rc": 0, "start": "2013-08-19 01:00:52.088549", "stderr": "", "stdout": ""}
+2013-08-19 01:00:52,094 p=22081 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 01:00:52,371 p=22081 u=jeremy |  ok: [test04] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 01:00:52,380 p=22081 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 01:00:55,008 p=22081 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.466065", "end": "2013-08-19 01:00:55.018321", "item": "", "rc": 0, "start": "2013-08-19 01:00:52.552256", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 01:00:55,017 p=22081 u=jeremy |  TASK: [Generate Tripwire initial database] ************************************ 
+2013-08-19 01:01:11,209 p=22081 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["tripwire", "-m", "i", "-P", "blah"], "delta": "0:00:15.972784", "end": "2013-08-19 01:01:11.216842", "item": "", "rc": 0, "start": "2013-08-19 01:00:55.244058", "stderr": "### Warning: File system error.\n### Filename: /var/lib/tripwire/test04.twd\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /etc/rc.boot\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/Mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xsession-errors\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xauth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.tcshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.sawfish\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.pinerc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.mc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome_private\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome-desktop\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.esd_auth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.elm\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.cshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_profile\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_logout\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.amandahosts\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook.lu\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xresources\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xauthority\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.ICEauthority\n### No such file or directory\n### Continuing...", "stdout": "Parsing policy file: /etc/tripwire/tw.pol\nGenerating the database...\n*** Processing Unix File System ***\nThe object: \"/dev/pts\" is on a different file system...ignoring.\nWrote database file: /var/lib/tripwire/test04.twd\nThe database was successfully generated."}
+2013-08-19 01:01:11,219 p=22081 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 01:01:11,953 p=22081 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 01:01:11,963 p=22081 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 01:01:12,456 p=22081 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 01:01:12,465 p=22081 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 01:01:12,714 p=22081 u=jeremy |  changed: [test03] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376888472.5-262922145704010/source", "state": "file", "uid": 0}
+2013-08-19 01:01:12,724 p=22081 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 01:01:13,262 p=22081 u=jeremy |  ok: [test03] => {"changed": false, "item": ""}
+2013-08-19 01:01:13,280 p=22081 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 01:01:13,568 p=22081 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.090057", "end": "2013-08-19 01:01:13.582215", "item": "", "rc": 0, "start": "2013-08-19 01:01:13.492158", "stderr": "", "stdout": ""}
+2013-08-19 01:01:13,591 p=22081 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 01:01:13,959 p=22081 u=jeremy |  ok: [test03] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 01:01:13,973 p=22081 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 01:01:17,012 p=22081 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.771707", "end": "2013-08-19 01:01:17.018076", "item": "", "rc": 0, "start": "2013-08-19 01:01:14.246369", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 01:01:17,022 p=22081 u=jeremy |  TASK: [Generate Tripwire initial database] ************************************ 
+2013-08-19 01:01:38,281 p=22081 u=jeremy |  changed: [test03] => {"changed": true, "cmd": ["tripwire", "-m", "i", "-P", "blah"], "delta": "0:00:21.031699", "end": "2013-08-19 01:01:38.291200", "item": "", "rc": 0, "start": "2013-08-19 01:01:17.259501", "stderr": "### Warning: File system error.\n### Filename: /var/lib/tripwire/test03.twd\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /etc/rc.boot\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/Mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xsession-errors\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xauth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.tcshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.sawfish\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.pinerc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.mc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome_private\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome-desktop\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.esd_auth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.elm\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.cshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_profile\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_logout\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.amandahosts\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook.lu\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xresources\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xauthority\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.ICEauthority\n### No such file or directory\n### Continuing...", "stdout": "Parsing policy file: /etc/tripwire/tw.pol\nGenerating the database...\n*** Processing Unix File System ***\nThe object: \"/dev/pts\" is on a different file system...ignoring.\nWrote database file: /var/lib/tripwire/test03.twd\nThe database was successfully generated."}
+2013-08-19 01:01:38,291 p=22081 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 01:01:39,129 p=22081 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 01:01:39,141 p=22081 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 01:01:39,573 p=22081 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 01:01:39,582 p=22081 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 01:01:39,833 p=22081 u=jeremy |  changed: [test02] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376888499.62-169682951204066/source", "state": "file", "uid": 0}
+2013-08-19 01:01:39,843 p=22081 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 01:01:40,305 p=22081 u=jeremy |  ok: [test02] => {"changed": false, "item": ""}
+2013-08-19 01:01:40,314 p=22081 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 01:01:40,509 p=22081 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.002349", "end": "2013-08-19 01:01:40.527383", "item": "", "rc": 0, "start": "2013-08-19 01:01:40.525034", "stderr": "", "stdout": ""}
+2013-08-19 01:01:40,518 p=22081 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 01:01:40,747 p=22081 u=jeremy |  ok: [test02] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 01:01:40,756 p=22081 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 01:01:43,013 p=22081 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.074920", "end": "2013-08-19 01:01:43.021108", "item": "", "rc": 0, "start": "2013-08-19 01:01:40.946188", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 01:01:43,028 p=22081 u=jeremy |  TASK: [Generate Tripwire initial database] ************************************ 
+2013-08-19 01:02:03,010 p=22081 u=jeremy |  changed: [test02] => {"changed": true, "cmd": ["tripwire", "-m", "i", "-P", "blah"], "delta": "0:00:19.743298", "end": "2013-08-19 01:02:03.014455", "item": "", "rc": 0, "start": "2013-08-19 01:01:43.271157", "stderr": "### Warning: File system error.\n### Filename: /var/lib/tripwire/test02.twd\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /etc/rc.boot\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/Mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xsession-errors\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xauth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.tcshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.sawfish\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.pinerc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.mc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome_private\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome-desktop\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.esd_auth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.elm\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.cshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_profile\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_logout\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.amandahosts\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook.lu\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xresources\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xauthority\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.ICEauthority\n### No such file or directory\n### Continuing...", "stdout": "Parsing policy file: /etc/tripwire/tw.pol\nGenerating the database...\n*** Processing Unix File System ***\nThe object: \"/dev/pts\" is on a different file system...ignoring.\nWrote database file: /var/lib/tripwire/test02.twd\nThe database was successfully generated."}
+2013-08-19 01:02:03,020 p=22081 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 01:02:04,194 p=22081 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 01:02:04,210 p=22081 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 01:02:04,724 p=22081 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 01:02:04,736 p=22081 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 01:02:05,067 p=22081 u=jeremy |  changed: [test01] => {"changed": true, "dest": "/tmp/tripwire-debconf-config.dat", "gid": 1000, "group": "jeremy", "item": "", "md5sum": "fb2a85e6419accbb33eab7694aca653c", "mode": "0600", "owner": "root", "size": 1511, "src": "/home/jeremy/.ansible/tmp/ansible-1376888524.78-145950961241996/source", "state": "file", "uid": 0}
+2013-08-19 01:02:05,077 p=22081 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 01:02:05,611 p=22081 u=jeremy |  ok: [test01] => {"changed": false, "item": ""}
+2013-08-19 01:02:05,623 p=22081 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 01:02:05,829 p=22081 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["rm", "/tmp/tripwire-debconf-config.dat"], "delta": "0:00:00.006639", "end": "2013-08-19 01:02:05.847379", "item": "", "rc": 0, "start": "2013-08-19 01:02:05.840740", "stderr": "", "stdout": ""}
+2013-08-19 01:02:05,840 p=22081 u=jeremy |  TASK: [Copy Tripwire policy text file twpol.txt] ****************************** 
+2013-08-19 01:02:06,056 p=22081 u=jeremy |  ok: [test01] => {"changed": false, "gid": 0, "group": "root", "item": "", "mode": "0644", "owner": "root", "path": "/etc/tripwire/twpol.txt", "size": 6034, "state": "file", "uid": 0}
+2013-08-19 01:02:06,069 p=22081 u=jeremy |  TASK: [Generate Tripwire policy] ********************************************** 
+2013-08-19 01:02:09,001 p=22081 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["twadmin", "-m", "P", "-S", "/etc/tripwire/site.key", "-Q", "blah", "/etc/tripwire/twpol.txt"], "delta": "0:00:02.530597", "end": "2013-08-19 01:02:09.014612", "item": "", "rc": 0, "start": "2013-08-19 01:02:06.484015", "stderr": "", "stdout": "Wrote policy file: /etc/tripwire/tw.pol"}
+2013-08-19 01:02:09,015 p=22081 u=jeremy |  TASK: [Generate Tripwire initial database] ************************************ 
+2013-08-19 01:02:23,283 p=22081 u=jeremy |  changed: [test01] => {"changed": true, "cmd": ["tripwire", "-m", "i", "-P", "blah"], "delta": "0:00:14.069522", "end": "2013-08-19 01:02:23.300326", "item": "", "rc": 0, "start": "2013-08-19 01:02:09.230804", "stderr": "### Warning: File system error.\n### Filename: /var/lib/tripwire/test01.twd\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /etc/rc.boot\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/Mail\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xsession-errors\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.xauth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.tcshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.sawfish\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.pinerc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.mc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome_private\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome-desktop\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.gnome\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.esd_auth\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.elm\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.cshrc\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_profile\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.bash_logout\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.amandahosts\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook.lu\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.addressbook\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xresources\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.Xauthority\n### No such file or directory\n### Continuing...\n### Warning: File system error.\n### Filename: /root/.ICEauthority\n### No such file or directory\n### Continuing...", "stdout": "Parsing policy file: /etc/tripwire/tw.pol\nGenerating the database...\n*** Processing Unix File System ***\nThe object: \"/dev/pts\" is on a different file system...ignoring.\nWrote database file: /var/lib/tripwire/test01.twd\nThe database was successfully generated."}
+2013-08-19 01:02:23,292 p=22081 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 01:02:23,293 p=22081 u=jeremy |  test01                     : ok=9    changed=4    unreachable=0    failed=0   
+2013-08-19 01:02:23,293 p=22081 u=jeremy |  test02                     : ok=9    changed=4    unreachable=0    failed=0   
+2013-08-19 01:02:23,293 p=22081 u=jeremy |  test03                     : ok=9    changed=4    unreachable=0    failed=0   
+2013-08-19 01:02:23,293 p=22081 u=jeremy |  test04                     : ok=9    changed=4    unreachable=0    failed=0   

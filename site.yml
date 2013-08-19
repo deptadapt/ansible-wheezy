@@ -1,6 +1,6 @@
 ---
 # site wide playbook
 
-- hosts: auto 
+- hosts: all
   roles:
     - common
