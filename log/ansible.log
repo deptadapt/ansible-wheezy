@@ -8941,3 +8941,309 @@ jeremy   pts/0        Aug 18 12:16 (parsons)
 2013-08-18 15:16:07,295 p=29175 u=jeremy |  test02 | success | rc=0 >>
 
 
+2013-08-18 20:35:51,826 p=13408 u=jeremy |   
+2013-08-18 20:35:51,826 p=13408 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s
+2013-08-18 20:35:51,826 p=13408 u=jeremy |   
+2013-08-18 20:36:04,692 p=13636 u=jeremy |   
+2013-08-18 20:36:04,693 p=13636 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s test.yml
+2013-08-18 20:36:04,693 p=13636 u=jeremy |   
+2013-08-18 20:36:04,697 p=13636 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:36:04,697 p=13636 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:36:06,227 p=13636 u=jeremy |  ok: [test04]
+2013-08-18 20:36:06,251 p=13636 u=jeremy |  TASK: [command echo $BLAH] **************************************************** 
+2013-08-18 20:36:06,547 p=13636 u=jeremy |  changed: [test04]
+2013-08-18 20:36:06,569 p=13636 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:36:06,570 p=13636 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 20:37:22,972 p=15070 u=jeremy |   
+2013-08-18 20:37:22,972 p=15070 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s test.yml
+2013-08-18 20:37:22,972 p=15070 u=jeremy |   
+2013-08-18 20:37:22,977 p=15070 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:37:22,977 p=15070 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:37:23,694 p=15070 u=jeremy |  ok: [test04]
+2013-08-18 20:37:23,717 p=15070 u=jeremy |  TASK: [command echo $BLAH > /tmp/BLAH.txt] ************************************ 
+2013-08-18 20:37:23,980 p=15070 u=jeremy |  changed: [test04]
+2013-08-18 20:37:24,002 p=15070 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:37:24,003 p=15070 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 20:38:08,679 p=15955 u=jeremy |   
+2013-08-18 20:38:08,679 p=15955 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s test.yml
+2013-08-18 20:38:08,679 p=15955 u=jeremy |   
+2013-08-18 20:38:08,684 p=15955 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:38:08,684 p=15955 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:38:09,219 p=15955 u=jeremy |  ok: [test04]
+2013-08-18 20:38:09,245 p=15955 u=jeremy |  TASK: [trying out environment variables] ************************************** 
+2013-08-18 20:38:09,527 p=15955 u=jeremy |  changed: [test04]
+2013-08-18 20:38:09,551 p=15955 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:38:09,552 p=15955 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 20:38:41,926 p=16614 u=jeremy |   
+2013-08-18 20:38:41,926 p=16614 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook
+2013-08-18 20:38:41,926 p=16614 u=jeremy |   
+2013-08-18 20:38:47,051 p=16702 u=jeremy |   
+2013-08-18 20:38:47,052 p=16702 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook
+2013-08-18 20:38:47,052 p=16702 u=jeremy |   
+2013-08-18 20:39:03,014 p=16978 u=jeremy |   
+2013-08-18 20:39:03,015 p=16978 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -vvv -s test.yml
+2013-08-18 20:39:03,015 p=16978 u=jeremy |   
+2013-08-18 20:39:03,019 p=16978 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:39:03,020 p=16978 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:39:03,058 p=16978 u=jeremy |  <test04> ESTABLISH CONNECTION FOR USER: jeremy
+2013-08-18 20:39:03,059 p=16978 u=jeremy |  <test04> EXEC ['ssh', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/tmp/ansible-ssh-%h-%p-%r', '-o', 'Port=22', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', 'test04', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1376872743.06-219037085289318 && chmod a+rx $HOME/.ansible/tmp/ansible-1376872743.06-219037085289318 && echo $HOME/.ansible/tmp/ansible-1376872743.06-219037085289318'"]
+2013-08-18 20:39:03,085 p=16978 u=jeremy |  <test04> REMOTE_MODULE setup 
+2013-08-18 20:39:03,088 p=16978 u=jeremy |  <test04> PUT /tmp/tmpNJ4Grf TO /home/jeremy/.ansible/tmp/ansible-1376872743.06-219037085289318/setup
+2013-08-18 20:39:03,237 p=16978 u=jeremy |  <test04> EXEC ['ssh', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/tmp/ansible-ssh-%h-%p-%r', '-o', 'Port=22', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', 'test04', '/bin/sh -c \'sudo -k && sudo -H -S -p "[sudo via ansible, key=cwvkdrznzxgvuudkpethglfbuiupkgdi] password: " -u root /bin/sh -c \'"\'"\'/usr/bin/python /home/jeremy/.ansible/tmp/ansible-1376872743.06-219037085289318/setup; rm -rf /home/jeremy/.ansible/tmp/ansible-1376872743.06-219037085289318/ >/dev/null 2>&1\'"\'"\'\'']
+2013-08-18 20:39:03,544 p=16978 u=jeremy |  ok: [test04]
+2013-08-18 20:39:03,563 p=16978 u=jeremy |  TASK: [trying out environment variables] ************************************** 
+2013-08-18 20:39:03,616 p=16978 u=jeremy |  <test04> ESTABLISH CONNECTION FOR USER: jeremy
+2013-08-18 20:39:03,617 p=16978 u=jeremy |  <test04> EXEC ['ssh', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/tmp/ansible-ssh-%h-%p-%r', '-o', 'Port=22', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', 'test04', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-1376872743.62-248184660156185 && chmod a+rx $HOME/.ansible/tmp/ansible-1376872743.62-248184660156185 && echo $HOME/.ansible/tmp/ansible-1376872743.62-248184660156185'"]
+2013-08-18 20:39:03,638 p=16978 u=jeremy |  <test04> REMOTE_MODULE command echo $BLAH > /tmp/BLAH.txt
+2013-08-18 20:39:03,639 p=16978 u=jeremy |  <test04> PUT /tmp/tmpJk9JW6 TO /home/jeremy/.ansible/tmp/ansible-1376872743.62-248184660156185/command
+2013-08-18 20:39:03,773 p=16978 u=jeremy |  <test04> EXEC ['ssh', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/tmp/ansible-ssh-%h-%p-%r', '-o', 'Port=22', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', 'test04', '/bin/sh -c \'sudo -k && sudo -H -S -p "[sudo via ansible, key=msbnenbotatthxrbgagazlqbqalexvku] password: " -u root /bin/sh -c \'"\'"\'BLAH=blam /usr/bin/python /home/jeremy/.ansible/tmp/ansible-1376872743.62-248184660156185/command; rm -rf /home/jeremy/.ansible/tmp/ansible-1376872743.62-248184660156185/ >/dev/null 2>&1\'"\'"\'\'']
+2013-08-18 20:39:03,861 p=16978 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["echo", "$BLAH", ">", "/tmp/BLAH.txt"], "delta": "0:00:00.002231", "end": "2013-08-18 20:39:03.851543", "rc": 0, "start": "2013-08-18 20:39:03.849312", "stderr": "", "stdout": "$BLAH > /tmp/BLAH.txt"}
+2013-08-18 20:39:03,884 p=16978 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:39:03,885 p=16978 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 20:39:39,946 p=17704 u=jeremy |   
+2013-08-18 20:39:39,946 p=17704 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -v -s test.yml
+2013-08-18 20:39:39,946 p=17704 u=jeremy |   
+2013-08-18 20:39:39,951 p=17704 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:39:39,951 p=17704 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:39:40,568 p=17704 u=jeremy |  ok: [test04]
+2013-08-18 20:39:40,585 p=17704 u=jeremy |  TASK: [trying out environment variables] ************************************** 
+2013-08-18 20:39:40,862 p=17704 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["echo", "$BLAH"], "delta": "0:00:00.002125", "end": "2013-08-18 20:39:40.850641", "rc": 0, "start": "2013-08-18 20:39:40.848516", "stderr": "", "stdout": "$BLAH"}
+2013-08-18 20:39:40,876 p=17704 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:39:40,877 p=17704 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 20:42:22,801 p=20577 u=jeremy |   
+2013-08-18 20:42:22,801 p=20577 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -v -s test.yml
+2013-08-18 20:42:22,801 p=20577 u=jeremy |   
+2013-08-18 20:42:22,806 p=20577 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:42:22,806 p=20577 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:42:23,496 p=20577 u=jeremy |  ok: [test04]
+2013-08-18 20:42:23,526 p=20577 u=jeremy |  TASK: [trying out environment variables] ************************************** 
+2013-08-18 20:42:23,737 p=20577 u=jeremy |  changed: [test04] => {"changed": true, "cmd": ["echo", "$BLAH", ">", "/tmp/blah.txt"], "delta": "0:00:00.002306", "end": "2013-08-18 20:42:23.728994", "rc": 0, "start": "2013-08-18 20:42:23.726688", "stderr": "", "stdout": "$BLAH > /tmp/blah.txt"}
+2013-08-18 20:42:23,757 p=20577 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:42:23,758 p=20577 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 20:42:39,093 p=20963 u=jeremy |   
+2013-08-18 20:42:39,094 p=20963 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -v -s test.yml
+2013-08-18 20:42:39,094 p=20963 u=jeremy |   
+2013-08-18 20:42:39,098 p=20963 u=jeremy |  PLAY [test04] ***************************************************************** 
+2013-08-18 20:42:39,099 p=20963 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 20:42:39,560 p=20963 u=jeremy |  ok: [test04]
+2013-08-18 20:42:39,581 p=20963 u=jeremy |  TASK: [trying out environment variables] ************************************** 
+2013-08-18 20:42:39,807 p=20963 u=jeremy |  changed: [test04] => {"changed": true, "cmd": "echo $BLAH > /tmp/blah.txt ", "delta": "0:00:00.001986", "end": "2013-08-18 20:42:39.796753", "rc": 0, "start": "2013-08-18 20:42:39.794767", "stderr": "", "stdout": ""}
+2013-08-18 20:42:39,825 p=20963 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 20:42:39,825 p=20963 u=jeremy |  test04                     : ok=2    changed=1    unreachable=0    failed=0   
+2013-08-18 21:25:13,368 p=2010 u=jeremy |  
+2013-08-18 21:25:13,368 p=2010 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m apt -a pkg=tripwire state=absent purge=yes
+2013-08-18 21:25:13,368 p=2010 u=jeremy |  
+2013-08-18 21:25:40,244 p=2010 u=jeremy |  test02 | success >> {
+    "changed": true
+}
+
+2013-08-18 21:25:41,835 p=2010 u=jeremy |  test03 | success >> {
+    "changed": true
+}
+
+2013-08-18 21:25:41,836 p=2010 u=jeremy |  test04 | success >> {
+    "changed": false
+}
+
+2013-08-18 21:25:41,838 p=2010 u=jeremy |  test01 | success >> {
+    "changed": true
+}
+
+2013-08-18 21:34:48,047 p=12004 u=jeremy |   
+2013-08-18 21:34:48,047 p=12004 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 21:34:48,047 p=12004 u=jeremy |   
+2013-08-18 21:34:48,055 p=12004 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 21:34:48,056 p=12004 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 21:34:48,937 p=12004 u=jeremy |  ok: [test01]
+2013-08-18 21:34:49,252 p=12004 u=jeremy |  ok: [test02]
+2013-08-18 21:34:49,284 p=12004 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 21:34:50,110 p=12004 u=jeremy |  ok: [test01]
+2013-08-18 21:34:50,111 p=12004 u=jeremy |  ok: [test02]
+2013-08-18 21:34:50,136 p=12004 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 21:34:50,673 p=12004 u=jeremy |  ok: [test01]
+2013-08-18 21:34:50,999 p=12004 u=jeremy |  ok: [test02]
+2013-08-18 21:34:51,022 p=12004 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 21:34:51,368 p=12004 u=jeremy |  changed: [test01]
+2013-08-18 21:34:51,455 p=12004 u=jeremy |  changed: [test02]
+2013-08-18 21:34:51,477 p=12004 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 21:34:52,352 p=12004 u=jeremy |  ok: [test01]
+2013-08-18 21:34:52,354 p=12004 u=jeremy |  ok: [test02]
+2013-08-18 21:34:52,378 p=12004 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 21:34:52,379 p=12004 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-18 21:34:52,380 p=12004 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-18 21:36:47,655 p=14312 u=jeremy |  
+2013-08-18 21:36:47,655 p=14312 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m apt -a pkg=harden state=absent
+2013-08-18 21:36:47,655 p=14312 u=jeremy |  
+2013-08-18 21:36:53,327 p=14312 u=jeremy |  test01 | success >> {
+    "changed": true
+}
+
+2013-08-18 21:36:58,858 p=14312 u=jeremy |  test02 | success >> {
+    "changed": true
+}
+
+2013-08-18 21:37:03,735 p=14312 u=jeremy |  test04 | success >> {
+    "changed": false
+}
+
+2013-08-18 21:37:03,735 p=14312 u=jeremy |  test03 | success >> {
+    "changed": true
+}
+
+2013-08-18 21:38:13,202 p=15856 u=jeremy |  
+2013-08-18 21:38:13,202 p=15856 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m apt -a pkg=tripwire state=absent purge=yes
+2013-08-18 21:38:13,202 p=15856 u=jeremy |  
+2013-08-18 21:38:13,994 p=15856 u=jeremy |  test01 | success >> {
+    "changed": false
+}
+
+2013-08-18 21:38:14,761 p=15856 u=jeremy |  test02 | success >> {
+    "changed": false
+}
+
+2013-08-18 21:38:15,410 p=15856 u=jeremy |  test03 | success >> {
+    "changed": false
+}
+
+2013-08-18 21:38:15,412 p=15856 u=jeremy |  test04 | success >> {
+    "changed": false
+}
+
+2013-08-18 21:38:41,390 p=16405 u=jeremy |  
+2013-08-18 21:38:41,391 p=16405 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a debconf-show tripwire
+2013-08-18 21:38:41,391 p=16405 u=jeremy |  
+2013-08-18 21:38:42,007 p=16405 u=jeremy |  test01 | success | rc=0 >>
+* tripwire/local-passphrase: (password omitted)
+* tripwire/site-passphrase: (password omitted)
+* tripwire/site-passphrase-again: (password omitted)
+* tripwire/local-passphrase-again: (password omitted)
+* tripwire/rebuild-config: true
+* tripwire/use-localkey: true
+  tripwire/change-in-default-policy:
+  tripwire/email-report:
+  tripwire/broken-passphrase:
+* tripwire/use-sitekey: true
+* tripwire/installed:
+  tripwire/site-passphrase-incorrect: false
+  tripwire/upgrade: true
+* tripwire/rebuild-policy: true
+  tripwire/local-passphrase-incorrect: false
+
+2013-08-18 21:38:42,008 p=16405 u=jeremy |  test04 | success | rc=0 >>
+
+
+2013-08-18 21:38:42,436 p=16405 u=jeremy |  test03 | success | rc=0 >>
+* tripwire/local-passphrase: (password omitted)
+* tripwire/site-passphrase: (password omitted)
+* tripwire/site-passphrase-again: (password omitted)
+* tripwire/local-passphrase-again: (password omitted)
+* tripwire/rebuild-config: true
+* tripwire/use-localkey: true
+* tripwire/change-in-default-policy:
+* tripwire/email-report:
+* tripwire/broken-passphrase:
+* tripwire/use-sitekey: true
+* tripwire/installed:
+* tripwire/site-passphrase-incorrect: false
+* tripwire/upgrade: true
+* tripwire/rebuild-policy: true
+* tripwire/local-passphrase-incorrect: false
+
+2013-08-18 21:38:42,438 p=16405 u=jeremy |  test02 | success | rc=0 >>
+  tripwire/local-passphrase: (password omitted)
+  tripwire/site-passphrase: (password omitted)
+  tripwire/site-passphrase-again: (password omitted)
+  tripwire/local-passphrase-again: (password omitted)
+  tripwire/rebuild-config: true
+  tripwire/use-localkey: true
+  tripwire/change-in-default-policy:
+  tripwire/email-report:
+  tripwire/broken-passphrase:
+  tripwire/use-sitekey: true
+  tripwire/installed:
+  tripwire/site-passphrase-incorrect: false
+  tripwire/upgrade: true
+  tripwire/rebuild-policy: true
+  tripwire/local-passphrase-incorrect: false
+
+2013-08-18 21:39:03,939 p=16842 u=jeremy |   
+2013-08-18 21:39:03,939 p=16842 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 21:39:03,939 p=16842 u=jeremy |   
+2013-08-18 21:39:03,947 p=16842 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 21:39:03,947 p=16842 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 21:39:04,774 p=16842 u=jeremy |  ok: [test01]
+2013-08-18 21:39:04,775 p=16842 u=jeremy |  ok: [test02]
+2013-08-18 21:39:04,790 p=16842 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 21:39:05,592 p=16842 u=jeremy |  ok: [test01]
+2013-08-18 21:39:05,593 p=16842 u=jeremy |  ok: [test02]
+2013-08-18 21:39:05,602 p=16842 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 21:39:06,437 p=16842 u=jeremy |  ok: [test01]
+2013-08-18 21:39:06,438 p=16842 u=jeremy |  ok: [test02]
+2013-08-18 21:39:06,460 p=16842 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 21:39:06,891 p=16842 u=jeremy |  ok: [test01]
+2013-08-18 21:39:06,892 p=16842 u=jeremy |  ok: [test02]
+2013-08-18 21:39:06,914 p=16842 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 21:39:21,300 p=16842 u=jeremy |  changed: [test01]
+2013-08-18 21:39:21,301 p=16842 u=jeremy |  changed: [test02]
+2013-08-18 21:39:21,323 p=16842 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 21:39:21,324 p=16842 u=jeremy |  test01                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-18 21:39:21,324 p=16842 u=jeremy |  test02                     : ok=5    changed=1    unreachable=0    failed=0   
+2013-08-18 21:39:53,274 p=17950 u=jeremy |  
+2013-08-18 21:39:53,274 p=17950 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts all -s -m command -a shutdown -h now
+2013-08-18 21:39:53,274 p=17950 u=jeremy |  
+2013-08-18 21:39:54,846 p=17950 u=jeremy |  test02 | success | rc=0 >>
+
+
+2013-08-18 21:39:55,423 p=17950 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-18 21:39:56,300 p=17950 u=jeremy |  test04 | success | rc=0 >>
+
+
+2013-08-18 21:39:56,301 p=17950 u=jeremy |  test03 | success | rc=0 >>
+
+
+2013-08-18 21:47:30,352 p=25079 u=jeremy |   
+2013-08-18 21:47:30,352 p=25079 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 21:47:30,352 p=25079 u=jeremy |   
+2013-08-18 21:47:30,361 p=25079 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 21:47:30,362 p=25079 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 21:47:38,255 p=25079 u=jeremy |  ok: [test01]
+2013-08-18 21:47:38,257 p=25079 u=jeremy |  ok: [test02]
+2013-08-18 21:47:38,289 p=25079 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 21:48:10,106 p=25079 u=jeremy |  changed: [test01]
+2013-08-18 21:48:10,107 p=25079 u=jeremy |  changed: [test02]
+2013-08-18 21:48:10,128 p=25079 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 21:48:21,712 p=25079 u=jeremy |  changed: [test01]
+2013-08-18 21:48:31,248 p=25079 u=jeremy |  changed: [test02]
+2013-08-18 21:48:31,270 p=25079 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 21:48:31,791 p=25079 u=jeremy |  changed: [test01]
+2013-08-18 21:48:31,793 p=25079 u=jeremy |  changed: [test02]
+2013-08-18 21:48:31,815 p=25079 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 21:51:08,730 p=25079 u=jeremy |  changed: [test01]
+2013-08-18 21:51:08,731 p=25079 u=jeremy |  changed: [test02]
+2013-08-18 21:51:08,749 p=25079 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 21:51:08,749 p=25079 u=jeremy |  test01                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-18 21:51:08,749 p=25079 u=jeremy |  test02                     : ok=5    changed=4    unreachable=0    failed=0   
+2013-08-18 23:22:12,715 p=28895 u=jeremy |   
+2013-08-18 23:22:12,715 p=28895 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-18 23:22:12,715 p=28895 u=jeremy |   
+2013-08-18 23:22:12,724 p=28895 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-18 23:22:12,724 p=28895 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-18 23:22:13,874 p=28895 u=jeremy |  ok: [test01]
+2013-08-18 23:22:13,875 p=28895 u=jeremy |  ok: [test02]
+2013-08-18 23:22:13,907 p=28895 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-18 23:22:14,948 p=28895 u=jeremy |  ok: [test01]
+2013-08-18 23:22:14,949 p=28895 u=jeremy |  ok: [test02]
+2013-08-18 23:22:14,971 p=28895 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-18 23:22:15,919 p=28895 u=jeremy |  ok: [test02]
+2013-08-18 23:22:15,919 p=28895 u=jeremy |  ok: [test01]
+2013-08-18 23:22:15,931 p=28895 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-18 23:22:16,330 p=28895 u=jeremy |  ok: [test01]
+2013-08-18 23:22:16,333 p=28895 u=jeremy |  ok: [test02]
+2013-08-18 23:22:16,348 p=28895 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-18 23:22:17,186 p=28895 u=jeremy |  ok: [test01]
+2013-08-18 23:22:17,187 p=28895 u=jeremy |  ok: [test02]
+2013-08-18 23:22:17,209 p=28895 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-18 23:22:17,209 p=28895 u=jeremy |  test01                     : ok=5    changed=0    unreachable=0    failed=0   
+2013-08-18 23:22:17,210 p=28895 u=jeremy |  test02                     : ok=5    changed=0    unreachable=0    failed=0   

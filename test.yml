@@ -1,0 +1,10 @@
+---
+# this is a sandbox
+- hosts: test04
+
+  tasks:
+    - name: trying out environment variables
+      shell: echo $BLAH > /tmp/blah.txt
+      environment:
+        BLAH: blam
+

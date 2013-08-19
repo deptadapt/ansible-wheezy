@@ -11,11 +11,16 @@
 - name: Install harden-servers
   apt: pkg=harden-servers state=latest
 
-- name: Copy Tripwire preseed
-  template: src=tripwire.preseed.cfg.j2 dest=/tmp/tripwire.preseed.cfg
-  
+# - name: Copy Tripwire preseed
+#   template: src=tripwire.preseed.cfg.j2 dest=/tmp/tripwire.preseed.cfg
+
 # - name: Load Tripwire preseed
 #   command: debconf-set-selections /tmp/tripwire.preseed.cfg
 
-# - name: Install harden package
-#   apt: pkg=harden state=latest
+- name: Copy Tripwire debconf database
+  template: src=tripwire-debconf-config.dat.j2 dest=/tmp/tripwire-debconf-config.dat
+  
+- name: Install harden package
+  environment:
+    DEBCONF_DB_FALLBACK: "File{/tmp/tripwire-debconf-config.dat}"
+  apt: pkg=harden state=latest
