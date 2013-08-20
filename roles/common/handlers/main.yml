@@ -1,0 +1,13 @@
+---
+# These tasks will do the initial configurate of Tripwire if it's just
+# been installed.
+#
+
+- name: Copy Tripwire policy text file twpol.txt
+  copy: src=twpol.txt dest=/etc/tripwire/twpol.txt owner=root group=root mode=0644
+
+- name: Generate Tripwire policy
+  command: twadmin -m P -S /etc/tripwire/site.key -Q blah /etc/tripwire/twpol.txt
+
+- name: Generate Tripwire initial database
+  command: tripwire -m i -P blah

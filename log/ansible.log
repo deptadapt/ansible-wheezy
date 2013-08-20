@@ -10082,3 +10082,162 @@ Couldn't read packet: Connection reset by peer
 2013-08-19 01:02:23,293 p=22081 u=jeremy |  test02                     : ok=9    changed=4    unreachable=0    failed=0   
 2013-08-19 01:02:23,293 p=22081 u=jeremy |  test03                     : ok=9    changed=4    unreachable=0    failed=0   
 2013-08-19 01:02:23,293 p=22081 u=jeremy |  test04                     : ok=9    changed=4    unreachable=0    failed=0   
+2013-08-19 22:49:45,923 p=21536 u=jeremy |   
+2013-08-19 22:49:45,923 p=21536 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 22:49:45,923 p=21536 u=jeremy |   
+2013-08-19 22:49:45,938 p=21536 u=jeremy |  ERROR: handlers is not a legal parameter in an Ansible task or handler
+2013-08-19 22:50:35,737 p=22395 u=jeremy |   
+2013-08-19 22:50:35,737 p=22395 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 22:50:35,737 p=22395 u=jeremy |   
+2013-08-19 22:50:35,748 p=22395 u=jeremy |  ERROR: handlers is not a legal parameter in an Ansible task or handler
+2013-08-19 22:51:51,547 p=23662 u=jeremy |   
+2013-08-19 22:51:51,548 p=23662 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 22:51:51,548 p=23662 u=jeremy |   
+2013-08-19 22:51:51,560 p=23662 u=jeremy |  ERROR: handlers is not a legal parameter in an Ansible task or handler
+2013-08-19 22:52:41,651 p=24521 u=jeremy |   
+2013-08-19 22:52:41,651 p=24521 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 22:52:41,651 p=24521 u=jeremy |   
+2013-08-19 22:52:41,664 p=24521 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-19 22:52:41,665 p=24521 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 22:52:44,407 p=24521 u=jeremy |  ok: [test01]
+2013-08-19 22:52:44,408 p=24521 u=jeremy |  ok: [test02]
+2013-08-19 22:52:44,423 p=24521 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 22:53:18,356 p=24521 u=jeremy |  changed: [test01]
+2013-08-19 22:53:18,357 p=24521 u=jeremy |  changed: [test02]
+2013-08-19 22:53:18,379 p=24521 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 22:53:42,059 p=24521 u=jeremy |  changed: [test01]
+2013-08-19 22:53:42,060 p=24521 u=jeremy |  changed: [test02]
+2013-08-19 22:53:42,073 p=24521 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 22:53:42,487 p=24521 u=jeremy |  changed: [test01]
+2013-08-19 22:53:42,590 p=24521 u=jeremy |  changed: [test02]
+2013-08-19 22:53:42,612 p=24521 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 22:56:15,631 p=24521 u=jeremy |  changed: [test01]
+2013-08-19 22:56:15,632 p=24521 u=jeremy |  changed: [test02]
+2013-08-19 22:56:15,657 p=24521 u=jeremy |  ERROR: change handler (Generate Tripwire Policy) is not defined
+2013-08-19 22:56:55,552 p=29215 u=jeremy |   
+2013-08-19 22:56:55,552 p=29215 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 22:56:55,552 p=29215 u=jeremy |   
+2013-08-19 22:56:55,565 p=29215 u=jeremy |  PLAY [auto] ******************************************************************* 
+2013-08-19 22:56:55,565 p=29215 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 22:56:56,282 p=29215 u=jeremy |  ok: [test01]
+2013-08-19 22:56:56,620 p=29215 u=jeremy |  ok: [test02]
+2013-08-19 22:56:56,650 p=29215 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 22:56:57,549 p=29215 u=jeremy |  ok: [test01]
+2013-08-19 22:56:57,550 p=29215 u=jeremy |  ok: [test02]
+2013-08-19 22:56:57,572 p=29215 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 22:56:58,450 p=29215 u=jeremy |  ok: [test01]
+2013-08-19 22:56:58,451 p=29215 u=jeremy |  ok: [test02]
+2013-08-19 22:56:58,470 p=29215 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 22:56:58,871 p=29215 u=jeremy |  ok: [test01]
+2013-08-19 22:56:58,872 p=29215 u=jeremy |  ok: [test02]
+2013-08-19 22:56:58,895 p=29215 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 22:56:59,486 p=29215 u=jeremy |  ok: [test01]
+2013-08-19 22:56:59,860 p=29215 u=jeremy |  ok: [test02]
+2013-08-19 22:56:59,880 p=29215 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 22:57:00,129 p=29215 u=jeremy |  changed: [test01]
+2013-08-19 22:57:00,209 p=29215 u=jeremy |  changed: [test02]
+2013-08-19 22:57:00,235 p=29215 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 22:57:00,235 p=29215 u=jeremy |  test01                     : ok=6    changed=1    unreachable=0    failed=0   
+2013-08-19 22:57:00,236 p=29215 u=jeremy |  test02                     : ok=6    changed=1    unreachable=0    failed=0   
+2013-08-19 22:58:08,986 p=30778 u=jeremy |   
+2013-08-19 22:58:08,986 p=30778 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 22:58:08,987 p=30778 u=jeremy |   
+2013-08-19 22:58:09,000 p=30778 u=jeremy |  PLAY [manual] ***************************************************************** 
+2013-08-19 22:58:09,000 p=30778 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 22:58:10,371 p=30778 u=jeremy |  ok: [test03]
+2013-08-19 22:58:10,892 p=30778 u=jeremy |  ok: [test04]
+2013-08-19 22:58:10,917 p=30778 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 22:58:37,982 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 22:58:37,983 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 22:58:38,006 p=30778 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 22:58:59,365 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 22:58:59,366 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 22:58:59,392 p=30778 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 22:58:59,827 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 22:58:59,827 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 22:58:59,841 p=30778 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 23:01:29,404 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 23:01:29,404 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 23:01:29,429 p=30778 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 23:01:29,959 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 23:01:29,960 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 23:01:29,977 p=30778 u=jeremy |  NOTIFIED: [Copy Tripwire policy text file twpol.txt] ************************** 
+2013-08-19 23:01:30,435 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 23:01:30,436 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 23:01:30,449 p=30778 u=jeremy |  NOTIFIED: [Generate Tripwire policy] ****************************************** 
+2013-08-19 23:01:36,048 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 23:01:36,049 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 23:01:36,070 p=30778 u=jeremy |  NOTIFIED: [Generate Tripwire initial database] ******************************** 
+2013-08-19 23:02:36,834 p=30778 u=jeremy |  changed: [test03]
+2013-08-19 23:02:36,835 p=30778 u=jeremy |  changed: [test04]
+2013-08-19 23:02:36,857 p=30778 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 23:02:36,857 p=30778 u=jeremy |  test03                     : ok=9    changed=8    unreachable=0    failed=0   
+2013-08-19 23:02:36,858 p=30778 u=jeremy |  test04                     : ok=9    changed=8    unreachable=0    failed=0   
+2013-08-19 23:02:50,504 p=4907 u=jeremy |   
+2013-08-19 23:02:50,504 p=4907 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 23:02:50,504 p=4907 u=jeremy |   
+2013-08-19 23:02:50,516 p=4907 u=jeremy |  PLAY [manual] ***************************************************************** 
+2013-08-19 23:02:50,517 p=4907 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 23:02:51,473 p=4907 u=jeremy |  ok: [test03]
+2013-08-19 23:02:51,475 p=4907 u=jeremy |  ok: [test04]
+2013-08-19 23:02:51,500 p=4907 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 23:02:52,739 p=4907 u=jeremy |  ok: [test03]
+2013-08-19 23:02:52,740 p=4907 u=jeremy |  ok: [test04]
+2013-08-19 23:02:52,756 p=4907 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 23:02:53,675 p=4907 u=jeremy |  ok: [test04]
+2013-08-19 23:02:53,676 p=4907 u=jeremy |  ok: [test03]
+2013-08-19 23:02:53,686 p=4907 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 23:02:54,106 p=4907 u=jeremy |  changed: [test03]
+2013-08-19 23:02:54,107 p=4907 u=jeremy |  changed: [test04]
+2013-08-19 23:02:54,129 p=4907 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 23:02:55,109 p=4907 u=jeremy |  ok: [test03]
+2013-08-19 23:02:55,110 p=4907 u=jeremy |  ok: [test04]
+2013-08-19 23:02:55,136 p=4907 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 23:02:55,467 p=4907 u=jeremy |  changed: [test03]
+2013-08-19 23:02:55,468 p=4907 u=jeremy |  changed: [test04]
+2013-08-19 23:02:55,490 p=4907 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 23:02:55,490 p=4907 u=jeremy |  test03                     : ok=6    changed=2    unreachable=0    failed=0   
+2013-08-19 23:02:55,491 p=4907 u=jeremy |  test04                     : ok=6    changed=2    unreachable=0    failed=0   
+2013-08-19 23:03:52,002 p=6304 u=jeremy |   
+2013-08-19 23:03:52,002 p=6304 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible-playbook -i testing-hosts -s site.yml
+2013-08-19 23:03:52,002 p=6304 u=jeremy |   
+2013-08-19 23:03:52,014 p=6304 u=jeremy |  PLAY [manual] ***************************************************************** 
+2013-08-19 23:03:52,015 p=6304 u=jeremy |  GATHERING FACTS *************************************************************** 
+2013-08-19 23:03:52,687 p=6304 u=jeremy |  ok: [test03]
+2013-08-19 23:03:53,021 p=6304 u=jeremy |  ok: [test04]
+2013-08-19 23:03:53,043 p=6304 u=jeremy |  TASK: [Install NTP service] *************************************************** 
+2013-08-19 23:03:54,007 p=6304 u=jeremy |  ok: [test03]
+2013-08-19 23:03:54,008 p=6304 u=jeremy |  ok: [test04]
+2013-08-19 23:03:54,032 p=6304 u=jeremy |  TASK: [Install harden-servers] ************************************************ 
+2013-08-19 23:03:55,003 p=6304 u=jeremy |  ok: [test03]
+2013-08-19 23:03:55,004 p=6304 u=jeremy |  ok: [test04]
+2013-08-19 23:03:55,029 p=6304 u=jeremy |  TASK: [Copy Tripwire debconf database] **************************************** 
+2013-08-19 23:03:55,403 p=6304 u=jeremy |  changed: [test03]
+2013-08-19 23:03:55,507 p=6304 u=jeremy |  changed: [test04]
+2013-08-19 23:03:55,529 p=6304 u=jeremy |  TASK: [Install harden package] ************************************************ 
+2013-08-19 23:03:56,544 p=6304 u=jeremy |  ok: [test03]
+2013-08-19 23:03:56,545 p=6304 u=jeremy |  ok: [test04]
+2013-08-19 23:03:56,568 p=6304 u=jeremy |  TASK: [Remove Tripwire debconf database] ************************************** 
+2013-08-19 23:03:56,976 p=6304 u=jeremy |  changed: [test03]
+2013-08-19 23:03:56,977 p=6304 u=jeremy |  changed: [test04]
+2013-08-19 23:03:57,001 p=6304 u=jeremy |  PLAY RECAP ******************************************************************** 
+2013-08-19 23:03:57,002 p=6304 u=jeremy |  test03                     : ok=6    changed=2    unreachable=0    failed=0   
+2013-08-19 23:03:57,002 p=6304 u=jeremy |  test04                     : ok=6    changed=2    unreachable=0    failed=0   
+2013-08-19 23:05:02,919 p=7818 u=jeremy |  
+2013-08-19 23:05:02,919 p=7818 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts manual -s -a shutdown -h now
+2013-08-19 23:05:02,920 p=7818 u=jeremy |  
+2013-08-19 23:05:04,437 p=7818 u=jeremy |  test03 | success | rc=0 >>
+
+
+2013-08-19 23:05:04,438 p=7818 u=jeremy |  test04 | success | rc=0 >>
+
+
+2013-08-19 23:05:15,442 p=8100 u=jeremy |  
+2013-08-19 23:05:15,443 p=8100 u=jeremy |  /home/jeremy/.virtualenvs/ansible/bin/ansible -i testing-hosts auto -s -a shutdown -h now
+2013-08-19 23:05:15,443 p=8100 u=jeremy |  
+2013-08-19 23:05:17,194 p=8100 u=jeremy |  test01 | success | rc=0 >>
+
+
+2013-08-19 23:05:17,194 p=8100 u=jeremy |  test02 | success | rc=0 >>
+
+
