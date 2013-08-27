@@ -11,11 +11,22 @@
 - name: Install harden-servers
   apt: pkg=harden-servers state=latest
 
-- name: Copy Tripwire preseed
-  template: src=tripwire.preseed.cfg.j2 dest=/tmp/tripwire.preseed.cfg
+- name: Copy Tripwire debconf database
+  template: src=tripwire-debconf-config.dat.j2 dest=/run/shm/tripwire-debconf-config.dat owner=root mode=0600
   
-# - name: Load Tripwire preseed
-#   command: debconf-set-selections /tmp/tripwire.preseed.cfg
+- name: Install harden package
+  environment:
+    DEBCONF_DB_FALLBACK: "File{/run/shm/tripwire-debconf-config.dat}"
+  apt: pkg=harden state=latest
+  notify:
+    - Copy Tripwire policy text file twpol.txt
+    - Generate Tripwire policy
+    - Generate Tripwire initial database
 
-# - name: Install harden package
-#   apt: pkg=harden state=latest
+- name: Remove Tripwire debconf database
+  command: rm /run/shm/tripwire-debconf-config.dat
+
+# Generating the Tripwire policy and initial database should only
+# be done if Tripwire needed to be installed.
+
+
