@@ -1,0 +1,22 @@
+---
+# This role is for the primary email server
+# Created by Jeremy McNaughton 2013-08-26
+#
+# This will install and configure Postfix, Dovecot, and a bunch of related
+# tools. 
+
+# This task commented out for testing purposes (too slow)
+# - name: Make sure APT is up to date
+#   apt: update_cache=yes upgrade=yes
+
+- name: Install Postfix, Dovecot
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - postfix
+    - postfix-pgsql
+    - dovecot-core
+    - dovecot-imapd
+    - dovecot-pgsql
+    - postgresql-9.1
+    - python-psycopg2
+    - python-crypto
