@@ -39,3 +39,9 @@ hostname -F /etc/hostname
 FQDN="$host_name$domain_name"
 # echo $FQDN
 sed -i "/127.0.1.1/c \127.0.1.1 \t$FQDN $host_name" /etc/hosts
+
+# also update the mailname
+echo $FQDN > /etc/mailname
+
+# reboot the system
+reboot
