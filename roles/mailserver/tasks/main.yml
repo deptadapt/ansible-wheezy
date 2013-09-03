@@ -5,18 +5,34 @@
 # This will install and configure Postfix, Dovecot, and a bunch of related
 # tools. 
 
+# This task instructs debconf not to configure Postfix.
+# The playbook will supply the necessary Postfix configuration,
+# and we don't want debconf to interfere with this, including future
+# upgrades of the package.
+- name: preseed Postfix for "No configuration"
+  shell: echo "postfix postfix/main_mailer_type select No configuration" | debconf-set-selections 
+
 # This task commented out for testing purposes (too slow)
 # - name: Make sure APT is up to date
 #   apt: update_cache=yes upgrade=yes
 
-- name: Install Postfix, Dovecot
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - postfix
-    - postfix-pgsql
-    - dovecot-core
-    - dovecot-imapd
-    - dovecot-pgsql
-    - postgresql-9.1
-    - python-psycopg2
-    - python-crypto
+# This task demonstrates how to install everything in one go using
+# the with_items keyword.
+#
+# For now I've got it commented out as I am doing prep and clean-up tasks
+# for some of these packages.
+#
+# Also note: PostgreSQL should perhaps be in its own role, with this role
+# depending on it.
+#
+# - name: Install Postfix, Dovecot
+#   apt: pkg={{ item }} state=latest
+#   with_items:
+#     - postfix
+#     - postfix-pgsql
+#     - dovecot-core
+#     - dovecot-imapd
+#     - dovecot-pgsql
+#     - postgresql-9.1
+#     - python-psycopg2
+#     - python-crypto
