@@ -40,13 +40,13 @@
     - vmm
 
 - name: Copy /etc/postfix/main.cf
-  template: src=postfix/main.cf.j2 dst=/etc/postfix/main.cf owner=root group=root mode=0644
+  template: src=postfix/main.cf.j2 dest=/etc/postfix/main.cf owner=root group=root mode=0644
 
 - name: Copy /etc/postfix/master.cf.j2 template
-  template: src=postfix/master.cf.j2 dst=/etc/postfix/master.cf owner=root group=root mode=0644
+  template: src=postfix/master.cf.j2 dest=/etc/postfix/master.cf owner=root group=root mode=0644
 
 - name: Copy /etc/dovecot/dovecot.conf
-  copy: src=dovecot/dovecot.conf dst=/etc/dovecot/dovecot.conf owner=root group=root mode=0644
+  copy: src=dovecot/dovecot.conf dest=/etc/dovecot/dovecot.conf owner=root group=root mode=0644
 
 - name: Copy /etc/dovecot/local.conf
-  copy: src=dovecot/local.conf dst=/etc/dovecot/local.conf owner=root group=root mode=0644
+  copy: src=dovecot/local.conf dest=/etc/dovecot/local.conf owner=root group=root mode=0644
