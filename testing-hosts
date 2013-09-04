@@ -4,10 +4,10 @@ test02
 test03
 test04
 
-[auto]
+[manual]
 test01
 test02
 
-[manual]
+[auto]
 test03
 test04

@@ -1,10 +1,10 @@
 ---
 # site wide playbook
 
-- hosts: all 
+- hosts: auto 
   roles:
     - common
 
-- hosts: test03
+- hosts: auto 
   roles:
     - mailserver

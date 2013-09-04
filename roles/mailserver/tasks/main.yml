@@ -25,14 +25,28 @@
 # Also note: PostgreSQL should perhaps be in its own role, with this role
 # depending on it.
 #
-# - name: Install Postfix, Dovecot
-#   apt: pkg={{ item }} state=latest
-#   with_items:
-#     - postfix
-#     - postfix-pgsql
-#     - dovecot-core
-#     - dovecot-imapd
-#     - dovecot-pgsql
-#     - postgresql-9.1
-#     - python-psycopg2
-#     - python-crypto
+- name: Install Postfix, Dovecot
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - postfix
+    - postfix-pgsql
+    - dovecot-core
+    - dovecot-imapd
+    - dovecot-pgsql
+    - postgresql-client
+    - postgresql
+    - python-psycopg2
+    - python-crypto
+    - vmm
+
+- name: Copy /etc/postfix/main.cf
+  template: src=postfix/main.cf.j2 dst=/etc/postfix/main.cf owner=root group=root mode=0644
+
+- name: Copy /etc/postfix/master.cf.j2 template
+  template: src=postfix/master.cf.j2 dst=/etc/postfix/master.cf owner=root group=root mode=0644
+
+- name: Copy /etc/dovecot/dovecot.conf
+  copy: src=dovecot/dovecot.conf dst=/etc/dovecot/dovecot.conf owner=root group=root mode=0644
+
+- name: Copy /etc/dovecot/local.conf
+  copy: src=dovecot/local.conf dst=/etc/dovecot/local.conf owner=root group=root mode=0644
