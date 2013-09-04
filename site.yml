@@ -5,6 +5,6 @@
   roles:
     - common
 
-- hosts: auto 
+- hosts: test03 
   roles:
     - mailserver

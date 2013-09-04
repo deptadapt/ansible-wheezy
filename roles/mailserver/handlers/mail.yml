@@ -1,0 +1,60 @@
+---
+# Handers for the mailserver role
+# These handlers do the system preparation tasks for vmm
+# http://vmm.localdomain.org/installation/system_preparation.html
+
+- name: Add doveauth user
+  user: name=doveauth system=yes home=/nonexistent createhome=no group=doveauth shell=/usr/sbin/nologin
+
+- name: Add dovemail group
+  group: name=dovemail system=true
+
+- name: Create /srv/mail directory
+  file: dest=/srv/mail state=directory mode=0771
+
+- name: Create /srv/mail subdirectory contents
+  file: dest=/srv/mail/{{ item }} state=directory mode=0751
+  with_items:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - a
+    - b
+    - c
+    - d
+    - e
+    - f
+    - g
+    - h
+    - i
+    - j
+    - k
+    - l
+    - m
+    - n
+    - o
+    - p
+    - q
+    - r
+    - s
+    - t
+    - u
+    - v
+    - w
+    - x
+    - y
+    - z
+
+- name: Configure authentication for mailsys in pg_hba.conf
+  lineinfile: dest=/etc/postfix/9.1/main/pg_hba.conf backup=yes line='host     mailsys         +mailsys        127.0.0.1/32            md5'
+
+# Need to figure out way to use postgres system user
+# - name: Create PostgreSQL role for vmm
+# - postgresql_user: 

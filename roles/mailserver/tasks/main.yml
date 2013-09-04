@@ -50,3 +50,18 @@
 
 - name: Copy /etc/dovecot/local.conf
   copy: src=dovecot/local.conf dest=/etc/dovecot/local.conf owner=root group=root mode=0644
+
+- name: Create directory for Postfix PostgreSQL config files.
+  file: dest=/etc/postfix/pgsql state=directory owner=root group=root mode=0700
+
+- name: Copy /etc/postfix/pgsql-*.cf j2 templates
+  template: src=postfix/{{ item }}.j2 dest=/etc/postfix/pgsql/{{ item }} owner=root group=root mode=0600
+  with_items:
+    - pgsql-relocated_maps.cf
+    - pgsql-smtpd_sender_login_maps.cf
+    - pgsql-transport_maps.cf
+    - pgsql-virtual_alias_maps.cf
+    - pgsql-virtual_gid_maps.cf
+    - pgsql-virtual_mailbox_domains.cf
+    - pgsql-virtual_mailbox_maps.cf
+    - pgsql-virtual_uid_maps.cf
