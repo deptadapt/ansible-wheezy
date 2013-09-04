@@ -33,9 +33,6 @@
     - dovecot-core
     - dovecot-imapd
     - dovecot-pgsql
-    - postgresql-client
-    - postgresql
-    - python-psycopg2
     - python-crypto
     - vmm
 

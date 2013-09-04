@@ -1,0 +1,16 @@
+---
+# This role will install the PostgreSQL database to the system.
+# It will also set a password for the postgres role to be used by
+# other plays when creating 
+#
+
+- name: Install PostgreSQL database server
+  apt: pkg={{ item }} state=present
+  with_items:
+    - postgresql-client
+    - postgresql
+    - python-psycopg2
+  sudo: no
+  notify:
+    - Create PostgreSQL superuser role ansiblepg
+
