@@ -1,5 +1,4 @@
-# See /usr/share/postfix/main.cf.dist for a commented, more complete version
-
+# {{ ansible_managed }}
 
 # Debian specific:  Specifying a file name will cause the first
 # line of that file to be used as the name.  The Debian default
@@ -7,7 +6,7 @@
 #myorigin = /etc/mailname
 
 smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
-biff = no
+biff = yes 
 
 # appending .domain is the MUA's job.
 append_dot_mydomain = no
@@ -15,7 +14,6 @@ append_dot_mydomain = no
 # Uncomment the next line to generate "delayed mail" warnings
 #delay_warning_time = 4h
 
-readme_directory = no
 
 # TLS parameters
 smtpd_tls_cert_file=/etc/ssl/certs/postfix.pem
@@ -32,30 +30,89 @@ smtpd_tls_auth_only = yes
 # See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
 # information on enabling SSL in the smtp client.
 
-
-myhostname = mx.deptadapt.org
+# General network info
+# http://www.postfix.org/postconf.5.html#myhostname
+myhostname = {{ ansible_hostname }}.deptadapt.org
+# http://www.postfix.org/postconf.5.html#mydomain
 mydomain = deptadapt.org
-myorigin = deptadapt.org
+# http://www.postfix.org/postconf.5.html#myorigin
+myorigin = /etc/mailname 
+# http://www.postfix.org/postconf.5.html#mydestination
 mydestination = $myhostname, localhost.$mydomain, $mydomain
-alias_maps = hash:/etc/aliases
-alias_database = hash:/etc/aliases
-virtual_alias_domains = deptadapt.com, londoncommons.ca
-virtual_alias_maps = hash:/etc/postfix/virtual
+# http://www.postfix.org/postconf.5.html#relayhost
 relayhost = 
+# http://www.postfix.org/postconf.5.html#mynetworks
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 69.196.175.168/30 
-mailbox_size_limit = 0
-recipient_delimiter = +
+# http://www.postfix.org/postconf.5.html#relay_domains
+relay_domains = $mydestination, lists.deptadapt.org
+# http://www.postfix.org/postconf.5.html#inet_interfaces
 inet_interfaces = all
+
+#
+# maps for vmm
+# http://vmm.localdomain.org/installation/postfix_configuration.html
+# http://www.postfix.org/postconf.5.html#relocated_maps
+# http://www.postfix.org/postconf.5.html#transport_maps
+# http://www.postfix.org/postconf.5.html#virtual_mailbox_domains
+# http://www.postfix.org/postconf.5.html#virtual_alias_maps
+# http://www.postfix.org/postconf.5.html#virtual_minimum_uid
+# http://www.postfix.org/postconf.5.html#virtual_uid_maps
+# http://www.postfix.org/postconf.5.html#virtual_gid_maps
+# http://www.postfix.org/postconf.5.html#virtual_mailbox_base
+# http://www.postfix.org/postconf.5.html#virtual_mailbox_maps
+
+sql = pgsql:${config_directory}/
+proxysql = proxy:${sql}
+
+# relocated users from the database
+relocated_maps = ${proxysql}pgsql-relocated_maps.cf
+
+# transport settings from the database
+transport_maps = ${proxysql}pgsql-transport_maps.cf
+
+# virtual domains, mailboxes and aliases
+virtual_mailbox_domains = ${proxysql}pgsql-virtual_mailbox_domains.cf
+virtual_alias_maps = ${proxysql}pgsql-virtual_alias_maps.cf
+virtual_minimum_uid = 70000
+virtual_uid_maps = ${sql}pgsql-virtual_uid_maps.cf
+virtual_gid_maps = ${sql}pgsql-virtual_gid_maps.cf
+virtual_mailbox_base = /
+virtual_mailbox_maps = ${proxysql}pgsql-virtual_mailbox_maps.cf
+
+# dovecot lmtp
+virtual_transports = lmtp:unix:private/dovecot-lmtp
+
+# dovecot SASL
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/dovecot-auth
+smtpd_sasl_auth_enable = yes
+# Keep smtpd_sasl_local_domain identical to Dovecot's auth_default_realm:
+# empty. Both are empty by default. Let it commented out.
+# Read more at: http://wiki2.dovecot.org/Authentication/Mechanisms/DigestMD5
+#smtpd_sasl_local_domain =
+smtpd_sasl_security_options = noplaintext, noanonymous
+#broken_sasl_auth_clients = yes
+
+# alias_maps = hash:/etc/aliases
+# alias_database = hash:/etc/aliases
+# virtual_alias_domains = deptadapt.com, londoncommons.ca
+# virtual_alias_maps = hash:/etc/postfix/virtual
+# mailbox_size_limit = 0
+recipient_delimiter = +
 
 ###
 # added for GNU Mailman
 # Jeremy 15/03/2013
 # https://wiki.deptadapt.org/MailMan
-relay_domains = $mydestination, lists.deptadapt.org
-relay_recipient_maps = hash:/var/lib/mailman/data/virtual-mailman
-transport_maps = hash:/etc/postfix/transports
-mailman_destination_recipient_limit = 1
-unknown_local_recipient_reject_code = 550
+
+# commented out because relay_hosts is defined above
+# Also this configuration is redundant, uses transport and aliases
+# See: https://wiki.deptadapt.org/MailMan#transport_vs_aliases
+# relay_domains = $mydestination, lists.deptadapt.org
+# relay_recipient_maps = hash:/var/lib/mailman/data/virtual-mailman
+# transport_maps = hash:/etc/postfix/transports
+# mailman_destination_recipient_limit = 1
+# unknown_local_recipient_reject_code = 550
 
 
 
@@ -85,6 +142,8 @@ smtpd_sender_restrictions =
   reject_non_fqdn_sender,
   reject_unknown_sender_domain,
   permit
+
+
 smtpd_recipient_restrictions = 
   reject_unauth_pipelining,
   reject_non_fqdn_recipient,
