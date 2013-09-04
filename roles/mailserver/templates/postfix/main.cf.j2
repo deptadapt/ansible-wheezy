@@ -1,10 +1,30 @@
 # {{ ansible_managed }}
 
-# Debian specific:  Specifying a file name will cause the first
-# line of that file to be used as the name.  The Debian default
-# is /etc/mailname.
-#myorigin = /etc/mailname
+# General configuration
+# http://www.postfix.org/postconf.5.html#myhostname
+# http://www.postfix.org/postconf.5.html#mydomain
+# http://www.postfix.org/postconf.5.html#myorigin
+# http://www.postfix.org/postconf.5.html#mydestination
+# http://www.postfix.org/postconf.5.html#relayhost
+# http://www.postfix.org/postconf.5.html#mynetworks
+# http://www.postfix.org/postconf.5.html#relay_domains
+# http://www.postfix.org/postconf.5.html#inet_interfaces
+myhostname = {{ ansible_hostname }}.deptadapt.org
+mydomain = deptadapt.org
+myorigin = /etc/mailname 
+mydestination = $myhostname, localhost.$mydomain, localhost
+relayhost = 
+mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 69.196.175.168/30 
+relay_domains = $mydestination, lists.deptadapt.org
+inet_interfaces = all
 
+# local delivery Maildir
+home_mailbox = Maildir/
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+
+# Initially setting this to 450 to 
+unknown_local_recipient_reject_code = 450
 smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
 biff = yes 
 
@@ -18,39 +38,23 @@ append_dot_mydomain = no
 # TLS parameters
 smtpd_tls_cert_file=/etc/ssl/certs/postfix.pem
 smtpd_tls_key_file=/etc/ssl/private/postfix.key
-smtpd_use_tls = yes
-smtp_use_tls = yes
-smtp_tls_note_starttls_offer = yes
+
+smtp_tls_security_level = may
+# smtp_tls_note_starttls_offer = yes
+
+smtpd_tls_security_level = may
 smtpd_tls_loglevel = 1
-smtpd_tls_received_header = yes
+# smtpd_tls_received_header = yes
+
+smtpd_tls_auth_only = yes
 
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
-smtpd_tls_auth_only = yes
-# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
-# information on enabling SSL in the smtp client.
-
-# General network info
-# http://www.postfix.org/postconf.5.html#myhostname
-myhostname = {{ ansible_hostname }}.deptadapt.org
-# http://www.postfix.org/postconf.5.html#mydomain
-mydomain = deptadapt.org
-# http://www.postfix.org/postconf.5.html#myorigin
-myorigin = /etc/mailname 
-# http://www.postfix.org/postconf.5.html#mydestination
-mydestination = $myhostname, localhost.$mydomain, $mydomain
-# http://www.postfix.org/postconf.5.html#relayhost
-relayhost = 
-# http://www.postfix.org/postconf.5.html#mynetworks
-mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 69.196.175.168/30 
-# http://www.postfix.org/postconf.5.html#relay_domains
-relay_domains = $mydestination, lists.deptadapt.org
-# http://www.postfix.org/postconf.5.html#inet_interfaces
-inet_interfaces = all
 
 #
 # maps for vmm
 # http://vmm.localdomain.org/installation/postfix_configuration.html
+# http://www.postfix.org/VIRTUAL_README.html
 # http://www.postfix.org/postconf.5.html#relocated_maps
 # http://www.postfix.org/postconf.5.html#transport_maps
 # http://www.postfix.org/postconf.5.html#virtual_mailbox_domains
@@ -86,75 +90,39 @@ virtual_transports = lmtp:unix:private/dovecot-lmtp
 smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/dovecot-auth
 smtpd_sasl_auth_enable = yes
-# Keep smtpd_sasl_local_domain identical to Dovecot's auth_default_realm:
-# empty. Both are empty by default. Let it commented out.
-# Read more at: http://wiki2.dovecot.org/Authentication/Mechanisms/DigestMD5
-#smtpd_sasl_local_domain =
 smtpd_sasl_security_options = noplaintext, noanonymous
+smtpd_sasl_tls_security_options = noanonymous
 #broken_sasl_auth_clients = yes
 
-# alias_maps = hash:/etc/aliases
-# alias_database = hash:/etc/aliases
-# virtual_alias_domains = deptadapt.com, londoncommons.ca
-# virtual_alias_maps = hash:/etc/postfix/virtual
-# mailbox_size_limit = 0
-recipient_delimiter = +
-
-###
-# added for GNU Mailman
-# Jeremy 15/03/2013
-# https://wiki.deptadapt.org/MailMan
-
-# commented out because relay_hosts is defined above
-# Also this configuration is redundant, uses transport and aliases
-# See: https://wiki.deptadapt.org/MailMan#transport_vs_aliases
-# relay_domains = $mydestination, lists.deptadapt.org
-# relay_recipient_maps = hash:/var/lib/mailman/data/virtual-mailman
-# transport_maps = hash:/etc/postfix/transports
-# mailman_destination_recipient_limit = 1
-# unknown_local_recipient_reject_code = 550
+# recipient_delimiter = +
 
 
-
-# access restrictions
-# added by jeremy 14/01/2013
-# mostly from http://www.freesoftwaremagazine.com/articles/focus_spam_postfix/
-#smtpd_sasl_type = dovecot
-#smtpd_sasl_path = private/auth
-smtpd_sasl_auth_enable = yes
-smtpd_sasl_security_options = noanonymous
-smtpd_sasl_local_domain = $myhostname
-smtpd_sasl_application_name = smtpd
-broken_sasl_auth_clients = yes
-
-
-
+#
+# Access and Spam control
+# http://www.postfix.org/SMTPD_ACCESS_README.html
+# http://jimsun.linxnet.com/misc/postfix-anti-UCE.txt
+# http://www.postfix.org/POSTSCREEN_README.html
+# http://rob0.nodns4.us/postscreen.html
 smtpd_delay_reject = yes
 smtpd_helo_required = yes
-smtpd_helo_restrictions = 
-  permit_mynetworks,
-  reject_non_fqdn_hostname,
+
+# smtpd_recipient_restrictions
+# http://www.postfix.org/postconf.5.html#smtpd_recipient_restrictions
+smtpd_recipient_restrictions =
   reject_invalid_hostname,
-  permit
-smtpd_sender_restrictions = 
-  permit_sasl_authenticated,
-  permit_mynetworks,
+  reject_non_fqdn_hostname,
   reject_non_fqdn_sender,
+  reject_non_fqdn_recipient,
   reject_unknown_sender_domain,
+  reject_unknown_recipient_domain
+  permit_mynetworks,
+  permit_sasl_authenticated,
+  reject_unauth_destination,
+# uncomment for the postgrey service 
+#   check_policy_service inet:127.0.0.1:10023
   permit
 
-
-smtpd_recipient_restrictions = 
+# http://www.postfix.org/postconf.5.html#smtpd_data_restrictions
+smtpd_data_restrictions =
   reject_unauth_pipelining,
-  reject_non_fqdn_recipient,
-  reject_unknown_recipient_domain,
-  reject_unknown_sender_domain,
-  permit_sasl_authenticated,
-  permit_mynetworks,
-  reject_unauth_destination,
-#  check_policy_service unix:private/policy-spf
-  check_policy_service inet:127.0.0.1:10023
-
-# local delivery Maildir
-home_mailbox = Maildir/
-
+  permit
