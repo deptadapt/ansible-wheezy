@@ -1,0 +1,13 @@
+connect = host=localhost dbname=mailsys user=dovecot password=$Dovecot_PASS
+map {
+  pattern = priv/quota/storage
+  table = userquota
+  username_field = uid
+  value_field = bytes
+}
+map {
+  pattern = priv/quota/messages
+  table = userquota
+  username_field = uid
+  value_field = messages
+}

@@ -1,0 +1,28 @@
+#
+# Database settings
+#
+[database]
+; The Python PostgreSQL database adapter module to be used (String)
+; Supported modules are:
+;    * psycopg2
+;    * pyPgSQL
+module = psycopg2
+; Hostname or IP address of the database server (String)
+host = localhost
+; The TCP port, on which the database server is listening for connections (Int)
+port = 5432
+; SSL mode for the database connection (String)
+; Possible values are:
+;    * disabled
+;    * allow
+;    * prefer (default)
+;    * require
+;    * verify-ca (PostgreSQL >= 8.4)
+;    * verify-full (PostgreSQL >= 8.4)
+sslmode = prefer
+; Database user name (String)
+user = vmmadmin
+; Database password (String)
+pass = 
+; Database name (String)
+name = vmm
