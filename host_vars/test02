@@ -1,5 +1,0 @@
----
-# file: host_vars/test01
-
-tripwire_site_passphrase: nrg10x47
-tripwire_local_passphrase: "vbD7R-IdCOr6eRCtA__D9XOFLZhVi87U-Fmn_6iS W5Es Ug1e-D49sgH0o6zp5X" 
