@@ -36,8 +36,17 @@
     - python-crypto
     - vmm
   notify:
+    - Add doveauth group
     - Add doveauth user
-    - Add dovemail groupV
+    - Add dovemail group
+    - Create /srv/mail directory
+    - Create /srv/mail subdirectory contents
+    - Configure authentication for mailsys in pg_hba.conf
+    - Create temp directory for vmm script
+    - Copy vmm PostgreSQL database configuration script
+    - Copy vmm tables
+    - Copy vmm permission script
+    - Execute vmm database config script
 
 - name: Copy /etc/postfix/main.cf
   template: src=postfix/main.cf.j2 dest=/etc/postfix/main.cf owner=root group=root mode=0644
@@ -50,6 +59,12 @@
 
 - name: Copy /etc/dovecot/local.conf
   copy: src=dovecot/local.conf dest=/etc/dovecot/local.conf owner=root group=root mode=0644
+
+- name: Copy /etc/dovecot/dovecot-dict-sql.conf.ext.j2 template
+  template: src=dovecot/dovecot-dict-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-dict-sql.conf.ext owner=root group=dovecot mode=0600
+
+- name: Copy /etc/dovecot/dovecot-sql.conf.ext.j2 template
+  template: src=dovecot/dovecot-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-sql.conf.ext owner=root group=dovecot mode=0600
 
 - name: Create directory for Postfix PostgreSQL config files.
   file: dest=/etc/postfix/pgsql state=directory owner=root group=root mode=0700

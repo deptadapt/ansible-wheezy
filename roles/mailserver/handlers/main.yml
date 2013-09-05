@@ -4,11 +4,14 @@
 # These handlers do the system preparation tasks for vmm
 # http://vmm.localdomain.org/installation/system_preparation.html
 
+- name: Add doveauth group
+  group: name=doveauth system=yes
+
 - name: Add doveauth user
   user: name=doveauth system=yes home=/nonexistent createhome=no group=doveauth shell=/usr/sbin/nologin
 
 - name: Add dovemail group
-  group: name=dovemail system=true
+  group: name=dovemail system=yes
 
 - name: Create /srv/mail directory
   file: dest=/srv/mail state=directory mode=0771
@@ -54,7 +57,7 @@
     - z
 
 - name: Configure authentication for mailsys in pg_hba.conf
-  lineinfile: dest=/etc/postfix/9.1/main/pg_hba.conf backup=yes line='host     mailsys         +mailsys        127.0.0.1/32            md5'
+  lineinfile: dest=/etc/postgresql/9.1/main/pg_hba.conf backup=yes regexp="mailsys" line='host     mailsys         +mailsys        127.0.0.1/32            md5' state=present insertafter=EOF
 
 # The following tasks configure the PostgreSQL database for the
 # mail system using a script instead of the Ansible postgresql_* modules.
@@ -82,9 +85,8 @@
   copy: src=vmm/set-permissions.py dest=/tmp/vmm/set-permissions.py owner=postgres group=postgres mode=0600
 
 - name: Execute vmm database config script
-  shell: /tmp/vmm/vmm-postgres.sh
+  shell: /tmp/vmm/vmm-postgres.sh creates=/etc/postgresql/9.1/vmm-installed
   sudo_user: postgres
-  creates: /etc/postgres/9.1/vmm-installed
 
 # - name: Remove vmm config tmp directory
 #   command: rm -rf /tmp/vmm

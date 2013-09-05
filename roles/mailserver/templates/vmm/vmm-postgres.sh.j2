@@ -16,5 +16,5 @@ PGPASSWORD="password" psql mailsys vmm -w -h localhost -f /tmp/vmm/create_tables
 
 python /tmp/vmm/set-permissions.py -H 127.0.0.1 -U vmm -p password
 
-touch /etc/postgres/9.1/vmm-installed
+touch /etc/postgresql/9.1/vmm-installed
 exit 0
