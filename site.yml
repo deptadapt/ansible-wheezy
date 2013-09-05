@@ -1,10 +1,10 @@
 ---
 # site wide playbook
 
-# - hosts: auto 
-#   user: root
-#   roles:
-#     - common
+- hosts: vmm
+  user: root
+  roles:
+    - common
 
 - hosts: vmm 
   user: root
