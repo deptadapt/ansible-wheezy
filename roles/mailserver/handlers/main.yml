@@ -88,18 +88,17 @@
   shell: /tmp/vmm/vmm-postgres.sh creates=/etc/postgresql/9.1/vmm-installed
   sudo_user: postgres
 
-# - name: Remove vmm config tmp directory
-#   command: rm -rf /tmp/vmm
+- name: Remove vmm config tmp directory
+  command: rm -rf /tmp/vmm
 
-# Need to figure out way to use postgres system user
-# - name: Create PostgreSQL role for vmm
-#   postgresql_user: name=vmm password=password state=present role_attr_flags=LOGIN
-#   sudo_user: postgres 
-# 
-# - name: Create PostgreSQL role for dovecot 
-#   postgresql_user: name=dovecot password=password state=present role_attr_flags=LOGIN
-#   sudo_user: postgres 
-# 
-# - name: Create PostgreSQL role for vmm
-#   postgresql_user: name=postfix password=password state=present role_attr_flags=LOGIN
-#   sudo_user: postgres 
+- name: Start Postfix
+  service: name=postfix enabled=yes state=started
+
+- name: Start Dovecot
+  service: name=dovecot enabled=yes state=started
+
+- name: Reload Postfix config
+  service: name=postfix state=reloaded
+
+- name: Reload Dovecot config
+  service: name=dovecot state=reloaded

@@ -47,24 +47,38 @@
     - Copy vmm tables
     - Copy vmm permission script
     - Execute vmm database config script
+    - Start Postfix
+    - Start Dovecot
 
 - name: Copy /etc/postfix/main.cf
   template: src=postfix/main.cf.j2 dest=/etc/postfix/main.cf owner=root group=root mode=0644
+  notify:
+    - Reload Postfix config
 
 - name: Copy /etc/postfix/master.cf.j2 template
   template: src=postfix/master.cf.j2 dest=/etc/postfix/master.cf owner=root group=root mode=0644
+  notify:
+    - Reload Postfix config
 
 - name: Copy /etc/dovecot/dovecot.conf
   copy: src=dovecot/dovecot.conf dest=/etc/dovecot/dovecot.conf owner=root group=root mode=0644
+  notify:
+    - Reload Dovecot config
 
 - name: Copy /etc/dovecot/local.conf
   copy: src=dovecot/local.conf dest=/etc/dovecot/local.conf owner=root group=root mode=0644
+  notify:
+    - reload Dovecot config
 
 - name: Copy /etc/dovecot/dovecot-dict-sql.conf.ext.j2 template
   template: src=dovecot/dovecot-dict-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-dict-sql.conf.ext owner=root group=dovecot mode=0600
+  notify:
+    - reload Dovecot config
 
 - name: Copy /etc/dovecot/dovecot-sql.conf.ext.j2 template
   template: src=dovecot/dovecot-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-sql.conf.ext owner=root group=dovecot mode=0600
+  notify:
+    - reload Dovecot config
 
 - name: Create directory for Postfix PostgreSQL config files.
   file: dest=/etc/postfix/pgsql state=directory owner=root group=root mode=0700
@@ -80,6 +94,8 @@
     - pgsql-virtual_mailbox_domains.cf
     - pgsql-virtual_mailbox_maps.cf
     - pgsql-virtual_uid_maps.cf
+  notify:
+    - Reload Postfix config
 
 - name: Copy /etc/vmm/vmm.cfg
   copy: src=vmm/vmm.cfg dest=/etc/vmm/vmm.cfg owner=root group=vmm mode=0640
