@@ -46,7 +46,7 @@
     - Copy vmm PostgreSQL database configuration script
     - Copy vmm tables
     - Copy vmm permission script
-    - Execute vmm database config script
+#    - Execute vmm database config script
 
 - name: Copy /etc/postfix/main.cf
   template: src=postfix/main.cf.j2 dest=/etc/postfix/main.cf owner=root group=root mode=0644
@@ -80,3 +80,9 @@
     - pgsql-virtual_mailbox_domains.cf
     - pgsql-virtual_mailbox_maps.cf
     - pgsql-virtual_uid_maps.cf
+
+- name: Copy /etc/vmm/vmm.cfg
+  copy: src=vmm/vmm.cfg dest=/etc/vmm/vmm.cfg owner=root group=vmm mode=0640
+
+- name: Copy /etc/vmm/vmm-db.cfg.j2 template
+  template: src=vmm/vmm-db.cfg.j2 dest=/etc/vmm/vmm-db.cfg owner=root group=vmm mode=0640

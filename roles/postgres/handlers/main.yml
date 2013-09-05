@@ -1,6 +1,6 @@
 ---
 # handlers for the postgres role
 
-- name: Create PostgreSQL superuser role ansiblepg
-  postgresql_user: name=ansibledb password=password state=present role_attr_flags=CREATEDB,CREATEROLE,SUPERUSER
-  sudo_user: postgres
+# - name: Create PostgreSQL superuser role ansiblepg
+#   postgresql_user: name=ansibledb password=password state=present role_attr_flags=CREATEDB,CREATEROLE,SUPERUSER
+#   sudo_user: postgres

@@ -1,4 +1,4 @@
-connect = host=localhost dbname=mailsys user=dovecot password={{ lookup('password', 'passwords/vmm_dovecot length=30') }}
+connect = host=localhost dbname=mailsys user=dovecot password={{ lookup('password', 'passwords/vmm_dovecot') }}
 map {
   pattern = priv/quota/storage
   table = userquota

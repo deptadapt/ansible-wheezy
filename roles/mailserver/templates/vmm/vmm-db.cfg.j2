@@ -23,6 +23,6 @@ sslmode = prefer
 ; Database user name (String)
 user = vmm
 ; Database password (String)
-pass = {{ lookup('password', 'passwords/vmm_vmm length=30') }}
+pass = {{ lookup('password', 'passwords/vmm_vmm') }}
 ; Database name (String)
 name = mailsys
