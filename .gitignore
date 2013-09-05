@@ -1,2 +1,4 @@
 *swp
 log/ansible.log
+host_vars/*
+host_vars
