@@ -33,6 +33,8 @@
     - dovecot-core
     - dovecot-imapd
     - dovecot-pgsql
+    - dovecot-sieve
+    - dovecot-managesieved
     - python-crypto
     - vmm
   notify:
@@ -65,8 +67,8 @@
   notify:
     - Reload Dovecot config
 
-- name: Copy /etc/dovecot/local.conf
-  copy: src=dovecot/local.conf dest=/etc/dovecot/local.conf owner=root group=root mode=0644
+- name: Copy /etc/dovecot/local.conf j2 template
+  template: src=dovecot/local.conf.j2 dest=/etc/dovecot/local.conf owner=root group=root mode=0644
   notify:
     - Reload Dovecot config
 

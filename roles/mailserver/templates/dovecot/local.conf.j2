@@ -9,7 +9,7 @@
 ###
 # conf.d/10-auth.conf
 ###
-auth_mechanisms = plain login cram-md5
+auth_mechanisms = plain login
 passdb {
   driver = sql
   args = /etc/dovecot/dovecot-sql.conf.ext
@@ -29,7 +29,7 @@ mail_access_groups = dovemail
 mail_location = maildir:~/Maildir
 
 # uncomment if you want to use the quota plugin
-#mail_plugins = quota
+mail_plugins = quota
 
 ###
 # conf.d/10-master.conf
@@ -81,7 +81,7 @@ service dict {
 # conf.d/10-ssl.conf
 ###
 # SSL/TLS support: yes, no, required. <doc/wiki/SSL.txt>
-#ssl = yes
+ssl = required
 
 ssl_cert = </etc/ssl/certs/dovecot.pem
 ssl_key = </etc/ssl/private/dovecot.pem
@@ -92,7 +92,7 @@ ssl_key = </etc/ssl/private/dovecot.pem
 ###
 # conf.d/15-lda.conf
 ###
-postmaster_address = postmaster@YOUR-DOMAIN.TLD
+postmaster_address = postmaster@{{ ansible_fqdn }}
 recipient_delimiter = +
 protocol lda {
   # uncomment if you want to use the quota plugin
@@ -106,7 +106,7 @@ protocol lda {
 ###
 protocol imap {
   # uncomment if you want to use the quota plugin
-  #mail_plugins = $mail_plugins imap_quota
+  mail_plugins = $mail_plugins imap_quota
 }
 
 ###
@@ -114,27 +114,27 @@ protocol imap {
 ###
 protocol lmtp {
   # uncomment if you want to use the quota plugin
-  #mail_plugins = $mail_plugins
+  mail_plugins = $mail_plugins
   # uncomment if you want to use the quota and sieve plugins
-  #mail_plugins = $mail_plugins sieve
+  mail_plugins = $mail_plugins sieve
 }
 
 ###
 # conf.d/90-quota.conf
 ###
 # uncomment if you want to use the quota plugin
-#plugin {
-#  quota = dict:user:%{uid}:proxy::quota
-#  quota_rule = *:storage=0:messages=0
-#  quota_rule2 = Trash:storage=+100M
-#}
+plugin {
+  quota = dict:user:%{uid}:proxy::quota
+  quota_rule = *:storage=0:messages=0
+  quota_rule2 = Trash:storage=+100M
+}
 
 ###
 # conf.d/90-sieve.conf
 ###
 # uncomment if you want to use sieve (and maybe managesieve)
-#plugin {
-#  recipient_delimiter = +
-#  sieve = ~/.dovecot.sieve
-#  sieve_dir = ~/sieve
-#}
+plugin {
+  recipient_delimiter = +
+  sieve = ~/.dovecot.sieve
+  sieve_dir = ~/sieve
+}
