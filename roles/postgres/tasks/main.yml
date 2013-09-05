@@ -2,9 +2,16 @@
 # This role will install the PostgreSQL database to the system.
 # It will also set a password for the postgres role to be used by
 # other plays when creating 
-#
+# 
+# Note the LANG and LC_ALL environment variables are set so that
+# PostgreSQL will generate the initial database cluster in UTF-8
+# because without them it defaults to SQL-ASCII. There might be an
+# Ansible variable I can use to default this to the master's locale.
 
 - name: Install PostgreSQL database server
+  environment:
+    LANG: en_CA.UTF-8 
+    LC_ALL: en_CA.UTF-8 
   apt: pkg={{ item }} state=present
   with_items:
     - postgresql-client
@@ -14,3 +21,5 @@
 #  notify:
 #    - Create PostgreSQL superuser role ansiblepg
 
+# - name: Install PostgreSQL using
+#   shell: LANG=$locale LC_COLLATE=$locale LC_CTYPE=$locale LC_MESSAGES=$locale LC_MONETARY=$locale LC_NUMERIC=$locale LC_TIME=$locale LC_ALL=$locale  apt-get install -y postgresql  
