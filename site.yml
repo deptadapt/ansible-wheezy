@@ -1,17 +1,18 @@
 ---
 # site wide playbook
 
-# - hosts: auto 
-#   roles:
-#     - common
+- hosts: auto 
+  user: root
+  roles:
+    - common
 
 - hosts: auto 
   user: root
-  sudo_user: postgres
   roles:
     - postgres
 
 
 - hosts: auto 
+  user: root
   roles:
     - mailserver

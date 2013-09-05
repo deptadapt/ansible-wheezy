@@ -10,7 +10,7 @@
     - postgresql-client
     - postgresql
     - python-psycopg2
-  sudo: no
-  notify:
-    - Create PostgreSQL superuser role ansiblepg
+#  sudo: no
+#  notify:
+#    - Create PostgreSQL superuser role ansiblepg
 

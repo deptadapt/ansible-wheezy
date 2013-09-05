@@ -3,4 +3,4 @@
 
 - name: Create PostgreSQL superuser role ansiblepg
   postgresql_user: name=ansibledb password=password state=present role_attr_flags=CREATEDB,CREATEROLE,SUPERUSER
-  sudo: yes
+  sudo_user: postgres

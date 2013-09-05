@@ -35,6 +35,9 @@
     - dovecot-pgsql
     - python-crypto
     - vmm
+  notify:
+    - Add doveauth user
+    - Add dovemail groupV
 
 - name: Copy /etc/postfix/main.cf
   template: src=postfix/main.cf.j2 dest=/etc/postfix/main.cf owner=root group=root mode=0644

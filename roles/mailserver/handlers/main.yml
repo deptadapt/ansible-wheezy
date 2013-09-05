@@ -1,0 +1,103 @@
+---
+# Handers for the mailserver role, meant to be included by the main.yml
+# handler for the role.
+# These handlers do the system preparation tasks for vmm
+# http://vmm.localdomain.org/installation/system_preparation.html
+
+- name: Add doveauth user
+  user: name=doveauth system=yes home=/nonexistent createhome=no group=doveauth shell=/usr/sbin/nologin
+
+- name: Add dovemail group
+  group: name=dovemail system=true
+
+- name: Create /srv/mail directory
+  file: dest=/srv/mail state=directory mode=0771
+
+- name: Create /srv/mail subdirectory contents
+  file: dest=/srv/mail/{{ item }} state=directory mode=0751
+  with_items:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - a
+    - b
+    - c
+    - d
+    - e
+    - f
+    - g
+    - h
+    - i
+    - j
+    - k
+    - l
+    - m
+    - n
+    - o
+    - p
+    - q
+    - r
+    - s
+    - t
+    - u
+    - v
+    - w
+    - x
+    - y
+    - z
+
+- name: Configure authentication for mailsys in pg_hba.conf
+  lineinfile: dest=/etc/postfix/9.1/main/pg_hba.conf backup=yes line='host     mailsys         +mailsys        127.0.0.1/32            md5'
+
+# The following tasks configure the PostgreSQL database for the
+# mail system using a script instead of the Ansible postgresql_* modules.
+#
+# The postgresql_user module is unable to creat group roles in the database,
+# and does not seem to use the ENCRYPTED password that vmm wants to use.
+# This playbook will need to be rewritten to use the postgresql_* modules
+# if they ever get the functionality needed to install vmm.
+#
+# The script creates an empty file /etc/postgres/9.1/vmm-installed. It puts
+# it in the the posgresql directory because the script that creates the file
+# needs to be executed by the postgres system user. The task that executes
+# the script will not play if the file exists, to help with idempotency.
+
+- name: Create temp directory for vmm script
+  file: dest=/tmp/vmm state=directory owner=postgres group=postgres mode=0700
+
+- name: Copy vmm PostgreSQL database configuration script
+  template: src=vmm/vmm-postgres.sh.j2 dest=/tmp/vmm/vmm-postgres.sh owner=postgres group=postgres mode=0700
+
+- name: Copy vmm tables
+  copy: src=vmm/create_tables-dovecot-1.2.x.pgsql dest=/tmp/vmm/create_tables-dovecot-1.2.x.pgsql owner=postgres group=postgres mode=0600
+
+- name: Copy vmm permission script
+  copy: src=vmm/set-permissions.py dest=/tmp/vmm/set-permissions.py owner=postgres group=postgres mode=0600
+
+- name: Execute vmm database config script
+  shell: /tmp/vmm/vmm-postgres.sh
+  sudo_user: postgres
+  creates: /etc/postgres/9.1/vmm-installed
+
+# - name: Remove vmm config tmp directory
+#   command: rm -rf /tmp/vmm
+
+# Need to figure out way to use postgres system user
+# - name: Create PostgreSQL role for vmm
+#   postgresql_user: name=vmm password=password state=present role_attr_flags=LOGIN
+#   sudo_user: postgres 
+# 
+# - name: Create PostgreSQL role for dovecot 
+#   postgresql_user: name=dovecot password=password state=present role_attr_flags=LOGIN
+#   sudo_user: postgres 
+# 
+# - name: Create PostgreSQL role for vmm
+#   postgresql_user: name=postfix password=password state=present role_attr_flags=LOGIN
+#   sudo_user: postgres 
