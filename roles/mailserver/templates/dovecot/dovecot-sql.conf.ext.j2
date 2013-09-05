@@ -1,5 +1,5 @@
 driver = pgsql
-connect = host=localhost dbname=mailsys user=dovecot password=$Dovecot_PASS
+connect = host=localhost dbname=mailsys user=dovecot password={{ vmm_dovecot_password }}
 
 password_query = \
  SELECT userid AS "user", password FROM dovecotpassword('%Ln', '%Ld') WHERE %Ls

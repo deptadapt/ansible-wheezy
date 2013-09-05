@@ -5,7 +5,7 @@ hosts = localhost
 
 # The user name and password to log into the pgsql server.
 user = postfix
-password = some_password
+password = {{ vmm_postfix_password }}
 
 # The database name on the servers.
 dbname = mailsys

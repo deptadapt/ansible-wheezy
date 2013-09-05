@@ -6,15 +6,15 @@
 # 
 # It is meant to be executed by the 'postgres' system user.
 
-psql -c "CREATE ROLE vmm LOGIN ENCRYPTED PASSWORD 'password';"
-psql -c "CREATE ROLE dovecot LOGIN ENCRYPTED PASSWORD 'password';"
-psql -c "CREATE ROLE postfix LOGIN ENCRYPTED PASSWORD 'password';"
+psql -c "CREATE ROLE vmm LOGIN ENCRYPTED PASSWORD '{{ vmm_vmm_password }}';"
+psql -c "CREATE ROLE dovecot LOGIN ENCRYPTED PASSWORD '{{ vmm_dovecot_password }}';"
+psql -c "CREATE ROLE postfix LOGIN ENCRYPTED PASSWORD '{{ vmm_postfix_password }}';"
 psql -c "CREATE ROLE mailsys WITH USER postfix, dovecot, vmm;"
 psql -c "CREATE DATABASE mailsys WITH OWNER vmm ENCODING 'UTF8';"
 
-PGPASSWORD="password" psql mailsys vmm -w -h localhost -f /tmp/vmm/create_tables-dovecot-1.2.x.pgsql
+PGPASSWORD="{{ vmm_vmm_password }}" psql mailsys vmm -w -h localhost -f /tmp/vmm/create_tables-dovecot-1.2.x.pgsql
 
-python /tmp/vmm/set-permissions.py -H 127.0.0.1 -U vmm -p password
+python /tmp/vmm/set-permissions.py -H 127.0.0.1 -U vmm -p {{ vmm_vmm_password }}
 
 touch /etc/postgresql/9.1/vmm-installed
 exit 0

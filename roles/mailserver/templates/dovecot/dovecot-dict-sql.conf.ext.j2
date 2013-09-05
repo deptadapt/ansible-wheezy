@@ -1,4 +1,4 @@
-connect = host=localhost dbname=mailsys user=dovecot password=$Dovecot_PASS
+connect = host=localhost dbname=mailsys user=dovecot password={{ vmm_dovecot_password }}
 map {
   pattern = priv/quota/storage
   table = userquota
