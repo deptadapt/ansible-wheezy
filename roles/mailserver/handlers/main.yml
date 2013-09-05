@@ -85,11 +85,13 @@
   copy: src=vmm/set-permissions.py dest=/tmp/vmm/set-permissions.py owner=postgres group=postgres mode=0600
 
 - name: Execute vmm database config script
-  shell: /tmp/vmm/vmm-postgres.sh creates=/etc/postgresql/9.1/vmm-installed
-  sudo_user: postgres
+  shell: su -l -c "/tmp/vmm/vmm-postgres.sh" postgres creates=/etc/postgresql/9.1/vmm-installed
 
 - name: Remove vmm config tmp directory
   command: rm -rf /tmp/vmm
+
+###
+# Service handlers for Postfix and Dovecot
 
 - name: Start Postfix
   service: name=postfix enabled=yes state=started
