@@ -104,3 +104,6 @@
 
 - name: Reload Dovecot config
   service: name=dovecot state=reloaded
+
+- name: Generate /etc/aliases
+  command: postalias /etc/aliases

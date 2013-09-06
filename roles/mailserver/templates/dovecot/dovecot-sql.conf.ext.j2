@@ -5,8 +5,7 @@ password_query = \
  SELECT userid AS "user", password FROM dovecotpassword('%Ln', '%Ld') WHERE %Ls
 
 # uncomment this user_query if you want to use the quota plugin
-#user_query = \
-# SELECT home, uid, gid, mail, quota_rule FROM dovecotquotauser('%Ln', '%Ld')
+user_query = SELECT home, uid, gid, mail, quota_rule FROM dovecotquotauser('%Ln', '%Ld')
 
 # otherwise uncomment the following user_query
 #user_query = SELECT home, uid, gid, mail FROM dovecotuser('%Ln', '%Ld')

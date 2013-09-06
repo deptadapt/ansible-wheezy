@@ -42,6 +42,13 @@ mail_plugins = quota
 ##  }
 ##}
 
+# disable imap listener--- this doesn't seem to work
+# service imap-login {
+#  inet_listener imap {
+#    port = 0
+#  }
+# }
+
 service lmtp {
   unix_listener /var/spool/postfix/private/dovecot-lmtp {
     user = postfix
@@ -83,8 +90,8 @@ service dict {
 # SSL/TLS support: yes, no, required. <doc/wiki/SSL.txt>
 ssl = required
 
-ssl_cert = </etc/ssl/certs/dovecot.pem
-ssl_key = </etc/ssl/private/dovecot.pem
+ssl_cert = </etc/dovecot/dovecot.pem
+ssl_key = </etc/dovecot/private/dovecot.pem
 
 # if you want to disable SSL/TLS, you have set 'ssl = no' and disable the
 # imaps listener in conf.d/10-master.conf

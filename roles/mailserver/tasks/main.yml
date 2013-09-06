@@ -73,7 +73,7 @@
     - Reload Dovecot config
 
 - name: Copy /etc/dovecot/dovecot-dict-sql.conf.ext.j2 template
-  template: src=dovecot/dovecot-dict-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-dict-sql.conf.ext owner=root group=dovecot mode=0600
+  template: src=dovecot/dovecot-dict-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-dict-sql.conf.ext owner=root group=dovecot mode=0640
   notify:
     - Reload Dovecot config
 
@@ -83,10 +83,10 @@
     - Reload Dovecot config
 
 - name: Create directory for Postfix PostgreSQL config files.
-  file: dest=/etc/postfix/pgsql state=directory owner=root group=root mode=0700
+  file: dest=/etc/postfix/pgsql state=directory owner=root group=postfix mode=0750
 
 - name: Copy /etc/postfix/pgsql-*.cf j2 templates
-  template: src=postfix/{{ item }}.j2 dest=/etc/postfix/pgsql/{{ item }} owner=root group=root mode=0600
+  template: src=postfix/{{ item }}.j2 dest=/etc/postfix/pgsql/{{ item }} owner=root group=postfix mode=0640
   with_items:
     - pgsql-relocated_maps.cf
     - pgsql-smtpd_sender_login_maps.cf
@@ -97,6 +97,12 @@
     - pgsql-virtual_mailbox_maps.cf
     - pgsql-virtual_uid_maps.cf
   notify:
+    - Reload Postfix config
+
+- name: Copy /etc/aliases j2 template
+  template: src=postfix/aliases dest=/etc/aliases owner=root group=root mode=0644
+  notify:
+    - Generate /etc/aliases
     - Reload Postfix config
 
 - name: Copy /etc/vmm/vmm.cfg
