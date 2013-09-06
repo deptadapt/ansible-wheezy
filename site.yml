@@ -15,3 +15,8 @@
   user: root
   roles:
     - mailserver
+
+- hosts: all
+  user: root
+  roles:
+    - harden

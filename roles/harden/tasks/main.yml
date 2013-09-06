@@ -1,0 +1,25 @@
+---
+# This role installs the Debian harden package, which includes a bunch
+# of security related packages.
+#
+# One of thos packages, Tripwire, needs special steps taken to get the
+# passphrases for the encryption keys generated properly. Instead of 
+# preseeding the debconf database, a database fragment is included that
+# contains the passphrase, and is used with the DEBCONF_DB_FALLBACK
+# environment variable.
+
+
+- name: Copy Tripwire debconf database
+  template: src=tripwire-debconf-config.dat.j2 dest=/run/shm/tripwire-debconf-config.dat owner=root mode=0600
+  
+- name: Install harden package
+  environment:
+    DEBCONF_DB_FALLBACK: "File{/run/shm/tripwire-debconf-config.dat}"
+  apt: pkg=harden state=latest
+  notify:
+    - Copy Tripwire policy text file twpol.txt
+    - Generate Tripwire policy
+    - Generate Tripwire initial database
+
+- name: Remove Tripwire debconf database
+  command: rm /run/shm/tripwire-debconf-config.dat
