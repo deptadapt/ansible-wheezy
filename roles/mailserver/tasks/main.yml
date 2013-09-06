@@ -47,9 +47,8 @@
     - Configure authentication for mailsys in pg_hba.conf
     - Create temp directory for vmm script
     - Copy vmm PostgreSQL database configuration script
-#    - Copy vmm tables
-#    - Copy vmm permission script
     - Execute vmm database config script
+    - Remove vmm config tmp directory
     - Start Postfix
     - Start Dovecot
 

@@ -19,8 +19,8 @@
     - Reload sshd config
 
 # This task commented out for testing purposes (too slow)
-# - name: Make sure APT is up to date
-#   apt: update_cache=yes upgrade=yes
+- name: Make sure APT is up to date
+  apt: update_cache=yes upgrade=yes
 
 - name: Install harden-servers
   apt: pkg=harden-servers state=latest

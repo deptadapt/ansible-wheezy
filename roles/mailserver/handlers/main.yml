@@ -78,12 +78,6 @@
 - name: Copy vmm PostgreSQL database configuration script
   template: src=vmm/vmm-postgres.sh.j2 dest=/tmp/vmm/vmm-postgres.sh owner=postgres group=postgres mode=0700
 
-# - name: Copy vmm tables
-#   copy: src=vmm/create_tables-dovecot-1.2.x.pgsql dest=/tmp/vmm/create_tables-dovecot-1.2.x.pgsql owner=postgres group=postgres mode=0600
-
-# - name: Copy vmm permission script
-#   copy: src=vmm/set-permissions.py dest=/tmp/vmm/set-permissions.py owner=postgres group=postgres mode=0600
-
 - name: Execute vmm database config script
   shell: su -l -c "/tmp/vmm/vmm-postgres.sh" postgres creates=/etc/postgresql/9.1/vmm-installed
 

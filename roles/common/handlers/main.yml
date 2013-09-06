@@ -6,4 +6,4 @@
   service: name=ssh state=reloaded
 
 - name: Reload iptables rules
-  command: /etc/networking/if-pre-up.d/firewall
+  command: /etc/network/if-pre-up.d/firewall
