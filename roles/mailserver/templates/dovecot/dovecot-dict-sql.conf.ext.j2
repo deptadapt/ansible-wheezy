@@ -1,4 +1,4 @@
-connect = host=localhost dbname=mailsys user=dovecot password={{ lookup('password', 'passwords/vmm_dovecot') }}
+connect = host=localhost dbname=mailsys user=dovecot password={{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_dovecot') }}
 map {
   pattern = priv/quota/storage
   table = userquota

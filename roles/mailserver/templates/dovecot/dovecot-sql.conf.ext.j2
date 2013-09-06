@@ -1,5 +1,5 @@
 driver = pgsql
-connect = host=localhost dbname=mailsys user=dovecot password={{ lookup('password', 'passwords/vmm_dovecot') }}
+connect = host=localhost dbname=mailsys user=dovecot password={{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_dovecot') }}
 
 password_query = \
  SELECT userid AS "user", password FROM dovecotpassword('%Ln', '%Ld') WHERE %Ls
