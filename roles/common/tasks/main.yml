@@ -1,14 +1,29 @@
 ---
 # This role contains the common elements to all systems
 
+
+- name: Copy firewall rule j2 templates
+  template: src={{ item }}.j2 dest=/etc/{{ item }} owner=root group=root mode=0600
+  with_items:
+    - ip6tables.rules
+    - iptables.rules
+  notify:
+    - Reload iptables rules
+
+- name: Copy /etc/network/if-pre-up.d/firewall
+  copy: src=if-pre-up-d_firewall dest=/etc/network/if-pre-up.d/firewall owner=root group=root mode=0700
+
+- name: Copy /etc/ssh/sshd_config
+  copy: src=sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=0644
+  notify:
+    - Reload sshd config
+
 # This task commented out for testing purposes (too slow)
 # - name: Make sure APT is up to date
 #   apt: update_cache=yes upgrade=yes
 
-- name: Install NTP service
-  apt: pkg=ntp state=latest
-
 - name: Install harden-servers
   apt: pkg=harden-servers state=latest
 
-
+- name: Install NTP service
+  apt: pkg=ntp state=latest

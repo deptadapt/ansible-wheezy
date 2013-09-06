@@ -1,0 +1,9 @@
+---
+# These handlers are to be run after new configuration files have
+# been sent to the server.
+
+- name: Reload sshd config
+  service: name=ssh state=reloaded
+
+- name: Reload iptables rules
+  command: /etc/networking/ip-pre-up.d/firewall

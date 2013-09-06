@@ -1,0 +1,20 @@
+# {{ ansible_managed }}
+# Probably best not to edit this file locally.
+*filter
+-A INPUT -i lo -j ACCEPT
+-A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+{% if (inventory_hostname in groups['mail_server']) %}
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 143 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 587 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 993 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 4190 -j ACCEPT
+{% endif %}
+# -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+-A INPUT -j REJECT --reject-with icmp-port-unreachable
+-A FORWARD -j REJECT --reject-with icmp-port-unreachable
+-A OUTPUT -j ACCEPT
+COMMIT

@@ -1,22 +1,22 @@
 ---
 # site wide playbook
 
-# - hosts: vmm
+- hosts: all
 #   user: root
-#   roles:
-#     - common
+  roles:
+    - common
 
-- hosts: vmm 
-  user: root
+- hosts: mail_server
+#   user: root
   roles:
     - postgres
 
-- hosts: vmm 
-  user: root
+- hosts: mail_server
+#   user: root
   roles:
     - mailserver
 
 - hosts: all
-  user: root
+#   user: root
   roles:
     - harden
