@@ -7,9 +7,7 @@
   copy: src=twpol.txt dest=/etc/tripwire/twpol.txt owner=root group=root mode=0644
 
 - name: Generate Tripwire policy
-  command: twadmin -m P -S /etc/tripwire/site.key -Q {{ item }}  /etc/tripwire/twpol.txt
-  with_password: passwords/{{ ansible_fqdn }}/tripwire_site
+  command: twadmin -m P -S /etc/tripwire/site.key -Q  {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }} /etc/tripwire/twpol.txt
 
 - name: Generate Tripwire initial database
-  command: tripwire -m i -P {{ item }}
-  with_password: passwords/{{ ansible_fqdn }}/tripwire_local
+  command: tripwire -m i -P {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}
