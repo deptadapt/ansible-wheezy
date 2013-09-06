@@ -12,7 +12,10 @@ psql -c "CREATE ROLE postfix LOGIN ENCRYPTED PASSWORD '{{ lookup('password', 'pa
 psql -c "CREATE ROLE mailsys WITH USER postfix, dovecot, vmm;" template1
 psql -c "CREATE DATABASE mailsys WITH OWNER vmm ENCODING 'UTF8';" template1
 
-PGPASSWORD="{{ lookup('password', 'passwords/vmm_vmm') }}" psql mailsys vmm -w -h localhost -f /tmp/vmm/create_tables-dovecot-1.2.x.pgsql
+PGPASSWORD="{{ lookup('password', 'passwords/vmm_vmm') }}" psql mailsys vmm -w -h localhost -f /usr/share/doc/vmm/examples/pgsql/create_tables-dovecot-1.2.x.pgsql
+
+cp /usr/share/doc/vmm/examples/pgsql/set-permissions.py.gz /tmp/vmm
+gunzip /tmp/vmm/set-permissions.py.gz
 
 python /tmp/vmm/set-permissions.py -H 127.0.0.1 -U vmm -p {{ lookup('password', 'passwords/vmm_vmm') }}
 

@@ -118,8 +118,7 @@ smtpd_recipient_restrictions =
   permit_mynetworks,
   permit_sasl_authenticated,
   reject_unauth_destination,
-# uncomment for the postgrey service 
-#   check_policy_service inet:127.0.0.1:10023
+  check_policy_service inet:127.0.0.1:10023
   permit
 
 # http://www.postfix.org/postconf.5.html#smtpd_data_restrictions

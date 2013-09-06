@@ -25,7 +25,7 @@
 # Also note: PostgreSQL should perhaps be in its own role, with this role
 # depending on it.
 #
-- name: Install Postfix, Dovecot
+- name: Install Postfix, Dovecot, vmm, postgrey
   apt: pkg={{ item }} state=latest
   with_items:
     - postfix
@@ -37,6 +37,7 @@
     - dovecot-managesieved
     - python-crypto
     - vmm
+    - postgrey
   notify:
     - Add doveauth group
     - Add doveauth user
@@ -46,8 +47,8 @@
     - Configure authentication for mailsys in pg_hba.conf
     - Create temp directory for vmm script
     - Copy vmm PostgreSQL database configuration script
-    - Copy vmm tables
-    - Copy vmm permission script
+#    - Copy vmm tables
+#    - Copy vmm permission script
     - Execute vmm database config script
     - Start Postfix
     - Start Dovecot
