@@ -72,12 +72,15 @@
   notify:
     - Reload Dovecot config
 
-- name: Copy /etc/dovecot/dovecot-dict-sql.conf.ext.j2 template
+- name: mkdir /etc/dovecot/pgsql
+  file: dest=/etc/dovecot/pgsql state=directory owner=root group=dovecot mode=0750
+
+- name: Copy /etc/dovecot/pgsql/dovecot-dict-sql.conf.ext j2 template
   template: src=dovecot/dovecot-dict-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-dict-sql.conf.ext owner=root group=dovecot mode=0640
   notify:
     - Reload Dovecot config
 
-- name: Copy /etc/dovecot/dovecot-sql.conf.ext.j2 template
+- name: Copy /etc/dovecot/pgsql/dovecot-sql.conf.ext j2 template
   template: src=dovecot/dovecot-sql.conf.ext.j2 dest=/etc/dovecot/dovecot-sql.conf.ext owner=root group=dovecot mode=0600
   notify:
     - Reload Dovecot config
