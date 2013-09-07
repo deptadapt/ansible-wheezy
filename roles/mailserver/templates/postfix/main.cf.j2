@@ -9,8 +9,8 @@
 # http://www.postfix.org/postconf.5.html#mynetworks
 # http://www.postfix.org/postconf.5.html#relay_domains
 # http://www.postfix.org/postconf.5.html#inet_interfaces
-myhostname = {{ ansible_hostname }}.deptadapt.org
-mydomain = deptadapt.org
+myhostname = {{ ansible_fqdn }}
+mydomain = {{ ansible_domain }}
 myorigin = /etc/mailname 
 mydestination = $myhostname, localhost.$mydomain, localhost
 relayhost = 
@@ -38,15 +38,13 @@ append_dot_mydomain = no
 # TLS parameters
 smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
 smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
-
+smtpd_tls_CAfile=/etc/ssl/certs/ca-certificates.crt
 smtp_tls_security_level = may
-# smtp_tls_note_starttls_offer = yes
-
 smtpd_tls_security_level = may
 smtpd_tls_loglevel = 1
-# smtpd_tls_received_header = yes
-
 smtpd_tls_auth_only = yes
+# smtpd_tls_received_header = yes
+# smtp_tls_note_starttls_offer = yes
 
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
