@@ -89,7 +89,7 @@ service dict {
 ###
 # SSL/TLS support: yes, no, required. <doc/wiki/SSL.txt>
 ssl = required
-ssl_cipher_list = ALL:!EXPORT:!LOW:!MEDIUM:!SSLv2:!SSLv3:!aNULL
+# ssl_cipher_list = HIGH:!SSLv2:!SSLv3
 ssl_cert = </etc/dovecot/dovecot.pem
 ssl_key = </etc/dovecot/private/dovecot.pem
 
