@@ -144,3 +144,12 @@ smtpd_recipient_restrictions =
 smtpd_data_restrictions =
   reject_unauth_pipelining,
   permit
+
+{% if dkim_install %}
+# OpenDKIM signing and verification.
+# This part was enabled because the Ansible host variable dkim_install was true
+#
+milter_default_action = accept
+smtpd_milters = inet:localhost:12023
+non_smtpd_milters = $smtpd_milters
+{% endif %}

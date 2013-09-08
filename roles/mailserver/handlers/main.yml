@@ -101,3 +101,6 @@
 
 - name: Generate /etc/aliases
   command: postalias /etc/aliases
+
+- name: Reload OpenDKIM config
+  service: name=opendkim state=reloaded
