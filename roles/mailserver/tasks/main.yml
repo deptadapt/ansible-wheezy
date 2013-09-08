@@ -192,13 +192,27 @@
     - /etc/opendkim
     - /etc/opendkim/private
 
-- name: Copy OpenDKIM Key, Signing and Internal hosts tables
-  when: dkim_install
-  copy: src={{ item }} dest=/etc/opendkim owner=opendkim group=opendkim mode=0600
-  with_items:
-    - {{ dkim_keytable_file }}
-    - {{ dkim_signingtable_file }}
-    - {{ dkim_internal_hosts_file }}
+- name: Copy OpenDKIM KeyTable file
+  when:
+    - dkim_install
+    - dkm_keytable_file is defined
+  copy: src={{ dkim_keytable_file }} dest=/etc/opendkim owner=opendkim group=opendkim mode=0600
+  notify:
+    - Reload OpenDKIM config
+
+- name: Copy OpenDKIM SigningTable file
+  when:
+    - dkim_install
+    - dkm_signingtable_file is defined
+  copy: src={{ dkim_signingtable_file }} dest=/etc/opendkim owner=opendkim group=opendkim mode=0600
+  notify:
+    - Reload OpenDKIM config
+
+- name: Copy OpenDKIM InternalHosts file
+  when:
+    - dkim_install
+    - dkm_internalhosts_file is defined
+  copy: src={{ dkim_internalhosts_file }} dest=/etc/opendkim owner=opendkim group=opendkim mode=0600
   notify:
     - Reload OpenDKIM config
 
@@ -206,6 +220,6 @@
   when: dkim_private_keys_directory is defined
   copy: src={{ item }} dest=/etc/opendkim/private owner=opendkim gruop=opendkim mode=0600
   with_fileglob:
-    - {{ dkim_private_keys_directory }}/*
+    - dkim_private_keys_directory
   notify:
     - Reload OpenDKIM config
