@@ -36,8 +36,22 @@ append_dot_mydomain = no
 
 
 # TLS parameters
+{% if ssl_cert_file is defined %}
+smptd_tls_cert_file=/etc/ssl/localcert/{{ ssl_cert_file_name }}
+{% else %}
 smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+{% endif %}
+
+{% if ssl_key_file is defined %}
+smtpd_tls_key_file=/etc/ssl/localcert/private/{{ ssl_key_file_name }}
+{% else %}
 smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+{% endif %}
+
+# smtpd_tls_dh1024_param_file = /etc/postfix/dh_1024.pem
+# smtpd_tls_dh512_param_file = /etc/postfix/dh_512.pem
+# smtpd_tls_eecdh_grade = strong
+
 smtpd_tls_CAfile=/etc/ssl/certs/ca-certificates.crt
 smtpd_tls_security_level = may
 smtpd_tls_loglevel = 1

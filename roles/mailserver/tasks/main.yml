@@ -113,3 +113,34 @@
 
 - name: Copy /etc/vmm/vmm-db.cfg.j2 template
   template: src=vmm/vmm-db.cfg.j2 dest=/etc/vmm/vmm-db.cfg owner=root group=vmm mode=0640
+
+- name: Make directory for provided SSL certifcate
+  when: ssl_cert_file is defined
+  file: dest=/etc/ssl/localcert state=directory owner=root group=root mode=0755
+
+- name: Make directory for provided SSL certifcate
+  when: ssl_key_file is defined
+  file: dest=/etc/ssl/localcert/private state=directory owner=root group=ssl-cert mode=0710
+
+- name: Copy SSL certificate to /etc/ssl/localcert
+  when: ssl_cert_file is defined
+  copy: src={{ ssl_cert_file }} dest=/etc/ssl/localcert/ owner=root group=root mode=0644
+  notify:
+    - Reload Postfix config
+    - Reload Dovecot config
+
+- name: Copy SSL key to /etc/ssl/localcert/private
+  when: ssl_key_file is defined
+  copy: src={{ ssl_key_file }} dest=/etc/ssl/localcert/private/ owner=root group=ssl-cert mode=0640
+  notify:
+    - Reload Postfix config
+    - Reload Dovecot config
+
+- name: Generate Diffie-Hellman parameters for Postfix
+  command: openssl dhparam -out /etc/postfix/dh_{{ item }}.pem -2 {{ item }} creates=/etc/postfix/dh_{{ item }}.pem
+  with_items:
+    - 1024
+    - 512
+
+- name: Copy postfix-dh-params script to /etc/cron.weekly
+  copy: src=postfix/postfix-dh-params dest=/etc/cron.weekly owner=root group=root mode=0755 

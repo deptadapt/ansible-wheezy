@@ -1,0 +1,9 @@
+#!/bin/sh
+# Regenerate the Diffie-Hellman parameters used by Postfix.
+# This script is meant to be dropped into /etc/cron.weekly on a Debian
+# system.
+
+openssl dhparam -out /etc/postfix/dh_512.pem -2 512
+openssl dhparam -out /etc/postfix/dh_1024.pem -2 1024
+
+service postfix reload

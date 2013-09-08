@@ -90,8 +90,18 @@ service dict {
 # SSL/TLS support: yes, no, required. <doc/wiki/SSL.txt>
 ssl = required
 # ssl_cipher_list = HIGH:!SSLv2:!SSLv3
+
+{% if ssl_cert_file is defined %}
+ssl_cert = </etc/ssl/localcert/{{ ssl_cert_file_name }}
+{% else %}
 ssl_cert = </etc/dovecot/dovecot.pem
+{% endif %}
+
+{% if ssl_key_file is defined %}
+ssl_key = </etc/ssl/localcert/private/{{ ssl_key_file_name }}
+{% else %}
 ssl_key = </etc/dovecot/private/dovecot.pem
+{% endif %}
 
 # if you want to disable SSL/TLS, you have set 'ssl = no' and disable the
 # imaps listener in conf.d/10-master.conf
