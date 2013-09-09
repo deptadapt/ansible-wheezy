@@ -10,7 +10,11 @@
 
 
 - name: Copy Tripwire debconf database
-  template: src=tripwire-debconf-config.dat.j2 dest=/run/shm/tripwire-debconf-config.dat owner=root mode=0600
+  template: >
+    src=tripwire-debconf-config.dat.j2
+    dest=/run/shm/tripwire-debconf-config.dat
+    owner=root
+    mode=0600
   
 - name: Install harden package
   environment:

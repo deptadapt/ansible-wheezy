@@ -8,16 +8,32 @@
   group: name=doveauth system=yes
 
 - name: Add doveauth user
-  user: name=doveauth system=yes home=/nonexistent createhome=no group=doveauth shell=/usr/sbin/nologin
+  user: >
+    name=doveauth
+    system=yes
+    home=/nonexistent
+    createhome=no
+    group=doveauth
+    shell=/usr/sbin/nologin
 
 - name: Add dovemail group
   group: name=dovemail system=yes
 
 - name: Create /srv/mail directory
-  file: dest=/srv/mail state=directory mode=0771
+  file: >
+    dest=/srv/mail
+    state=directory
+    owner=root
+    group=root
+    mode=0771
 
 - name: Create /srv/mail subdirectory contents
-  file: dest=/srv/mail/{{ item }} state=directory mode=0751
+  file: >
+    dest=/srv/mail/{{ item }}
+    state=directory
+    owner=root
+    group=root
+    mode=0751
   with_items:
     - 0
     - 1
@@ -57,7 +73,13 @@
     - z
 
 - name: Configure authentication for mailsys in pg_hba.conf
-  lineinfile: dest=/etc/postgresql/9.1/main/pg_hba.conf backup=yes regexp="mailsys" line='host     mailsys         +mailsys        127.0.0.1/32            md5' state=present insertafter=EOF
+  lineinfile: >
+    dest=/etc/postgresql/9.1/main/pg_hba.conf
+    backup=yes
+    regexp="mailsys"
+    line='host     mailsys         +mailsys        127.0.0.1/32            md5'
+    state=present
+    insertafter=EOF
 
 # The following tasks configure the PostgreSQL database for the
 # mail system using a script instead of the Ansible postgresql_* modules.
@@ -73,10 +95,20 @@
 # the script will not play if the file exists, to help with idempotency.
 
 - name: Create temp directory for vmm script
-  file: dest=/tmp/vmm state=directory owner=postgres group=postgres mode=0700
+  file: >
+    dest=/tmp/vmm
+    state=directory
+    owner=postgres
+    group=postgres
+    mode=0700
 
 - name: Copy vmm PostgreSQL database configuration script
-  template: src=vmm/vmm-postgres.sh.j2 dest=/tmp/vmm/vmm-postgres.sh owner=postgres group=postgres mode=0700
+  template: >
+    src=vmm/vmm-postgres.sh.j2
+    dest=/tmp/vmm/vmm-postgres.sh
+    owner=postgres
+    group=postgres
+    mode=0700
 
 - name: Execute vmm database config script
   shell: su -l -c "/tmp/vmm/vmm-postgres.sh" postgres creates=/etc/postgresql/9.1/vmm-installed
@@ -106,7 +138,13 @@
   shell: "cd /etc/opendkim/private && tar xvf ./private.tar"
 
 - name: Set ownership of DKIM private RSA keys
-  file: dest=/etc/opendkim/private state=directory recurse=yes owner=opendkim group=opendkim mode=0700
+  file: >
+    dest=/etc/opendkim/private
+    state=directory
+    recurse=yes
+    owner=opendkim
+    group=opendkim
+    mode=0700
 
 - name: Reload OpenDKIM config
   service: name=opendkim enabled=yes state=restarted
