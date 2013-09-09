@@ -102,5 +102,12 @@
 - name: Generate /etc/aliases
   command: postalias /etc/aliases
 
+- name: Untar DKIM private RSA keys tarball
+  shell: "cd /etc/opendkim/private && tar xvf ./private.tar"
+
+- name: Set ownership of DKIM private RSA keys
+  file: dest=/etc/opendkim/private state=directory recurse=yes owner=opendkim group=opendkim mode=0700
+
 - name: Reload OpenDKIM config
-  service: name=opendkim state=reloaded
+  service: name=opendkim enabled=yes state=restarted
+
