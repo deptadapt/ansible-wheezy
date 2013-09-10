@@ -328,30 +328,17 @@
 
 # Using a tar ball to copy "recursively" so that the source can be
 # defined in a host_var
-- name: Copy DKIM private RSA keys tarball
+- name: Copy DKIM private RSA keys
   when:
     - dkim_install
-    - dkim_private_kays_tarball
+    - dkim_private_keys_glob is defined
   copy: >
-    src={{ dkim_private_keys_tarball }}
-    dest=/etc/opendkim/private
+    src={{ item }}
+    dest=/etc/opendkim/private/
     owner=opendkim
     group=opendkim
     mode=0600
+  with_fileglob: 
+    - "{{ dkim_private_keys_glob }}/*"
   notify:
-    - Untar DKIM private RSA keys tarball
-    - Set ownership of DKIM private RSA keys
     - Reload OpenDKIM config
-
-# Recommended in Ansible documentation for recursive copying
-# - name: Copy DKIM private RSA keys directory
-#   when: dkim_private_keys_directory is defined
-#   local_action: command rsync -a {{ dkim_private_keys_directory }} {{ inventory_hostname }}:/etc/opendkim/private
-
-# - name: Copy DKIM private RSA keys directory
-#  when: dkim_private_keys_directory is defined
-#   copy: src={{ item }} dest=/etc/opendkim/private owner=opendkim group=opendkim mode=0600
-#   with_fileglob:
-#     - /home/jeremy/mail_testing_files/dkim/private/*
-#   notify:
-#     - Reload OpenDKIM config
