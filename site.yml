@@ -2,21 +2,14 @@
 # site wide playbook
 
 - hosts: all
-#   user: root
   roles:
     - common
 
 - hosts: mail_server
-#   user: root
   roles:
     - postgres
-
-- hosts: mail_server
-#   user: root
-  roles:
     - mailserver
 
 - hosts: all
-#   user: root
   roles:
     - harden
