@@ -2,6 +2,9 @@
 # This script will create symlinks to the "passwords directory" defined
 # in the first argument in the places required by this playbook.
 
+# Updated 2013-09-11 to create password symlinks for every role that has
+# a files directory
+
 # start by catching problems
 
 if [ -z $1 ]
@@ -28,18 +31,28 @@ then
     exit 1
 fi
 
-if [ -h ./roles/harden/files/passwords ]
-then
-    rm ./roles/harden/files/passwords
-elif [ -e ./passwords ]
-then
-    echo "The ./roles/harden/files/passwords directory is not a symlink, aborting!"
-    exit 1
-fi
+for role in ./roles/* ; do
+    if [ -h $role/files/passwords ]
+        then
+            rm ./roles/harden/files/passwords
+    elif [ -e $role/files/passwords ]
+        then
+            echo "The $role/files/passwords directory is not a symlink, aborting!"
+            exit 1
+    fi
+done
 
 # make the links
 
+echo "creating symlink ./passwords"
 ln -s $1 ./passwords
-ln -s $1 ./roles/harden/files/passwords
+
+for role in ./roles/* ; do
+    if [ -d $role/files ]
+        then
+            echo "creating symlink $role/files/passwords"
+            ln -s $1 $role/files/passwords
+        fi
+done
 
 exit 0

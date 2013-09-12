@@ -4,3 +4,4 @@ host_vars/*
 host_vars
 passwords
 passwords/*
+site.yml
