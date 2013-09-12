@@ -1,4 +1,7 @@
 ---
 
+- name: Enable BIND at boot
+  service: name=bind9 enabled=yes
+
 - name: Reload BIND config
   service: name=bind9 state=reloaded

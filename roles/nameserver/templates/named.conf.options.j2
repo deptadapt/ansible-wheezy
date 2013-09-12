@@ -23,14 +23,9 @@ options {
 	auth-nxdomain no;    # conform to RFC1035
 	listen-on-v6 { any; };
     allow-transfer {none;};
-    version "Not available."
+    version "Not available.";
     notify master-only;
     allow-recursion {
         localhost;
     };       
-};
-
-zone "." {
-    type hint;
-    file "/etc/bind/db.root";
 };

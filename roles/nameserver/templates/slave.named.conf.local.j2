@@ -9,7 +9,6 @@
 include "/etc/bind/zones.rfc1918";
 
 
-
 {% for zone in dns_zones %}
 
 zone "{{ zone }}" in{
@@ -21,24 +20,3 @@ zone "{{ zone }}" in{
 };
 
 {% endfor %}
-
-
-// Do I need to include zones for reverse resolution
-// when my ISP doesn't delegate that to me?
-// Maybe Postfix will need it? Probably not...
-
-// zone "59.249.192.IN-ADDR.ARPA" in{
-//     type slave;
-//     file "slave.192.249.59.rev";
-//     masters (192.249.59.111;);
-//     allow-update {none;};
-//     allow-notify {192.249.59.111;};
-// };
-
-// zone "88.184.192.IN-ADDR.ARPA" in{
-//     type slave;
-//     file "slave.192.184.88.rev";
-//     masters (192.249.59.111;);
-//     allow-update {none;};
-//     allow-notify {192.249.59.111;};
-// };

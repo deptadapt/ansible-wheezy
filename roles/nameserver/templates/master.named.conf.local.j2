@@ -9,7 +9,6 @@
 include "/etc/bind/zones.rfc1918";
 
 
-
 {% for zone in dns_zones %}
 
 zone "{{ zone }}" in{
@@ -25,36 +24,3 @@ zone "{{ zone }}" in{
 };
 
 {% endfor %}
-
-// Do I still need to include the root servers hint in BIND 9.8?
-
-// zone "deptadapt.org" in{
-//     type master;
-//     file "/etc/bind/master.deptadapt.org";
-//     allow-update {none;};
-//     allow-transfer {192.184.88.113;};
-// };
-
-// zone "deptadapt.com" in{
-//     type master;
-//     file "/etc/bind/master.deptadapt.com";
-//     allow-update {none;};
-//     allow-transfer {192.184.88.113;};
-// };
-// Do I need to include zones for reverse resolution
-// when my ISP doesn't delegate that to me?
-// Maybe Postfix will need it? Probably not...
-
-// zone "59.249.192.IN-ADDR.ARPA" in{
-//     type master;
-//     file "master.192.249.59.rev";
-//     allow-update {none;};
-//     allow-transfer {192.184.88.113;};
-// };
-
-// zone "88.184.192.IN-ADDR.ARPA" in{
-//     type master;
-//     file "master.192.184.88.rev";
-//     allow-update {none;};
-//     allow-transfer {192.184.88.113;};
-// };
