@@ -1,0 +1,14 @@
+---
+# This role installs the BIND DNS server.
+# It requires some host variables.
+
+- name: Install bind9 package
+  apt: pkg=bind9 state=latest
+
+- name: Copy slave.named.conf.local.j2 template
+  template: >
+    src={{ dns_type }}.named.conf.local.j2
+    dest=/etc/bind/named.conf.local
+    owner=root
+    group=bind
+    mode=0644

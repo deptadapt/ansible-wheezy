@@ -7,41 +7,42 @@
 //include "/etc/bind/zones.rfc1918";
 
 
-// Do I still need to include the root servers hint in BIND 9.8?
 
-zone "deptadapt.org" in{
+{% for zone in dns_zones %}
+
+zone "{{ zone }}" in{
     type slave;
-    file "slave.deptadapt.org";
-    masters (192.249.59.111;);
-    allow-update {none;};
-    allow-notify {192.249.59.111;};
-};
-
-zone "deptadapt.com" in{
-    type slave;
-    file "slave.deptadapt.com";
-    masters (192.249.59.111;);
-    allow-update {none;};
-    allow-notify {192.249.59.111;};
-};
-
-{% for zone in zone_dict %}
-
-zone "{{ zone.domain }}" in{
-    type slave;
-    file "{{ zone.filename }}";
-    masters ({{ hostvars[dns_master].ipv4.address }};);
+    file "slave.{{ zone.filename }}";
+    masters ({{ hostvars[dns_master].ansible_eth0.ipv4.address }};);
     allow-update {none;};
     allow-notify {
-        {{ hostvars[dns_master].ipv4.address }};
+        {{ hostvars[dns_master].ansible_eth0.ipv4.address }};
     };
 };
 
 {% endfor %}
 
+// Do I still need to include the root servers hint in BIND 9.8?
+
+// zone "deptadapt.org" in{
+//     type slave;
+//     file "slave.deptadapt.org";
+//     masters (192.249.59.111;);
+//     allow-update {none;};
+//     allow-notify {192.249.59.111;};
+// };
+
+// zone "deptadapt.com" in{
+//     type slave;
+//     file "slave.deptadapt.com";
+//     masters (192.249.59.111;);
+//     allow-update {none;};
+//     allow-notify {192.249.59.111;};
+// };
 // Do I need to include zones for reverse resolution
 // when my ISP doesn't delegate that to me?
 // Maybe Postfix will need it? Probably not...
+
 zone "59.249.192.IN-ADDR.ARPA" in{
     type slave;
     file "slave.192.249.59.rev";
