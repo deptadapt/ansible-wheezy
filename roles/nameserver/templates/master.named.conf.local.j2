@@ -12,8 +12,7 @@
 
 zone "{{ zone }}" in{
     type master;
-    file "/etc/bind/master.{{ zone }}";
-    allow-update {none;};
+    file "/etc/bind/masters/master.{{ zone }}";
     allow-transfer {
         {{ hostvars[dns_slave].ansible_eth0.ipv4.address }};
     };
@@ -40,16 +39,16 @@ zone "{{ zone }}" in{
 // when my ISP doesn't delegate that to me?
 // Maybe Postfix will need it? Probably not...
 
-zone "59.249.192.IN-ADDR.ARPA" in{
-    type master;
-    file "master.192.249.59.rev";
-    allow-update {none;};
-    allow-transfer {192.184.88.113;};
-};
+// zone "59.249.192.IN-ADDR.ARPA" in{
+//     type master;
+//     file "master.192.249.59.rev";
+//     allow-update {none;};
+//     allow-transfer {192.184.88.113;};
+// };
 
-zone "88.184.192.IN-ADDR.ARPA" in{
-    type master;
-    file "master.192.184.88.rev";
-    allow-update {none;};
-    allow-transfer {192.184.88.113;};
-};
+// zone "88.184.192.IN-ADDR.ARPA" in{
+//     type master;
+//     file "master.192.184.88.rev";
+//     allow-update {none;};
+//     allow-transfer {192.184.88.113;};
+// };

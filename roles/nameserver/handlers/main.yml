@@ -1,0 +1,4 @@
+---
+
+- name: Reload BIND config
+  service: name=bind9 state=reloaded
