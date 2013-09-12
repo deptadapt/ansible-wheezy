@@ -4,7 +4,9 @@
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
-//include "/etc/bind/zones.rfc1918";
+
+
+include "/etc/bind/zones.rfc1918";
 
 
 
@@ -14,9 +16,12 @@ zone "{{ zone }}" in{
     type master;
     notify yes;
     file "/etc/bind/masters/master.{{ zone }}";
+    allow-update {none;};
+    {% if dns_slave is defined %}
     allow-transfer {
         {{ hostvars[dns_slave].ansible_eth0.ipv4.address }};
     };
+    {% endif %}
 };
 
 {% endfor %}

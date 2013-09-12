@@ -4,7 +4,9 @@
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
-//include "/etc/bind/zones.rfc1918";
+
+
+include "/etc/bind/zones.rfc1918";
 
 
 
@@ -20,23 +22,7 @@ zone "{{ zone }}" in{
 
 {% endfor %}
 
-// Do I still need to include the root servers hint in BIND 9.8?
 
-// zone "deptadapt.org" in{
-//     type slave;
-//     file "slave.deptadapt.org";
-//     masters (192.249.59.111;);
-//     allow-update {none;};
-//     allow-notify {192.249.59.111;};
-// };
-
-// zone "deptadapt.com" in{
-//     type slave;
-//     file "slave.deptadapt.com";
-//     masters (192.249.59.111;);
-//     allow-update {none;};
-//     allow-notify {192.249.59.111;};
-// };
 // Do I need to include zones for reverse resolution
 // when my ISP doesn't delegate that to me?
 // Maybe Postfix will need it? Probably not...
