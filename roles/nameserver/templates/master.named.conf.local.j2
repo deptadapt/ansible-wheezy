@@ -12,6 +12,7 @@
 
 zone "{{ zone }}" in{
     type master;
+    notify yes;
     file "/etc/bind/masters/master.{{ zone }}";
     allow-transfer {
         {{ hostvars[dns_slave].ansible_eth0.ipv4.address }};

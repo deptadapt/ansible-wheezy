@@ -15,6 +15,14 @@
   notify:
     - Reload BIND config
 
+- name: Copy named.conf.options.j2 template
+  template: >
+    src=named.conf.options.j2
+    dest=/etc/bind/named.conf.options
+    owner=root
+    group=bind
+    mode=0640
+
 - name: Create /etc/bind/masters on DNS master server
   when: dns_type == "master"
   file: > 
