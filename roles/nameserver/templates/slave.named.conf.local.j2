@@ -16,10 +16,6 @@ zone "{{ zone }}" in{
     masters {
         {{ hostvars[dns_master].ansible_eth0.ipv4.address }};
     };
-//    allow-update {none;};
-    allow-notify {
-        {{ hostvars[dns_master].ansible_eth0.ipv4.address }};
-    };
 };
 
 {% endfor %}
