@@ -4,7 +4,12 @@
 #
 
 - name: Copy Tripwire policy text file twpol.txt
-  copy: src=twpol.txt dest=/etc/tripwire/twpol.txt owner=root group=root mode=0644
+  copy: >
+    src=twpol.txt
+    dest=/etc/tripwire/twpol.txt
+    owner=root
+    group=root
+    mode=0644
 
 - name: Generate Tripwire policy
   command: twadmin -m P -S /etc/tripwire/site.key -Q  {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }} /etc/tripwire/twpol.txt
