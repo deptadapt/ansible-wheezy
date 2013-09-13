@@ -45,14 +45,30 @@ done
 # make the links
 
 echo "creating symlink ./passwords"
-ln -s $1 ./passwords
+ln -s $1/passwords ./passwords
 
 for role in ./roles/* ; do
     if [ -d $role/files ]
         then
             echo "creating symlink $role/files/passwords"
-            ln -s $1 $role/files/passwords
+            ln -s $1/passwords $role/files/passwords
         fi
 done
+
+# make some more links
+
+for each in ./ansible.cfg ./group_vars ./hosts ./host_vars ./log ./site.yml ./testing-hosts ; do
+    if [ -h $each ]
+    then
+        rm $each
+    elif [ -e $each ]
+    then
+        echo "$each already exists and isn't a symlink. aborting."
+        exit 1
+    fi
+done
+
+ln -s $1/ansible/* .
+
 
 exit 0

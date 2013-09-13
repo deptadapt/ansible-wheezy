@@ -1,6 +1,0 @@
-[mail_server]
-vmm
-
-[name_server]
-names1: dns_type=master dns_slaves=[names2]
-names2: dns_type=slave dns_master=names1

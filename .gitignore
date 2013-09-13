@@ -5,3 +5,9 @@ host_vars
 passwords
 passwords/*
 site.yml
+ansible.cfg
+group_vars
+hosts
+log
+testing-hosts
+
