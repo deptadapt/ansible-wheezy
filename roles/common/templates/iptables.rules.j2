@@ -13,6 +13,12 @@
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 993 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 4190 -j ACCEPT
 {% endif %}
+
+{% if (inventory_hostname in groups['name_server']) %}
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 53 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 53 -j ACCEPT
+{% endif %}
+
 # -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
 -A INPUT -j REJECT --reject-with icmp-port-unreachable
 -A FORWARD -j REJECT --reject-with icmp-port-unreachable
