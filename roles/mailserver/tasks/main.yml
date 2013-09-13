@@ -339,6 +339,6 @@
     group=opendkim
     mode=0600
   with_fileglob: 
-    - "{{ dkim_private_keys_glob }}/*"
+    - "{{ dkim_private_keys_directory }}/*"
   notify:
     - Reload OpenDKIM config

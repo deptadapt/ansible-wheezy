@@ -34,7 +34,7 @@ fi
 for role in ./roles/* ; do
     if [ -h $role/files/passwords ]
         then
-            rm ./roles/harden/files/passwords
+            rm $role/files/passwords
     elif [ -e $role/files/passwords ]
         then
             echo "The $role/files/passwords directory is not a symlink, aborting!"
