@@ -47,6 +47,8 @@
     mode=0660
   with_fileglob:
     - "{{ dns_zone_source_directory }}/*"
+  tags:
+    - zone_files
   notify:
     - Reload BIND config
 
