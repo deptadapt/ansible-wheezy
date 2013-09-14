@@ -1,0 +1,41 @@
+---
+# trying to fetch a report from tripwire
+#
+
+- hosts:
+    - all
+
+  vars_prompt:
+    - name: "update_confirm"
+      prompt: "Are you sure you want to update the Tripwire database? Enter YES"
+      default: "no"
+      private: no
+
+  tasks:
+
+    - name: Run the tripwire report script
+      script: files/scripts/tripwire-check.sh /tmp/{{ ansible_fqdn }}.tripwire.txt
+      tags:
+        - fetch_reports
+
+    - name: Fetch the report
+      fetch: >
+        src=/tmp/{{ ansible_fqdn }}.tripwire.txt
+        dest={{ tripwire_reports_dir }}
+        fail_on_missing=yes
+        flat=yes
+      tags:
+        - fetch_reports
+
+    - name: Remove the report from /tmp
+      file: >
+        dest=/tmp/{{ ansible_fqdn }}.tripwire.txt
+        state=absent
+      tags:
+        - fetch_reports
+
+    - name: Update the Tripwire database
+      script: files/scripts/tripwire-update.sh {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}
+      tags:
+        - update_database
+      when: update_confirm == "YES"
