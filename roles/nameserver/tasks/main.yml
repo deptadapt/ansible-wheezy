@@ -6,6 +6,18 @@
   apt: pkg=bind9 state=latest
   notify: Enable BIND at boot
 
+- name: Install resolvconf
+  apt: pkg=resolvconf state=latest
+
+- name: Tell BIND to use resolvconf in /etc/default/bind9
+  lineinfile: >
+    dest=/etc/default/bind9
+    regexp="RESOLVCONF"
+    line="RESOLVCONF=yes"
+    state=present
+  notify:
+    - Restart BIND
+
 - name: Copy named.conf.local.j2 template
   template: >
     src={{ dns_type }}.named.conf.local.j2
