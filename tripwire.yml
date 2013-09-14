@@ -14,13 +14,13 @@
   tasks:
 
     - name: Run the tripwire report script
-      script: files/scripts/tripwire-check.sh /tmp/{{ ansible_fqdn }}.tripwire.txt
+      script: files/scripts/tripwire-check.sh /tmp/{{ ansible_fqdn }}.{{ ansible_date_time.date }}.tripwire.txt
       tags:
         - fetch_reports
 
     - name: Fetch the report
       fetch: >
-        src=/tmp/{{ ansible_fqdn }}.tripwire.txt
+        src=/tmp/{{ ansible_fqdn }}.{{ ansible_date_time.date }}.tripwire.txt
         dest={{ tripwire_reports_dir }}
         fail_on_missing=yes
         flat=yes
