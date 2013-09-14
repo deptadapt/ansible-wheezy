@@ -1,0 +1,25 @@
+---
+# This role will install msmtp to use for sending mail.
+# This will remove any other MTA packages that are installed,
+# including exim4 which is installed by default.
+#
+
+- name: Install msmtp-mta and ca-certificates
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - msmtp-mta
+    - ca-certificates
+
+- name: Remove exim4-base and exim4-config
+  apt: pkg={{ item }} state=absent
+  with_items:
+    - exim4-base
+    - exim4-config
+
+- name: Copy /etc/msmtprc .j2 template
+  template: >
+    src=msmtprc.j2
+    dest=/etc/msmtprc
+    owner=root
+    group=root
+    mode=0644
