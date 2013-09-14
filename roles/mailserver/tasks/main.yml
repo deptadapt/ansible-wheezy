@@ -147,17 +147,36 @@
   notify:
     - Reload Postfix config
 
-- name: Copy /etc/aliases j2 template
+- name: Copy /etc/postfix/mynetworks j2 template
   template: >
-    src=postfix/aliases
-    dest=/etc/aliases
+    src=postfix/mynetworks.j2
+    dest=/etc/postfix/mynetworks
     owner=root
     group=root
-    mode=0644
+    mode=0640
+  notify:
+    - Reload Postfix config
+
+- name: Edit /etc/aliases to point root to mailserver
+  lineinfile: >
+    dest=/etc/aliases
+    regexp="^root:"
+    line="root: {{ root_email_alias }}"
+    state=present
   notify:
     - Generate /etc/aliases
     - Reload Postfix config
 
+- name: Edit /etc/aliases to point root to mailserver
+  lineinfile: >
+    dest=/etc/aliases
+    regexp="^logcheck:"
+    line="logcheck: root"
+    state=present
+  notify:
+    - Generate /etc/aliases
+    - Reload Postfix config
+# "
 - name: Copy /etc/vmm/vmm.cfg
   copy: >
     src=vmm/vmm.cfg

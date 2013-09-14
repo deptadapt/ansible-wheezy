@@ -7,12 +7,21 @@ account default
 host {{ hostvars[groups['mail_server'][0]].ansible_fqdn }} 
 
 # Construct envelope-from addresses of the form "user@oursite.example".
-auto_from on
-maildomain {{ ansible_fqdn }} 
+from root@{{ ansible_fqdn }}
+
+domain {{ ansible_fqdn }}
+
+aliases /etc/aliases
 
 # Use TLS.
 tls on
+tls_starttls on
+{% if hostvars[groups['mail_server'][0]].ssl_cert_file is defined %}
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
+{% else %}
+tls_certcheck off
+{% endif %}
+
 
 # Syslog logging with facility LOG_MAIL instead of the default LOG_USER.
 syslog LOG_MAIL

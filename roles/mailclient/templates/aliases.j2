@@ -1,0 +1,15 @@
+# /etc/aliases
+mailer-daemon: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+postmaster: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+nobody: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+hostmaster: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+usenet: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+news: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+webmaster: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+www: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+ftp: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+abuse: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+noc: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+security: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+root: {{ hostvars[groups['mail_server'][0]].root_email_alias }}
+logcheck: {{ hostvars[groups['mail_server'][0]].root_email_alias }}

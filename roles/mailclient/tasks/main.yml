@@ -23,3 +23,11 @@
     owner=root
     group=root
     mode=0644
+
+- name: Copy /etc/aliases .j2 template
+  template: >
+    src=aliases.j2
+    dest=/etc/aliases
+    owner=root
+    group=root
+    mode=0644
