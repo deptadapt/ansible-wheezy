@@ -3,7 +3,8 @@
 {% if 'mail_server' in group_names %}
 if [ -e /tmp/postgres ]
 then
-    rm -rf /tmp/postgres
+#    rm -rf /tmp/postgres
+    ls -l /tmp/postgres
 fi
 {% endif %}
 

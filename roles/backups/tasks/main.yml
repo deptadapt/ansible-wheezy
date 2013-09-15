@@ -19,7 +19,7 @@
     mode=0700
 #     recurse=yes
 
-- name: Copy Duply default profile j2 templates
+- name: Copy Duply default profile config j2 templates
   template: >
     src=default/{{ item }}.j2
     dest=/etc/duply/default/{{ item }}
@@ -29,6 +29,15 @@
   with_items:
     - conf
     - exclude
+
+- name: Copy Duply default profile script j2 templates
+  template: >
+    src=default/{{ item }}.j2
+    dest=/etc/duply/default/{{ item }}
+    owner=root
+    group=root
+    mode=0700
+  with_items:
     - pre
     - post
 
@@ -87,5 +96,3 @@
     - Make tarball of duply profile
     - Fetch the duply profile
     - Remove tarball of duply profile
-  tags:
-    - dups

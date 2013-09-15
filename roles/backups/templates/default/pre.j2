@@ -6,6 +6,7 @@ mkdir /tmp/postgres
 chown postgres:postgres /tmp/postgres
 chmod 700 /tmp/postgres
 
+echo "Running pg_dumpall..."
 su - -c "pg_dumpall > /tmp/postgres/pg_dumpall.{{ ansible_fqdn }}.psql" postgres
 
 {% endif %}
