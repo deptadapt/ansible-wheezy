@@ -31,8 +31,6 @@
     - exclude
     - pre
     - post
-  notify:
-    - Duply full backup
 
 - name: Copy SSH private key
   copy: >
@@ -54,6 +52,9 @@
   copy: >
     src={{ duply_keys_directory }}/{{ duply_ssh_host_key_file }}
     dest=/root/duply_storage_ssh_host_key
+    owner=root
+    group=root
+    mode=0600
   notify:
     - Append /root/.ssh/known_hosts
 
@@ -81,3 +82,10 @@
     job="duply default full"
     user=root
     state=present
+  notify:
+    - Duply full backup
+    - Make tarball of duply profile
+    - Fetch the duply profile
+    - Remove tarball of duply profile
+  tags:
+    - dups
