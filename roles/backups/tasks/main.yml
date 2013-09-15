@@ -1,0 +1,83 @@
+---
+# This role will install Duply to perform automated backups.
+# There will probably be some variables necessary for the 
+# keys that will be needed.
+#
+
+- name: Install duply package
+  apt: pkg=duply state=latest
+  notify:
+    - Copy GnuPG key pair file
+    - Import GnuPG keys
+
+- name: Create /etc/duply/default directory
+  file: >
+    dest=/etc/duply/default
+    state=directory
+    owner=root
+    group=root
+    mode=0700
+#     recurse=yes
+
+- name: Copy Duply default profile j2 templates
+  template: >
+    src=default/{{ item }}.j2
+    dest=/etc/duply/default/{{ item }}
+    owner=root
+    group=root
+    mode=0600
+  with_items:
+    - conf
+    - exclude
+    - pre
+    - post
+  notify:
+    - Duply full backup
+
+- name: Copy SSH private key
+  copy: >
+    src={{ duply_keys_directory }}/{{ duply_ssh_private_key_file }}
+    dest=/root/.ssh/id_rsa
+    owner=root
+    group=root
+    mode=0600
+
+- name: Copy SSH public key
+  copy: >
+    src={{ duply_keys_directory }}/{{ duply_ssh_public_key_file }}
+    dest=/root/.ssh/id_rsa.pub
+    owner=root
+    group=root
+    mode=0600
+
+- name: Copy storage target SSH host key file
+  copy: >
+    src={{ duply_keys_directory }}/{{ duply_ssh_host_key_file }}
+    dest=/root/duply_storage_ssh_host_key
+  notify:
+    - Append /root/.ssh/known_hosts
+
+- name: Copy /root/.ssh/config j2 template
+  template: >
+    src=ssh_config.j2
+    dest=/root/.ssh/config
+    owner=root
+    group=root
+    mode=0600
+
+- name: Add nightly Duply backup to cron
+  cron: >
+    name=duply_nightly
+    hour=3
+    job="duply default backup"
+    user=root
+    state=present
+
+- name: Add weekly Duply full backup to cron
+  cron: >
+    name=duply_weekly
+    hour=5
+    weekday=0
+    job="duply default full"
+    user=root
+    state=present

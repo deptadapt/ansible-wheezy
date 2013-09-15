@@ -1,0 +1,10 @@
+#!/bin/sh
+
+{% if 'mail_server' in group_names %}
+if [ -e /tmp/postgres ]
+then
+    rm -rf /tmp/postgres
+fi
+{% endif %}
+
+exit 0

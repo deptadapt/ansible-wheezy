@@ -1,0 +1,13 @@
+#!/bin/sh
+
+{% if 'mail_server' in group_names %}
+
+mkdir /tmp/postgres
+chown postgres:postgres /tmp/postgres
+chmod 700 /tmp/postgres
+
+su - -c "pg_dumpall > /tmp/postgres/pg_dumpall.{{ ansible_fqdn }}.psql" postgres
+
+{% endif %}
+
+exit 0

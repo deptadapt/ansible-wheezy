@@ -1,0 +1,21 @@
+---
+# handlers for the duply backup installation
+#
+
+- name: Append /root/.ssh/known_hosts
+  shell: "cat /root/duply_storage_ssh_host_key >> /root/.ssh/known_hosts"
+
+- name: Copy GnuPG key pair file
+  copy: >
+    src={{ duply_keys_directory }}/{{ duply_gpg_keys_file }}
+    dest=/etc/duply/default/
+    owner=root
+    group=root
+    mode=0600
+
+- name: Import GnuPG keys
+  shell: gpg --allow-secret-key-import --trust-model always --import /etc/duply/default/both.asc
+
+- name: Duply full backup
+  shell: duply default full
+
