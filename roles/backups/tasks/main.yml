@@ -87,6 +87,7 @@
   cron: >
     name=duply_nightly
     hour=3
+    minute=10
     job="duply default backup"
     user=root
     state=present
@@ -95,6 +96,7 @@
   cron: >
     name=duply_weekly
     hour=5
+    minute=0
     weekday=0
     job="duply default full"
     user=root
