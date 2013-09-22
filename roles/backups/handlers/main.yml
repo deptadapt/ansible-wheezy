@@ -8,16 +8,8 @@
 - name: Append /root/.ssh/known_hosts
   shell: "cat /root/duply_storage_ssh_host_key >> /root/.ssh/known_hosts"
 
-- name: Copy GnuPG key pair file
-  copy: >
-    src={{ duply_keys_directory }}/{{ duply_gpg_keys_file }}
-    dest=/etc/duply/default/
-    owner=root
-    group=root
-    mode=0600
-
 - name: Import GnuPG keys
-  shell: gpg --allow-secret-key-import --trust-model always --import /etc/duply/default/both.asc
+  shell: "gpg --allow-secret-key-import --trust-model always --import /etc/duply/default/{{ duply_gpg_keys_file }}"
 
 - name: Duply full backup
   command: duply default backup
