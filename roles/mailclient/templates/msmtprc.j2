@@ -4,7 +4,11 @@
 account default
 
 # The SMTP smarthost.
+{% if hostvars[groups['mail_server'][0]].ansible_fqdn is defined %}
 host {{ hostvars[groups['mail_server'][0]].ansible_fqdn }} 
+{% elif mail_smarthost is defined %}
+host {{ mail_smarthost }}
+{% endif %}
 
 # Construct envelope-from addresses of the form "user@oursite.example".
 from root@{{ ansible_fqdn }}
@@ -16,7 +20,7 @@ aliases /etc/aliases
 # Use TLS.
 tls on
 tls_starttls on
-{% if hostvars[groups['mail_server'][0]].ssl_cert_file is defined %}
+{% if (hostvars[groups['mail_server'][0]].ssl_cert_file is defined) or (mail_check_certs) %}
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 {% else %}
 tls_certcheck off
