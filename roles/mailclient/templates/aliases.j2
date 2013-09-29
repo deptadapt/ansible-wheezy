@@ -1,6 +1,6 @@
 # /etc/aliases
 
-{% if hostvars[groups['mail_server'] %}
+{% if hostvars[groups['mail_server']] %}
   {% set email_alias = hostvars[groups['mail_server'][0]].root_email_alias %}
 {% elif mail_root_alias is defined %}
   {% set email_alias = mail_root_alias %}
