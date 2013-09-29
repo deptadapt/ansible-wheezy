@@ -45,30 +45,33 @@ done
 # make the links
 
 echo "creating symlink ./passwords"
-ln -s $1/passwords ./passwords
+ln -s $1 ./passwords
 
 for role in ./roles/* ; do
     if [ -d $role/files ]
         then
             echo "creating symlink $role/files/passwords"
-            ln -s $1/passwords $role/files/passwords
+            ln -s $1 $role/files/passwords
         fi
 done
 
 # make some more links
+# commented out by Jeremy 2013-09-29.
+# only want to symlink passwords for now.
+# all the other files should be managed by cloning this git repo directly into
+# a prepare directory.
+# for each in ./ansible.cfg ./group_vars ./hosts ./host_vars ./log ./site.yml ./testing-hosts ; do
+#     if [ -h $each ]
+#     then
+#         rm $each
+#     elif [ -e $each ]
+#     then
+#         echo "$each already exists and isn't a symlink. aborting."
+#         exit 1
+#     fi
+# done
 
-for each in ./ansible.cfg ./group_vars ./hosts ./host_vars ./log ./site.yml ./testing-hosts ; do
-    if [ -h $each ]
-    then
-        rm $each
-    elif [ -e $each ]
-    then
-        echo "$each already exists and isn't a symlink. aborting."
-        exit 1
-    fi
-done
-
-ln -s $1/ansible/* .
+# ln -s $1/ansible/* .
 
 
 exit 0
