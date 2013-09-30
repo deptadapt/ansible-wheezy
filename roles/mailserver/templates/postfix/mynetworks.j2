@@ -8,4 +8,7 @@
 {% endfor %}
 {% endif %}
 {% endfor %}
+{% if additional_mynetworks is defined %}
+{{ lookup('file', additional_mynetworks) }}
+{% endif %}
 
