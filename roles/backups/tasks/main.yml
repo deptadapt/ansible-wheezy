@@ -131,7 +131,7 @@
 #     mode=0600
 
 - name: Duply full backup
-  command: duply default backup
+  command: duply default full
   when: duply_suppress_backup is not defined
 
 - name: Add nightly Duply backup to cron
@@ -150,6 +150,16 @@
     minute=0
     weekday=0
     job="duply default full"
+    user=root
+    state=present
+
+- name: Add weekly Duply purge of old backups to cron
+  cron: >
+    name=duply_purge
+    hour=2
+    minute=0
+    weekday=4
+    job="duply default purge-full --force"
     user=root
     state=present
 
