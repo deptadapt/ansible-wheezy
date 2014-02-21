@@ -7,16 +7,6 @@
 - name: Install duply package
   apt: pkg=duply state=latest
 
-- name: Copy GnuPG key pair file
-  copy: >
-    src={{ duply_keys_directory }}/{{ duply_gpg_keys_file }}
-    dest=/etc/duply/default/
-    owner=root
-    group=root
-    mode=0600
-  notify:
-    - Import GnuPG keys
-
 - name: Create /etc/duply/default directory
   file: >
     dest=/etc/duply/default
@@ -26,38 +16,77 @@
     mode=0700
 #     recurse=yes
 
-- name: Copy Duply default profile config j2 templates
-  template: >
-    src=default/{{ item }}.j2
-    dest=/etc/duply/default/{{ item }}
+- name: Copy GnuPG key pair file
+  copy: >
+    src={{ duply_prep_directory }}/gpgkeys.asc
+    dest=/etc/duply/default/
     owner=root
     group=root
     mode=0600
-  with_items:
-    - conf
-    - exclude
   notify:
-    - Duply full backup
-    - Make tarball of duply profile
-    - Fetch the duply profile
-    - Remove tarball of duply profile
+    - Import GnuPG keys
 
-# the pre and post scripts need to be executable
-- name: Copy Duply default profile script j2 templates
+
+#
+# The following four tasks can hopefully be refactored as a
+# nested loop.
+# http://www.ansibleworks.com/docs/playbooks_loops.html#nested-loops
+#
+- name: Copy conf.j2 for Duply default profile
   template: >
-    src=default/{{ item }}.j2
-    dest=/etc/duply/default/{{ item }}
+    src={{ item }}
+    dest=/etc/duply/default/conf
     owner=root
     group=root
-    mode=0700
-  with_items:
-    - pre
-    - post
-  notify:
-    - Duply full backup
-    - Make tarball of duply profile
-    - Fetch the duply profile
-    - Remove tarball of duply profile
+    mode=0600
+  with_first_found:
+    - files: conf.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
+
+- name: Copy exclude.j2 for Duply default profile
+  template: >
+    src={{ item }}
+    dest=/etc/duply/default/exclude
+    owner=root
+    group=root
+    mode=0600
+  with_first_found:
+    - files: exclude.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
+
+- name: Copy pre.j2 for Duply default profile
+  template: >
+    src={{ item }}
+    dest=/etc/duply/default/pre
+    owner=root
+    group=root
+    mode=0600
+  with_first_found:
+    - files: pre.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
+# this is the old way of doing the above:
+#  first_available_file:
+#    - "{{ duply_prep_directory }}/pre.j2"
+#    - pre.j2
+
+- name: Copy post.j2 for Duply default profile
+  template: >
+    src={{ item }}
+    dest=/etc/duply/default/post
+    owner=root
+    group=root
+    mode=0600
+  with_first_found:
+    - files: post.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
 
 - name: Create /root/.ssh directory
   file: >
@@ -69,7 +98,7 @@
 
 - name: Copy SSH private key
   copy: >
-    src={{ duply_keys_directory }}/{{ duply_ssh_private_key_file }}
+    src={{ duply_prep_directory }}/id_rsa
     dest=/root/.ssh/id_rsa
     owner=root
     group=root
@@ -77,7 +106,7 @@
 
 - name: Copy SSH public key
   copy: >
-    src={{ duply_keys_directory }}/{{ duply_ssh_public_key_file }}
+    src={{ duply_prep_directory }}/id_rsa.pub
     dest=/root/.ssh/id_rsa.pub
     owner=root
     group=root
@@ -85,7 +114,7 @@
 
 - name: Copy storage target SSH host key file
   copy: >
-    src={{ duply_keys_directory }}/{{ duply_ssh_host_key_file }}
+    src={{ duply_prep_directory }}/known_host
     dest=/root/duply_storage_ssh_host_key
     owner=root
     group=root
@@ -93,13 +122,17 @@
   notify:
     - Append /root/.ssh/known_hosts
 
-- name: Copy /root/.ssh/config j2 template
-  template: >
-    src=ssh_config.j2
-    dest=/root/.ssh/config
-    owner=root
-    group=root
-    mode=0600
+# - name: Copy /root/.ssh/config j2 template
+#   template: >
+#     src=ssh_config.j2
+#     dest=/root/.ssh/config
+#     owner=root
+#     group=root
+#     mode=0600
+
+- name: Duply full backup
+  command: duply default full
+  when: duply_suppress_backup is not defined
 
 - name: Add nightly Duply backup to cron
   cron: >
@@ -119,3 +152,16 @@
     job="duply default full"
     user=root
     state=present
+
+- name: Add weekly Duply purge of old backups to cron
+  cron: >
+    name=duply_purge
+    hour=2
+    minute=0
+    weekday=4
+    job="duply default purge-full --force"
+    user=root
+    state=present
+
+## I really should add another cron job that prunes the number of full backups
+#  or maybe make the above cron job a script that does both?

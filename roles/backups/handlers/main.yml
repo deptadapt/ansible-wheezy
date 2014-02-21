@@ -9,21 +9,4 @@
   shell: "cat /root/duply_storage_ssh_host_key >> /root/.ssh/known_hosts"
 
 - name: Import GnuPG keys
-  shell: "gpg --allow-secret-key-import --trust-model always --import /etc/duply/default/{{ duply_gpg_keys_file }}"
-
-- name: Duply full backup
-  command: duply default backup
-
-- name: Make tarball of duply profile
-  shell: "tar cvf /tmp/{{ ansible_fqdn }}.duply-profile.tar /etc/duply/default"
-
-- name: Fetch the duply profile
-  fetch: >
-    flat=yes
-    src=/tmp/{{ ansible_fqdn }}.duply-profile.tar
-    dest={{ duply_profiles_directory }}/
-    fail_on_missing=yes
-
-- name: Remove tarball of duply profile
-  command: rm /tmp/{{ ansible_fqdn }}.duply-profile.tar
-
+  shell: "gpg --allow-secret-key-import --trust-model always --import /etc/duply/default/gpgkeys.asc"
