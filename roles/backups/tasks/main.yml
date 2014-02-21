@@ -28,7 +28,7 @@
 
 
 #
-# The following four tasks can probably be refactored as a
+# The following four tasks can hopefully be refactored as a
 # nested loop.
 # http://www.ansibleworks.com/docs/playbooks_loops.html#nested-loops
 #
@@ -39,19 +39,11 @@
     owner=root
     group=root
     mode=0600
-  first_available_file:
-    - "{{ duply_prep_directory }}/conf.j2"
-    - conf.j2
-### the below works only with literals, not with variables
-### when used with variables it returns None
-#   with_first_found:
-#     - files: 
-#         - conf
-#         - blah
-#         - conf.j2
-#       paths:
-#         - /home/jeremy/mail_testing_files/duply/
-#         - /home/jeremy/src/ansible/roles/backups/templates/
+  with_first_found:
+    - files: conf.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
 
 - name: Copy exclude.j2 for Duply default profile
   template: >
@@ -60,9 +52,11 @@
     owner=root
     group=root
     mode=0600
-  first_available_file:
-    - "{{duply_prep_directory}/exclude.j2"
-    - exclude.j2
+  with_first_found:
+    - files: exclude.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
 
 - name: Copy pre.j2 for Duply default profile
   template: >
@@ -71,9 +65,15 @@
     owner=root
     group=root
     mode=0600
-  first_available_file:
-    - "{{ duply_prep_directory }}/pre.j2"
-    - pre.j2
+  with_first_found:
+    - files: pre.j2
+      paths:
+        - "{{ duply_prep_directory }}/"
+        - ../templates
+# this is the old way of doing the above:
+#  first_available_file:
+#    - "{{ duply_prep_directory }}/pre.j2"
+#    - pre.j2
 
 - name: Copy post.j2 for Duply default profile
   template: >
@@ -82,18 +82,11 @@
     owner=root
     group=root
     mode=0600
-#   first_available_file:
-#     - "{{ duply_prep_directory }}/post.j2"
-#     - post.j2
-### below is what i was trying originally
-### it returns None for the file name
   with_first_found:
-    - files:
-        - post.j2
-#      - post
+    - files: post.j2
       paths:
         - "{{ duply_prep_directory }}/"
-        - default/
+        - ../templates
 
 - name: Create /root/.ssh directory
   file: >
