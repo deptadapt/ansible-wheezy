@@ -145,7 +145,7 @@ smtpd_data_restrictions =
   reject_unauth_pipelining,
   permit
 
-{% if dkim_install %}
+{% if dkim_install is defined %}
 # OpenDKIM signing and verification.
 # This part was enabled because the Ansible host variable dkim_install was true
 #
