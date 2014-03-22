@@ -1,0 +1,7 @@
+---
+# This role requires postgresql
+#
+
+dependencies:
+- { role: mysql-server }
+
