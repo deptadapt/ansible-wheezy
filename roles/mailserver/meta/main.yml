@@ -3,5 +3,5 @@
 #
 
 dependencies:
-- { role: mysql-server }
+- { role: postgres }
 
