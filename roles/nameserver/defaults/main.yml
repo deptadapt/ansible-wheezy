@@ -1,0 +1,22 @@
+---
+# Default server configuration is for master. You can also define slaves if
+# you need them.
+#
+# For this role to work you will need to define some variables for which there
+# are no suitable defaults.
+#
+# dns_zones should be a list of domain names that BIND will manage zone files
+# for. For example:
+#
+# dns_zones:
+#   - deptadapt.org
+#   - deptadapt.com
+#
+# The variable dns_zone_source_directory should be a path to a directory
+# containing a zone file for each domain listed by dns_zones. Each zone
+# file should be named master.domain.tld. With the dns_zones example above
+# this role would look for two files: master.deptadapt.org and
+# master.deptadapt.com
+
+dns_type: master
+dns_zone_source_directory: files/bind

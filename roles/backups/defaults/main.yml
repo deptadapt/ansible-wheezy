@@ -1,0 +1,16 @@
+---
+# This file contains default values for some of the variables used by this role.
+# There are other variables that need to be set that do not have defaults:
+#  - duply_gpg_key: ID of GPG key that duply will sign backups with
+#  - duply_target: the URL duply should send backups to
+
+
+# TODO: is this variable actually used?
+duply_cron: "30 4 * * 0"
+
+duply_suppress_backup: true
+
+duply_prep_directory: files/duply
+duply_restore_tarballs: files/duply/restore_profiles
+
+
