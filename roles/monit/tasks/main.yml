@@ -6,3 +6,13 @@
 - name: Install monit package
   apt: pkg=monit state=present
 
+- name: Copy monitrc snippet templates to /etc/monit/conf.d
+  template: >
+    src={{ item }}.j2
+    dest=/etc/monit/conf.d/
+    owner=root
+    group=root
+    mode=0664
+  with_items:
+    - 01-monit-http
+    - 02-include-monitrc.d
