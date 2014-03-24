@@ -1,0 +1,8 @@
+---
+# This role installs and configure Monit.
+# It will probably have a bunch of monitrc snippets
+# that will need to be used conditionally.
+
+- name: Install monit package
+  apt: pkg=monit state=present
+
