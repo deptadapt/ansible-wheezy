@@ -3,11 +3,11 @@
 # It requires some host variables.
 
 - name: Install bind9 package
-  apt: pkg=bind9 state=latest
+  apt: pkg=bind9 state=present
   notify: Enable BIND at boot
 
 - name: Install resolvconf
-  apt: pkg=resolvconf state=latest
+  apt: pkg=resolvconf state=present
 
 - name: Tell BIND to use resolvconf in /etc/default/bind9
   lineinfile: >

@@ -12,21 +12,8 @@
 - name: preseed Postfix for "No configuration"
   shell: echo "postfix postfix/main_mailer_type select No configuration" | debconf-set-selections 
 
-# This task commented out for testing purposes (too slow)
-# - name: Make sure APT is up to date
-#   apt: update_cache=yes upgrade=yes
-
-# This task demonstrates how to install everything in one go using
-# the with_items keyword.
-#
-# For now I've got it commented out as I am doing prep and clean-up tasks
-# for some of these packages.
-#
-# Also note: PostgreSQL should perhaps be in its own role, with this role
-# depending on it.
-#
 - name: Install Postfix, Dovecot, vmm, postgrey
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=present
   with_items:
     - postfix
     - postfix-pgsql
@@ -281,7 +268,7 @@
 
 - name: Install OpenDKIM
   when: dkim_install
-  apt: pkg=opendkim state=latest
+  apt: pkg=opendkim state=present
 
 - name: Copy /etc/opendkim.conf
   when: dkim_install
@@ -345,8 +332,6 @@
   notify:
     - Reload OpenDKIM config
 
-# Using a tar ball to copy "recursively" so that the source can be
-# defined in a host_var
 - name: Copy DKIM private RSA keys
   when:
     - dkim_install

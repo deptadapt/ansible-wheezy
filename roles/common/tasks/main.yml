@@ -33,12 +33,15 @@
   notify:
     - Reload sshd config
 
-# This task commented out for testing purposes (too slow)
-- name: Make sure APT is up to date
-  apt: update_cache=yes upgrade=yes
+# This task commented out because it really should be moved
+# somewhere else. Either its own playbook, or simply as a task
+# in a playbook that applies roles. It's too slow to do on every
+# host every time, and it doesn't warrant another variable.
+# - name: Make sure APT is up to date
+#   apt: update_cache=yes upgrade=yes
 
 - name: Install harden-servers
-  apt: pkg=harden-servers state=latest
+  apt: pkg=harden-servers state=present
 
 - name: Install NTP service
-  apt: pkg=ntp state=latest
+  apt: pkg=ntp state=present

@@ -5,7 +5,7 @@
 #
 
 - name: Install msmtp-mta and ca-certificates
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=present
   with_items:
     - msmtp-mta
     - ca-certificates

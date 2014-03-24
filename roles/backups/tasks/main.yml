@@ -5,7 +5,7 @@
 #
 
 - name: Install duply package
-  apt: pkg=duply state=latest
+  apt: pkg=duply state=present
 
 - name: Create /etc/duply/default directory
   file: >
@@ -163,5 +163,3 @@
     user=root
     state=present
 
-## I really should add another cron job that prunes the number of full backups
-#  or maybe make the above cron job a script that does both?
