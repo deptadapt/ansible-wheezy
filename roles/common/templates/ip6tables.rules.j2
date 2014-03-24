@@ -8,6 +8,8 @@
 -A INPUT ! -i lo -d ::1/128 -j REJECT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+# Open port for Monit. Probably make this optional
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 2812 -j ACCEPT
 
 {% if (inventory_hostname in groups['mail_server']) %}
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT
