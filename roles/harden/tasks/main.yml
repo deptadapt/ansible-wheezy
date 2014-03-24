@@ -19,7 +19,7 @@
 - name: Install harden package
   environment:
     DEBCONF_DB_FALLBACK: "File{/run/shm/tripwire-debconf-config.dat}"
-  apt: pkg=harden state=latest
+  apt: pkg=harden state=present
   notify:
     - Copy Tripwire policy text file twpol.txt
     - Generate Tripwire policy
