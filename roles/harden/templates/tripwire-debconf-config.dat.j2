@@ -1,23 +1,23 @@
 Name: tripwire/local-passphrase
 Template: tripwire/local-passphrase
-Value: {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}
+Value: {{ tripwire_local_password }}
 Owners: tripwire
 Flags: seen
 
 Name: tripwire/local-passphrase-again
 Template: tripwire/local-passphrase-again
-Value: {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}
+Value: {{ tripwire_local_password }}
 Owners: tripwire
 Flags: seen
 
 Name: tripwire/site-passphrase
 Template: tripwire/site-passphrase
-Value: {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }}
+Value: {{ tripwire_site_password }}
 Owners: tripwire
 Flags: seen
 
 Name: tripwire/site-passphrase-again
 Template: tripwire/site-passphrase-again
-Value: {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }}
+Value: {{ tripwire_site_password }}
 Owners: tripwire
 Flags: seen

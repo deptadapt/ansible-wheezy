@@ -12,7 +12,7 @@
     mode=0644
 
 - name: Generate Tripwire policy
-  command: twadmin -m P -S /etc/tripwire/site.key -Q  {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }} /etc/tripwire/twpol.txt
+  command: twadmin -m P -S /etc/tripwire/site.key -Q  {{ tripwire_site_password }} /etc/tripwire/twpol.txt
 
 - name: Generate Tripwire initial database
-  command: tripwire -m i -P {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}
+  command: tripwire -m i -P {{ tripwire_local_password }}

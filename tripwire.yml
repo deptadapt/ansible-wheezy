@@ -4,6 +4,9 @@
 
 - hosts:
     - all
+  vars: 
+    - tripwire_local_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}"
+    - tripwire_site_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }}"
 
   vars_prompt:
     - name: "update_confirm"
@@ -35,7 +38,7 @@
         - fetch_reports
 
     - name: Update the Tripwire database
-      script: files/scripts/tripwire-update.sh {{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}
+      script: files/scripts/tripwire-update.sh {{ tripwire_local_password }}
       tags:
         - update_database
       when: update_confirm == "YES"
