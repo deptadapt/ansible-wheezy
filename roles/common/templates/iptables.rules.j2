@@ -7,10 +7,12 @@
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 
-# Open port for Monit. Should probably make this optional
+{% if firewall_unblock_monit == 'True' %}
+# Open port for Monit. 
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 2812 -j ACCEPT
+{% endif %}
 
-{% if (inventory_hostname in groups['mail_server']) %}
+{% if firewall_unblock_mail == 'True' %}
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 143 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 587 -j ACCEPT
@@ -18,7 +20,7 @@
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 4190 -j ACCEPT
 {% endif %}
 
-{% if (inventory_hostname in groups['name_server']) %}
+{% if firewall_unblock_dns == 'True' %}
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 53 -j ACCEPT
 -A INPUT -p udp -m state --state NEW -m udp --dport 53 -j ACCEPT
 {% endif %}

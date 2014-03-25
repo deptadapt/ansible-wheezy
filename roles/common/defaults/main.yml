@@ -1,0 +1,10 @@
+---
+# The common role handles the firewall.
+
+# Note that these variables will be strings of "True" or "False" not
+# actually boolean values.
+firewall_unblock_mail: "{{ inventory_hostname in groups['mail_server'] }}"
+firewall_unblock_dns: "{{ inventory_hostname in groups['name_server'] }}"
+firewall_unblock_monit: "{{ inventory_hostname in groups['monit'] }}"
+
+
