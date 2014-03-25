@@ -8,6 +8,9 @@
 # contains the passphrase, and is used with the DEBCONF_DB_FALLBACK
 # environment variable.
 
+- name: Check for presence of /usr/sbin/tripwire
+  stat: path=/usr/sbin/tripwire
+  register: tripwire_bin
 
 - name: Copy Tripwire debconf database
   template: >
@@ -15,6 +18,7 @@
     dest=/run/shm/tripwire-debconf-config.dat
     owner=root
     mode=0600
+  when: tripwire_bin.stat.exists == False
   
 - name: Install harden package
   environment:
@@ -26,4 +30,4 @@
     - Generate Tripwire initial database
 
 - name: Remove Tripwire debconf database
-  command: rm /run/shm/tripwire-debconf-config.dat
+  file: path=/run/shm/tripwire-debconf-config.dat state=absent
