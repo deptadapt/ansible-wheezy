@@ -6,18 +6,18 @@
 # 
 # It is meant to be executed by the 'postgres' system user.
 
-psql -c "CREATE ROLE vmm LOGIN ENCRYPTED PASSWORD '{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_vmm') }}';" template1
-psql -c "CREATE ROLE dovecot LOGIN ENCRYPTED PASSWORD '{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_dovecot') }}';" template1
-psql -c "CREATE ROLE postfix LOGIN ENCRYPTED PASSWORD '{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_postfix') }}';" template1
+psql -c "CREATE ROLE vmm LOGIN ENCRYPTED PASSWORD '{{ vmm_vmm_password }}';" template1
+psql -c "CREATE ROLE dovecot LOGIN ENCRYPTED PASSWORD '{{ dovecot_vmm_password }}';" template1
+psql -c "CREATE ROLE postfix LOGIN ENCRYPTED PASSWORD '{{ postfix_vmm_password }}';" template1
 psql -c "CREATE ROLE mailsys WITH USER postfix, dovecot, vmm;" template1
 psql -c "CREATE DATABASE mailsys WITH OWNER vmm ENCODING 'UTF8';" template1
 
-PGPASSWORD="{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_vmm') }}" psql mailsys vmm -w -h localhost -f /usr/share/doc/vmm/examples/pgsql/create_tables-dovecot-1.2.x.pgsql
+PGPASSWORD="{{ vmm_vmm_password }}" psql mailsys vmm -w -h localhost -f /usr/share/doc/vmm/examples/pgsql/create_tables-dovecot-1.2.x.pgsql
 
 cp /usr/share/doc/vmm/examples/pgsql/set-permissions.py.gz /tmp/vmm
 gunzip /tmp/vmm/set-permissions.py.gz
 
-python /tmp/vmm/set-permissions.py -H 127.0.0.1 -U vmm -p {{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_vmm') }}
+python /tmp/vmm/set-permissions.py -H 127.0.0.1 -U vmm -p {{ vmm_vmm_password }}
 
 touch /etc/postgresql/9.1/vmm-installed
 exit 0

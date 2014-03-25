@@ -23,6 +23,6 @@ sslmode = prefer
 ; Database user name (String)
 user = vmm
 ; Database password (String)
-pass = {{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_vmm') }}
+pass = {{ vmm_vmm_password }}
 ; Database name (String)
 name = mailsys
