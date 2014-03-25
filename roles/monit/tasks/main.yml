@@ -16,3 +16,6 @@
   with_items:
     - 01-monit-http
     - 02-include-monitrc.d
+
+- debug: msg="{{ deptadapt_ntp }}"
+  when: deptadapt_ntp is defined

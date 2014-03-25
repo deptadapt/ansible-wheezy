@@ -1,0 +1,8 @@
+---
+# For now there is only one variable and it's actually set
+# here but used by the monit role to determine whether postgres
+# should be monitored.
+
+# Enable monitoring with monit by default.
+# This variable is used by the monit role.
+monit_postgres: true

@@ -3,3 +3,9 @@
 
 dkim_install: false
 root_email_alias: root@{{ ansible_fqdn }}
+
+# Enable monitoring with monit by default.
+# This variable is used by the monit role.
+monit_postfix: true
+monit_dovecot: true
+
