@@ -11,7 +11,7 @@
 {# Note that the variable unblock is a string. 
    TODO: it might not be a string if the default gets overridden. #}
 {% for name, unblock in firewall_unblock.iteritems() %}
-{% if unblock == "True" %}
+{% if unblock|bool %}
 {% include name + ".j2" %}
 {% endif %}
 {% endfor %}
