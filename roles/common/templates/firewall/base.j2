@@ -1,0 +1,32 @@
+# {{ ansible_managed }}
+# If you edit this file locally it will be written over the
+# next time Ansible is run.
+{% block header %}
+{% endblock header %}
+
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+
+{% block filters %}
+
+{% if firewall_unblock_mail == 'True' %}
+{% include "iptables-mailserver.j2" %}
+{% endif %}
+
+{% if firewall_unblock_dns == 'True' %}
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 53 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 53 -j ACCEPT
+{% endif %}
+
+{% if firewall_unblock_monit == 'True' %}
+# Open port for Monit. 
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 2812 -j ACCEPT
+{% endif %}
+
+{% block append_filters %}
+{% endblock append_filters %}
+
+{% endblock filters %}
+
+{% block footer %}
+{% endblock footer %}
+COMMIT

@@ -1,0 +1,20 @@
+{% extends "base.j2" %}
+{% block header %}
+*filter
+-A INPUT -i lo -j ACCEPT
+-A INPUT ! -i lo -d ::1/128 -j REJECT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+{% endblock header %}
+
+
+{% block footer %}
+# ip6tables.rules.j2
+# Unblock mail: {{ firewall_unblock_mail }}
+# Unblock dns: {{ firewall_unblock_dns }}
+# Unblock monit: {{ firewall_unblock_monit }}
+
+# -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A INPUT -j REJECT
+-A FORWARD -j REJECT
+-A OUTPUT -j ACCEPT
+{% endblock footer %}

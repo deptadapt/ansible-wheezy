@@ -1,0 +1,5 @@
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 143 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 587 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 993 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 4190 -j ACCEPT

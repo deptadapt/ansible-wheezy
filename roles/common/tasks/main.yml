@@ -4,7 +4,7 @@
 
 - name: Copy firewall rule j2 templates
   template: >
-    src={{ item }}.j2
+    src=firewall/{{ item }}.j2
     dest=/etc/{{ item }}
     owner=root
     group=root
