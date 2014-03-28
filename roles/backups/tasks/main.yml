@@ -121,8 +121,7 @@
     line="{{ item  + ' ' +  target_ssh_host_key_type + ' ' + target_ssh_host_key }}"
   with_items:
     - "{{ target_hostname }}"
-    - "{{ target_ip }}"
-    - "{{ target_hostname + ',' + target_ip }}"
+    - "{{ target_ip + ',' + target_hostname }}"
 
 # "
 - debug: var=target_ssh_host_key_type
