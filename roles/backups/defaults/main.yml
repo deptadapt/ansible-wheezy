@@ -18,4 +18,4 @@ target_hostname: "{{ hostvars[groups['archive'][0]].ansible_hostname }}"
 target_ip: "{{ hostvars[groups['archive'][0]].ansible_default_ipv4.address }}"
 target_ssh_host_key: "{{ hostvars[groups['archive'][0]].ansible_ssh_host_key_ecdsa_public }}"
 
-
+root_ssh_key_file: "/root/.ssh/ansible"

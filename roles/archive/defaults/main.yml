@@ -1,0 +1,5 @@
+---
+# This file is empty
+#
+
+backup_clients: "{{ groups['backup_clients'] }}"

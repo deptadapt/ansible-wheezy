@@ -1,0 +1,30 @@
+---
+# This role is meant for a server that hosts backups for
+# other servers. The other servers will connect over SSH, so
+# all we need to do is create users and add some authorized_keys
+
+- debug: var=backup_clients
+
+- name: Create a user account for each backup client
+  user: >
+    name={{ item }}
+    state=present
+  with_items: backup_clients
+
+- name: Add authorized keys for each backup client
+  authorized_key: >
+    user={{ item }}
+    state=present
+    key="{{ hostvars[item].root_ssh_key.ssh_public_key }}"
+  with_items: backup_clients
+
+- debug: msg="{{ hostvars['marx'].root_ssh_key.ssh_public_key }}"
+
+- name: Restrict permissions on each client's home folder
+  file: >
+    path=/home/{{ item }}
+    owner={{ item }}
+    group={{ item }}
+    mode=0700
+  with_items: backup_clients
+
