@@ -13,4 +13,9 @@ duply_suppress_backup: true
 duply_prep_directory: files/duply
 duply_restore_tarballs: files/duply/restore_profiles
 
+target_ssh_host_key_type: "ecdsa-sha2-nistp256"
+target_hostname: "{{ hostvars[groups['archive'][0]].ansible_hostname }}"
+target_ip: "{{ hostvars[groups['archive'][0]].ansible_default_ipv4.address }}"
+target_ssh_host_key: "{{ hostvars[groups['archive'][0]].ansible_ssh_host_key_ecdsa_public }}"
+
 

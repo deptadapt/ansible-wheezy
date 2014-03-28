@@ -112,16 +112,36 @@
     group=root
     mode=0600
 
-- name: Copy storage target SSH host key file
-  copy: >
-    src={{ duply_prep_directory }}/known_host
-    dest=/root/duply_storage_ssh_host_key
-    owner=root
-    group=root
-    mode=0600
-  notify:
-    - Append /root/.ssh/known_hosts
+- name: Add backup target's SSH host key to /root/.ssh/known_hosts
+  lineinfile: >
+    dest=/root/.ssh/known_hosts
+    create=yes
+    mode=0644
+    regexp="^{{ item }}"
+    line="{{ item  + ' ' +  target_ssh_host_key_type + ' ' + target_ssh_host_key }}"
+  with_items:
+    - "{{ target_hostname }}"
+    - "{{ target_ip }}"
+    - "{{ target_hostname + ',' + target_ip }}"
 
+# "
+- debug: var=target_ssh_host_key_type
+- debug: var=target_hostname
+- debug: var=target_ip
+- debug: var=target_ssh_host_key
+
+# "Commenting out the old task to replace it.
+# - name: Copy storage target SSH host key file
+#   copy: >
+#     src={{ duply_prep_directory }}/known_host
+#    dest=/root/duply_storage_ssh_host_key
+#    owner=root
+#    group=root
+#    mode=0600
+#  notify:
+#     - Append /root/.ssh/known_hosts
+
+# This task turned out to be unnecessary.
 # - name: Copy /root/.ssh/config j2 template
 #   template: >
 #     src=ssh_config.j2
