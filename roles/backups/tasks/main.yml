@@ -1,8 +1,7 @@
 ---
 # This role will install Duply to perform automated backups.
-# There will probably be some variables necessary for the 
-# keys that will be needed.
-#
+# It is meant to be used with the corresponding backup_server
+# role
 
 - name: Install duply package
   apt: pkg=duply state=present
@@ -34,7 +33,7 @@
 # TODO: make it work with or without the slash. Possibly using a 
 # default variable that applies the path filter and supplies a default
 # value that is an empty string.
-- name: Copy conf.j2 for Duply default profile
+- name: Copy Duply default profile j2 templates
   template: >
     src={{ duply_profile_template_directory }}{{ item }}
     dest=/etc/duply/default/
@@ -47,6 +46,12 @@
     - pre.j2
     - post.j2
 
+# This task registers its result as root_ssh_key.
+# The variable is used by the archive role, which must
+# always run after the backups role for this variable to be
+# available.
+# TODO: consider fetching the key to a local file that can
+# be used by the archive role instead.
 - name: Generate ssh key for root
   user: >
     name=root
@@ -55,11 +60,19 @@
 
 - debug: var=root_ssh_key.ssh_public_key
 
+# This complicated looking task has the goal of adding the backup
+# server's SSH host key to root's known_hosts files. Without
+# the host key, root cannot connect to the backup server without a prompt.
+# If the backup server's SSH key ever changes this task should also
+# update root's known_hosts.
+# This is assumed to be safe because if the SSH key has changed there
+# will also be warnings on the local computer executing Ansible. The values
+# are also logged using the debug actions below.
 - name: Add backup target's SSH host key to /root/.ssh/known_hosts
   lineinfile: >
     dest=/root/.ssh/known_hosts
     create=yes
-    mode=0644
+    mode=0600
     regexp="^{{ item }}"
     line="{{ item  + ' ' +  target_ssh_host_key_type + ' ' + target_ssh_host_key }}"
   with_items:
@@ -71,10 +84,6 @@
 - debug: var=target_hostname
 - debug: var=target_ip
 - debug: var=target_ssh_host_key
-
-- name: Duply full backup
-  command: duply default full
-  when: duply_suppress_backup is not defined
 
 - name: Add nightly Duply backup to cron
   cron: >

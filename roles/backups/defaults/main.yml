@@ -2,23 +2,53 @@
 # This file contains default values for some of the variables used by this role.
 # There are other variables that need to be set that do not have defaults:
 #  - duply_gpg_key: ID of GPG key that duply will sign backups with
-#  - duply_target: the URL duply should send backups to
 
 
 # TODO: is this variable actually used?
 duply_cron: "30 4 * * 0"
 
+# Don't execute backups by default. This variable might get
+# removed because the task to execute the backup can't run
+# successfully until the second time the playbook is executed.
+# This is because the backups server is configured after this role.
 duply_suppress_backup: true
 
 duply_prep_directory: files/duply
+
+# This variable defaults to an empty string. The variable is used in the 
+# "Copy Duply default profile j2 templates" task as a prefix for the path
+# to the template file. Note that this path prefix must always end with a
+# '/' and that the directory must contain all four of these files:
+#  * conf.j2: the duply conf file
+#  * exclude.j2: a list of paths to exclude from the backup
+#  * pre.j2: a script to execute before backup
+#  * post.js: a script to execute after backup
+# See the templates directory of this role for the files that are used
+# by default.
 duply_profile_template_directory: ""
+
+# Path to a directory to put Duply restore profiles for hosts.
+# This playbook makes a tarball of the Duply profile used for backing
+# up each host. This tarball contains everything you need to restore and
+# decrypt the host's files. The filename is the host's FQDN.tar
 duply_restore_tarballs: files/duply/restore_profiles
 
+# By default this playbook will configure Duply to send backups
+# to the first listed host in the "archive" group. If you use this role
+# with the corresponding archive role, the default values for the following
+# variables facilitate automated deployment of the SSH host key for
+# the archive server that backup clients will connect to.
+# These variables end up getting used to create the file
+# /root/.ssh/known_hosts.
 target_ssh_host_key_type: "ecdsa-sha2-nistp256"
-target_hostname: "{{ hostvars[groups['archive'][0]].ansible_hostname }}"
+target_hostname: "{{ hostvars[groups['archive'][0]].ansible_fqdn }}"
 target_ip: "{{ hostvars[groups['archive'][0]].ansible_default_ipv4.address }}"
 target_ssh_host_key: "{{ hostvars[groups['archive'][0]].ansible_ssh_host_key_ecdsa_public }}"
 
+# This variable is used by the conf.j2 template as part of the Duply
+# profile that this role creates. The default target URL uses this
+# host's hostname as the SSH username, and the above target_hostname
+# variable (which defaults to the first host in the "archive group"
+#
 duply_target_url: "ssh://{{ ansible_hostname }}@{{ target_hostname }}"
 
-root_ssh_key_file: "/root/.ssh/ansible"
