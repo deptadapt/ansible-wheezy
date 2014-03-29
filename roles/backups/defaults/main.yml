@@ -11,6 +11,7 @@ duply_cron: "30 4 * * 0"
 duply_suppress_backup: true
 
 duply_prep_directory: files/duply
+duply_profile_template_directory: ""
 duply_restore_tarballs: files/duply/restore_profiles
 
 target_ssh_host_key_type: "ecdsa-sha2-nistp256"

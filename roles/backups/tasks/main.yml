@@ -26,75 +26,26 @@
   notify:
     - Import GnuPG keys
 
-
-#
-# The following four tasks can hopefully be refactored as a
-# nested loop.
-# http://www.ansibleworks.com/docs/playbooks_loops.html#nested-loops
-#
+# This task uses the duply_profile_template_directory variable
+# to allow the user to prefix a path to a directory containing the
+# files listed under with_items. All 4 files must exist at this path.
+# The path listed in duply_profile_template_directory must end with
+# a '/' for this to work.
+# TODO: make it work with or without the slash. Possibly using a 
+# default variable that applies the path filter and supplies a default
+# value that is an empty string.
 - name: Copy conf.j2 for Duply default profile
   template: >
-    src={{ item }}
-    dest=/etc/duply/default/conf
+    src={{ duply_profile_template_directory }}{{ item }}
+    dest=/etc/duply/default/
     owner=root
     group=root
     mode=0600
-  with_first_found:
-    - files: conf.j2
-      paths:
-        - "{{ duply_prep_directory }}/"
-        - ../templates
-
-- name: Copy exclude.j2 for Duply default profile
-  template: >
-    src={{ item }}
-    dest=/etc/duply/default/exclude
-    owner=root
-    group=root
-    mode=0600
-  with_first_found:
-    - files: exclude.j2
-      paths:
-        - "{{ duply_prep_directory }}/"
-        - ../templates
-
-- name: Copy pre.j2 for Duply default profile
-  template: >
-    src={{ item }}
-    dest=/etc/duply/default/pre
-    owner=root
-    group=root
-    mode=0600
-  with_first_found:
-    - files: pre.j2
-      paths:
-        - "{{ duply_prep_directory }}/"
-        - ../templates
-# this is the old way of doing the above:
-#  first_available_file:
-#    - "{{ duply_prep_directory }}/pre.j2"
-#    - pre.j2
-
-- name: Copy post.j2 for Duply default profile
-  template: >
-    src={{ item }}
-    dest=/etc/duply/default/post
-    owner=root
-    group=root
-    mode=0600
-  with_first_found:
-    - files: post.j2
-      paths:
-        - "{{ duply_prep_directory }}/"
-        - ../templates
-
-- name: Create /root/.ssh directory
-  file: >
-    dest=/root/.ssh
-    state=directory
-    owner=root
-    group=root
-    mode=0700
+  with_items:
+    - conf.j2
+    - exclude.j2
+    - pre.j2
+    - post.j2
 
 - name: Generate ssh key for root
   user: >
@@ -115,31 +66,11 @@
     - "{{ target_hostname }}"
     - "{{ target_ip + ',' + target_hostname }}"
 
-# "
+# " So that the values are logged:
 - debug: var=target_ssh_host_key_type
 - debug: var=target_hostname
 - debug: var=target_ip
 - debug: var=target_ssh_host_key
-
-# "Commenting out the old task to replace it.
-# - name: Copy storage target SSH host key file
-#   copy: >
-#     src={{ duply_prep_directory }}/known_host
-#    dest=/root/duply_storage_ssh_host_key
-#    owner=root
-#    group=root
-#    mode=0600
-#  notify:
-#     - Append /root/.ssh/known_hosts
-
-# This task turned out to be unnecessary.
-# - name: Copy /root/.ssh/config j2 template
-#   template: >
-#     src=ssh_config.j2
-#     dest=/root/.ssh/config
-#     owner=root
-#     group=root
-#     mode=0600
 
 - name: Duply full backup
   command: duply default full

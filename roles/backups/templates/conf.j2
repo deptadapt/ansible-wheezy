@@ -35,7 +35,7 @@ GPG_OPTS='--trust-model always'
 #            http://en.wikipedia.org/wiki/Url_encoding 
 #            if you define the credentials as TARGET_USER, TARGET_PASS below 
 #            duply will url_encode them for you
-TARGET='{{ duply_target }}/{{ ansible_fqdn }}'
+TARGET='{{ duply_target_url }}/{{ ansible_fqdn }}'
 # optionally the username/password can be defined as extra variables
 # setting them here _and_ in TARGET results in an error
 #TARGET_USER='_backend_username_'
