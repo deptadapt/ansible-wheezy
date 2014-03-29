@@ -41,10 +41,10 @@
     group=root
     mode=0600
   with_items:
-    - conf.j2
-    - exclude.j2
-    - pre.j2
-    - post.j2
+    - conf
+    - exclude
+    - pre
+    - post
 
 # This task registers its result as root_ssh_key.
 # The variable is used by the archive role, which must
