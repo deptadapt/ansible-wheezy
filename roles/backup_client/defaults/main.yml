@@ -52,3 +52,11 @@ target_ssh_host_key: "{{ hostvars[groups['archive'][0]].ansible_ssh_host_key_rsa
 #
 duply_target_url: "ssh://{{ ansible_hostname }}@{{ target_hostname }}"
 
+# Database backup handing.
+# Here is how databases will be handled. 
+# The pre and post script will test for the existence of scripts and
+# execute them if they exist. The scripts will be deployed by the roles
+# that install the database server. The default values will point
+# to the scripts installed by those roles.
+backup_mysql_dump_script: /usr/local/sbin/mysql_dump_all.sh
+backup_postgres_dump_script: /usr/local/sbin/postgresql_dump_all.sh
