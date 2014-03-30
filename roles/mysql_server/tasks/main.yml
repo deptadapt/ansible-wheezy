@@ -27,3 +27,11 @@
     group=root
     mode=0700
 
+- name: Make sure /var/local/mysql_dumps exists
+  file: >
+    dest=/var/local/mysql_dumps
+    state=directory
+    owner=root
+    group=root
+    mode=0700
+

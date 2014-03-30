@@ -4,3 +4,4 @@
 
 # TODO: use password lookup
 mysql_root_password: 'abc123'
+mysql_dumpdb_password: '123abc'
