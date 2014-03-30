@@ -3,8 +3,15 @@
 # See the notes in tasks/main.yml and defaults/main.yml about
 # replacing this and the other Duply config profile files.
 
+# Here we are checking to see if the scripts left by other roles
+# exist.
+
 if [ -f {{ backup_postgres_dump_script }} ]; then
     source {{ backup_postgres_dump_script }}
+fi
+
+if [ -f {{ backup_postgres_dump_script }} ]; then
+  source {{ backup_mysql_dump_script }}
 fi
 
 exit 0

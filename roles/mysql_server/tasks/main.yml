@@ -10,3 +10,20 @@
     - Set MySQL root password
 
 - meta: flush_handlers
+
+- name: Make sure dumpdb user exists
+  mysql_user: >
+    login_user=root
+    login_password={{ mysql_root_password }}
+    name=dumpdb
+    password={{ mysql_dumpdb_password }}
+    priv="*.*:SELECT"
+
+- name: Make sure the mysql_dump_all.sh exists
+  template: >
+    src=mysql_dump_all.sh.j2
+    dest=/usr/local/sbin/mysql_dump_all.sh
+    owner=root
+    group=root
+    mode=0700
+

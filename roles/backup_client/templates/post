@@ -1,11 +1,7 @@
 #!/bin/sh
 
-{% if 'mail_server' in group_names %}
-if [ -e /tmp/postgres ]
-then
-#    rm -rf /tmp/postgres
-    ls -l /tmp/postgres
-fi
-{% endif %}
+# This script needs to look for files in /var/local/ and delete them.
+# The database dump scripts that are called (if they exist) in the pre 
+# script leave their dumps in /var/local
 
 exit 0
