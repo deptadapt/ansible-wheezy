@@ -1,0 +1,6 @@
+---
+# Defaults for MySQL server
+#
+
+# TODO: use password lookup
+mysql_root_password: 'abc123'

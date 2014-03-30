@@ -1,0 +1,12 @@
+---
+# This role installs MySQL server and sets the root password.
+
+- name: Install mysql-server package
+  apt: pkg={{ item }} state=present
+  with_items:
+    - mysql-server
+    - python-mysqldb
+  notify:
+    - Set MySQL root password
+
+- meta: flush_handlers

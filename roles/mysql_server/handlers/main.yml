@@ -1,0 +1,11 @@
+---
+
+# We really only want to set the root MySQL password once, the first
+# time that mysql-server is instaled. Simply reinstalling it will not
+# reset the password.
+# A task that changes the MySQL root password after it has been set would
+# need to use the login_user and login_password parameters
+- name: Set MySQL root password
+  mysql_user: > 
+    name=root
+    password={{ mysql_root_password }}
