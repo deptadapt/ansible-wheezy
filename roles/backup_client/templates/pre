@@ -10,7 +10,7 @@ if [ -f {{ backup_postgres_dump_script }} ]; then
     source {{ backup_postgres_dump_script }}
 fi
 
-if [ -f {{ backup_postgres_dump_script }} ]; then
+if [ -f {{ backup_mysql_dump_script }} ]; then
   source {{ backup_mysql_dump_script }}
 fi
 

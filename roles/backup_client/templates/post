@@ -4,4 +4,12 @@
 # The database dump scripts that are called (if they exist) in the pre 
 # script leave their dumps in /var/local
 
+if [ -x /var/local/pgsql_dumps ]; then
+    rm /var/local/pgsql_dumps/*
+fi
+
+if [ -x /var/local/mysql_dumps ]; then
+    rm /var/local/mysql_dumps/*
+fi
+
 exit 0
