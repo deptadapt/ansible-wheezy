@@ -3,9 +3,6 @@
 
 # Note that these variables will be strings of "True" or "False" not
 # actually boolean values.
-# If you override this dictionary, you should be able to use YAML
-# boolean literals. But right now the template that uses this 
-# dictionary only tests for strings.
 firewall_unblock:
   mailserver: "{{ inventory_hostname in groups['mail_server'] }}"
   nameserver: "{{ inventory_hostname in groups['name_server'] }}"
