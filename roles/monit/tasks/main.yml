@@ -1,11 +1,16 @@
 ---
 # This role installs and configure Monit.
-# It will probably have a bunch of monitrc snippets
-# that will need to be used conditionally.
+# 
+# This role uses a dictionary monit_monitor to determine which
+# services monit should be used to monitor. See the example in
+# defaults/main.yml.
+
 
 - name: Install monit package
   apt: pkg=monit state=present
 
+# These snippets are part of the core monit configuration.
+# The tasks below it are for services to monitor.
 - name: Copy monitrc snippet templates to /etc/monit/conf.d
   template: >
     src={{ item }}.j2
@@ -16,6 +21,26 @@
   with_items:
     - 01-monit-http
     - 02-include-monitrc.d
+  notify:
+    - Restart monit
 
-- debug: msg="{{ deptadapt_ntp }}"
-  when: deptadapt_ntp is defined
+- name: Copy monitrc snippet templates for services enabled in monit_monitor
+  template: >
+    src=services/{{ item.key }}.j2
+    dest=/etc/monit/conf.d/
+    owner=root
+    group=root
+    mode=0664
+  when: item.value|bool
+  with_dict: monit_monitor
+  notify:
+    - Restart monit
+
+- name: Remove monitrc snippet for services disabled in monit_monitor
+  file: >
+    dest=/etc/monit/conf.d/{{ item.key }}
+    state=absent
+  when: not item.value|bool
+  with_dict: monit_monitor
+  notify:
+    - Restart monit

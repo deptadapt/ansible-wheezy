@@ -1,0 +1,11 @@
+---
+#
+
+monit_monitor:
+  apache: false
+  postgresql: false
+  mysql: false
+  postfix: false
+  dovecot: false
+  bind: false
+  
