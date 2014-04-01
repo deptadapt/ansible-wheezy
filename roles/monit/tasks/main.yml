@@ -9,18 +9,13 @@
 - name: Install monit package
   apt: pkg=monit state=present
 
-# These snippets are part of the core monit configuration.
-# The tasks below it are for services to monitor.
-- name: Copy monitrc snippet templates to /etc/monit/conf.d
+- name: Copy monitrc templates to /etc/monit/
   template: >
-    src={{ item }}.j2
-    dest=/etc/monit/conf.d/
+    src=monitrc.j2
+    dest=/etc/monit/
     owner=root
     group=root
     mode=0664
-  with_items:
-    - 01-monit-http
-    - 02-include-monitrc.d
   notify:
     - Restart monit
 
@@ -44,3 +39,5 @@
   with_dict: monit_monitor
   notify:
     - Restart monit
+
+- debug: msg={{ hostvars['localhost'].ansible_hostname }}
