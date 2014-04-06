@@ -1,6 +1,12 @@
 ---
 # The common role handles the firewall.
 
+# TODO: Use default variables for the ports to open for each of
+# the services listed in firewall_unblock
+# TODO: Use the Jinja2 default filter for these to prevent failure
+# if the group name does not exist in inventory.
+#
+#
 # Note that these variables will be strings of "True" or "False" not
 # actually boolean values.
 firewall_unblock:

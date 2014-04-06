@@ -8,8 +8,11 @@
 
 {% block filters %}
 
-{# Note that the variable unblock is a string. 
-   TODO: it might not be a string if the default gets overridden. #}
+{# Note that the variable unblock is a string, so the bool filter
+   is used. bool filter is added to Jinja2 by Ansible.
+
+   TODO: make a single generic rules template that iterates over
+   a list of ports to open. #}
 {% for name, unblock in firewall_unblock.iteritems() %}
 {% if unblock|bool %}
 {% include "rules/" + name + ".j2" %}
