@@ -9,8 +9,8 @@
 
 {% block footer %}
 # ip6tables.rules.j2
-# Unblock mail: {{ firewall_unblock.mailserver }}
-# Unblock dns: {{ firewall_unblock.nameserver }}
+# Unblock mail: {{ firewall_unblock.mail_server }}
+# Unblock dns: {{ firewall_unblock.name_server }}
 # Unblock monit: {{ firewall_unblock.monit }}
 
 # -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT

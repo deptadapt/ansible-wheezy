@@ -11,8 +11,8 @@
 
 {% block footer %}
 # iptables.rules.j2
-# Unblock mail: {{ firewall_unblock.mailserver }}
-# Unblock dns: {{ firewall_unblock.nameserver }}
+# Unblock mail: {{ firewall_unblock.mail_server }}
+# Unblock dns: {{ firewall_unblock.name_server }}
 # Unblock monit: {{ firewall_unblock.monit }}
 
 # -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7

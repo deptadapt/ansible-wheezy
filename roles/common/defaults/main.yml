@@ -4,8 +4,9 @@
 # Note that these variables will be strings of "True" or "False" not
 # actually boolean values.
 firewall_unblock:
-  mailserver: "{{ inventory_hostname in groups['mail_server'] }}"
-  nameserver: "{{ inventory_hostname in groups['name_server'] }}"
+  mail_server: "{{ inventory_hostname in groups['mail_server'] }}"
+  name_server: "{{ inventory_hostname in groups['name_server'] }}"
+  web_server: "{{ inventory_hostname in groups['web_server'] }}"
   monit: "{{ inventory_hostname in groups['monit'] }}"
 
 
