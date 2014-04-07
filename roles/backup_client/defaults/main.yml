@@ -41,9 +41,9 @@ duply_restore_tarballs: files/duply/restore_profiles
 # These variables end up getting used to create the file
 # /root/.ssh/known_hosts.
 target_ssh_host_key_type: "ssh-rsa"
-target_hostname: "{{ hostvars[groups['archive'][0]].ansible_fqdn }}"
-target_ip: "{{ hostvars[groups['archive'][0]].ansible_default_ipv4.address }}"
-target_ssh_host_key: "{{ hostvars[groups['archive'][0]].ansible_ssh_host_key_rsa_public }}"
+target_hostname: "{{ hostvars[groups['backup_server'][0]].ansible_fqdn }}"
+target_ip: "{{ hostvars[groups['backup_server'][0]].ansible_default_ipv4.address }}"
+target_ssh_host_key: "{{ hostvars[groups['backup_server'][0]].ansible_ssh_host_key_rsa_public }}"
 
 # This variable is used by the conf.j2 template as part of the Duply
 # profile that this role creates. The default target URL uses this
