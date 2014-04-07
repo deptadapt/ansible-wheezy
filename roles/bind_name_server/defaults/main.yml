@@ -20,8 +20,3 @@
 
 dns_type: master
 dns_zone_source_directory: files/bind
-
-
-# Enable monitoring with monit by default.
-# This variable is used by the monit role.
-monit_bind: true

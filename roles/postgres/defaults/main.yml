@@ -1,8 +1,3 @@
 ---
-# For now there is only one variable and it's actually set
-# here but used by the monit role to determine whether postgres
-# should be monitored.
-
-# Enable monitoring with monit by default.
-# This variable is used by the monit role.
-monit_postgres: true
+# There are no variables here for now, but I should probably make
+# it easy to override the default locale to install PostgreSQL with.

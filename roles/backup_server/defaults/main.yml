@@ -1,5 +1,5 @@
 ---
-# This file is empty
-#
+# This role requires there to be an invenvory group
+# backup_clients. It's meant to be used with the backup_client role.
 
 backup_clients: "{{ groups['backup_clients'] }}"
