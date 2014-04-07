@@ -1,18 +1,19 @@
 ---
-# The common role handles the firewall.
+# The common role handles the firewall and a few other common details like
+# NTP and configuring sshd.
 
 # TODO: Use default variables for the ports to open for each of
-# the services listed in firewall_unblock
-# TODO: Use the Jinja2 default filter for these to prevent failure
-# if the group name does not exist in inventory.
-#
+# the services listed in firewall_unblock. Note that some services
+# like DNS require TCP and UDP.
 #
 # Note that these variables will be strings of "True" or "False" not
-# actually boolean values.
+# actually boolean values. The get method is used on the groups dictionary
+# to prevent KeyError exception if the inventory does not contain that
+# group name.
 firewall_unblock:
-  mail_server: "{{ inventory_hostname in groups['mail_server'] }}"
-  name_server: "{{ inventory_hostname in groups['name_server'] }}"
-  web_server: "{{ inventory_hostname in groups['web_server'] }}"
-  monit: "{{ inventory_hostname in groups['monit'] }}"
+  mail_server: "{{ inventory_hostname in groups.get('mail_server', []) }}"
+  name_server: "{{ inventory_hostname in groups.get('name_server', []) }}"
+  web_server: "{{ inventory_hostname in groups.get('web_server', []) }}"
+  monit: "{{ inventory_hostname in groups.get('name_server', []) }}"
 
 

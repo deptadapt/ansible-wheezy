@@ -14,9 +14,9 @@
    TODO: make a single generic rules template that iterates over
    a list of ports to open. #}
 {% for name, unblock in firewall_unblock.iteritems() %}
-{% if unblock|bool %}
-{% include "rules/" + name + ".j2" %}
-{% endif %}
+{%   if unblock|bool %}
+{%     include "rules/" + name + ".j2" %}
+{%   endif %}
 {% endfor %}
 
 
