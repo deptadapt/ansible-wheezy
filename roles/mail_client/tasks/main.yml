@@ -1,29 +1,43 @@
 ---
-# This role will install msmtp to use for sending mail.
-# This will remove any other MTA packages that are installed,
-# including exim4 which is installed by default.
+# This role started out using msmtp-mta.
+# It has since been switched to use Postfix with a null mailer
+# configuration.
 #
+# TODO: allow user to specify relay host and auth details with
+# variables
 
-- name: Install msmtp-mta and ca-certificates
+- name: Check for presence of /usr/sbin/postfix
+  stat: path=/usr/sbin/postfix
+  register: postfix_bin
+
+- name: preseed Postfix for "No configuration"
+  shell: echo "postfix postfix/main_mailer_type select No configuration" | debconf-set-selections
+  when: postfix_bin.stat.exists == False
+
+- name: Install Postfix
   apt: pkg={{ item }} state=present
   with_items:
-    - msmtp-mta
-    - ca-certificates
+    - postfix
+#    - ca-certificates
 
 - name: Remove exim4-base and exim4-config
   apt: pkg={{ item }} state=absent
   with_items:
     - exim4-base
     - exim4-config
+    - msmtp-mta
 
-- name: Copy /etc/msmtprc .j2 template
+- name: Copy /etc/postfix/main.cf template
   template: >
-    src=msmtprc.j2
-    dest=/etc/msmtprc
+    src=postfix/main.cf.j2
+    dest=/etc/postfix/main.cf
     owner=root
     group=root
     mode=0644
 
+
+# TODO: The aliases template was originally written for use with
+# msmtp-mta and will need to be redone.
 - name: Copy /etc/aliases .j2 template
   template: >
     src=aliases.j2
