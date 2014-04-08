@@ -2,10 +2,10 @@
 #
 
 monit_monitor:
-  apache: false
-  postgresql: false
-  mysql: false
-  postfix: false
-  dovecot: false
-  bind: false
+  apache: "{{ inventory_hostname in groups.get('web_server', []) }}"
+  postgresql: "{{ inventory_hostname in groups.get('postgresql_server', []) }}"
+  mysql: "{{ inventory_hostname in groups.get('mysql_server', []) }}"
+  postfix: "{{ inventory_hostname in groups.get('mail_server', []) }}"
+  dovecot: "{{ inventory_hostname in groups.get('mail_server', []) }}"
+  bind: "{{ inventory_hostname in groups.get('name_server', []) }}"
   

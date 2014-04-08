@@ -12,7 +12,7 @@
 - name: Copy monitrc templates to /etc/monit/
   template: >
     src=monitrc.j2
-    dest=/etc/monit/
+    dest=/etc/monit/monitrc
     owner=root
     group=root
     mode=0664
@@ -22,7 +22,7 @@
 - name: Copy monitrc snippet templates for services enabled in monit_monitor
   template: >
     src=services/{{ item.key }}.j2
-    dest=/etc/monit/conf.d/
+    dest=/etc/monit/conf.d/{{ item.key }}
     owner=root
     group=root
     mode=0664
