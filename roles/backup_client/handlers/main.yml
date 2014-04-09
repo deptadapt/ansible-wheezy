@@ -2,11 +2,5 @@
 # handlers for the duply backup installation
 #
 
-# - name: Append /root/.ssh/known_hosts
-#   shell: "ssh-keyscan -H archive.deptadapt.org >> /root/.ssh/known_hosts"
-
-- name: Append /root/.ssh/known_hosts
-  shell: "cat /root/duply_storage_ssh_host_key >> /root/.ssh/known_hosts"
-
 - name: Import GnuPG keys
   shell: "gpg --allow-secret-key-import --trust-model always --import /etc/duply/default/gpgkeys.asc"

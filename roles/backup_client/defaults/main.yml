@@ -50,6 +50,11 @@ target_ssh_host_key: "{{ hostvars[groups['backup_server'][0]].ansible_ssh_host_k
 # host's hostname as the SSH username, and the above target_hostname
 # variable (which defaults to the first host in the "archive group"
 #
+# Note that this ends up with the ansible_fqdn variable appended,
+# so that the backups files are in their own directory.
+# 
+# Also if you choose to override this using an absolute path, the path
+# part needs to start with two forward slashes.
 duply_target_url: "ssh://{{ ansible_hostname }}@{{ target_hostname }}"
 
 # Database backup handing.
