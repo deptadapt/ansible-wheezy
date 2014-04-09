@@ -15,17 +15,13 @@
   when: postfix_bin.stat.exists == False
 
 - name: Install Postfix
-  apt: pkg={{ item }} state=present
-  with_items:
-    - postfix
-#    - ca-certificates
+  apt: pkg=postfix state=present
 
 - name: Remove exim4-base and exim4-config
   apt: pkg={{ item }} state=absent
   with_items:
     - exim4-base
     - exim4-config
-    - msmtp-mta
 
 - name: Copy /etc/postfix/main.cf template
   template: >
