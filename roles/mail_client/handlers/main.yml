@@ -1,0 +1,4 @@
+---
+
+- name: Run postalias
+  command: postalias /etc/aliases

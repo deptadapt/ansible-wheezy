@@ -1,25 +1,27 @@
 # /etc/aliases
+# {{ ansible_generated }}
 
 {% if groups['mail_server'] %}
-  {% set email_alias = hostvars[groups['mail_server'][0]].root_email_alias %}
+{%   set email_alias = hostvars[groups['mail_server'][0]].root_email_alias %}
 {% elif mail_root_alias is defined %}
-  {% set email_alias = mail_root_alias %}
+{%   set email_alias = mail_root_alias %}
 {% else %}
-  {% set email_alias = "root@" + ansible_domain %}
+{%   set email_alias = "root@" + ansible_domain %}
 {% endif %}
 
 
-mailer-daemon: {{ email_alias }}
-postmaster: {{ email_alias }}
-nobody: {{ email_alias }}
-hostmaster: {{ email_alias }}
-usenet: {{ email_alias }}
-news: {{ email_alias }}
-webmaster: {{ email_alias }}
-www: {{ email_alias }}
-ftp: {{ email_alias }}
-abuse: {{ email_alias }}
-noc: {{ email_alias }}
-security: {{ email_alias }}
+mailer-daemon: root
+postmaster: root
+nobody: root
+hostmaster: root
+usenet: root
+news: root
+webmaster: root
+www: root
+ftp: root
+abuse: root
+noc: root
+security: root
 root: {{ email_alias }}
-logcheck: {{ email_alias }}
+logcheck: root
+monit: root

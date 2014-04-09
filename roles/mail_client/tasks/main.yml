@@ -35,9 +35,6 @@
     group=root
     mode=0644
 
-
-# TODO: The aliases template was originally written for use with
-# msmtp-mta and will need to be redone.
 - name: Copy /etc/aliases .j2 template
   template: >
     src=aliases.j2
@@ -45,3 +42,5 @@
     owner=root
     group=root
     mode=0644
+  notify:
+    - Run postalias
