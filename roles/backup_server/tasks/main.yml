@@ -2,6 +2,10 @@
 # This role is meant for a server that hosts backups for
 # other servers. The other servers will connect over SSH, so
 # all we need to do is create users and add some authorized_keys
+#
+# Note that this role needs to be used after the backup_client
+# role runs so that the ssh_public_key variable will be available
+# on the backup_client hosts.
 
 - debug: var=backup_clients
 
@@ -17,8 +21,6 @@
     state=present
     key="{{ hostvars[item].root_ssh_key.ssh_public_key }}"
   with_items: backup_clients
-
-- debug: msg="{{ hostvars['marx'].root_ssh_key.ssh_public_key }}"
 
 - name: Restrict permissions on each client's home folder
   file: >
