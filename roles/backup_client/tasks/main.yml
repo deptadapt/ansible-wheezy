@@ -35,8 +35,8 @@
 # value that is an empty string.
 - name: Copy Duply default profile j2 templates
   template: >
-    src={{ duply_profile_template_directory }}{{ item }}
-    dest=/etc/duply/default/
+    src={{ duply_profile_template_directory }}{{ item }}.j2
+    dest=/etc/duply/default/{{ item }}
     owner=root
     group=root
     mode=0600
