@@ -2,3 +2,9 @@
 
 - name: Run postalias
   command: postalias /etc/aliases
+
+- name: Run postmap on /etc/postfix/sasl/sasl_passwd
+  command: postmap /etc/postfix/sasl/sasl_passwd
+
+- name: Restart Postfix
+  service: name=postfix state=restarted

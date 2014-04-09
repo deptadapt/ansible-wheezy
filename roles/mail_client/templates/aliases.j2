@@ -1,15 +1,15 @@
 # /etc/aliases
-# {{ ansible_generated }}
-
+# {{ ansible_managed }}
 {% if groups['mail_server'] %}
 {%   set email_alias = hostvars[groups['mail_server'][0]].root_email_alias %}
+# using root_email_alias from first mail_server
 {% elif mail_root_alias is defined %}
 {%   set email_alias = mail_root_alias %}
+# using mail_root_alias variable
 {% else %}
 {%   set email_alias = "root@" + ansible_domain %}
+# using root@ ansible_domain
 {% endif %}
-
-
 mailer-daemon: root
 postmaster: root
 nobody: root

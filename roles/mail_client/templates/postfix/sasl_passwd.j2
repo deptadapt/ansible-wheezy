@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+{# We don't need to test for the other mail_client_ variables because
+   this template is only used by a task that is conditional on them
+   being set. #}
+# destination
+{% if mail_client_use_submission is defined and mail_client_use_submission|bool %}
+[{{ mail_client_relayhost }}]:submission   {{ mail_client_username }}:{{ mail_client_password }}
+{% else %}
+[{{ mail_client_relayhost }}]   {{ mail_client_username }}:{{ mail_client_password }}
+{% endif %}

@@ -1,5 +1,29 @@
+# {{ ansible_managed }}
+
+{# Right now the problem I'm having is that the client's postfix is sending
+   the email to the mail_server, but because my VM was not configured properly
+   it's setting the address to for example logcheck@engels.localdomain. 
+
+   I think I need to fix my test VMs before I can finish working on this issue. #}
 myhostname = {{ ansible_fqdn }} 
 myorigin = $mydomain
+
+{% if mail_client_relayhost is defined and mail_client_relayhost %}
+{%     if mail_client_use_submission is defined and mail_client_use_submission|bool %}
+relayhost = [{{ mail_client_relayhost }}]:submission
+{%     else %}
+relayhost = [{{ mail_client_relayhost }}]
+{%     endif %}
+{% else %}
 relayhost = $mydomain
+{% endif %}
+
+{% if mail_client_username is defined and mail_client_username
+   and mail_client_password is defined and mail_client_password %}
+smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd
+{% endif %}
+
+alias_maps = hash:/etc/aliases
+
 inet_interfaces = loopback-only
 mydestination =

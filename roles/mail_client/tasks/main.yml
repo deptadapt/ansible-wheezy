@@ -30,6 +30,23 @@
     owner=root
     group=root
     mode=0644
+  notify:
+    - Restart Postfix
+
+- name: Copy SMTP client authentication map template
+  template: >
+    src=postfix/sasl_passwd.j2
+    dest=/etc/postfix/sasl/sasl_passwd
+    owner=root
+    group=root
+    mode=0600
+  when: >
+    mail_client_relayhost is defined and mail_client_relayhost
+    and mail_client_username is defined and mail_client_username
+    and mail_client_password is defined and mail_client_password
+  notify:
+    - Run postmap on /etc/postfix/sasl/sasl_passwd
+    - Restart Postfix
 
 - name: Copy /etc/aliases .j2 template
   template: >
@@ -40,3 +57,4 @@
     mode=0644
   notify:
     - Run postalias
+    - Restart Postfix
