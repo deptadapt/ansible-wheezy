@@ -17,7 +17,7 @@
 
 - name: Copy GnuPG key pair file
   copy: >
-    src={{ duply_prep_directory }}/gpgkeys.asc
+    src={{ backups_prep_directory }}/gpgkeys.asc
     dest=/etc/duply/default/
     owner=root
     group=root
@@ -35,7 +35,7 @@
 # value that is an empty string.
 - name: Copy Duply default profile j2 templates
   template: >
-    src={{ duply_profile_template_directory }}{{ item }}.j2
+    src={{ backups_duply_profile_template_directory }}{{ item }}.j2
     dest=/etc/duply/default/{{ item }}
     owner=root
     group=root
@@ -74,16 +74,16 @@
     create=yes
     mode=0600
     regexp="^{{ item }}"
-    line="{{ item  + ' ' +  target_ssh_host_key_type + ' ' + target_ssh_host_key }}"
+    line="{{ item  + ' ' +  backups_target_ssh_host_key_type + ' ' + backups_target_ssh_host_key }}"
   with_items:
-    - "{{ target_hostname }}"
-    - "{{ target_ip + ',' + target_hostname }}"
+    - "{{ backups_target_hostname }}"
+    - "{{ backups_target_ip + ',' + backups_target_hostname }}"
 
 # " So that the values are logged:
-- debug: var=target_ssh_host_key_type
-- debug: var=target_hostname
-- debug: var=target_ip
-- debug: var=target_ssh_host_key
+- debug: var=backups_target_ssh_host_key_type
+- debug: var=backups_target_hostname
+- debug: var=backups_target_ip
+- debug: var=backups_target_ssh_host_key
 
 - name: Add nightly Duply backup to cron
   cron: >

@@ -1,19 +1,12 @@
 ---
 # This file contains default values for some of the variables used by this role.
 # There are other variables that need to be set that do not have defaults:
-#  - duply_gpg_key: ID of GPG key that duply will sign backups with
+#  - backups_duply_gpg_key: ID of GPG key that duply will sign backups with
 
+backups_duply_max_full: 4
 
-# TODO: is this variable actually used?
-duply_cron: "30 4 * * 0"
-
-# Don't execute backups by default. This variable might get
-# removed because the task to execute the backup can't run
-# successfully until the second time the playbook is executed.
-# This is because the backups server is configured after this role.
-duply_suppress_backup: true
-
-duply_prep_directory: files/duply
+# Directory to find GPG key file.
+backups_prep_directory: files/duply
 
 # This variable defaults to an empty string. The variable is used in the 
 # "Copy Duply default profile j2 templates" task as a prefix for the path
@@ -25,13 +18,13 @@ duply_prep_directory: files/duply
 #  * post.js: a script to execute after backup
 # See the templates directory of this role for the files that are used
 # by default.
-duply_profile_template_directory: ""
+backups_duply_profile_template_directory: ""
 
 # Path to a directory to put Duply restore profiles for hosts.
 # This playbook makes a tarball of the Duply profile used for backing
 # up each host. This tarball contains everything you need to restore and
 # decrypt the host's files. The filename is the host's FQDN.tar
-duply_restore_tarballs: files/duply/restore_profiles
+backups_duply_restore_tarballs: files/duply/restore_profiles
 
 # By default this playbook will configure Duply to send backups
 # to the first listed host in the "archive" group. If you use this role
@@ -40,10 +33,10 @@ duply_restore_tarballs: files/duply/restore_profiles
 # the archive server that backup clients will connect to.
 # These variables end up getting used to create the file
 # /root/.ssh/known_hosts.
-target_ssh_host_key_type: "ssh-rsa"
-target_hostname: "{{ hostvars[groups['backup_server'][0]].ansible_fqdn }}"
-target_ip: "{{ hostvars[groups['backup_server'][0]].ansible_default_ipv4.address }}"
-target_ssh_host_key: "{{ hostvars[groups['backup_server'][0]].ansible_ssh_host_key_rsa_public }}"
+backups_target_ssh_host_key_type: "ssh-rsa"
+backups_target_hostname: "{{ hostvars[groups['backup_server'][0]].ansible_fqdn }}"
+backups_target_ip: "{{ hostvars[groups['backup_server'][0]].ansible_default_ipv4.address }}"
+backups_target_ssh_host_key: "{{ hostvars[groups['backup_server'][0]].ansible_ssh_host_key_rsa_public }}"
 
 # This variable is used by the conf.j2 template as part of the Duply
 # profile that this role creates. The default target URL uses this
@@ -55,7 +48,7 @@ target_ssh_host_key: "{{ hostvars[groups['backup_server'][0]].ansible_ssh_host_k
 # 
 # Also if you choose to override this using an absolute path, the path
 # part needs to start with two forward slashes.
-duply_target_url: "ssh://{{ ansible_hostname }}@{{ target_hostname }}"
+backups_duply_target_url: "ssh://{{ ansible_hostname }}@{{ backups_target_hostname }}"
 
 # Database backup handing.
 # Here is how databases will be handled. 
@@ -63,5 +56,5 @@ duply_target_url: "ssh://{{ ansible_hostname }}@{{ target_hostname }}"
 # execute them if they exist. The scripts will be deployed by the roles
 # that install the database server. The default values will point
 # to the scripts installed by those roles.
-backup_mysql_dump_script: /usr/local/sbin/mysql_dump_all.sh
-backup_postgres_dump_script: /usr/local/sbin/postgresql_dump_all.sh
+backups_mysql_dump_script: /usr/local/sbin/mysql_dump_all.sh
+backups_postgres_dump_script: /usr/local/sbin/postgresql_dump_all.sh
