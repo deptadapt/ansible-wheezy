@@ -6,7 +6,7 @@
 
    I think I need to fix my test VMs before I can finish working on this issue. #}
 myhostname = {{ ansible_fqdn }} 
-myorigin = $mydomain
+myorigin = $myhostname
 
 {% if mail_client_relayhost is defined and mail_client_relayhost %}
 {%     if mail_client_use_submission is defined and mail_client_use_submission|bool %}
@@ -26,4 +26,4 @@ smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd
 alias_maps = hash:/etc/aliases
 
 inet_interfaces = loopback-only
-mydestination =
+# mydestination =
