@@ -8,6 +8,11 @@
 myhostname = {{ ansible_fqdn }} 
 myorigin = $myhostname
 
+{# TODO: possibly set this to secure if it is known that the mail
+   server is using a signed SSL certificate. Or maybe secure should
+   be the default and users can override the variable. #}
+smtp_tls_security_level = encrypt
+
 {% if mail_client_relayhost is defined and mail_client_relayhost %}
 {%     if mail_client_use_submission is defined and mail_client_use_submission|bool %}
 relayhost = [{{ mail_client_relayhost }}]:submission
