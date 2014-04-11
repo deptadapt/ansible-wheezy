@@ -11,7 +11,9 @@ myorigin = $myhostname
 {# TODO: possibly set this to secure if it is known that the mail
    server is using a signed SSL certificate. Or maybe secure should
    be the default and users can override the variable. #}
-smtp_tls_security_level = encrypt
+smtp_tls_security_level = {{ mail_client_smtp_tls_security_level }}
+smtp_tls_loglevel = 1
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 
 {% if mail_client_relayhost is defined and mail_client_relayhost %}
 {%     if mail_client_use_submission is defined and mail_client_use_submission|bool %}

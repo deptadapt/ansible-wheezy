@@ -1,0 +1,8 @@
+---
+
+mail_client_smtp_tls_security_level: encrypt
+
+# mail_client_relayhost
+mail_client_use_submission: false
+# mail_client_username
+# mail_client_password
