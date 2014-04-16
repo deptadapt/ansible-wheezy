@@ -3,5 +3,5 @@
 #
 
 # TODO: use password lookup
-mysql_root_password: 'abc123'
-mysql_dumpdb_password: '123abc'
+mysql_root_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/mysql_root length=64 chars=ascii,digits') }}"
+mysql_dumpdb_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/mysql_dumpdb length=64 chars=ascii,digits') }}"
