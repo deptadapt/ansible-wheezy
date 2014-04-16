@@ -9,6 +9,6 @@ root_email_alias: root@{{ ansible_fqdn }}
 monit_postfix: true
 monit_dovecot: true
 
-postfix_vmm_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_postfix') }}"
-dovecot_vmm_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_dovecot') }}"
-vmm_vmm_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/vmm_vmm') }}"
+postfix_vmm_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/vmm_postfix') }}"
+dovecot_vmm_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/vmm_dovecot') }}"
+vmm_vmm_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/vmm_vmm') }}"
