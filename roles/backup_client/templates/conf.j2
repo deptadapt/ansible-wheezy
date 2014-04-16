@@ -3,7 +3,7 @@
 #  GPG_KEY='01234567'; GPG_PW='passphrase' - public key encryption
 #  GPG_PW='passphrase' - symmetric encryption using passphrase only
 GPG_KEY='{{ backups_duply_gpg_key }}'
-GPG_PW='{{ lookup('password', 'passwords/' + '/duply_gpg_passphrase') }}'
+GPG_PW='{{ backups_gpg_passphrase }}'
 # gpg options passed from duplicity to gpg process (default='')
 # e.g. "--trust-model pgp|classic|direct|always" 
 #   or "--compress-algo=bzip2 --bzip2-compress-level=9"

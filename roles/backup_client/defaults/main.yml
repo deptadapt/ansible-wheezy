@@ -5,6 +5,9 @@
 
 backups_duply_max_full: 4
 
+# Pass phrase to use for the GPG key, defaults to using the password lookup
+backups_gpg_passphrase: "{{ lookup('password', inventory_dir + '/passwords/' + '/duply_gpg_passphrase') }}" 
+
 # Directory to find GPG key file.
 backups_prep_directory: files/duply
 
