@@ -5,8 +5,8 @@
 - hosts:
     - all
   vars: 
-    - tripwire_local_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_local') }}"
-    - tripwire_site_password: "{{ lookup('password', 'passwords/' + ansible_fqdn + '/tripwire_site') }}"
+    - tripwire_local_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/tripwire_local') }}"
+    - tripwire_site_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/tripwire_site') }}"
 
   vars_prompt:
     - name: "update_confirm"
