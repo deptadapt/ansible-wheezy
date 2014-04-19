@@ -1,0 +1,29 @@
+{# I think this template might require some logic. 
+
+Do a default test against localhost:80, but if variables
+are supplied then test against a different URL instead. #}
+check process apache with pidfile /var/run/apache2.pid
+   start program = "/usr/sbin/service apache2 start"
+   stop  program = "/usr/sbin/service apache2 stop"
+   if failed host localhost port {{ monit_web_port }}
+        protocol HTTP request "/~hauk/monit/token" then restart
+   if failed host 192.168.1.1 port 443 type TCPSSL 
+        certmd5 12-34-56-78-90-AB-CD-EF-12-34-56-78-90-AB-CD-EF
+	protocol HTTP request http://localhost/~hauk/monit/token  then restart
+   if 5 restarts within 5 cycles then timeout
+   depends on apache_bin
+   depends on apache_rc
+
+ check file apache_bin with path /opt/apache/bin/httpd
+   group www
+   if failed checksum then unmonitor
+   if failed permission 755 then unmonitor
+   if failed uid root then unmonitor
+   if failed gid root then unmonitor
+
+ check file apache_rc with path /etc/init.d/apache
+   group www
+   if failed checksum then unmonitor
+   if failed permission 755 then unmonitor
+   if failed uid root then unmonitor
+   if failed gid root then unmonitor
