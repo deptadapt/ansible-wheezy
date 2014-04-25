@@ -1,0 +1,13 @@
+---
+- name: Install Apache 
+  apt: pkg=apache2-mpm-{{ apache2_mpm }} state=present
+
+- name: Disable unnecessary Apache modules
+  file: >
+    path=/etc/apache2/mods-enabled/{{ item }}
+    state=absent
+  with_items:
+    - cgi.load
+    - autoindex.conf
+    - autoindex.load
+  notify: Restart apache2

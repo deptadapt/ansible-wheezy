@@ -1,0 +1,5 @@
+---
+# This file will contain default values for Apache and PHP variables
+#
+
+apache2_mpm: worker

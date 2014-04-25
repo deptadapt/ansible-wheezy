@@ -1,0 +1,6 @@
+---
+# This file will contain handlers to reload Apache if any of Apache's
+# or PHP's config files have been changed
+
+- name: Restart apache2
+  service: name=apache2 state=restarted
