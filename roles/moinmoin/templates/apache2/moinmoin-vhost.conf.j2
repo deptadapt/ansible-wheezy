@@ -1,0 +1,34 @@
+<VirtualHost *:80>
+  ServerName moin.deptadapt.org
+  ServerAlias moin
+  Redirect permanent / https://moin/
+</VirtualHost>
+
+<VirtualHost *:443>
+  ServerName moin.deptadapt.org
+  ServerAlias moin
+  
+  SSLEngine On
+  SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+  SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+  
+  Alias /moin_static193/applets/FCKeditor/ "/usr/share/fckeditor/"
+  Alias /moin_static193/ "/usr/share/moin/htdocs/"
+  Alias /robots.txt /usr/share/moin/htdocs/robots.txt
+  Alias /favicon.ico /usr/share/moin/htdocs/favicon.ico
+  DocumentRoot /var/www/wiki/
+  
+  WSGIScriptAlias / "/usr/share/moin/server/moin.wsgi"
+  WSGIDaemonProcess moin user=wiki group=wiki home=/home/wiki processes=3 threads=10 maximum-requests=1000 umask=0007
+  WSGIProcessGroup moin
+
+  ErrorLog /var/log/apache2/moin.deptadapt.org-error.log
+  CustomLog /var/log/apache2/moin.deptadapt.org-access.log combined
+
+  <Location />
+    Order Allow,Deny
+    Allow from all
+  </Location>
+
+</VirtualHost>

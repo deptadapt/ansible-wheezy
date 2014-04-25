@@ -1,0 +1,59 @@
+---
+
+- name: Install MoinMoin
+  apt: pkg=python-moinmoin state=present
+
+- name: Add wiki system user
+  user: name=wiki system=yes state=present
+
+- name: Create /var/local/wiki to store data
+  file: >
+    dest=/var/local/wiki
+    state=directory
+    owner=wiki
+    group=wiki
+    mode=0700
+  notify:
+    - Copy MoinMoin data and underlay
+
+- name: Create dummy /var/www/wiki directory
+  file: >
+    dest=/var/www/wiki
+    state=directory
+    owner=wiki
+    group=www-data
+    mode=0770
+
+- name: Copy Apache vhost template
+  template: >
+    src=apache2/moinmoin-vhost.conf.j2
+    dest=/etc/apache2/sites-available/moinmoin.conf
+    owner=root
+    group=root
+    mode=0700
+  notify:
+    - Restart Apache2
+
+- name: Add vhost to sites-enabled
+  file: >
+    src=/etc/apache2/sites-available/moinmoin.conf
+    dest=/etc/apache2/sites-enabled/moinmoin.conf
+    state=link
+  notify:
+    - Restart Apache2
+
+- name: Copy mywiki.py template
+  template: >
+    src=moin/mywiki.py.j2
+    dest=/etc/moin/mywiki.py
+    owner=root
+    group=root
+    mode=0775
+  notify: Restart Apache2
+
+- name: Add wiki to /etc/moin/wikilist
+  lineinfile: >
+    dest=/etc/moin/wikilist
+    line="wiki moin.deptadapt.org/"
+    state=present
+  notify: Restart Apache2

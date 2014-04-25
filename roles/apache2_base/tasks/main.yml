@@ -10,4 +10,14 @@
     - cgi.load
     - autoindex.conf
     - autoindex.load
-  notify: Restart apache2
+  notify: Restart Apache2
+
+- name: Enable mod_ssl
+  file: >
+    dest=/etc/apache2/mods-enabled/{{ item }}
+    src=/etc/apache2/mods-available/{{ item }}
+    state=link
+  with_items:
+    - ssl.load
+    - ssl.conf
+  notify: Restart Apache2

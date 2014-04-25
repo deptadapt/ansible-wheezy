@@ -1,0 +1,74 @@
+# -*- coding: utf-8 -*-
+# IMPORTANT! This encoding (charset) setting MUST be correct! If you live in a
+# western country and you don't know that you use utf-8, you probably want to
+# use iso-8859-1 (or some other iso charset). If you use utf-8 (a Unicode
+# encoding) you MUST use: coding: utf-8
+# That setting must match the encoding your editor uses when you modify the
+# settings below. If it does not, special non-ASCII chars will be wrong.
+
+"""
+This is a sample config for a wiki that is part of a wiki farm and uses
+farmconfig for common stuff. Here we define what has to be different from
+the farm's common settings.
+"""
+
+# we import the FarmConfig class for common defaults of our wikis:
+from farmconfig import FarmConfig
+
+# now we subclass that config (inherit from it) and change what's different:
+class Config(FarmConfig):
+
+    # basic options (you normally need to change these)
+    sitename = u'DeptAdaptWiki' # [Unicode]
+    interwikiname = u'DeptAdaptWiki' # [Unicode]
+
+    # name of entry page / front page [Unicode], choose one of those:
+
+    # a) if most wiki content is in a single language
+    #page_front_page = u"MyStartingPage"
+
+    # b) if wiki content is maintained in many languages
+    page_front_page = u"FrontPage"
+
+    data_dir = '/var/local/wiki/data/'
+    data_underlay_dir = '/var/local/wiki/underlay/'
+
+    superuser = [u"JeremyMcNaughton", ]
+    mail_from = u'no-reply@deptadapt.org'
+    mail_smarthost = 'tolstoy.deptadapt.org'
+    tz_offset = -5
+
+    # ACL added by jeremy
+    acl_hierarchic = True
+    acl_rights_before = u"JeremyMcNaughton:read,write,revert,delete,admin"
+    
+
+    # changed below made by Jeremy 2013-08-13 to deal with spam
+    # updated 2013-08-14: revert to original acl_rights_default
+
+    # this will automatically update the BadContent page of blocked regular expressions
+    # from MoinMoin.security.antispam import SecurityPolicy
+
+    # original acl_rights_default allowed Known users (any authenticated
+    # user) to create/edit. Started to get spam, so now only members of
+    # TrustedGroup can make changes.
+    # acl_rights_default = u"AdminGroup:read,write,revert,admin,delete Known:read,write,revert All:read"
+    acl_rights_default = u"AdminGroup:read,write,revert,admin,delete TrustedGroup:read,write,revert All:read"
+
+    textchas_disabled_group = u"TrustedGroup"
+    textchas = {
+        'en': { 
+            u"What does deptadapt stand for?": ur"(department of adaptations|Department of Adaptations)",
+            u"What is better than a car?": ur"(bike|Bike|bicycle)",
+            u"Who runs this wiki?": ur"(jeremy|Jeremy)",
+            u"What is Spider-Man's first name?": ur"(peter|Peter)",
+            u"What is The Hulk's last name?": ur"Banner"
+        },
+        'fr': { # some french options too.
+            u"Dans quel saison est-ce-que la construction arrete?": ur"(Hiver|hiver)",
+            u"Quel est le nom de famille de Spider-Man?": ur"Parker",
+            u"Quel est le surnom de Bruce Banner?": ur"(hulk|Hulk)"
+            # ...
+        },
+        # you can add more languages if you like
+    }
