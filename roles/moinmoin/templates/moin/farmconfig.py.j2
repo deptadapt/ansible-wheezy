@@ -10,7 +10,7 @@ wikis = [
     #("wiki1", r"^http://wiki1\.example\.org/.*$"),
     #("wiki2", r"^https?://wiki2\.example\.org/.*$"),
     {% for wiki in moinmoin_wikis %}
-    ("{{ wiki.name }}", r"^https?://({{ wiki.server_name }}|{{ wiki.server_alias }})/.*$"),
+    ("{{ wiki.name }}", r"^https?://({{ wiki.server_name|replace(".", "\.") }}|{{ wiki.server_alias|replace(".", "\.") }})/.*$"),
     {% endfor %}
 ]
 
