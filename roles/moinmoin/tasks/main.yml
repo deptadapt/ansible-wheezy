@@ -1,59 +1,85 @@
 ---
 
-- name: Install MoinMoin
-  apt: pkg=python-moinmoin state=present
+- name: Install MoinMoin and libapache2-mod-wsgi
+  apt: pkg={{ item }} state=present
+  with_items:
+    - python-moinmoin
+    - libapache2-mod-wsgi
+
+- name: Enable NameVirtualHost on port 443 in Apache2
+  lineinfile: >
+    line="    NameVirtualHost *:443"
+    insertafter="^\<IfModule mod\_ssl.c\>"
+    state=present
+    dest=/etc/apache2/ports.conf
+  notify: Restart Apache2
 
 - name: Add wiki system user
-  user: name=wiki system=yes state=present
+  user: name={{ item.name }} system=yes state=present
+  with_items: moinmoin_wikis
 
-- name: Create /var/local/wiki to store data
+- name: Create /var/local/moin
   file: >
-    dest=/var/local/wiki
+    dest=/var/local/moin
     state=directory
-    owner=wiki
-    group=wiki
+    owner=root
+    group=root
+    mode=0755
+
+- name: Create directories in /var/local/moin for wikis
+  file: >
+    dest=/var/local/moin/{{ item.name }}
+    state=directory
+    owner={{ item.name }}
+    group={{ item.name }}
     mode=0700
-  notify:
-    - Copy MoinMoin data and underlay
+  with_items: moinmoin_wikis
+  notify: Copy MoinMoin data and underlay
 
 - name: Create dummy /var/www/wiki directory
   file: >
     dest=/var/www/wiki
     state=directory
-    owner=wiki
+    owner=root
     group=www-data
     mode=0770
 
 - name: Copy Apache vhost template
   template: >
     src=apache2/moinmoin-vhost.conf.j2
-    dest=/etc/apache2/sites-available/moinmoin.conf
+    dest=/etc/apache2/sites-available/moin-{{ item.name }}.conf
     owner=root
     group=root
     mode=0700
-  notify:
-    - Restart Apache2
+  with_items: moinmoin_wikis
+  notify: Restart Apache2
 
 - name: Add vhost to sites-enabled
   file: >
-    src=/etc/apache2/sites-available/moinmoin.conf
-    dest=/etc/apache2/sites-enabled/moinmoin.conf
+    src=/etc/apache2/sites-available/moin-{{ item.name }}.conf
+    dest=/etc/apache2/sites-enabled/moin-{{ item.name }}.conf
     state=link
-  notify:
-    - Restart Apache2
-
-- name: Copy mywiki.py template
-  template: >
-    src=moin/mywiki.py.j2
-    dest=/etc/moin/mywiki.py
-    owner=root
-    group=root
-    mode=0775
+  with_items: moinmoin_wikis
   notify: Restart Apache2
 
-- name: Add wiki to /etc/moin/wikilist
-  lineinfile: >
-    dest=/etc/moin/wikilist
-    line="wiki moin.deptadapt.org/"
-    state=present
+- name: Copy "mywiki.py" templates to /etc/moin
+  template: >
+    src=moin/mywiki.py.j2
+    dest=/etc/moin/{{ item.name }}.py
+    owner=root
+    group=root
+    mode=0755
+  with_items: moinmoin_wikis
+  notify: Restart Apache2
+
+- name: Copy wikilist.j2 and farmconfig.py.j2 templates to /etc/moin/
+  template: >
+    src=moin/{{ item }}.j2
+    dest=/etc/moin/{{ item }}
+    owner=root
+    group=root
+    mode=0744
+  with_items:
+    - wikilist
+    - farmconfig.py
   notify: Restart Apache2

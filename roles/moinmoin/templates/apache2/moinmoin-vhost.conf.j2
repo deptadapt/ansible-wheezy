@@ -1,12 +1,12 @@
 <VirtualHost *:80>
-  ServerName moin.deptadapt.org
-  ServerAlias moin
-  Redirect permanent / https://moin/
+  ServerName {{ item.server_name }}
+  ServerAlias {{ item.server_alias }}
+  Redirect permanent / https://{{ item.server_name }}/
 </VirtualHost>
 
 <VirtualHost *:443>
-  ServerName moin.deptadapt.org
-  ServerAlias moin
+  ServerName {{ item.server_name }}
+  ServerAlias {{ item.server_alias }}
   
   SSLEngine On
   SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
@@ -20,11 +20,11 @@
   DocumentRoot /var/www/wiki/
   
   WSGIScriptAlias / "/usr/share/moin/server/moin.wsgi"
-  WSGIDaemonProcess moin user=wiki group=wiki home=/home/wiki processes=3 threads=10 maximum-requests=1000 umask=0007
-  WSGIProcessGroup moin
+  WSGIDaemonProcess {{ item.name }} user={{ item.name }} group={{ item.name }} home=/home/{{ item.name }} processes=3 threads=10 maximum-requests=1000 umask=0007
+  WSGIProcessGroup {{ item.name }}
 
-  ErrorLog /var/log/apache2/moin.deptadapt.org-error.log
-  CustomLog /var/log/apache2/moin.deptadapt.org-access.log combined
+  ErrorLog /var/log/apache2/{{ item.server_name }}-error.log
+  CustomLog /var/log/apache2/{{ item.server_name }}-access.log combined
 
   <Location />
     Order Allow,Deny

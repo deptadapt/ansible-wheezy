@@ -1,0 +1,19 @@
+---
+
+moinmoin_wikis:
+  - name: mywiki
+    sitename: "MyLocalWiki"
+    server_name: "{{ ansible_fqdn }}"
+    server_alias: "{{ ansible_hostname }}"
+    ssl_cert: ""
+    ssl_key: ""
+    superuser: "MoinMoinAdmin"
+    mail_from: "no-reply@{{ ansible_fqdn }}"
+    mail_smarthost: ""
+    tz_offset: 5
+    acl_hierarchic: true
+    acl_rights_before: "MoinMoinAdmin:read,write,revert,delete,admin"
+    acl_rights_default: "AdminGroup:read,write,revert,admin,delete TrustedGroup:read,write,revert All:read"
+
+
+

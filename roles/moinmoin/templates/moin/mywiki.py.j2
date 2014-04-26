@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# {{ ansible_managed }}
 # IMPORTANT! This encoding (charset) setting MUST be correct! If you live in a
 # western country and you don't know that you use utf-8, you probably want to
 # use iso-8859-1 (or some other iso charset). If you use utf-8 (a Unicode
@@ -19,8 +20,8 @@ from farmconfig import FarmConfig
 class Config(FarmConfig):
 
     # basic options (you normally need to change these)
-    sitename = u'DeptAdaptWiki' # [Unicode]
-    interwikiname = u'DeptAdaptWiki' # [Unicode]
+    sitename = u'{{ item.sitename }}' # [Unicode]
+    interwikiname = u'{{ item.sitename }}' # [Unicode]
 
     # name of entry page / front page [Unicode], choose one of those:
 
@@ -30,17 +31,19 @@ class Config(FarmConfig):
     # b) if wiki content is maintained in many languages
     page_front_page = u"FrontPage"
 
-    data_dir = '/var/local/wiki/data/'
-    data_underlay_dir = '/var/local/wiki/underlay/'
+    data_dir = '/var/local/moin/{{ item.name }}/data/'
+    data_underlay_dir = '/var/local/moin/{{ item.name }}/underlay/'
 
-    superuser = [u"JeremyMcNaughton", ]
-    mail_from = u'no-reply@deptadapt.org'
-    mail_smarthost = 'tolstoy.deptadapt.org'
-    tz_offset = -5
+    superuser = [u"{{ item.superuser }}", ]
+    mail_from = u'{{ item.mail_from }}'
+    mail_smarthost = '{{ item.mail_smarthost }}'
+    tz_offset = {{ item.tz_offset }}
 
     # ACL added by jeremy
+{% if item.acl_hierarchic %}
     acl_hierarchic = True
-    acl_rights_before = u"JeremyMcNaughton:read,write,revert,delete,admin"
+{% endif %}
+    acl_rights_before = u"{{ item.superuser}}:read,write,revert,delete,admin"
     
 
     # changed below made by Jeremy 2013-08-13 to deal with spam

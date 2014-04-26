@@ -1,19 +1,18 @@
 ---
 
 - name: Copy MoinMoin data and underlay
-  command: cp -r /usr/share/moin/{{ item }} /var/local/wiki creates=/var/local/wiki/{{ item }}
-  with_items:
-    - data
-    - underlay
+  command: cp -r /usr/share/moin/data /usr/share/moin/underlay /var/local/moin/{{ item.name }}/ creates=/var/local/wiki/{{ item.name }}/data
+  with_items: moinmoin_wikis
   notify:
     - Set owner and group on /var/local/wiki
 
 - name: Set owner and group on /var/local/wiki
   file: >
-    path=/var/local/wiki
+    path=/var/local/moin/{{ item.name }}
     recurse=yes
-    owner=wiki
-    group=wiki
+    owner={{ item.name }}
+    group={{ item.name }}
+  with_items: moinmoin_wikis
 
 - name: Restart Apache2
   service: name=apache2 state=restarted

@@ -1,3 +1,4 @@
+# {{ ansible_managed }}
 # This file is used by moin-mass-migrate script to migrate the listed
 # wikis. Run this script when upgrading moin to an incompatible new
 # version that requires migrating data.
@@ -10,4 +11,6 @@
 # url. The format of ~/.moin/wikilist is the same as this file.
 
 #www-data wiki.example.org/
-wiki wiki.deptadapt.org/
+{% for wiki in moinmoin_wikis %}
+{{ wiki.name }} {{ wiki.server_name }}/
+{% endfor %}
