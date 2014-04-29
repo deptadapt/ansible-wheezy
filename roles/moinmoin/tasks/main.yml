@@ -72,7 +72,7 @@
   with_items: moinmoin_wikis
   notify: Restart Apache2
 
-- name: Copy wikilist.j2 and farmconfig.py.j2 templates to /etc/moin/
+- name: Copy wikilist.j2 and farmconfig.py.j2 and moin.wsgi.j2 templates to /etc/moin/
   template: >
     src=moin/{{ item }}.j2
     dest=/etc/moin/{{ item }}
@@ -82,4 +82,5 @@
   with_items:
     - wikilist
     - farmconfig.py
+    - moin.wsgi
   notify: Restart Apache2

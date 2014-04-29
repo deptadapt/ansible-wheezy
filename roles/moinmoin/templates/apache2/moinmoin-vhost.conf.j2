@@ -23,9 +23,11 @@
   Alias /favicon.ico /usr/share/moin/htdocs/favicon.ico
   DocumentRoot /var/www/wiki/
   
-  WSGIScriptAlias / "/usr/share/moin/server/moin.wsgi"
+  WSGIScriptAlias / "/etc/moin/moin.wsgi"
   WSGIDaemonProcess {{ item.name }} user={{ item.name }} group={{ item.name }} home=/home/{{ item.name }} processes=3 threads=10 maximum-requests=1000 umask=0007
   WSGIProcessGroup {{ item.name }}
+
+  SetEnv MOINLOGGINGCONF /usr/share/moin/config/logging/stderr
 
   ErrorLog /var/log/apache2/{{ item.server_name }}-error.log
   CustomLog /var/log/apache2/{{ item.server_name }}-access.log combined

@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+{{ ansible_managed }}
+"""
+import sys, os
+
+sys.path.insert(0, '/etc/moin')
+
+from MoinMoin import log
+log.load_config('/usr/share/moin/config/logging/stderr')
+
+from MoinMoin.web.serving import make_application
+
+application = make_application(shared=True)
+
