@@ -50,7 +50,7 @@
     dest=/etc/apache2/sites-available/moin-{{ item.name }}.conf
     owner=root
     group=root
-    mode=0700
+    mode=0600
   with_items: moinmoin_wikis
   notify: Restart Apache2
 
@@ -68,7 +68,7 @@
     dest=/etc/moin/{{ item.name }}.py
     owner=root
     group=root
-    mode=0755
+    mode=0644
   with_items: moinmoin_wikis
   notify: Restart Apache2
 
@@ -78,7 +78,7 @@
     dest=/etc/moin/{{ item }}
     owner=root
     group=root
-    mode=0744
+    mode=0644
   with_items:
     - wikilist
     - farmconfig.py

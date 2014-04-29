@@ -34,16 +34,16 @@ class Config(FarmConfig):
     data_dir = '/var/local/moin/{{ item.name }}/data/'
     data_underlay_dir = '/var/local/moin/{{ item.name }}/underlay/'
 
-    superuser = [u"{{ item.superuser }}", ]
-    mail_from = u'{{ item.mail_from }}'
-    mail_smarthost = '{{ item.mail_smarthost }}'
-    tz_offset = {{ item.tz_offset }}
+    superuser = [u"{{ item.get('superuser', 'MoinMoinAdmin') }}", ]
+    mail_from = u"{{ item.get('mail_from', 'no-reply@' + ansible_fqdn) }}"
+    mail_smarthost = "{{ item.get('mail_smarthost', 'localhost') }}"
+    tz_offset = {{ item.get('tz_offset', 0) }}
 
     # ACL added by jeremy
-{% if item.acl_hierarchic %}
+{% if item.acl_hierarchic is defined and item.acl_hierarchic %}
     acl_hierarchic = True
 {% endif %}
-    acl_rights_before = u"{{ item.superuser}}:read,write,revert,delete,admin"
+    acl_rights_before = u"{{ item.get('acl_rights_before', item.get('superuser', 'MoinMoinAdmin') + ':read,write,revert,delete,admin') }}"
     
 
     # changed below made by Jeremy 2013-08-13 to deal with spam
@@ -56,14 +56,12 @@ class Config(FarmConfig):
     # user) to create/edit. Started to get spam, so now only members of
     # TrustedGroup can make changes.
     # acl_rights_default = u"AdminGroup:read,write,revert,admin,delete Known:read,write,revert All:read"
-    acl_rights_default = u"AdminGroup:read,write,revert,admin,delete TrustedGroup:read,write,revert All:read"
+    acl_rights_default = u"{{ item.get('acl_rights_default', 'AdminGroup:read,write,revert,admin,delete TrustedGroup:read,write,revert All:read') }}"
 
     textchas_disabled_group = u"TrustedGroup"
     textchas = {
         'en': { 
-            u"What does deptadapt stand for?": ur"(department of adaptations|Department of Adaptations)",
             u"What is better than a car?": ur"(bike|Bike|bicycle)",
-            u"Who runs this wiki?": ur"(jeremy|Jeremy)",
             u"What is Spider-Man's first name?": ur"(peter|Peter)",
             u"What is The Hulk's last name?": ur"Banner"
         },

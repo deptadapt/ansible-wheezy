@@ -1,13 +1,17 @@
 <VirtualHost *:80>
   ServerName {{ item.server_name }}
+{% if item.server_alias is defined and item.server_alias %}
   ServerAlias {{ item.server_alias }}
+{% endif %}
   Redirect permanent / https://{{ item.server_name }}/
 </VirtualHost>
 
 <VirtualHost *:443>
   ServerName {{ item.server_name }}
+{% if item.server_alias is defined and item.server_alias %}
   ServerAlias {{ item.server_alias }}
-  
+{% endif %}
+
   SSLEngine On
   SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
   SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
