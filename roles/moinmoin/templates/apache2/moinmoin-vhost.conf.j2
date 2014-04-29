@@ -1,11 +1,3 @@
-<VirtualHost *:80>
-  ServerName {{ item.server_name }}
-{% if item.server_alias is defined and item.server_alias %}
-  ServerAlias {{ item.server_alias }}
-{% endif %}
-  Redirect permanent / https://{{ item.server_name }}/
-</VirtualHost>
-
 <VirtualHost *:443>
   ServerName {{ item.server_name }}
 {% if item.server_alias is defined and item.server_alias %}
@@ -13,8 +5,17 @@
 {% endif %}
 
   SSLEngine On
+{# Use the SSL cert and key provided by playbook user if they
+   are defined in the moinmoin_wikis list. Otherwise use the snakeoil
+   certificate generated and self-signed by the ssl-cert Debian package. #}
+{% if item.ssl_cert is defined and item.ssl_cert
+   and item.ssl_key is defined and item.ssl_key %}
+  SSLCertificateFile /etc/ssl/local/moin-{{ item.name }}-cert.pem
+  SSLCertificateKeyFile /etc/ssl/local/private/moin-{{ item.name }}-key.pem
+{% else %}
   SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
   SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+{% endif %}
 
   
   Alias /moin_static193/applets/FCKeditor/ "/usr/share/fckeditor/"
@@ -27,8 +28,6 @@
   WSGIDaemonProcess {{ item.name }} user={{ item.name }} group={{ item.name }} home=/home/{{ item.name }} processes=3 threads=10 maximum-requests=1000 umask=0007
   WSGIProcessGroup {{ item.name }}
 
-  SetEnv MOINLOGGINGCONF /usr/share/moin/config/logging/stderr
-
   ErrorLog /var/log/apache2/{{ item.server_name }}-error.log
   CustomLog /var/log/apache2/{{ item.server_name }}-access.log combined
 
@@ -38,3 +37,40 @@
   </Location>
 
 </VirtualHost>
+
+<VirtualHost *:80>
+  ServerName {{ item.server_name }}
+{% if item.server_alias is defined and item.server_alias %}
+  ServerAlias {{ item.server_alias }}
+{% endif %}
+
+{# If SSL cert and key are defined for this wiki, alway redirect to
+   https. Otherwise serve the page with http. If no SSL cert and key
+   are defined the user will still be able to access the site over TLS
+   by manually adding "https://" to the URL, but it will be served
+   with the default Debian self-signed certificate and present a warning
+   in the user's browser. #}
+{% if item.ssl_cert is defined and item.ssl_cert
+    and item.ssl_key is defined and item.ssl_key %}
+  Redirect permanent / https://{{ item.server_name }}/
+{% else %}
+  Alias /moin_static193/applets/FCKeditor/ "/usr/share/fckeditor/"
+  Alias /moin_static193/ "/usr/share/moin/htdocs/"
+  Alias /robots.txt /usr/share/moin/htdocs/robots.txt
+  Alias /favicon.ico /usr/share/moin/htdocs/favicon.ico
+  DocumentRoot /var/www/wiki/
+  
+  WSGIScriptAlias / "/etc/moin/moin.wsgi"
+  # WSGIDaemonProcess {{ item.name }} user={{ item.name }} group={{ item.name }} home=/home/{{ item.name }} processes=3 threads=10 maximum-requests=1000 umask=0007
+  WSGIProcessGroup {{ item.name }}
+
+  ErrorLog /var/log/apache2/{{ item.server_name }}-error.log
+  CustomLog /var/log/apache2/{{ item.server_name }}-access.log combined
+
+  <Location />
+    Order Allow,Deny
+    Allow from all
+  </Location>
+{% endif %}
+</VirtualHost>
+

@@ -21,3 +21,19 @@
     - ssl.load
     - ssl.conf
   notify: Restart Apache2
+
+- name: Create /etc/ssl/local
+  file: >
+    dest=/etc/ssl/local
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+
+- name: Create /etc/ssl/local/private
+  file: >
+    dest=/etc/ssl/local/private
+    state=directory
+    owner=root
+    group=root
+    mode=0700

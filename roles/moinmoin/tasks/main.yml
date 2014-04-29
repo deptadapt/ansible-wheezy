@@ -44,6 +44,28 @@
     group=www-data
     mode=0770
 
+- name: Copy SSL certificates for wikis
+  copy: >
+    src={{ item.ssl_cert }}
+    dest=/etc/ssl/local/moin-{{ item.name }}-cert.pem
+    owner=root
+    group=root
+    mode=0644
+  with_items: moinmoin_wikis
+  when: item.ssl_cert is defined and item.ssl_cert
+  notify: Restart Apache2
+
+- name: Copy SSL private keys for wikis
+  copy: >
+    src={{ item.ssl_key }}
+    dest=/etc/ssl/local/private/moin-{{ item.name }}-key.pem
+    owner=root
+    group=root
+    mode=0600
+  with_items: moinmoin_wikis
+  when: item.ssl_cert is defined and item.ssl_cert
+  notify: Restart Apache2
+
 - name: Copy Apache vhost template
   template: >
     src=apache2/moinmoin-vhost.conf.j2
