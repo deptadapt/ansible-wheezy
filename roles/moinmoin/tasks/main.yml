@@ -76,6 +76,15 @@
   with_items: moinmoin_wikis
   notify: Restart Apache2
 
+- name: Copy awstats conf.j2 for each wiki
+  template: >
+    src=awstats/awstats.conf.j2
+    dest=/etc/awstats/awstats.{{ item.server_name }}.conf
+    owner=root
+    group=root
+    mode=0644
+  with_items: moinmoin_wikis
+
 - name: Add vhost to sites-enabled
   file: >
     src=/etc/apache2/sites-available/moin-{{ item.name }}.conf
