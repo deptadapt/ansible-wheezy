@@ -76,6 +76,10 @@
   with_items: moinmoin_wikis
   notify: Restart Apache2
 
+- name: Check if /etc/awstats exists
+  stat: path=/etc/awstats
+  register: etc_awstats
+
 - name: Copy awstats conf.j2 for each wiki
   template: >
     src=awstats/awstats.conf.j2
@@ -84,6 +88,7 @@
     group=root
     mode=0644
   with_items: moinmoin_wikis
+  when: etc_awstats.stat.exists == True
 
 - name: Add vhost to sites-enabled
   file: >
