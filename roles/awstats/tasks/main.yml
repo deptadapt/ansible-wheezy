@@ -1,0 +1,32 @@
+---
+
+- name: Install awstats
+  apt: pkg=awstats state=present
+
+- name: Create awstats user for reading Apache2 logs
+  user: >
+    name=awstats
+    system=yes
+    groups=adm,www-data
+    state=present
+
+- name: Enable group write permission on awstats directories
+  file: >
+    path={{ item }}
+    mode=0770
+  with_items:
+    - /var/cache/awstats
+    - /var/lib/awstats
+
+- name: Update /etc/cron.d/awstats to run as awstats user
+  template: >
+    src=cron/awstats.j2
+    dest=/etc/cron.d/awstats
+    owner=root
+    group=root
+    mode=0644
+
+- name: Delete /etc/awstats/awstats.conf
+  file: >
+    path=/etc/awstats/awstats.conf
+    state=absent
