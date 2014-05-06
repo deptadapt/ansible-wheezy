@@ -10,6 +10,28 @@
     groups=adm,www-data
     state=present
 
+- name: Add www-data to awstats group
+  user: >
+    name=www-data
+    append=yes
+    groups=awstats
+
+- name: Copy awstats vhost conf to Apache2
+  template: >
+    src=apache2/awstats-vhost.conf.j2
+    dest=/etc/apache2/sites-available/awstats.conf
+    owner=root
+    group=root
+    mode=0664
+  notify: Restart Apache2
+
+- name: Create symlink for awstats-vhost.conf in /etc/apache2/sites-enabled
+  file: >
+    src=/etc/apache2/sites-available/awstats.conf
+    dest=/etc/apache2/sites-enabled/awstats.conf
+    state=link
+  notify: Restart Apache2
+
 - name: Enable group write permission on awstats directories
   file: >
     path={{ item }}

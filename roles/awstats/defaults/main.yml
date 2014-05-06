@@ -1,0 +1,5 @@
+---
+
+awstats_server_name: "{{ ansible_fqdn }}"
+
+

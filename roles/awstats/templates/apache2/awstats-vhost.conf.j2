@@ -1,0 +1,47 @@
+<VirtualHost *:443>
+  ServerName {{ awstats_server_name }}
+
+  SSLEngine On
+  SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+  SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+  
+  DocumentRoot /var/cache/awstats/
+
+  ErrorLog /var/log/apache2/awstats-error.log
+  CustomLog /var/log/apache2/awstats-access.log combined
+
+  <Directory /var/cache/awstats>
+    Options +Indexes
+    AllowOverride None
+    DirectoryIndex index.en.html
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+  <Directory /usr/share/awstats/icon>
+    Options None
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+  </Directory>
+  <Directory /usr/share/java/awstats>
+    Options FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+  </Directory>
+  Alias /awstats-icon/ /usr/share/awstats/icon/
+  Alias /awstatsclasses/ /usr/share/java/awstats/
+
+  <Location />
+    Order Allow,Deny
+    Allow from all
+  </Location>
+
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName {{ awstats_server_name }} 
+  Redirect permanent / https://{{ awstats_server_name }}/
+</VirtualHost>
+
