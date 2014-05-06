@@ -10,6 +10,7 @@
     - cgi.load
     - autoindex.conf
     - autoindex.load
+  when: apache_disable_mods is defined and apache_disable_mods
   notify: Restart Apache2
 
 - name: Enable mod_ssl
