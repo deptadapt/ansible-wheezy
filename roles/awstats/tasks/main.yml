@@ -3,6 +3,9 @@
 - name: Install awstats
   apt: pkg=awstats state=present
 
+- name: Install python-passlib
+  apt: pkg=python-passlib state=present
+
 - name: Create awstats user for reading Apache2 logs
   user: >
     name=awstats
@@ -15,6 +18,16 @@
     name=www-data
     append=yes
     groups=awstats
+
+- name: htpasswd file for awstats
+  htpasswd: >
+    name=awstats 
+    state=present 
+    path=/etc/awstats/htpasswd 
+    password={{ awstats_htpasswd }}
+    owner=root
+    group=www-data
+    mode=0640
 
 - name: Copy awstats vhost conf to Apache2
   template: >

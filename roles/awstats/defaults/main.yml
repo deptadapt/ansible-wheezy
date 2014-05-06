@@ -2,4 +2,5 @@
 
 awstats_server_name: "{{ ansible_fqdn }}"
 
+awstats_htpasswd: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/awstats_htpasswd length=64 chars=ascii,digits')  }}"
 
