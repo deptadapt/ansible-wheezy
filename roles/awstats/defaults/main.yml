@@ -18,3 +18,8 @@ awstats_URLWithQuery: 1
 
 # Keep or remove query from referrer URLs. Debian awstats default is 0.
 awstats_URLReferrerWithQuery: 1
+
+# These variables are used in /etc/cron.d/awstats (templates/cron/awstats.j2 in this role).
+# The default values are the same as the Debian awstats package defaults.
+awstats_cron_update: "*/10 * * * *"
+awstats_cron_reports: "10 03 * * *"
