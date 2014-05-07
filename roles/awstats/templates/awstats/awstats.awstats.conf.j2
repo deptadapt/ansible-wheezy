@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+LogFile="/usr/share/awstats/tools/logresolvemerge.pl /var/log/apache2/awstats-access.* |"
+LogType=W
+LogFormat=1
+LogSeparator=" "
+
+SiteDomain="{{ awstats_server_name }}"
+HostAliases="localhost 127.0.0.1"
+
+Include "/etc/awstats/awstats.conf.local"
