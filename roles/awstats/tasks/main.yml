@@ -65,3 +65,19 @@
   file: >
     path=/etc/awstats/awstats.conf
     state=absent
+
+- name: Copy awstats.awstats.conf.j2 for tracking the stats site
+  template: >
+    src=awstats/awstats.awstats.conf.j2
+    dest=/etc/awstats/awstats.awstats.conf
+    owner=root
+    group=root
+    mode=0644
+
+- name: Copy awstats.conf.local.j2 for system wide config
+  template: >
+    src=awstats/awstats.conf.local.j2
+    dest=/etc/awstats/awstats.conf.local
+    owner=root
+    group=root
+    mode=0644

@@ -1,6 +1,20 @@
 ---
 
+# This variable is used for generating the Apache vhost configuration file,
+# and also for the awstats conf file that tracks access to the stats.
 awstats_server_name: "{{ ansible_fqdn }}"
 
+# This password is used for the HTTP basic authentication to access the awstats
+# via the website configured with the server name above. The username is awstats.
 awstats_htpasswd: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/awstats_htpasswd length=64 chars=ascii,digits')  }}"
 
+# Lookup DNS by default. Set to 0 to disable DNS lookup, or 2 to only perform lookup
+# if the static DNS cache file exists
+awstats_DNSLookup: 1
+
+# Control whether awstats truncates the query portion of the URL. Debian awstats
+# default is 0 to remove the query.
+awstats_URLWithQuery: 1
+
+# Keep or remove query from referrer URLs. Debian awstats default is 0.
+awstats_URLReferrerWithQuery: 1
