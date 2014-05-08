@@ -2,8 +2,13 @@
   ServerName {{ awstats_server_name }}
 
   SSLEngine On
+{% if awstats_ssl_cert and awstats_ssl_key %}
+  SSLCertificateFile /etc/ssl/local/awstats-cert.pem
+  SSLCertificateKeyFile /etc/ssl/local/private/awstats-key.pem
+{% else %}
   SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
   SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+{% endif %}
   
   DocumentRoot /var/cache/awstats/
 

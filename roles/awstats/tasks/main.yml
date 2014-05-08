@@ -38,6 +38,29 @@
     mode=0664
   notify: Restart Apache2
 
+- name: Copy SSL certificate file for awstats
+  copy: >
+    src={{ awstats_ssl_cert }}
+    dest=/etc/ssl/local/awstats-cert.pem
+    owner=root
+    group=root
+    mode=0644
+  when: awstats_ssl_cert is defined and awstats_ssl_cert
+  notify: Restart Apache2
+
+- name: Copy SSL key file for awstats
+  copy: >
+    src={{ awstats_ssl_key }}
+    dest=/etc/ssl/local/private/awstats-key.pem
+    owner=root
+    group=root
+    mode=0600
+  when: awstats_ssl_key is defined and awstats_ssl_key
+  notify: Restart Apache2
+
+- debug: var=awstats_ssl_key
+- debug: var=awstats_ssl_cert
+
 - name: Create symlink for awstats-vhost.conf in /etc/apache2/sites-enabled
   file: >
     src=/etc/apache2/sites-available/awstats.conf

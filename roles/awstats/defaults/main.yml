@@ -23,3 +23,6 @@ awstats_URLReferrerWithQuery: 1
 # The default values are the same as the Debian awstats package defaults.
 awstats_cron_update: "*/10 * * * *"
 awstats_cron_reports: "10 03 * * *"
+
+awstats_ssl_cert: ""
+awstats_ssl_key: ""
