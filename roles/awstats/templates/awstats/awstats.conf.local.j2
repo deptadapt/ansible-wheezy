@@ -245,17 +245,6 @@ WarningMessages=1
 #
 ErrorMessages=""
 
-
-# AWStat can be run with debug=x parameter to output various informations
-# to help in debugging or solving troubles. If you want to allow this (not
-# enabled by default for security reasons), set this parameter to 0.
-# Change : Effective immediatly
-# Possible values: 0 or 1
-# Default: 0
-#
-DebugMessages=0
-
-
 # To help you to detect if your log format is good, AWStats reports an error
 # if all the first NbOfLinesForCorruptedLog lines have a format that does not
 # match the LogFormat parameter.
@@ -267,29 +256,6 @@ DebugMessages=0
 # Default: 50
 #
 NbOfLinesForCorruptedLog=50
-
-
-# For some particular integration needs, you may want to have CGI links to
-# point to another script than awstats.pl.
-# Use the name of this script in WrapperScript parameter.
-# Change : Effective immediatly
-# Example: "awstatslauncher.pl"
-# Example: "awstatswrapper.cgi?key=123"
-# Default: ""
-#
-WrapperScript=""
-
-
-# DecodeUA must be set to 1 if you use Roxen web server. This server converts
-# all spaces in user agent field into %20. This make the AWStats robots, OS
-# and browsers detection fail in some cases. Just change it to 1 if and only
-# if your web server is Roxen.
-# Change : Effective for new updates only
-# Possible values: 0 or 1
-# Default: 0
-#
-DecodeUA=0
-
 
 # MiscTrackerUrl can be used to make AWStats able to detect some miscellaneous
 # things, that can not be tracked on other way, like:
@@ -364,41 +330,9 @@ LevelForWormsDetection=0            # 0 disables Worms detection.
 # OPTIONAL APPEARANCE SETUP SECTION (Not required but increase AWStats features)
 #-----------------------------------------------------------------------------
 
-# When you use AWStats as a CGI, you can have the reports shown in HTML frames.
-# Frames are only available for report viewed dynamically. When you build
-# pages from command line, this option is not used and no frames are built.
-# Possible values: 0 or 1
-# Default: 1
-#
-UseFramesWhenCGI=1
-
-
-# This parameter asks your browser to open detailed reports into a different
-# window than the main page.
-# Possible values:
-# 0 - Open all in same browser window
-# 1 - Open detailed reports in another window except if using frames
-# 2 - Open always in a different window even if reports are framed
-# Default: 1
-#
-DetailedReportsOnNewWindows=1
-
-
-# You can add, in the HTML report page, a cache lifetime (in seconds) that
-# will be returned to the browser in HTTP header answer by server.
-# This parameter is not used when reports are built with -staticlinks option.
-# Example: 3600
-# Default: 0
-#
-Expires=0
-
-
-# To avoid too large web pages, you can ask AWStats to limit number of rows of
-# all reported charts to this number when no other limits apply.
-# Default: 1000
-#
+DetailedReportsOnNewWindows=0
 MaxRowsInHTMLOutput=1000
-
+ShowMenu=1					
 
 # Set your primary language (ISO-639-1 language codes).
 # Possible values:
@@ -415,20 +349,7 @@ MaxRowsInHTMLOutput=1000
 # Default: "auto"
 #
 Lang="auto"
-
-
-# Set the location of language files.
-# Example: "/usr/share/awstats/lang"
-# Default: "./lang" (means lang directory is in same location than awstats.pl)
-#
 DirLang="/usr/share/awstats/lang"
-
-
-# Show menu header with reports' links
-# Possible values: 0 or 1
-# Default: 1
-#
-ShowMenu=1					
 
 
 # You choose here which reports you want to see in the main page and what you
@@ -607,7 +528,7 @@ AddDataArrayShowHoursStats=1
 # Possible values: 0 or 1
 # Default: 0
 #
-IncludeInternalLinksInOriginSection=0
+IncludeInternalLinksInOriginSection={{ awstats_IncludeInternalLinksInOriginSection }}
 
 
 # The following parameters can be used to choose the maximum number of lines
@@ -657,71 +578,14 @@ MaxNbOfEMailsShown = 20
 MinHitEMail   = 1
 
 
-# Choose if you want the week report to start on sunday or monday
-# Possible values:
-# 0 - Week starts on sunday
-# 1 - Week starts on monday
-# Default: 1
-#
-FirstDayOfWeek=1
-
-
-# List of visible flags that link to other language translations.
-# See Lang parameter for list of allowed flag/language codes.
-# If you don't want any flag link, set ShowFlagLinks to "".
-# This parameter is used only if ShowMenu parameter is set to 1.
-# Possible values: "" or "language_codes_separated_by_space"
-# Example: "en es fr nl de"
-# Default: ""
-#
-ShowFlagLinks=""
-
-
-# Each URL, shown in stats report views, are links you can click.
-# Possible values: 0 or 1
-# Default: 1
-#
+FirstDayOfWeek={{ awstats_FirstDayOfWeek }}
 ShowLinksOnUrl=1
-
-
-# When AWStats builds HTML links in its report pages, it starts those links
-# with "http://". However some links might be HTTPS links, so you can enter
-# here the root of all your HTTPS links. If all your site is a SSL web site,
-# just enter "/".
-# This parameter is not used if ShowLinksOnUrl is 0.
-# Example: "/shopping"
-# Example: "/"
-# Default: ""
-#
-UseHTTPSLinkForUrl=""
-
-
-# Maximum length of URL part shown on stats page (number of characters).
-# This affects only URL visible text, links still work.
-# Default: 64
-#
+UseHTTPSLinkForUrl="{{ awstats_UseHTTPSLinkForUrl }}"
 MaxLengthOfShownURL=64
-
-
-# You can enter HTML code that will be added at the top of AWStats reports.
-# Default: ""
-#
-HTMLHeadSection=""
-
-
-# You can enter HTML code that will be added at the end of AWStats reports.
-# Great to add advert ban.
-# Default: ""
-#
-HTMLEndSection=""
-
-
-# By default AWStats page contains meta tag robots=noindex,nofollow
-# If you want to have your statistics to be indexed, set this option to 1. 
-# Default: 0
-#
+HTMLHeadSection="{{ awstats_HTMLHeadSection }}"
+HTMLEndSection="{{ awstats_HTMLEndSection }}"
 MetaRobot=0
-
+StyleSheet="{{ awstats_StyleSheet }}"
 
 # You can set Logo and LogoLink to use your own logo.
 # Logo must be the name of image file (must be in $DirIcons/other directory).
@@ -739,14 +603,6 @@ BarWidth   = 260
 BarHeight  = 90
 
 
-# You can ask AWStats to use a particular CSS (Cascading Style Sheet) to
-# change its look. To create a style sheet, you can use samples provided with
-# AWStats in wwwroot/css directory.
-# Example: "/awstatscss/awstats_bw.css"
-# Example: "/css/awstats_bw.css"
-# Default: ""
-#
-StyleSheet=""
 
 
 # Those color parameters can be used (if StyleSheet parameter is not used)
@@ -894,19 +750,6 @@ LoadPlugin="hashfiles"
 #
 #LoadPlugin="graphapplet /awstatsclasses"				# EXPERIMENTAL FEATURE
 
-# PLUGIN: GraphGoogleChartAPI
-# REQUIRED MODULES: None
-# PARAMETERS: None
-# DESCRIPTION: Replaces the standard charts with free Google API generated images 
-# in HTML reports. If country data is available and more than one country has hits, 
-# a map will be generated using Google Visualizations.
-# Note: The machine where reports are displayed must have Internet access for the 
-# charts to be generated. The only data sent to Google includes the statistic numbers, 
-# legend names and country names.
-# Warning: This plugin is not compatible with option BuildReportFormat=xhtml. 
-#
-#LoadPlugin="graphgooglechartapi"
-
 # PLUGIN: GeoIPfree
 # REQUIRED MODULES: Geo::IPfree version 0.2+ (from Graciliano M.P.)
 # PARAMETERS: None
@@ -920,63 +763,6 @@ LoadPlugin="hashfiles"
 # This plugin reduces AWStats speed by up to 10% !
 #
 #LoadPlugin="geoipfree"
-
-# MAXMIND GEO IP MODULES: Please see documentation for notes on all Maxmind modules
-
-# PLUGIN: GeoIP
-# REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-# PARAMETERS: [GEOIP_STANDARD | GEOIP_MEMORY_CACHE] [/pathto/geoip.dat[+/pathto/override.txt]]
-# DESCRIPTION: Builds a country chart and adds an entry to the hosts 
-# table with country name
-# Replace spaces in the path of geoip data file with string "%20".
-#
-#LoadPlugin="geoip GEOIP_STANDARD /usr/share/GeoIP/GeoIP.dat"
-
-# PLUGIN: GeoIP_City_Maxmind
-# REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-# PARAMETERS: [GEOIP_STANDARD | GEOIP_MEMORY_CACHE] [/pathto/GeoIPCity.dat[+/pathto/override.txt]]
-# DESCRIPTION: This plugin adds a column under the hosts field and tracks the pageviews
-# and hits by city including regions.
-# Replace spaces in the path of geoip data file with string "%20".
-#
-#LoadPlugin="geoip_city_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPCity.dat"
-
-# PLUGIN: GeoIP_ASN_Maxmind
-# REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-# PARAMETERS: [GEOIP_STANDARD | GEOIP_MEMORY_CACHE] [/pathto/GeoIPASN.dat[+/pathto/override.txt][+http://linktoASlookup]]
-# DESCRIPTION: This plugin adds a chart of AS numbers where the host IP address is registered. 
-# This plugin can display some ISP information if included in the database. You can also provide 
-# a link that will be used to lookup additional registration data. Put the link at the end of 
-# the parameter string and the report page will include the link with the full AS number at the end.
-# Replace spaces in the path of geoip data file with string "%20".
-#
-#LoadPlugin="geoip_asn_maxmind GEOIP_STANDARD /usr/local/geoip.dat+http://enc.com.au/itools/aut-num.php?autnum="
-
-# PLUGIN: GeoIP_Region_Maxmind
-# REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-# PARAMETERS: [GEOIP_STANDARD | GEOIP_MEMORY_CACHE] [/pathto/GeoIPRegion.dat[+/pathto/override.txt]]
-# DESCRIPTION:This plugin adds a chart of hits by regions. Only regions for US and 
-# Canada can be detected.
-# Replace spaces in the path of geoip data file with string "%20".
-#
-#LoadPlugin="geoip_region_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPRegion.dat"
-
-# PLUGIN: GeoIP_ISP_Maxmind
-# REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-# PARAMETERS: [GEOIP_STANDARD | GEOIP_MEMORY_CACHE] [/pathto/GeoIPISP.dat[+/pathto/override.txt]]
-# DESCRIPTION: This plugin adds a chart of hits by ISP.
-# Replace spaces in the path of geoip data file with string "%20".
-#
-#LoadPlugin="geoip_isp_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPISP.dat"
-
-# PLUGIN: GeoIP_Org_Maxmind
-# REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-# PARAMETERS: [GEOIP_STANDARD | GEOIP_MEMORY_CACHE] [/pathto/GeoIPOrg.dat[+/pathto/override.txt]]
-# DESCRIPTION: This plugin add a chart of hits by Organization name
-# Replace spaces in the path of geoip data file with string "%20".
-#
-#LoadPlugin="geoip_org_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPOrg.dat"
-
 
 #-----------------------------------------------------------------------------
 # EXTRA SECTIONS
