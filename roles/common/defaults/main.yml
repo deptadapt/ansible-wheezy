@@ -2,9 +2,10 @@
 # The common role handles the firewall and a few other common details like
 # NTP and configuring sshd.
 
-# TODO: Use default variables for the ports to open for each of
-# the services listed in firewall_unblock. Note that some services
-# like DNS require TCP and UDP.
+# TODO: replace my wonderful iptables-restore template with a basic
+# installation of 'ufw', and use the new 'ufw' Ansible module in other
+# roles to configure their own firewall rules.
+
 #
 # Note that these variables will be strings of "True" or "False" not
 # actually boolean values. The get method is used on the groups dictionary

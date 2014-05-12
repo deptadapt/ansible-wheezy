@@ -1,4 +1,58 @@
 ---
+# Default wiki. If you use this role without any configuration, this is
+# the wiki you will get.
+#
+# If you want you can define moinmoin_wikis as a host variable. It should be
+# a list of dictionaries. Each dictionary in this list defines a wiki in the
+# MoinMoin wiki farm. Only the keys 'name' and 'server_name' are mandatory.
+#
+# Each wiki gets its own of each of the following:
+#   - system user account
+#   - a "mywiki.py" config file in /etc/moin
+#   - an apache2 vhost config file for /etc/apache2/sites-available
+#   - a line in /etc/moin/wikilist
+#   - added to the wikis list in /etc/moin/farmconfig.py
+#
+# What each of the keys is used for:
+#
+#  - 'name': A unique name for the wiki. This value is used as the
+#    username of the system user for this wiki, as well as the file
+#    name for the "mywiki.py" file and several other places. The value
+#    needs to be a valid system username (start with a letter, use
+#    only letters, numbers and '_'.
+#
+#  - 'sitename': used for Config.sitename and Config.interwikiname in 
+#    "mywiki.py" file
+#
+#  - 'server_name': a FQDN used for ServerName directive in Apache vhost.
+#    This is also used in /etc/moin/wikilist and /etc/moin/farmconfig.py
+#
+#  - 'server_alias': an optional FQDN to use for ServerAlias directive in
+#    Apache vhost
+#
+#  - 'ssl_cert': path to local file containing SSL certificate suitable
+#    for use with Apache
+#
+#  - 'ssl_key': path to local file containing SSL private key corresponding
+#    to above SSL certificate
+#
+#  - 'superuser': Config.superuser in "mywiki.py", the administrative 
+#    superuser account for the wiki. Should be in CamelCase
+#
+#  - 'mail_from': email address this wiki will send mail from
+#
+#  - 'mail_smarthost': an SMTP server to connect to for sending mail
+#
+#  - 'tz_offset': time zone offset from UTC
+#
+#  - 'acl_hierarchic' boolean value (lower case true or false in YAML syntax)
+#    used in Config.acl_hierarchic in "mywiki.py"
+#
+#  - 'acl_rights_before': a MoinMoin ACL string to append to the default and
+#    page specific ACLs
+#
+#  - 'acl_rights_default': a MoinMoin ACL string that will be the default for
+#    pages without their own ACL
 
 moinmoin_wikis:
   - name: mywiki

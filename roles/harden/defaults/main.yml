@@ -1,4 +1,12 @@
 ---
+# This role installs the 'tripwire' package, which needs passphrase for two
+# cryptographic keys: a site key and a local key. The Debian package for
+# tripwire supports generating these keys during installation via the
+# debconf system. These two variables by default use the password lookup
+# plugin and store the passwords in a passwords directory in the same
+# directory as the inventory file. One could also use host or group
+# variables and Ansible Vault instead.
+
 
 tripwire_local_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/tripwire_local') }}"
 tripwire_site_password: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/tripwire_site') }}"

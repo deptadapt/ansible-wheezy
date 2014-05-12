@@ -1,4 +1,8 @@
 ---
+# The first six variables are the most important for getting awstats
+# installed and accessible. The bulk of this file is for customizing
+# the way that awstats prepares reports.
+
 
 # This variable is used for generating the Apache vhost configuration file,
 # and also for the awstats conf file that tracks access to the stats.
@@ -7,17 +11,6 @@ awstats_server_name: "{{ ansible_fqdn }}"
 # This password is used for the HTTP basic authentication to access the awstats
 # via the website configured with the server name above. The username is awstats.
 awstats_htpasswd: "{{ lookup('password', inventory_dir + '/passwords/' + ansible_fqdn + '/awstats_htpasswd length=64 chars=ascii,digits')  }}"
-
-# Lookup DNS by default. Set to 0 to disable DNS lookup, or 2 to only perform lookup
-# if the static DNS cache file exists
-awstats_DNSLookup: 1
-
-# Control whether awstats truncates the query portion of the URL. Debian awstats
-# default is 0 to remove the query.
-awstats_URLWithQuery: 1
-
-# Keep or remove query from referrer URLs. Debian awstats default is 0.
-awstats_URLReferrerWithQuery: 1
 
 # These variables are used in /etc/cron.d/awstats (templates/cron/awstats.j2 in this role).
 # The default values are the same as the Debian awstats package defaults.
@@ -30,6 +23,27 @@ awstats_cron_reports: "10 03 * * *"
 # will be used instead.
 awstats_ssl_cert: ""
 awstats_ssl_key: ""
+
+# -------------------------------------------------------------------------
+# Variables below are for configuring awstats. Each variable corresponds to
+# an awstats configuration value (with 'awstats_' prefixed to the name). This
+# role uses these values system-wide by putting them in 
+# /etc/awstats/awstats.conf.local and having each site-specific awstats.*.conf
+# file including it. See the template in templates/awstats/awstats.conf.local.j2
+# and the awstats documentation for more information.
+#
+# http://awstats.sourceforge.net/docs/awstats_config.html
+
+# Lookup DNS by default. Set to 0 to disable DNS lookup, or 2 to only perform lookup
+# if the static DNS cache file exists
+awstats_DNSLookup: 1
+
+# Control whether awstats truncates the query portion of the URL. Debian awstats
+# default is 0 to remove the query.
+awstats_URLWithQuery: 1
+
+# Keep or remove query from referrer URLs. Debian awstats default is 0.
+awstats_URLReferrerWithQuery: 1
 
 # In the Origin chart, you have stats on where your hits came from. You can
 # include hits on pages that come from pages of same sites in this chart.
